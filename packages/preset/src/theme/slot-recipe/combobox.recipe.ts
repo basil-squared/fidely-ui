@@ -37,6 +37,11 @@ export const comboboxSlotRecipe = defineSlotRecipe({
         borderColor: 'colorPalette.default',
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
+
+      '&:has(input[data-invalid])': {
+        borderColor: 'border.error',
+        boxShadow: '0 0 0 1px var(--colors-border-error)',
+      },
     },
 
     input: {
