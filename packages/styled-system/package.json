@@ -6,7 +6,7 @@
     "prepare": "panda codegen"
   },
   "devDependencies": {
-    "@pandacss/dev": "^1.4.3",
+    "@pandacss/dev": "^1.5.1",
     "@fidely-ui/panda-preset": "workspace:*"
   },
   "exports": {
