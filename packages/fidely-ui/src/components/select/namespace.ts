@@ -16,6 +16,7 @@ export {
   SelectLabel as Label,
   SelectPositioner as Positioner,
   SelectValueText as ValueText,
+  SelectIndicatorGroup as IndicatorGroup,
   SelectHighlightChangeDetails as HighlightChangeDetails,
   SelectValueChangeDetails as ValueChangeDetails,
   SelectOpenChangeDetails as OpenChangeDetails,
@@ -37,4 +38,5 @@ export {
   SelectLabelProps as LabelProps,
   SelectPositionerProps as PositionerProps,
   SelectValueTextProps as ValueTextProps,
+  SelectIndicatorGroupProps as IndicatorGroupProps,
 } from './select'

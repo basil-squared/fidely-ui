@@ -2,7 +2,7 @@
 
 import { createListCollection, Portal, Select } from '@fidely-ui/react'
 
-export const SelectDisabled = () => {
+export const SelectInvalid = () => {
   const collection = createListCollection({
     items: ['React', 'Solid', 'Vue', 'Svelte'],
   })
@@ -12,7 +12,7 @@ export const SelectDisabled = () => {
       collection={collection}
       positioning={{ sameWidth: true }}
       maxW={'350px'}
-      disabled
+      invalid
     >
       <Select.Label>Framework</Select.Label>
       <Select.Control>

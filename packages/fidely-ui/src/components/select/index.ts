@@ -12,6 +12,7 @@ export {
   SelectItemGroup,
   SelectItemGroupLabel,
   SelectItemIndicator,
+  SelectIndicatorGroup,
   SelectItemText,
   SelectLabel,
   SelectPositioner,
@@ -21,7 +22,7 @@ export {
   SelectOpenChangeDetails,
 } from './select'
 
-export {
+export type {
   SelectRootProviderProps,
   SelectRootProps,
   SelectClearTriggerProps,
@@ -37,6 +38,7 @@ export {
   SelectLabelProps,
   SelectPositionerProps,
   SelectValueTextProps,
+  SelectIndicatorGroupProps,
 } from './select'
 
 export {

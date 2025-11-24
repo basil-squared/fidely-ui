@@ -35,11 +35,29 @@ const docs = defineCollection({
         })
         .optional(),
     })
-    .transform((data, { meta }: any) => ({
-      ...data,
-      slug: meta.path.replace(/.*\/docs\//, '').replace(/\.mdx$/, ''),
-      category: meta.path.replace(/.*\/docs\//, '').replace(/\/[^/]*$/, ''),
-    })),
+    .transform((data, { meta }: any) => {
+      const links = data.links || {}
+
+      return {
+        ...data,
+        slug: meta.path.replace(/.*\/docs\//, '').replace(/\.mdx$/, ''),
+        category: meta.path.replace(/.*\/docs\//, '').replace(/\/[^/]*$/, ''),
+
+        links: {
+          ...links,
+
+          source: links.source
+            ? `https://github.com/fidely-ui/fidely-ui/tree/main/packages/fidely-ui/src/components/${links.source}`
+            : undefined,
+
+          ark: links.ark ? `https://ark-ui.com/docs/${links.ark}` : undefined,
+
+          recipe: links.recipe
+            ? `https://github.com/fidely-ui/fidely-ui/tree/main/packages/preset/src/theme/${links.recipe}.ts`
+            : undefined,
+        },
+      }
+    }),
 })
 
 export default defineConfig({

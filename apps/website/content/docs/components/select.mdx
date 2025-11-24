@@ -1,6 +1,10 @@
 ---
 title: Select
 description: Displays a list of options for the user to pick from.
+links:
+  source: select/select.tsx
+  recipe: slot-recipe/select.recipe
+  ark: components/select
 ---
 
 <ExampleTabs name="select-basics" scope="select" />
@@ -82,6 +86,18 @@ Use the **multiple** prop to allow multiple selections.
 
 <ExampleTabs name="select-multiple" scope="select" />
 
+### Icon
+
+Render your icon with **Select.Indicator** or **Select.ClearTriggerr** to use your custom icon.
+
+<ExampleTabs name="select-icon" scope="select" />
+
+### Invalid
+
+Pass the **invalid** prop to the **Select.Root**.
+
+<ExampleTabs name="select-invalid" scope="select" />
+
 ### Positioning
 
 Use the **positioning** prop to control the underlying **floating-ui** options of the select component.
@@ -90,12 +106,41 @@ Use the **positioning** prop to control the underlying **floating-ui** options o
 
 ### ClearTrigger
 
-Render the **Select.ClearTrigger** component to show a clear text or button (you can customize its design as needed).
-
-Clicking the clear button will clear the selected value.
+Render the **Select.ClearTrigger** component to show a clear button. Clicking the clear button will clear the selected value.
 
 <ExampleTabs name="select-trigger" scope="select" />
 
 ## Props
 
 ### Root
+
+| Prop                      | Type                                       | Default                         | Description                                                                                                                                                                                                        |
+| :------------------------ | :----------------------------------------- | :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `as`                      | `React.ElementType`                        | —                               | The underlying element to render.                                                                                                                                                                                  |
+| `asChild`                 | `boolean`                                  | —                               | Uses the provided child element as the rendered element, merging its props and behavior.                                                                                                                           |
+| `autoFocus`               | `boolean`                                  | —                               | Whether to autofocus the input on mount.                                                                                                                                                                           |
+| `closeOnSelect`           | `boolean`                                  | —                               | Whether the select should close after an item is selected.                                                                                                                                                         |
+| `collection`              | `ListCollection<T>`                        | —                               | The collection of items.                                                                                                                                                                                           |     |
+| `defaultHighlightedValue` | `string`                                   | —                               | The initial value of the highlighted item when opened. Use when you don't need to control the highlighted value of the select.                                                                                     |
+| `defaultOpen`             | `boolean`                                  | —                               | Whether the select's open state is controlled by the user                                                                                                                                                          |
+| `defaultValue`            | `string[]`                                 | `[]`                            | The initial default value of the select when rendered. Use when you don't need to control the value of the select.                                                                                                 |
+| `disabled`                | `boolean`                                  | —                               | Whether the select is disabled.                                                                                                                                                                                    |
+| `form`                    | `string`                                   | —                               | The associate form of the select.                                                                                                                                                                                  |
+| `highlightedValue`        | `string`                                   | —                               | The controlled key of the highlighted item.                                                                                                                                                                        |
+| `id`                      | `string`                                   | —                               | The unique identifier of the component.                                                                                                                                                                            |
+| `immediate`               | `boolean`                                  | —                               | Whether to synchronize the present change immediately or defer it to the next frame.                                                                                                                               |
+| `invalid`                 | `boolean`                                  | —                               | Whether the select is invalid.                                                                                                                                                                                     |
+| `loopFocus`               | `boolean`                                  | `true`                          | Whether to loop the keyboard navigation through the options.                                                                                                                                                       |
+| `multiple`                | `boolean`                                  | —                               | Whether to allow multiple selection. **Good to know:** When `multiple` is `true`, the `selectionBehavior` is automatically set to `clear`. It is recommended to render the selected items in a separate container. |
+| `name`                    | `string`                                   | —                               | The `name` attribute of the underlying select                                                                                                                                                                      |
+| `onFocusOutside`          | `(event: FocusOutsideEvent) => void`       | —                               | Function called when the focus is moved outside the component.                                                                                                                                                     |
+| `onInputValueChange`      | `(details: OpenChangeDetails) => void`     | —                               | Function called when the input value changes.                                                                                                                                                                      |
+| `onPointerDownOutside`    | `(event: PointerDownOutsideEvent) => void` | —                               | Function called when the pointer is pressed down outside the component.                                                                                                                                            |
+| `onSelect`                | `(details: SelectionDetails) => void`      | —                               | Function called when an item is selected.                                                                                                                                                                          |
+| `onValueChange`           | `(details: ValueChangeDetails<T>) => void` | —                               | The callback fired when the selected item changes.                                                                                                                                                                 |
+| `positioning`             | `PositioningOptions`                       | `{ placement: "bottom-start" }` | The positioning options of the menu.                                                                                                                                                                               |
+| `required`                | `boolean`                                  | —                               | Whether the select is required.                                                                                                                                                                                    |
+| `size`                    | `'xs' &#124; 'sm' &#124; 'md' &#124; 'lg'` | `md`                            | The size of the component.                                                                                                                                                                                         |
+| `unmountOnExit`           | `boolean`                                  | `false`                         | Whether to unmount on exit.                                                                                                                                                                                        |
+| `value`                   | `string[]`                                 | —                               | The controlled keys of the selected items.                                                                                                                                                                         |
+| `variant`                 | `'outside' \| 'subtle'`                    | `outline`                       | The variant of the component.                                                                                                                                                                                      |

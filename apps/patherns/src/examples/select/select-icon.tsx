@@ -1,8 +1,9 @@
 'use client'
 
 import { createListCollection, Portal, Select } from '@fidely-ui/react'
+import { PiCaretUpDownLight } from 'react-icons/pi'
 
-export const SelectDisabled = () => {
+export const SelectIcon = () => {
   const collection = createListCollection({
     items: ['React', 'Solid', 'Vue', 'Svelte'],
   })
@@ -12,7 +13,6 @@ export const SelectDisabled = () => {
       collection={collection}
       positioning={{ sameWidth: true }}
       maxW={'350px'}
-      disabled
     >
       <Select.Label>Framework</Select.Label>
       <Select.Control>
@@ -20,7 +20,9 @@ export const SelectDisabled = () => {
           <Select.ValueText placeholder="Select a Framework" />
         </Select.Trigger>
         <Select.IndicatorGroup>
-          <Select.Indicator />
+          <Select.Indicator>
+            <PiCaretUpDownLight size={20} />
+          </Select.Indicator>
         </Select.IndicatorGroup>
       </Select.Control>
       <Portal>

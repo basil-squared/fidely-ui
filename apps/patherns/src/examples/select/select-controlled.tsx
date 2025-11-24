@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { createListCollection, Portal, Select } from '@fidely-ui/react'
-import { BiChevronDown } from 'react-icons/bi'
 
 export const SelectControlled = () => {
   const [value, setValue] = useState<string[]>([])
@@ -23,10 +22,10 @@ export const SelectControlled = () => {
       <Select.Control>
         <Select.Trigger>
           <Select.ValueText placeholder="Select a Framework" />
-          <Select.Indicator>
-            <BiChevronDown />
-          </Select.Indicator>
         </Select.Trigger>
+        <Select.IndicatorGroup>
+          <Select.Indicator />
+        </Select.IndicatorGroup>
       </Select.Control>
       <Portal>
         <Select.Positioner>
