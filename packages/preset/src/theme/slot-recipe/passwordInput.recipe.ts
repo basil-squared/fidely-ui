@@ -26,6 +26,11 @@ export const passwordInputSlotRecipe = defineSlotRecipe({
         borderColor: 'colorPalette.default',
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
+
+      '&:has(input[data-invalid])': {
+        borderColor: 'border.error',
+        boxShadow: '0 0 0 1px var(--colors-border-error)',
+      },
     },
     input: {
       ...inputRecipe.base,
@@ -40,12 +45,7 @@ export const passwordInputSlotRecipe = defineSlotRecipe({
       },
 
       _invalid: {
-        color: 'fg.error',
         border: 'none',
-        _focus: {
-          borderColor: 'transparent',
-          boxShadow: 'none',
-        },
       },
     },
     label: {
