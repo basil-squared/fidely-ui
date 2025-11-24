@@ -192,7 +192,9 @@ export const SelectValueText = withSlotContext<
 
 // -------------------- Context --------------------
 export const SelectContext = ArkSelect.Context
+
 export const SelectItemContext = ArkSelect.ItemContext
+
 export const SelectHiddenSelect = ArkSelect.HiddenSelect
 
 export interface SelectValueChangeDetails<T extends CollectionItem = any>
