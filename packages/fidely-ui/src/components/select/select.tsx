@@ -9,6 +9,8 @@ import {
 } from '@fidely-ui/styled-system/recipes'
 
 import { makeStyleContext } from '../../system/make-style-context'
+import { FiClose } from '../icons/FiClose'
+import { FiCaretDownIcon } from '../icons/FiCaretDownIcon'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(select)
 
@@ -56,12 +58,22 @@ export const SelectContent = withSlotContext<
 
 // -------------------- ClearTrigger --------------------
 export interface SelectClearTriggerProps
-  extends Assign<HTMLStyledProps<'button'>, ArkSelect.ClearTriggerBaseProps> {}
+  extends Assign<HTMLStyledProps<'button'>, ArkSelect.ClearTriggerBaseProps> {
+  idleIcon?: React.ReactNode
+}
 
 export const SelectClearTrigger = withSlotContext<
   HTMLButtonElement,
   SelectClearTriggerProps
->(ArkSelect.ClearTrigger, 'clearTrigger')
+>((props) => {
+  const { idleIcon = <FiClose size={18} />, children, ...rest } = props
+
+  return (
+    <ArkSelect.ClearTrigger {...rest}>
+      {children ?? idleIcon}
+    </ArkSelect.ClearTrigger>
+  )
+}, 'clearTrigger')
 
 // -------------------- Trigger --------------------
 export interface SelectTriggerProps
@@ -74,12 +86,28 @@ export const SelectTrigger = withSlotContext<
 
 // -------------------- Indicator --------------------
 export interface SelectIndicatorProps
-  extends Assign<HTMLStyledProps<'div'>, ArkSelect.IndicatorBaseProps> {}
+  extends Assign<HTMLStyledProps<'div'>, ArkSelect.IndicatorBaseProps> {
+  idleIcon?: React.ReactNode
+}
 
 export const SelectIndicator = withSlotContext<
   HTMLDivElement,
   SelectIndicatorProps
->(ArkSelect.Indicator, 'indicator')
+>((props) => {
+  const { idleIcon = <FiCaretDownIcon size={18} />, children, ...rest } = props
+
+  return (
+    <ArkSelect.Indicator {...rest}>{children ?? idleIcon}</ArkSelect.Indicator>
+  )
+}, 'indicator')
+
+// -------------------- IndicatorGroup --------------------
+export interface SelectIndicatorGroupProps extends HTMLStyledProps<'div'> {}
+
+export const SelectIndicatorGroup = withSlotContext<
+  HTMLDivElement,
+  SelectIndicatorGroupProps
+>('div', 'indicatorGroup')
 
 // -------------------- Label --------------------
 export interface SelectLabelProps

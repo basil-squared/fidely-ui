@@ -1,7 +1,6 @@
 'use client'
 
 import { createListCollection, Portal, Select } from '@fidely-ui/react'
-import { BiChevronDown } from 'react-icons/bi'
 
 export const SelectMultiple = () => {
   const collection = createListCollection({
@@ -19,11 +18,10 @@ export const SelectMultiple = () => {
       <Select.Control>
         <Select.Trigger>
           <Select.ValueText placeholder="Select a Framework" />
-          <Select.Indicator>
-            <BiChevronDown />
-          </Select.Indicator>
         </Select.Trigger>
-        {/* <Select.ClearTrigger>Clear</Select.ClearTrigger> */}
+        <Select.IndicatorGroup>
+          <Select.Indicator />
+        </Select.IndicatorGroup>
       </Select.Control>
       <Portal>
         <Select.Positioner>

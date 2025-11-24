@@ -2,7 +2,6 @@
 
 import { Portal, Select } from '@fidely-ui/react'
 import { createListCollection } from '@fidely-ui/react/collection'
-import { BiChevronDown } from 'react-icons/bi'
 
 export const SelectGroup = () => {
   const collection = createListCollection({
@@ -19,10 +18,10 @@ export const SelectGroup = () => {
       <Select.Control>
         <Select.Trigger>
           <Select.ValueText placeholder="Select a Framework" />
-          <Select.Indicator>
-            <BiChevronDown />
-          </Select.Indicator>
         </Select.Trigger>
+        <Select.IndicatorGroup>
+          <Select.Indicator />
+        </Select.IndicatorGroup>
       </Select.Control>
       <Portal>
         <Select.Positioner>

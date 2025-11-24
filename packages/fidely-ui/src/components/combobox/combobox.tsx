@@ -84,7 +84,8 @@ export const ComboboxTrigger = withSlotContext<
 }, 'trigger')
 
 // -------------------- ClearTrigger --------------------
-export interface ComboboxClearTriggerProps extends HTMLStyledProps<'button'> {
+export interface ComboboxClearTriggerProps
+  extends Assign<HTMLStyledProps<'button'>, ArkCombobox.ClearTriggerBaseProps> {
   idleIcon?: React.ReactNode
 }
 

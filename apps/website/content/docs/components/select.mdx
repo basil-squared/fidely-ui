@@ -1,6 +1,10 @@
 ---
 title: Select
 description: Displays a list of options for the user to pick from.
+links:
+  source: select/select.tsx
+  recipe: slot-recipe/select.recipe
+  ark: components/select
 ---
 
 <ExampleTabs name="select-basics" scope="select" />
@@ -82,6 +86,18 @@ Use the **multiple** prop to allow multiple selections.
 
 <ExampleTabs name="select-multiple" scope="select" />
 
+### Icon
+
+Render your icon with **Select.Indicator** or **Select.ClearTriggerr** to use your custom icon.
+
+<ExampleTabs name="select-icon" scope="select" />
+
+### Invalid
+
+Pass the **invalid** prop to the **Select.Root**.
+
+<ExampleTabs name="select-invalid" scope="select" />
+
 ### Positioning
 
 Use the **positioning** prop to control the underlying **floating-ui** options of the select component.
@@ -90,12 +106,40 @@ Use the **positioning** prop to control the underlying **floating-ui** options o
 
 ### ClearTrigger
 
-Render the **Select.ClearTrigger** component to show a clear text or button (you can customize its design as needed).
-
-Clicking the clear button will clear the selected value.
+Render the **Select.ClearTrigger** component to show a clear button. Clicking the clear button will clear the selected value.
 
 <ExampleTabs name="select-trigger" scope="select" />
 
 ## Props
 
 ### Root
+
+| Prop                      | Type                                        | Default | Description                                                                              |
+| ------------------------- | ------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
+| `as`                      | `React.ElementType`                         | —       | The underlying element to render.                                                        |
+| `asChild`                 | `boolean`                                   | —       | Uses the provided child element as the rendered element, merging its props and behavior. |
+| `autoFocus`               | `boolean`                                   | —       | Whether to autofocus the input on mount.                                                 |
+| `closeOnSelect`           | `boolean`                                   | —       | Whether the select should close after an item is selected.                               |
+| `collection`              | `ListCollection<T>`                         | —       | The collection of items.                                                                 |
+| `defaultHighlightedValue` | `string`                                    | —       | The initial value of the highlighted item when opened.                                   |
+| `defaultOpen`             | `boolean`                                   | —       | Whether the select is open by default.                                                   |
+| `defaultValue`            | `string[]`                                  | `[]`    | The initial default value of the select when rendered.                                   |
+| `disabled`                | `boolean`                                   | —       | Whether the select is disabled.                                                          |
+| `form`                    | `string`                                    | —       | The associated form of the select.                                                       |
+| `highlightedValue`        | `string`                                    | —       | The controlled highlighted item value.                                                   |
+| `id`                      | `string`                                    | —       | The id of the select root element.                                                       |
+| `invalid`                 | `boolean`                                   | —       | Whether the select is in an invalid state. Adds `data-invalid` and `aria-invalid`.       |
+| `loop`                    | `boolean`                                   | `true`  | Whether navigation wraps around when reaching the first or last item.                    |
+| `multiple`                | `boolean`                                   | `false` | Whether multiple values can be selected.                                                 |
+| `name`                    | `string`                                    | —       | The name of the select when used in a form.                                              |
+| `onHighlightChange`       | `(details: HighlightChangeDetails) => void` | —       | Called when the highlighted option changes.                                              |
+| `onOpenChange`            | `(details: OpenChangeDetails) => void`      | —       | Called when the select’s open/close state changes.                                       |
+| `onValueChange`           | `(details: ValueChangeDetails) => void`     | —       | Called when the selected value changes.                                                  |
+| `open`                    | `boolean`                                   | —       | Controls the open state of the select.                                                   |
+| `openOnClick`             | `boolean`                                   | `true`  | Whether clicking the trigger opens the select.                                           |
+| `positioning`             | `Positioning`                               | —       | The positioning options for the select dropdown.                                         |
+| `preventScroll`           | `boolean`                                   | `false` | Prevents scroll locking when open.                                                       |
+| `required`                | `boolean`                                   | —       | Whether selection is required before form submission.                                    |
+| `sameWidth`               | `boolean`                                   | `true`  | Whether the dropdown should match the trigger width.                                     |
+| `value`                   | `string[]`                                  | —       | The controlled value of the select.                                                      |
+| `width`                   | `string \| number`                          | —       | The width of the select trigger.                                                         |

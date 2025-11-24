@@ -2,7 +2,7 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const buttonRecipe = defineRecipe({
   className: 'fidely-button',
-  jsx: ['Button', 'IconButton'],
+  jsx: ['Button', 'IconButton', 'CloseButton'],
   description: 'Styles for the Fidely UI Button component',
   base: {
     appearance: 'none',

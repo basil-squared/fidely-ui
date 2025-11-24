@@ -1,5 +1,5 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { selectAnatomy } from '@ark-ui/react/anatomy'
+import { selectAnatomy } from '../../anatomy'
 
 export const selectSlotRecipe = defineSlotRecipe({
   className: 'fidely-select',
@@ -33,11 +33,13 @@ export const selectSlotRecipe = defineSlotRecipe({
         opacity: 0.3,
         cursor: 'not-allowed',
       },
-      _invalid: {
-        borderColor: 'border.error',
-      },
       _placeholderShown: {
         color: 'fg.subtle',
+      },
+
+      '&[data-invalid], &:has([data-invalid])': {
+        borderColor: 'fg.error',
+        boxShadow: '0 0 0 1px var(--colors-border-error)',
       },
     },
     item: {
@@ -89,9 +91,12 @@ export const selectSlotRecipe = defineSlotRecipe({
     },
     clearTrigger: {
       color: 'fg.muted',
-      pointerEvents: 'auto',
       rounded: 's1',
-      textStyle: 'sm',
+      pointerEvents: 'auto',
+
+      _hover: {
+        bg: 'gray.alpha2',
+      },
     },
     itemText: {
       flex: 1,
@@ -108,6 +113,35 @@ export const selectSlotRecipe = defineSlotRecipe({
       fontWeight: 'normal',
       lineClamp: 1,
       maxW: '80%',
+    },
+
+    indicatorGroup: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '1',
+      pos: 'absolute',
+      textStyle: 'sm',
+      insetEnd: '0',
+      top: '0',
+      bottom: '0',
+      px: 'var(--select-trigger-p-x)',
+      pointerEvents: 'none',
+
+      '[data-disabled] &': {
+        opacity: 0.4,
+      },
+    },
+
+    indicator: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      pointerEvents: 'none',
+
+      '[data-invalid] &': {
+        color: 'fg.error',
+      },
     },
   },
 

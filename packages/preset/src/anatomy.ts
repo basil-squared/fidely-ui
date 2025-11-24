@@ -18,8 +18,9 @@ export { fieldAnatomy } from '@ark-ui/react/field'
 // export { menuAnatomy } from '@ark-ui/react/menu'
 // export { popoverAnatomy } from '@ark-ui/react/popover'
 // export { radioGroupAnatomy } from '@ark-ui/react/radio-group'
-export { switchAnatomy } from '@ark-ui/react/switch'
-export { selectAnatomy } from '@ark-ui/react/select'
+
+import { selectAnatomy as arkSelectAnatomy } from '@ark-ui/react/anatomy'
+
 // export { sliderAnatomy } from '@ark-ui/react/slider'
 // export { treeViewAnatomy } from '@ark-ui/react/tree-view'
 // export { numberInputAnatomy } from '@ark-ui/react/number-input'
@@ -66,3 +67,5 @@ export const dialogAnatomy = arkDialogAnatomy.extendWith(
 )
 
 export const comboboxAnatomy = arkComboboxAnatomy.extendWith('indicatorGroup')
+
+export const selectAnatomy = arkSelectAnatomy.extendWith('indicatorGroup')

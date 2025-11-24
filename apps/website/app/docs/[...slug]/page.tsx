@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
 import { docs } from '~/.velite'
-import { Box, Flex, Heading, Text } from '@fidely-ui/react'
+import { Box, Flex, Text } from '@fidely-ui/react'
 
 import { MDXContent } from '~/components/mdx-content'
 import { DocsPage } from '~/components/docs-page'
+import { DocPageHeader } from '~/components/page-header'
 
 type Props = {
   params: Promise<{ slug?: string[] }>
@@ -26,15 +27,7 @@ export default async function DocsPagePage({ params }: Props) {
         {/* Main content */}
         <Box flex="1" maxW={{ base: '100%', md: '75%' }} px={4}>
           <article className="doc-container">
-            <Heading as="h1" fontSize="2xl" fontWeight="bold" mb={2}>
-              {doc.title}
-            </Heading>
-
-            {doc.description && (
-              <Text color="gray.500" mb={4}>
-                {doc.description}
-              </Text>
-            )}
+            <DocPageHeader data={doc} />
 
             <MDXContent code={doc.code} />
           </article>
