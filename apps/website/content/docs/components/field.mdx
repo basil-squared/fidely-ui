@@ -53,3 +53,17 @@ This example illustrates how to use the **Field** component with a textarea elem
 > You can pass the **autoresize** prop to the Textarea component to enable automatic resizing as the user types.
 
 <ExampleTabs name="field-textarea" scope="field" />
+
+## Props
+
+### Root
+
+| Prop       | Default | Type                | Description                                                                                         |
+| ---------- | ------- | ------------------- | --------------------------------------------------------------------------------------------------- |
+| `invalid`  | `-`     | `boolean`           | Indicates whether the field is invalid..                                                            |
+| `ids`      | `-`     | `ElementIds`        | The ids of the field parts.                                                                         |
+| `readOnly` | —       | `boolean`           | Indicates whether the field is read-only.                                                           |
+| `required` | —       | `boolean`           | Indicates whether the field is required..                                                           |
+| `disabled` | —       | `boolean`           | Indicates whether the field is disabled.                                                            |
+| `as`       | —       | `React.ElementType` | The underlying element to render.                                                                   |
+| `asChild`  | `false` | `boolean`           | Use the provided child element as the default rendered element, combining their props and behavior. |
