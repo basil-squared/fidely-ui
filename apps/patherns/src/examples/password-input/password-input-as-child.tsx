@@ -1,4 +1,4 @@
-import { PasswordInput } from '@fidely-ui/react/password-input'
+import { Input, PasswordInput } from '@fidely-ui/react'
 
 export const PasswordInputAsChild = () => {
   return (
@@ -6,7 +6,7 @@ export const PasswordInputAsChild = () => {
       <PasswordInput.Label>Password</PasswordInput.Label>
       <PasswordInput.Control>
         <PasswordInput.Input asChild>
-          <input type="text" placeholder="enter password" />
+          <Input placeholder="enter password" unstyled />
         </PasswordInput.Input>
         <PasswordInput.VisibilityTrigger>
           <PasswordInput.Indicator />
