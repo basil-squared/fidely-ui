@@ -6,13 +6,13 @@ import { Box } from '@fidely-ui/react/box'
 import { Flex } from '@fidely-ui/react/flex'
 import { Stack } from '@fidely-ui/react/stack'
 import { Text } from '@fidely-ui/react/text'
-import { Badge as FidelyBadge } from '@fidely-ui/react/badge'
 import { Span } from '@fidely-ui/react/span'
 
 import {
   asideComponentLinks,
   asideUtilLinks,
 } from '~/constant/aside-component-links'
+import { NavItem } from '~/components/nav-item'
 
 export const DocsPage = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -53,6 +53,7 @@ function Sidebar() {
       overflowY="auto"
     >
       <Stack gap="6">
+        {/* Getting Started */}
         <Stack gap="3">
           <Text color={'fg.default'}>Getting Started</Text>
           <Link
@@ -74,96 +75,63 @@ function Sidebar() {
           </Link>
         </Stack>
 
+        {/* Theming */}
         <Stack gap="3">
-          <Text color={'fg.default'} fontSize={'14px'}>
+          <Text color="fg.default" fontSize="14px">
             Theming
           </Text>
-          <Link
-            href="/docs/theming/customization"
-            style={{ marginLeft: '6px' }}
-          >
-            <Span color={'fg.muted'} fontSize={'13px'}>
-              Customization
-            </Span>
-          </Link>
 
-          <Link
+          <NavItem href="/docs/theming/customization" label="Customization" />
+          <NavItem
             href="/docs/theming/semantic-tokens"
-            style={{ marginLeft: '6px' }}
-          >
-            <Span color={'fg.muted'} fontSize={'13px'}>
-              Semantic tokens
-            </Span>
-          </Link>
-
-          <Link href="/docs/theming/colors" style={{ marginLeft: '6px' }}>
-            <Span color={'fg.muted'} fontSize={'13px'}>
-              Colors
-            </Span>
-          </Link>
+            label="Semantic tokens"
+          />
+          <NavItem href="/docs/theming/colors" label="Colors" />
         </Stack>
 
+        {/* Styling */}
         <Stack gap="3">
-          <Text color={'fg.default'}>Styling</Text>
-          <Link href="/docs/styling/dark-mode" style={{ marginLeft: '6px' }}>
-            <Span color={'fg.muted'} fontSize={'13px'}>
-              Dark Mode
-            </Span>
-          </Link>
+          <Text color="fg.default">Styling</Text>
+
+          <NavItem href="/docs/styling/dark-mode" label="Dark Mode" />
         </Stack>
 
+        {/* Components */}
         <Stack gap="3">
           {asideComponentLinks.map((section, index: number) => (
             <React.Fragment key={index}>
               <Text fontSize={'14px'}>{section.section}</Text>
 
               {section.items.map((item) => (
-                <Link
-                  href={`/docs/components/${item.linkUrl}`}
+                <NavItem
                   key={item.name}
-                  style={{
-                    marginLeft: '6px',
-                  }}
-                >
-                  <Span color={'fg.muted'} fontSize={'13px'}>
-                    {item.name} {item.new ? <Badge /> : ''}
-                  </Span>
-                </Link>
+                  href={`/docs/components/${item.linkUrl}`}
+                  label={item.name}
+                  isNew={item.new}
+                />
               ))}
             </React.Fragment>
           ))}
         </Stack>
 
+        {/* Utilities */}
         <Stack gap="3">
           {asideUtilLinks.map((section, index: number) => (
             <React.Fragment key={index}>
               <Text fontSize={'14px'}>{section.section}</Text>
 
               {section.items.map((item) => (
-                <Link
-                  href={`/docs/utilities/${item.linkUrl}`}
+                <NavItem
                   key={item.name}
-                  style={{
-                    marginLeft: '6px',
-                  }}
-                >
-                  <Span color={'fg.muted'} fontSize={'13px'}>
-                    {item.name} {item.new ? <Badge /> : ''}
-                  </Span>
-                </Link>
+                  href={`/docs/utilities/${item.linkUrl}`}
+                  label={item.name}
+                  isNew={item.new}
+                />
               ))}
             </React.Fragment>
           ))}
         </Stack>
       </Stack>
     </Box>
-  )
-}
-
-const Badge = () => {
-  return (
-    <FidelyBadge colorPalette={'orange'} size={'sm'}>
-      New
-    </FidelyBadge>
   )
 }

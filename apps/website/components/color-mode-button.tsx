@@ -18,6 +18,12 @@ export const ColorModeButton = () => {
         size="xs"
         color="inherit"
         variant="ghost"
+        aria-label={
+          theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+        }
+        title={
+          theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
+        }
       >
         {theme === 'light' ? (
           <IoSunnyOutline size={'17px'} />

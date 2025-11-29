@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Box } from '@fidely-ui/react/box'
 import { Button } from '@fidely-ui/react/button'
 import { Flex } from '@fidely-ui/react/flex'
@@ -10,25 +10,21 @@ import { CommandInput } from '@fidely-ui/react/command-input'
 import { Text } from '@fidely-ui/react/text'
 import { Dialog, useDialog } from '@fidely-ui/react/dialog'
 import { Portal } from '@fidely-ui/react/portal'
-import { Badge } from '@fidely-ui/react/badge'
-import { Span } from '@fidely-ui/react/span'
-import { Stack } from '@fidely-ui/react/stack'
 import { Combobox, useListCollection } from '@fidely-ui/react/combobox'
 import { useFilter } from '@fidely-ui/react'
-
 import { FaGithub, FaBars } from 'react-icons/fa6'
-import { FaTimes } from 'react-icons/fa'
 import { FcLike } from 'react-icons/fc'
 
 import { ColorModeButton } from '~/components/color-mode-button'
+import { Drawer } from '~/components/drawer'
 import { AppLogo } from '~/components/logo'
-import {
-  asideComponentLinks,
-  asideUtilLinks,
-} from '~/constant/aside-component-links'
 
 export const NavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
+  const toggleDrawer = () => setIsDrawerOpen((prev) => !prev)
+  const closeDrawer = () => setIsDrawerOpen(false)
+
   const dialog = useDialog()
 
   const { contains } = useFilter({ sensitivity: 'base' })
@@ -155,105 +151,19 @@ export const NavBar = () => {
             aria-label="Toggle Menu"
             variant="ghost"
             size="sm"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={toggleDrawer}
           >
-            {menuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
+            <FaBars size={18} />
           </IconButton>
         </Box>
       </Flex>
 
-      {/* Mobile Menu Dropdown */}
-      {menuOpen && (
-        <Box
-          mt="3"
-          px="4"
-          py="3"
-          borderRadius="md"
-          display={{ base: 'flex', md: 'none' }}
-          flexDirection="column"
-          gap="3"
-        >
-          <CommandInput onOpen={() => dialog.setOpen(true)} shortcut="/" />
-
-          <Stack gap="6">
-            <Stack gap="3">
-              <Text color={'fg.default'}>Getting Started</Text>
-              <Link
-                href="/docs/getting-started/introduction"
-                style={{ marginLeft: '6px' }}
-              >
-                <Span color={'fg.muted'} fontSize={'13px'}>
-                  Introduction
-                </Span>
-              </Link>
-
-              <Link
-                href="/docs/getting-started/installation"
-                style={{ marginLeft: '6px' }}
-              >
-                <Span color={'fg.muted'} fontSize={'13px'}>
-                  Installation
-                </Span>
-              </Link>
-            </Stack>
-
-            <Stack gap="3">
-              <Text color={'fg.default'} fontSize={'14px'}>
-                Theming
-              </Text>
-              <Link href="/docs/theming" style={{ marginLeft: '6px' }}>
-                <Span color={'fg.muted'} fontSize={'13px'}>
-                  customization
-                </Span>
-              </Link>
-            </Stack>
-
-            <Stack gap="3">
-              {asideComponentLinks.map((section, index: number) => (
-                <React.Fragment key={index}>
-                  <Text fontSize={'14px'}>{section.section}</Text>
-
-                  {section.items.map((item) => (
-                    <Link
-                      href={`/docs/components/${item.linkUrl}`}
-                      key={item.name}
-                      style={{
-                        marginLeft: '6px',
-                      }}
-                    >
-                      <Span color={'fg.muted'} fontSize={'13px'}>
-                        {item.name} {item.new ? <Badge /> : ''}
-                      </Span>
-                    </Link>
-                  ))}
-                </React.Fragment>
-              ))}
-            </Stack>
-
-            <Stack gap="3">
-              {asideUtilLinks.map((section, index: number) => (
-                <React.Fragment key={index}>
-                  <Text fontSize={'14px'}>{section.section}</Text>
-
-                  {section.items.map((item) => (
-                    <Link
-                      href={`/docs/utilities/${item.linkUrl}`}
-                      key={item.name}
-                      style={{
-                        marginLeft: '6px',
-                      }}
-                    >
-                      <Span color={'fg.muted'} fontSize={'13px'}>
-                        {item.name} {item.new ? <Badge /> : ''}
-                      </Span>
-                    </Link>
-                  ))}
-                </React.Fragment>
-              ))}
-            </Stack>
-          </Stack>
-        </Box>
-      )}
+      {/* Mobile Menu Drawer */}
+      <Drawer
+        isOpen={isDrawerOpen}
+        closeDrawer={closeDrawer}
+        commandOpen={() => dialog.setOpen(true)}
+      />
 
       <Dialog.RootProvider value={dialog} size={'lg'}>
         <Portal>
