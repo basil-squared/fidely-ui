@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev:content": "velite --watch",
-    "dev:next": "next dev --turbopack",
+    "dev:next": "next dev",
     "build:content": "velite --clean",
-    "build:next": "next build --turbopack",
+    "build:next": "next build",
     "dev": "pnpm run dev:content & pnpm run dev:next",
     "build": "pnpm run build:content && pnpm run build:next",
     "start": "next start",
