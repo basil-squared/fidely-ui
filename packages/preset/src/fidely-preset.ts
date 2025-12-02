@@ -13,9 +13,18 @@ import { createRadii } from './utils/createRadii'
 import { recipes } from './theme/recipe'
 import { slotRecipes } from './theme/slot-recipe'
 import * as colors from './colors/index'
+import neutral from './colors/neutral'
 
-export const fidelyPreset = (options: PresetsOptions) => {
-  const { accentColor, rounded, grayColor } = options
+const defaultOptions: Required<PresetsOptions> = {
+  accentColor: neutral,
+  grayColor: neutral,
+  rounded: 'sm',
+}
+
+export const fidelyPreset = (options: PresetsOptions = defaultOptions) => {
+  const mergedOptions = { ...defaultOptions, ...options }
+
+  const { accentColor, rounded, grayColor } = mergedOptions
 
   const normalizeNeutralTokens = (tokens: SemanticTokens['colors']) =>
     JSON.parse(

@@ -7,9 +7,9 @@ export interface ColorPalette {
 }
 
 export interface PresetsOptions {
-  accentColor: ColorPalette
-  grayColor: ColorPalette
-  rounded: Radius
+  accentColor?: ColorPalette
+  grayColor?: ColorPalette
+  rounded?: Radius
 }
 
 export type AccentColor = (typeof accentColor)[number]
