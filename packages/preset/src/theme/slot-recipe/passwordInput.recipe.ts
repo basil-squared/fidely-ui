@@ -79,6 +79,11 @@ export const passwordInputSlotRecipe = defineSlotRecipe({
       _focusVisible: {
         outline: 'none',
       },
+
+      _icon: {
+        width: '3.5',
+        height: '3.5',
+      },
     },
   },
   variants: {
