@@ -83,6 +83,18 @@ export const tableSlotRecipe = defineSlotRecipe({
       },
       false: {},
     },
+    stickyHeader: {
+      true: {
+        header: {
+          '& :where(tr)': {
+            top: '0',
+            position: 'sticky',
+            zIndex: '1',
+          },
+        },
+      },
+      false: {},
+    },
 
     size: {
       sm: {
@@ -110,5 +122,6 @@ export const tableSlotRecipe = defineSlotRecipe({
     size: 'md',
     variant: 'subtle',
     hoverable: false,
+    stickyHeader: false,
   },
 })
