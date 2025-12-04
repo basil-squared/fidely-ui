@@ -19,7 +19,7 @@ export const TableStickyHeader = () => {
               <Table.Cell>{item.name}</Table.Cell>
               <Table.Cell minWidth="200px">{item.category}</Table.Cell>
               <Table.Cell>{item.price}</Table.Cell>
-              <Table.Cell minWidth="200px">{item.price}</Table.Cell>
+              <Table.Cell minWidth="200px">{item.stock}</Table.Cell>
               <Table.Cell>More info</Table.Cell>
             </Table.Row>
           ))}

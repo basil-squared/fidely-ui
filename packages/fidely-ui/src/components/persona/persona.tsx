@@ -38,7 +38,7 @@ export const Persona = forwardRef<HTMLDivElement, PersonaProps>(
         <Profile.AvatarWrapper>
           <Avatar.Root size={size}>
             <Avatar.Fallback name={name} />
-            <Avatar.Image src={img} alt={name ?? ''} />
+            <Avatar.Image src={img} alt={name || 'User avatar'} />
           </Avatar.Root>
         </Profile.AvatarWrapper>
 

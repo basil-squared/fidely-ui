@@ -20,7 +20,7 @@ export const TableWithCaption = () => {
             <Table.Cell>{item.name}</Table.Cell>
             <Table.Cell>{item.category}</Table.Cell>
             <Table.Cell>{item.price}</Table.Cell>
-            <Table.Cell>{item.price}</Table.Cell>
+            <Table.Cell>{item.stock}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>

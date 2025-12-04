@@ -15,5 +15,5 @@ export default {
 
 export { ProfileBasics as Basics } from 'patherns/examples/profile/profile-basics'
 export { ProfileSizes as Size } from 'patherns/examples/profile/profile-sizes'
-export { ProfileHorizontal as Horinzontal } from 'patherns/examples/profile/profile-horizontal'
+export { ProfileHorizontal as Horizontal } from 'patherns/examples/profile/profile-horizontal'
 export { ProfileVertical as Vertical } from 'patherns/examples/profile/profile-vertical'
