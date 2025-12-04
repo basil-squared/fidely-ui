@@ -51,6 +51,7 @@ const sharedComponents = {
   tr: TableRow,
   td: TableCell,
   callout: Callout,
+  Callout,
   ColorShowcase,
   ExampleTabs: ExampleTabs,
   ExamplePreview: ExamplePreview,

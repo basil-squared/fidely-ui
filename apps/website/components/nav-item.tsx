@@ -6,12 +6,12 @@ import { Stack } from '@fidely-ui/react/stack'
 interface NavItemProps {
   href: string
   label: string
-  isNew?: boolean
+  info?: string
   closeDrawer?: () => void
 }
 
 export const NavItem = (props: NavItemProps) => {
-  const { href, label, isNew, closeDrawer } = props
+  const { href, label, info, closeDrawer } = props
 
   return (
     <Link href={href} onClick={closeDrawer} style={{ marginLeft: '6px' }}>
@@ -19,16 +19,20 @@ export const NavItem = (props: NavItemProps) => {
         <Span color="fg.muted" fontSize="13px">
           {label}
         </Span>
-        {isNew && <Badge />}
+        {info && <InfoBadge info={info} />}
       </Stack>
     </Link>
   )
 }
 
-const Badge = () => {
+interface InfoBadgeProps {
+  info: string
+}
+
+const InfoBadge = ({ info }: InfoBadgeProps) => {
   return (
-    <FidelyBadge colorPalette={'orange'} size={'sm'}>
-      New
+    <FidelyBadge colorPalette="orange" size="sm">
+      {info}
     </FidelyBadge>
   )
 }

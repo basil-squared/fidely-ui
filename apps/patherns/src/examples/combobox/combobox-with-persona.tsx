@@ -45,7 +45,7 @@ export const ComboboxWithPersona = () => {
                   title={item.role}
                   name={item.name}
                   img={item.avatar}
-                  imgSize="xs"
+                  size="xs"
                 />
                 <Combobox.ItemIndicator>✓</Combobox.ItemIndicator>
               </Combobox.Item>

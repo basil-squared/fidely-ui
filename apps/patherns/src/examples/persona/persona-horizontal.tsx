@@ -6,7 +6,7 @@ export const PersonaHorizontal = () => {
       name="Leanne Graham"
       title="harness real-time e-markets"
       img={'http://bit.ly/47jPX1D'}
-      imgSize="xl"
+      size="xl"
     />
   )
 }

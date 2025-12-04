@@ -6,7 +6,7 @@ export const PersonaVertical = () => {
       name="Ervin Howell"
       title="synergize scalable supply-chains"
       img={'http://bit.ly/43kBcJt'}
-      imgSize="xl"
+      size="xl"
       orientation="vertical"
     />
   )

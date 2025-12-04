@@ -14,6 +14,7 @@ import { selectSlotRecipe } from './select.recipe'
 import { dialogSlotRecipe } from './dialog.recipe'
 import { passwordInputSlotRecipe } from './passwordInput.recipe'
 import { comboboxSlotRecipe } from './combobox.recipe'
+import { profileSlotRecipe } from './profile.recipe'
 
 export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   accordion: accordionSlotRecipe,
@@ -26,6 +27,7 @@ export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   field: fieldSlotRecipe,
   passwordInput: passwordInputSlotRecipe,
   pinInput: pinInputSlotRecipe,
+  profile: profileSlotRecipe,
   switchRecipe: switchSlotRecipe,
   tabs: tabsSlotRecipe,
   table: tableSlotRecipe,

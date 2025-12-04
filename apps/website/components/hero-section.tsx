@@ -52,12 +52,8 @@ export const HeroSection = () => {
         textAlign={'center'}
       >
         <Flex gap="3" flexDirection={{ base: 'column', md: 'row' }}>
-          <NewComponentBadge href={'/docs/components/password-input'}>
-            [New] Password Input Component
-          </NewComponentBadge>
-
-          <NewComponentBadge href={'/docs/components/combobox'}>
-            [New] Combobox Component
+          <NewComponentBadge href={'/docs/components/profile'}>
+            [New] Profile Component
           </NewComponentBadge>
         </Flex>
         <Heading
