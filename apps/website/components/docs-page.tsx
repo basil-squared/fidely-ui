@@ -107,7 +107,7 @@ function Sidebar() {
                   key={item.name}
                   href={`/docs/components/${item.linkUrl}`}
                   label={item.name}
-                  isNew={item.new}
+                  info={item.info}
                 />
               ))}
             </React.Fragment>
@@ -125,7 +125,7 @@ function Sidebar() {
                   key={item.name}
                   href={`/docs/utilities/${item.linkUrl}`}
                   label={item.name}
-                  isNew={item.new}
+                  info={item.info}
                 />
               ))}
             </React.Fragment>

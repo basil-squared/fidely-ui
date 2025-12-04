@@ -1,9 +1,9 @@
 import { Table } from '@fidely-ui/react/table'
 
-export const TableScrollArea = () => {
+export const TableStickyHeader = () => {
   return (
-    <Table.ScrollArea>
-      <Table.Root>
+    <Table.ScrollArea borderWidth="1px" rounded="md" height="165px">
+      <Table.Root stickyHeader>
         <Table.Header>
           <Table.Row>
             <Table.HeadCell>Item</Table.HeadCell>

@@ -1,0 +1,57 @@
+---
+title: Profile
+description: Low-level building blocks for constructing identity layouts with avatar, name, title and custom content.
+links:
+  source: profile/profile.tsx
+  recipe: slot-recipe/profile.recipe
+---
+
+<ExampleTabs name="profile-basics" scope="profile" />
+
+## Usage
+
+```tsx
+import { Avatar, Profile } from '@fidely-ui/react'
+```
+
+```tsx
+<Profile.Root>
+  <Profile.AvatarWrapper>
+    <Avatar.Root>
+      <Avatar.Fallback />
+      <Avatar.Image />
+    </Avatar.Root>
+  </Profile.AvatarWrapper>
+
+  <Profile.Details>
+    <Profile.Name />
+    <Profile.Title />
+  </Profile.Details>
+</Profile.Root>
+```
+
+## Examples
+
+### Horizontal Layout
+
+Use the default layout to display the avatar beside the text.
+
+<ExampleTabs name="profile-horizontal" scope="profile" />
+
+### Vertical Layout
+
+Use the orientation="vertical" prop to stack the avatar above the text.
+
+<ExampleTabs name="profile-vertical" scope="profile" />
+
+## Custom Sizes
+
+Adjust the avatar, name and title size using the **size** prop.
+
+<ExampleTabs name="profile-sizes" scope="profile" />
+
+## Props
+
+| Prop          | Type                         | Default        | Description                                                |
+| ------------- | ---------------------------- | -------------- | ---------------------------------------------------------- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Defines the layout direction of the **Profile** component. |

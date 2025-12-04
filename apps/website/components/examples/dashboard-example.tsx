@@ -86,7 +86,7 @@ export const DashboardSideBar = () => {
           name="Justice Chimobi"
           title="Creator Fidely UI"
           img={'https://avatars.githubusercontent.com/u/74328318?v=4'}
-          imgSize="sm"
+          size="sm"
         />
       </Box>
     </Box>
@@ -197,7 +197,7 @@ export const DashboardMain = ({ searchValue }: DashboardMainProps) => {
                         name={d.user.name}
                         title={d.user.email}
                         img={d.user.avatar}
-                        imgSize="md"
+                        size="md"
                       />
                     </Table.Cell>
                     <Table.Cell>{d.revenue}</Table.Cell>

@@ -118,7 +118,7 @@ export const Drawer = (props: DrawerProps) => {
                     key={item.name}
                     href={`/docs/components/${item.linkUrl}`}
                     label={item.name}
-                    isNew={item.new}
+                    info={item.info}
                     closeDrawer={closeDrawer}
                   />
                 ))}
@@ -136,7 +136,7 @@ export const Drawer = (props: DrawerProps) => {
                     key={item.name}
                     href={`/docs/utilities/${item.linkUrl}`}
                     label={item.name}
-                    isNew={item.new}
+                    info={item.info}
                     closeDrawer={closeDrawer}
                   />
                 ))}

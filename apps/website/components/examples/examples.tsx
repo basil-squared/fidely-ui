@@ -26,7 +26,7 @@ import { useToggleTheme } from '~/hooks/useToggleTheme'
 
 export const BillingAddress = () => {
   return (
-    <Paper width={'full'} height="min-content">
+    <Paper height="min-content">
       <Stack gap={2} mb={'15px'}>
         <Heading as={'h3'}>Billing Address</Heading>
         <Text>The billing address associated with your payment method</Text>
@@ -67,7 +67,7 @@ export const BillingAddress = () => {
 
 export const PaymentMethod = () => {
   return (
-    <Paper width={'full'} height="min-content">
+    <Paper height="min-content">
       <Stack gap={2} mb={'15px'}>
         <Heading as={'h3'}>Payment Method</Heading>
         <Text>All transactions are secure and encrypted</Text>
@@ -115,7 +115,7 @@ export const teamImages = [
 
 export const TeamMembers = () => {
   return (
-    <Paper width={'full'} height="min-content">
+    <Paper height="min-content">
       <Center>
         <Stack gap={4} mb={'15px'} textAlign={'center'}>
           <AvatarGroup justifyContent={'center'}>
@@ -143,7 +143,7 @@ export const TeamMembers = () => {
 
 export const TabsExample = () => {
   return (
-    <Paper width={'full'} height="min-content">
+    <Paper height="min-content">
       <Stack mb={'15px'}>
         <Heading as={'h3'}>Tabs</Heading>
       </Stack>
@@ -181,7 +181,7 @@ export const TabsExample = () => {
 
 export const ProcessingCard = () => {
   return (
-    <Paper width={'full'} height="min-content">
+    <Paper height="min-content">
       <Center>
         <Stack gap={4} mb={'15px'} textAlign={'center'}>
           <VStack
@@ -209,7 +209,7 @@ export const MoreComponents = () => {
   const { toggleTheme } = useToggleTheme()
 
   return (
-    <Paper width={'full'} height="min-content">
+    <Paper height="min-content">
       <Stack gap={4} mb={'15px'}>
         <Stack gap={4}>
           <Heading as={'h6'} textStyle={'lg'}>
@@ -256,7 +256,7 @@ export const MoreComponents = () => {
             name="Leanne Graham"
             title="harness real-time e-markets"
             img={'http://bit.ly/47jPX1D'}
-            imgSize="lg"
+            size="lg"
           />
         </Stack>
       </Stack>

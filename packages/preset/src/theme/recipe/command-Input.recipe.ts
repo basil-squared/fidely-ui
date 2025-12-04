@@ -16,6 +16,11 @@ export const commandInputRecipe = defineRecipe({
     _hover: {
       bg: 'bg.surface',
     },
+
+    _icon: {
+      width: '3.5',
+      height: '3.5',
+    },
   },
   variants: {
     size: {

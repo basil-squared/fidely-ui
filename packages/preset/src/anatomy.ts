@@ -69,3 +69,11 @@ export const dialogAnatomy = arkDialogAnatomy.extendWith(
 export const comboboxAnatomy = arkComboboxAnatomy.extendWith('indicatorGroup')
 
 export const selectAnatomy = arkSelectAnatomy.extendWith('indicatorGroup')
+
+export const profileAnatomy = createAnatomy('profile').parts(
+  'root',
+  'avatarWrapper',
+  'details',
+  'name',
+  'title'
+)

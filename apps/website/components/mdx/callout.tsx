@@ -1,40 +1,19 @@
 import { Box } from '@fidely-ui/react/box'
-import { Text } from '@fidely-ui/react/text'
+import { Flex } from '@fidely-ui/react/flex'
+import { CiCircleInfo } from 'react-icons/ci'
 
 interface CalloutProps {
-  type?: 'info' | 'warning' | 'tip' | 'danger'
   children: React.ReactNode
 }
 
-export const Callout = ({ type = 'info', children }: CalloutProps) => {
-  const bgColorMap = {
-    info: 'blue.50',
-    tip: 'green.50',
-    warning: 'yellow.50',
-    danger: 'red.50',
-  }
-
-  const borderColorMap = {
-    info: 'blue.500',
-    tip: 'green.500',
-    warning: 'yellow.500',
-    danger: 'red.500',
-  }
-
+export const Callout = ({ children }: CalloutProps) => {
   return (
-    <Box
-      borderLeftWidth="4px"
-      borderColor={borderColorMap[type]}
-      bg={bgColorMap[type]}
-      px={4}
-      py={3}
-      rounded="md"
-      my={4}
-    >
-      <Text fontWeight="bold" mb={1}>
-        {type.toUpperCase()}
-      </Text>
-      <Text>{children}</Text>
+    <Box borderLeftWidth="4px" bg="indigo.4" px={4} py={3} rounded="md" my={6}>
+      <Flex alignItems="flex-start" gap="3">
+        <CiCircleInfo size="28px" />
+
+        <Box>{children}</Box>
+      </Flex>
     </Box>
   )
 }

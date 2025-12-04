@@ -23,7 +23,7 @@ export const PersonaSizes = () => {
             name="Kurtis Weissna"
             title="generate enterprise e-tailers"
             img="http://bit.ly/47jPX1D"
-            imgSize={size}
+            size={size}
           />
         </Tabs.Content>
       ))}

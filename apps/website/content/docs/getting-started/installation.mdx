@@ -76,19 +76,17 @@ yarn add @fidely-ui/react @fidely-ui/panda-preset @fidely-ui/styled-system
 After installation, update your **panda.config.ts** file to include the Fidely UI preset.
 This preset automatically adds design tokens, colors, and component recipes optimized for Fidely UI.
 
+<Callout>
+  As of **v1.2.0**, fidelyPreset now includes default options. This means it
+  works out of the box using: **fidelyPreset()**
+</Callout>
+
 ```tsx
 import { defineConfig } from '@pandacss/dev'
 import { fidelyPreset } from '@fidely-ui/panda-preset'
-import neutral from '@fidely-ui/panda-preset/colors/neutral'
 
 export default defineConfig({
-  presets: [
-    fidelyPreset({
-      accentColor: neutral,
-      grayColor: neutral,
-      rounded: 'sm',
-    }),
-  ],
+  presets: [fidelyPreset()],
 
   // Whether to use css reset
   preflight: true,

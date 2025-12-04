@@ -52,12 +52,7 @@ export const Testimonials = () => {
                       justifyContent={'space-between'}
                       alignItems={'flex-start'}
                     >
-                      <Persona
-                        name={name}
-                        title={role}
-                        img={image}
-                        imgSize="xl"
-                      />
+                      <Persona name={name} title={role} img={image} size="xl" />
 
                       {linkUrl && (
                         <Link

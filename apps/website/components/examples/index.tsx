@@ -40,14 +40,17 @@ export const ExampleSection = () => {
           ))}
         </Tabs.List>
 
-        <Tabs.Content value="examples" width={'100%'}>
+        <Tabs.Content value="examples">
           <Grid
-            mx="auto"
             gridTemplateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }}
             gap={{ base: '2', md: '3' }}
           >
             {exampleComponents.map((Component, i) => (
-              <GridItem key={i} height="min-content">
+              <GridItem
+                key={i}
+                height="min-content"
+                width={{ base: '96%', md: '100%' }}
+              >
                 <Component />
               </GridItem>
             ))}

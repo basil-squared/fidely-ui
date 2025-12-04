@@ -15,5 +15,5 @@ export default {
 
 export { PersonaBasics as Basics } from 'patherns/examples/persona/persona-basics'
 export { PersonaSizes as Size } from 'patherns/examples/persona/persona-sizes'
-export { PersonaHorizontal as Horinzontal } from 'patherns/examples/persona/persona-horizontal'
+export { PersonaHorizontal as Horizontal } from 'patherns/examples/persona/persona-horizontal'
 export { PersonaVertical as Vertical } from 'patherns/examples/persona/persona-vertical'
