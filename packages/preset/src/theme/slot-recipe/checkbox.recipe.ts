@@ -20,6 +20,7 @@ export const checkboxSlotRecipe = defineSlotRecipe({
       borderRadius: 's1',
       background: 'bg.default',
       color: 'colorPalette.fg',
+      '--error-color': 'colors.border.error',
       transitionDuration: 'normal',
       transitionProperty: 'border-color, background',
       cursor: 'pointer',
@@ -44,7 +45,7 @@ export const checkboxSlotRecipe = defineSlotRecipe({
         borderColor: 'fg.error',
         _focus: {
           borderColor: 'fg.error',
-          boxShadow: '0 0 0 1px var(--colors-border-error)',
+          boxShadow: '0 0 0 1px var(--error-color)',
         },
       },
       _disabled: {

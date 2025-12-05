@@ -32,15 +32,17 @@ export const comboboxSlotRecipe = defineSlotRecipe({
       borderColor: 'border.default',
       borderRadius: 's2',
       bg: 'bg.surface',
+      '--default-color': 'colors.colorPalette.default',
+      '--error-color': 'colors.border.error',
 
       _focusWithin: {
         borderColor: 'colorPalette.default',
-        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+        boxShadow: '0 0 0 1px var(--default-color)',
       },
 
       '&:has(input[data-invalid])': {
-        borderColor: 'border.error',
-        boxShadow: '0 0 0 1px var(--colors-border-error)',
+        borderColor: 'fg.error',
+        boxShadow: '0 0 0 1px var(--error-color)',
       },
     },
 

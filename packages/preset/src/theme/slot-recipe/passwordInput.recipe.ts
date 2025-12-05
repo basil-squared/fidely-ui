@@ -21,15 +21,17 @@ export const passwordInputSlotRecipe = defineSlotRecipe({
       borderWidth: '1px',
       borderColor: 'border.default',
       borderRadius: 's2',
+      '--default-color': 'colors.colorPalette.default',
+      '--error-color': 'colors.border.error',
 
       _focusWithin: {
         borderColor: 'colorPalette.default',
-        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+        boxShadow: '0 0 0 1px var(--default-color)',
       },
 
       '&:has(input[data-invalid])': {
         borderColor: 'border.error',
-        boxShadow: '0 0 0 1px var(--colors-border-error)',
+        boxShadow: '0 0 0 1px var(--error-color)',
       },
     },
     input: {

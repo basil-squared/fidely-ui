@@ -12,6 +12,8 @@ export const selectSlotRecipe = defineSlotRecipe({
       flexDirection: 'column',
       gap: '1.6',
       width: 'full',
+      '--default-color': 'colors.colorPalette.default',
+      '--error-color': 'colors.border.error',
     },
     label: {
       color: 'fg.default',
@@ -39,7 +41,7 @@ export const selectSlotRecipe = defineSlotRecipe({
 
       '&[data-invalid], &:has([data-invalid])': {
         borderColor: 'fg.error',
-        boxShadow: '0 0 0 1px var(--colors-border-error)',
+        boxShadow: '0 0 0 1px var(--error-color)',
       },
     },
     item: {
@@ -153,7 +155,7 @@ export const selectSlotRecipe = defineSlotRecipe({
           borderColor: 'border.default',
           _focus: {
             borderColor: 'colorPalette.default',
-            boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+            boxShadow: '0 0 0 1px var(--default-color)',
           },
         },
       },
@@ -164,7 +166,7 @@ export const selectSlotRecipe = defineSlotRecipe({
           bg: 'bg.subtle',
           _focus: {
             borderColor: 'colorPalette.default',
-            boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+            boxShadow: '0 0 0 1px var(--default-color)',
           },
         },
       },

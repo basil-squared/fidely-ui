@@ -14,6 +14,8 @@ export const textareaRecipe = defineRecipe({
     position: 'relative',
     width: '100%',
     minWidth: '0',
+    '--default-color': 'colors.colorPalette.default',
+    '--error-color': 'colors.border.error',
     textAlign: 'start',
     transition: 'border-color 0.2s, box-shadow 0.2s',
     _disabled: {
@@ -24,7 +26,7 @@ export const textareaRecipe = defineRecipe({
       borderColor: 'fg.error',
       _focus: {
         borderColor: 'fg.error',
-        boxShadow: '0 0 0 1px var(--colors-border-error)',
+        boxShadow: '0 0 0 1px var(--error-color)',
       },
     },
   },
@@ -34,7 +36,7 @@ export const textareaRecipe = defineRecipe({
         bg: 'bg.surface',
         _focus: {
           borderColor: 'colorPalette.default',
-          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+          boxShadow: '0 0 0 1px var(--default-color)',
         },
       },
       flushed: {
@@ -53,7 +55,7 @@ export const textareaRecipe = defineRecipe({
         bg: 'bg.subtle',
         _focus: {
           borderColor: 'colorPalette.default',
-          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+          boxShadow: '0 0 0 1px var(--default-color)',
         },
       },
     },

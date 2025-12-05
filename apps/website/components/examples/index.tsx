@@ -49,7 +49,7 @@ export const ExampleSection = () => {
               <GridItem
                 key={i}
                 height="min-content"
-                width={{ base: '96%', md: '100%' }}
+                width={{ base: '90%', md: '100%' }}
               >
                 <Component />
               </GridItem>

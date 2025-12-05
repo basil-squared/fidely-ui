@@ -15,6 +15,8 @@ export const inputRecipe = defineRecipe({
     width: '100%',
     height: 'var(--input-height)',
     minW: 'var(--input-height)',
+    '--default-color': 'colors.colorPalette.default',
+    '--error-color': 'colors.border.error',
     minWidth: '0',
     transition: 'border-color 0.2s, box-shadow 0.2s',
     textAlign: 'start',
@@ -26,7 +28,7 @@ export const inputRecipe = defineRecipe({
       borderColor: 'fg.error',
       _focus: {
         borderColor: 'fg.error',
-        boxShadow: '0 0 0 1px var(--colors-border-error)',
+        boxShadow: '0 0 0 1px var(--error-color)',
       },
     },
   },
@@ -36,7 +38,7 @@ export const inputRecipe = defineRecipe({
         bg: 'bg.surface',
         _focus: {
           borderColor: 'colorPalette.default',
-          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+          boxShadow: '0 0 0 1px var(--default-color)',
         },
       },
       flushed: {
@@ -56,7 +58,7 @@ export const inputRecipe = defineRecipe({
         bg: 'bg.subtle',
         _focus: {
           borderColor: 'colorPalette.default',
-          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+          boxShadow: '0 0 0 1px var(--default-color)',
         },
       },
     },

@@ -19,14 +19,17 @@ export const tabsSlotRecipe = defineSlotRecipe({
       position: 'relative',
       scrollbarWidth: 'none',
       '&::-webkit-scrollbar': { display: 'none' },
+      '--border-color': 'colors.border.default',
+      '--error-color': 'colors.border.error',
 
       _horizontal: {
-        boxShadow: '0 -1px 0 0 inset var(--colors-border-default)',
+        boxShadow: '0 -1px 0 0 inset var(--border-color)',
+
         gap: '4',
         flexDirection: 'row',
       },
       _vertical: {
-        boxShadow: '1px 0 0 0 inset var(--colors-border-default)',
+        boxShadow: '0 -1px 0 0 inset var(--border-color)',
         gap: '1',
         flexDirection: 'column',
       },

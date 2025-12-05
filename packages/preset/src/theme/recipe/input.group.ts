@@ -13,6 +13,7 @@ export const inputGroupRecipe = defineRecipe({
     alignItems: 'stretch',
     position: 'relative',
     width: '100%',
+    '--error-color': 'colors.border.error',
 
     '& > input, & > .fidely-input': {
       flex: 1,
@@ -27,7 +28,7 @@ export const inputGroupRecipe = defineRecipe({
         borderColor: 'fg.error',
         _focus: {
           borderColor: 'fg.error',
-          boxShadow: '0 0 0 1px var(--colors-border-error)',
+          boxShadow: '0 0 0 1px var(--error-color)',
         },
       },
     },
