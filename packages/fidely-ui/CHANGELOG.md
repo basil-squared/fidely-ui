@@ -1,5 +1,21 @@
 # @fidely-ui/react
 
+## 1.2.0
+
+### Minor Changes
+
+- Introduced a new Profile component and updated the Persona component to use it, including renaming `imgSize` to `size` for consistency.
+- Added `stickyHeader` support to the Table component for improved usability.
+- Updated `fidelyPreset` to allow calling it without options by applying default configuration automatically.
+- Fixed the password-input visibility icon size.
+- Fixed inconsistent icon sizes in the command-input component.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @fidely-ui/panda-preset@1.2.0
+  - @fidely-ui/styled-system@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
