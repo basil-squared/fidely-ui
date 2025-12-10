@@ -2,7 +2,7 @@ import { PasswordInput } from '@fidely-ui/react/password-input'
 
 export const PasswordInputIgnore = () => {
   return (
-    <PasswordInput.Root>
+    <PasswordInput.Root ignorePasswordManagers>
       <PasswordInput.Label>Password</PasswordInput.Label>
       <PasswordInput.Control>
         <PasswordInput.Input placeholder="enter password" />
