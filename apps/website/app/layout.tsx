@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Inter } from 'next/font/google'
 
 import { AppProvider } from '~/app/proider'
 import { NavBar } from '~/components/navbar'
-import { Banner } from '~/components/banner'
+// import { Banner } from '~/components/banner'
 
 import './global.css'
 
@@ -59,7 +59,7 @@ export default function RootLayout({
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable}`}
       >
         <AppProvider>
-          <Banner />
+          {/* <Banner /> */}
           <NavBar />
           {children}
         </AppProvider>
