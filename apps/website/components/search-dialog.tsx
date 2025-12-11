@@ -88,7 +88,7 @@ export const SearchDialog = ({ value }: SearchDialogProps) => {
                     {filteredItems.length === 0 && (
                       <Stack p="3" align="center">
                         <Text>
-                          No results found for!{' '}
+                          No results found for{' '}
                           <Span fontWeight="bold" color="white">
                             {inputValue}
                           </Span>
