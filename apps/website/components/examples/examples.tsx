@@ -49,6 +49,8 @@ export const BillingAddress = () => {
             placeholder="Add any additional message"
             variant={'subtle'}
             rows={4}
+            colorPalette="orange"
+            resize="none"
           />
         </Field.Root>
 
@@ -56,7 +58,7 @@ export const BillingAddress = () => {
           <Button colorPalette={'orange'} ripple>
             Submit
           </Button>
-          <Button variant={'outline'} colorPalette={'orange'} ripple>
+          <Button variant={'outline'} colorPalette={'gray'} ripple>
             Cancel
           </Button>
         </HStack>

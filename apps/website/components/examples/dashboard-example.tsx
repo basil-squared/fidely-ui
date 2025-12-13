@@ -16,6 +16,8 @@ import { Table } from '@fidely-ui/react/table'
 import { Text } from '@fidely-ui/react/text'
 import { Heading } from '@fidely-ui/react/heading'
 import { Stack } from '@fidely-ui/react/stack'
+import { Menu } from '@fidely-ui/react/menu'
+import { Portal } from '@fidely-ui/react/portal'
 import { BiSearch } from 'react-icons/bi'
 import { FaArrowTrendUp } from 'react-icons/fa6'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi'
@@ -25,6 +27,7 @@ import {
   exampleDashboardData,
   exampleUsersData,
 } from '~/constant/example-contants'
+import { LuChevronRight } from 'react-icons/lu'
 
 export const DashboardExample = () => {
   const [searchValue, setSearchValue] = React.useState('')
@@ -118,12 +121,27 @@ export const DashboardNavBar = ({ onSearchChange }: DashboardNavBarProps) => {
 
       <Box width={'20%'}>
         <Flex justifyContent={'flex-end'} alignItems={'center'} gap={'4px'}>
-          <Avatar.Root size={'lg'}>
-            <Avatar.Fallback name="Justice Chimobi" />
-            <Avatar.Image
-              src={'https://avatars.githubusercontent.com/u/74328318?v=4'}
-            />
-          </Avatar.Root>
+          <Menu.Root>
+            <Menu.Trigger cursor="pointer" aria-label="Open account menu">
+              <Avatar.Root size={'lg'}>
+                <Avatar.Fallback name="Justice Chimobi" />
+                <Avatar.Image
+                  src={'https://avatars.githubusercontent.com/u/74328318?v=4'}
+                />
+              </Avatar.Root>
+            </Menu.Trigger>
+
+            <Portal>
+              <Menu.Positioner>
+                <Menu.Content>
+                  <Menu.Item value="account">Account</Menu.Item>
+                  <Menu.Item value="setting">Setting</Menu.Item>
+                  <Menu.Separator />
+                  <Menu.Item value="logout">Logout</Menu.Item>
+                </Menu.Content>
+              </Menu.Positioner>
+            </Portal>
+          </Menu.Root>
         </Flex>
       </Box>
     </Flex>
@@ -211,9 +229,47 @@ export const DashboardMain = ({ searchValue }: DashboardMainProps) => {
                     </Table.Cell>
                     <Table.Cell>{d.id}</Table.Cell>
                     <Table.Cell textAlign={'right'}>
-                      <IconButton variant={'ghost'} size={'sm'}>
-                        <HiOutlineDotsHorizontal />
-                      </IconButton>
+                      <Menu.Root>
+                        <Menu.Trigger asChild>
+                          <IconButton variant={'ghost'} size={'sm'}>
+                            <HiOutlineDotsHorizontal />
+                          </IconButton>
+                        </Menu.Trigger>
+
+                        <Portal>
+                          <Menu.Positioner>
+                            <Menu.Content>
+                              <Menu.Item value="edit">Edit</Menu.Item>
+                              <Menu.Root>
+                                <Menu.TriggerItem>
+                                  View <LuChevronRight />
+                                </Menu.TriggerItem>
+                                <Portal>
+                                  <Menu.Positioner>
+                                    <Menu.Content>
+                                      <Menu.Item value="revenue">
+                                        Revenue
+                                      </Menu.Item>
+                                      <Menu.Item value="transactions">
+                                        Transactions
+                                      </Menu.Item>
+                                      <Menu.Item value="sales">Sales</Menu.Item>
+                                    </Menu.Content>
+                                  </Menu.Positioner>
+                                </Portal>
+                              </Menu.Root>
+                              <Menu.Separator />
+                              <Menu.Item
+                                value="delete"
+                                color="fg.error"
+                                _hover={{ bg: 'red.2', color: 'fg.error' }}
+                              >
+                                Delete...
+                              </Menu.Item>
+                            </Menu.Content>
+                          </Menu.Positioner>
+                        </Portal>
+                      </Menu.Root>
                     </Table.Cell>
                   </Table.Row>
                 ))
