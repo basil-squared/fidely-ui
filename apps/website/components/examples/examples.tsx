@@ -49,6 +49,8 @@ export const BillingAddress = () => {
             placeholder="Add any additional message"
             variant={'subtle'}
             rows={4}
+            colorPalette="orange"
+            resize="none"
           />
         </Field.Root>
 

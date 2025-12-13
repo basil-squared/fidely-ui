@@ -9,8 +9,8 @@ import { Paper } from '@fidely-ui/react/paper'
 import { Stack } from '@fidely-ui/react/stack'
 import { Text } from '@fidely-ui/react/text'
 import { Heading } from '@fidely-ui/react/heading'
-import { FaGithub, FaGoogle } from 'react-icons/fa6'
 import { Divider } from '@fidely-ui/react/divider'
+import { FaGithub, FaGoogle } from 'react-icons/fa6'
 
 export const AuthenticationExample = () => {
   return (
@@ -56,10 +56,7 @@ export const AuthenticationExample = () => {
                 <Input
                   placeholder="mail@example.com"
                   variant={'subtle'}
-                  _focus={{
-                    borderColor: 'orange.9',
-                    boxShadow: 'none',
-                  }}
+                  colorPalette="orange"
                 />
               </Field.Root>
 
@@ -68,10 +65,7 @@ export const AuthenticationExample = () => {
                 <Input
                   placeholder="*********"
                   variant={'subtle'}
-                  _focus={{
-                    borderColor: 'orange.9',
-                    boxShadow: 'none',
-                  }}
+                  colorPalette="orange"
                 />
               </Field.Root>
 

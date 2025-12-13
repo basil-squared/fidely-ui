@@ -140,10 +140,10 @@ export const comboboxSlotRecipe = defineSlotRecipe({
       zIndex: 'dropdown',
 
       _open: {
-        animation: 'fadeIn 0.2s ease-out',
+        animation: 'fade-in',
       },
       _closed: {
-        animation: 'fadeOut 0.2s ease-out',
+        animation: 'fade-out',
       },
     },
 
