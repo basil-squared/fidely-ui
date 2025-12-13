@@ -13,11 +13,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./hooks": {
-      "types": "./dist/hooks/index.d.ts",
-      "import": "./dist/hooks/index.js",
-      "require": "./dist/hooks/index.cjs"
-    },
     "./collection": {
       "types": "./dist/collection.d.ts",
       "import": "./dist/collection.js",
@@ -27,11 +22,6 @@
       "types": "./dist/anatomy.d.ts",
       "import": "./dist/anatomy.js",
       "require": "./dist/anatomy.cjs"
-    },
-    "./provider": {
-      "types": "./dist/provider/index.d.ts",
-      "import": "./dist/provider/index.js",
-      "require": "./dist/provider/index.cjs"
     },
     "./*": {
       "types": "./dist/components/*/index.d.ts",

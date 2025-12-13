@@ -159,16 +159,14 @@ export const TabsExample = () => {
 
         <Tabs.Content value="fidely" width="full" p="3">
           <Text textStyle={'sm'}>
-            Fidely UI is a modern UI library with reusable, intuitive components
-            that help you ship products faster. Create beautiful, consistent
-            interfaces with customizable, production-ready building blocks.
+            Fidely UI is a modern, beautifully crafted React design system
+            powered by Ark UI and Panda CSS, delivering accessible and themeable
+            components for building exceptional web apps
           </Text>
         </Tabs.Content>
 
         <Tabs.Content value="dashboard" p="3">
-          <Text textStyle={'sm'}>
-            Coming soon — a visual dashboard overview.
-          </Text>
+          <Text textStyle={'sm'}>A visual dashboard overview.</Text>
         </Tabs.Content>
 
         <Tabs.Content value="authentication" p="3">

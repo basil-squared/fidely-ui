@@ -20,11 +20,13 @@ export const menuSlotRecipe = defineSlotRecipe({
       p: '1',
 
       _open: {
-        animation: 'fade-in',
+        animationStyle: 'fade-in',
+        animationDuration: 'fast',
       },
 
       _closed: {
-        animation: 'fade-out',
+        animationStyle: 'fade-out',
+        animationDuration: 'fastest',
       },
     },
     indicator: {},

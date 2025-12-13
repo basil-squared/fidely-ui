@@ -7,9 +7,6 @@ export const zIndex = defineTokens.zIndex({
   base: {
     value: 0,
   },
-  docked: {
-    value: 10,
-  },
   dropdown: {
     value: 1000,
   },
