@@ -3,9 +3,10 @@
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
 import {
+  Badge,
   Combobox,
   Dialog,
-  HStack,
+  Flex,
   Portal,
   Span,
   Stack,
@@ -14,8 +15,6 @@ import {
   type UseDialogReturn,
 } from '@fidely-ui/react'
 import { matchSorter } from 'match-sorter'
-import { LuCircleDashed } from 'react-icons/lu'
-import { IoArrowForward } from 'react-icons/io5'
 
 import { data } from '~/lib/docsData'
 
@@ -103,27 +102,21 @@ export const SearchDialog = ({ value }: SearchDialogProps) => {
                         persistFocus
                         mb="1.5"
                       >
-                        <HStack>
-                          {item.category === 'Get started' ||
-                          item.category === 'Utilities' ? (
-                            <IoArrowForward
-                              size={18}
-                              style={{ marginTop: 2.5 }}
-                            />
-                          ) : (
-                            <LuCircleDashed
-                              size={18}
-                              style={{ marginTop: 2.5 }}
-                            />
-                          )}
-
-                          <Stack>
-                            <Combobox.ItemText>{item.label}</Combobox.ItemText>
-                            <Combobox.ItemText fontSize="xs" color="fg.muted">
-                              {item.category}
-                            </Combobox.ItemText>
-                          </Stack>
-                        </HStack>
+                        <Stack width="full">
+                          <Flex gap="2">
+                            <Badge size="sm" bg="blue.4" color="white">
+                              <Text size="xs">{item.category}</Text>
+                            </Badge>
+                            <Text size="sm" fontWeight="semibold">
+                              {item.label}
+                            </Text>
+                          </Flex>
+                          <Combobox.ItemText asChild>
+                            <Text size="xs" color="fg.muted" lineClamp="1">
+                              {item.description}
+                            </Text>
+                          </Combobox.ItemText>
+                        </Stack>
                       </Combobox.Item>
                     ))}
                   </Combobox.Content>
