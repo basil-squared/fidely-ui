@@ -38,8 +38,8 @@ export const hoverCardSlotRecipe = defineSlotRecipe({
       '--arrow-background': 'var(--hovercard-bg)',
     },
     arrowTip: {
-      borderTopWidth: '0.4px',
-      borderLeftWidth: '0.4px',
+      borderTopWidth: '0.5px',
+      borderLeftWidth: '0.5px',
     },
   },
 })
