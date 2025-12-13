@@ -111,11 +111,7 @@ export const SearchDialog = ({ value }: SearchDialogProps) => {
                               {item.label}
                             </Text>
                           </Flex>
-                          <Combobox.ItemText
-                            fontSize="xs"
-                            color="fg.muted"
-                            asChild
-                          >
+                          <Combobox.ItemText asChild>
                             <Text size="xs" color="fg.muted" lineClamp="1">
                               {item.description}
                             </Text>
