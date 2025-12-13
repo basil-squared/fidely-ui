@@ -58,7 +58,7 @@ export const BillingAddress = () => {
           <Button colorPalette={'orange'} ripple>
             Submit
           </Button>
-          <Button variant={'outline'} colorPalette={'orange'} ripple>
+          <Button variant={'outline'} colorPalette={'gray'} ripple>
             Cancel
           </Button>
         </HStack>

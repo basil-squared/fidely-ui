@@ -14,7 +14,7 @@ export const menuSlotRecipe = defineSlotRecipe({
       color: 'fg.default',
       borderRadius: 's2',
       overflowY: 'auto',
-      overflow: 'hidden',
+      overflowX: 'hidden',
       zIndex: 'dropdown',
       boxShadow: 'md',
       p: '1',
@@ -100,7 +100,7 @@ export const menuSlotRecipe = defineSlotRecipe({
 
     trigger: {
       _focusVisible: {
-        focusVisibleRing: 'none',
+        focusVisibleRing: 'outside',
       },
     },
   },

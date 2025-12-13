@@ -43,7 +43,7 @@ export const MenuContent = withSlotContext<HTMLDivElement, MenuContentProps>(
 export interface MenuTriggerProps
   extends Assign<HTMLStyledProps<'button'>, ArkMenu.TriggerBaseProps> {}
 
-export const MenuTrigger = withSlotContext<HTMLDivElement, MenuTriggerProps>(
+export const MenuTrigger = withSlotContext<HTMLButtonElement, MenuTriggerProps>(
   ArkMenu.Trigger,
   'trigger'
 )
@@ -53,7 +53,7 @@ export interface MenuContextTriggerProps
   extends Assign<HTMLStyledProps<'button'>, ArkMenu.ContextTriggerBaseProps> {}
 
 export const MenuContextTrigger = withSlotContext<
-  HTMLDivElement,
+  HTMLButtonElement,
   MenuContextTriggerProps
 >(ArkMenu.ContextTrigger, 'contextTrigger')
 
@@ -70,10 +70,10 @@ export const MenuTriggerItem = withSlotContext<
 export interface MenuSeparatorProps
   extends Assign<HTMLStyledProps<'hr'>, ArkMenu.SeparatorBaseProps> {}
 
-export const MenuSeparator = withSlotContext<
-  HTMLDivElement,
-  MenuSeparatorProps
->(ArkMenu.Separator, 'separator')
+export const MenuSeparator = withSlotContext<HTMLHRElement, MenuSeparatorProps>(
+  ArkMenu.Separator,
+  'separator'
+)
 
 // -------------------- Positioner --------------------
 export interface MenuPositionerProps
@@ -149,7 +149,9 @@ export const MenuRadioItemGroup = withSlotContext<
 
 // -------------------- Indicator --------------------
 export interface MenuIndicatorProps
-  extends Assign<HTMLStyledProps<'div'>, ArkMenu.IndicatorBaseProps> {}
+  extends Assign<HTMLStyledProps<'div'>, ArkMenu.IndicatorBaseProps> {
+  idleIcon?: React.ReactNode
+}
 
 export const MenuIndicator = withSlotContext<
   HTMLDivElement,

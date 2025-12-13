@@ -122,7 +122,7 @@ export const DashboardNavBar = ({ onSearchChange }: DashboardNavBarProps) => {
       <Box width={'20%'}>
         <Flex justifyContent={'flex-end'} alignItems={'center'} gap={'4px'}>
           <Menu.Root>
-            <Menu.Trigger cursor="pointer">
+            <Menu.Trigger cursor="pointer" aria-label="Open account menu">
               <Avatar.Root size={'lg'}>
                 <Avatar.Fallback name="Justice Chimobi" />
                 <Avatar.Image
@@ -247,15 +247,13 @@ export const DashboardMain = ({ searchValue }: DashboardMainProps) => {
                                 <Portal>
                                   <Menu.Positioner>
                                     <Menu.Content>
-                                      <Menu.Item value="panda">
+                                      <Menu.Item value="revenue">
                                         Revenue
                                       </Menu.Item>
-                                      <Menu.Item value="ark">
+                                      <Menu.Item value="transactions">
                                         Transactions
                                       </Menu.Item>
-                                      <Menu.Item value="chakra">
-                                        Sales
-                                      </Menu.Item>
+                                      <Menu.Item value="sales">Sales</Menu.Item>
                                     </Menu.Content>
                                   </Menu.Positioner>
                                 </Portal>
