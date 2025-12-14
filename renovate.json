@@ -31,6 +31,10 @@
     {
       "groupName": "panda",
       "matchPackagePatterns": ["@pandacss/*"]
+    },
+    {
+      "groupName": "ark-ui",
+      "matchPackagePatterns": ["@ark-ui/*"]
     }
   ]
 }
