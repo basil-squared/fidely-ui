@@ -1,40 +1,44 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
   "dependencyDashboard": false,
-  "extends": ["config:base", "schedule:earlyMondays"],
-  "labels": ["dependencies"],
-  "rebaseWhen": "conflicted",
   "timezone": "UTC",
   "packageRules": [
     {
+      "description": "Panda CSS updates Sunday night (9–11pm)",
+      "matchPackagePatterns": ["@pandacss/*"],
+      "schedule": ["* 21-23 * * 0"]
+    },
+    {
+      "description": "Ark UI updates Sunday night (9–11pm)",
+      "matchPackagePatterns": ["@ark-ui/*"],
+      "schedule": ["* 21-23 * * 0"]
+    },
+    {
+      "description": "React updates Sunday night (9–11pm)",
+      "matchPackageNames": ["react", "react-dom"],
+      "schedule": ["* 21-23 * * 0"]
+    },
+    {
+      "description": "Storybook updates Sunday night (9–11pm)",
+      "matchPackagePatterns": ["*storybook*", "@storybook/*"],
+      "schedule": ["* 21-23 * * 0"]
+    },
+    {
+      "description": "Changesets updates Sunday night (9–11pm)",
+      "matchPackagePatterns": ["@changesets/*"],
+      "schedule": ["* 21-23 * * 0"]
+    },
+    {
+      "description": "ESLint updates Sunday night (9–11pm)",
+      "matchPackagePatterns": ["eslint*", "@eslint/*"],
+      "schedule": ["* 21-23 * * 0"]
+    },
+    {
+      "description": "All other non-major deps anytime",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
-    },
-    {
-      "groupName": "react",
-      "matchPackageNames": ["react", "react-dom"]
-    },
-    {
-      "groupName": "eslint",
-      "matchPackagePatterns": ["eslint*"]
-    },
-    {
-      "groupName": "storybook",
-      "matchPackagePatterns": ["*storybook*"]
-    },
-    {
-      "groupName": "changesets",
-      "matchPackagePatterns": ["@changesets*"]
-    },
-    {
-      "groupName": "panda",
-      "matchPackagePatterns": ["@pandacss/*"]
-    },
-    {
-      "groupName": "ark-ui",
-      "matchPackagePatterns": ["@ark-ui/*"]
+      "groupName": "all non-major dependencies"
     }
   ]
 }
