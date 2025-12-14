@@ -74,5 +74,5 @@ export const MarqueeEdge = withSlotContext<HTMLDivElement, MarqueeEdgeProps>(
 
 // -------------------- Context --------------------
 export const MarqueeContext = ArkMarquee.Context
-export interface MarqueePauseStatuDetails
+export interface MarqueePauseStatusDetails
   extends ArkMarquee.PauseStatusDetails {}

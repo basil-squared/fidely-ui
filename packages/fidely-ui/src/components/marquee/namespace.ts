@@ -6,7 +6,7 @@ export {
   MarqueeItem as Item,
   MarqueeEdge as Edge,
   MarqueeContext as Context,
-  MarqueePauseStatuDetails as PauseStatuDetails,
+  MarqueePauseStatusDetails as PauseStatusDetails,
 } from './marquee'
 
 export type {
