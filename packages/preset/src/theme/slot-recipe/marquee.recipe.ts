@@ -65,13 +65,13 @@ export const marqueeSlotRecipe = defineSlotRecipe({
         background: 'linear-gradient(to left, var(--edge-color), transparent)',
       },
       '&[data-side="top"]': {
-        insetInline: 0,
+        insetBlockStart: 0,
         height: 'var(--edge-size)',
         background:
           'linear-gradient(to bottom, var(--edge-color), transparent)',
       },
       '&[data-side="bottom"]': {
-        insetInline: 0,
+        insetBlockEnd: 0,
         height: 'var(--edge-size)',
         background: 'linear-gradient(to top, var(--edge-color), transparent)',
       },
