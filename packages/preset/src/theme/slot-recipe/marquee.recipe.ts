@@ -10,6 +10,7 @@ export const marqueeSlotRecipe = defineSlotRecipe({
   base: {
     root: {
       position: 'relative',
+      '--marquee-reverse-direction': 'reverse',
 
       '&[data-paused] [data-part="content"]': {
         animationPlayState: 'paused !important',
@@ -26,6 +27,10 @@ export const marqueeSlotRecipe = defineSlotRecipe({
       animationDuration: 'var(--marquee-duration)',
       animationDelay: 'var(--marquee-delay)',
       animationIterationCount: 'var(--marquee-loop-count)',
+
+      '&[data-reverse]': {
+        animationDirection: 'var(--marquee-reverse-direction)',
+      },
 
       '&[data-side="start"], &[data-side="end"]': {
         animationName: 'marqueeX',
