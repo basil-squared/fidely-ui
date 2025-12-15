@@ -36,7 +36,6 @@ export const tabsSlotRecipe = defineSlotRecipe({
     },
     trigger: {
       alignItems: 'center',
-      color: 'text.muted',
       cursor: 'pointer',
       display: 'inline-flex',
       flexShrink: '0',
@@ -47,7 +46,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
       transitionProperty: 'color, background, border-color',
       transitionDuration: 'normal',
       zIndex: '1',
-      _hover: { color: 'text.default' },
+      _hover: { color: 'fg.default' },
       _selected: {
         color: 'fg.muted',
         _hover: { color: 'fg.default' },
