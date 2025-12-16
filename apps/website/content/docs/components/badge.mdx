@@ -1,0 +1,57 @@
+---
+title: Badge
+description: Used to highlight item status for quick recognition..
+links:
+  source: badge/badge.tsx
+  recipe: recipe/bagde.recipe
+---
+
+<ExampleTabs name="badge-basics" scope="badge" />
+
+## Usage
+
+```tsx
+import { Badge } from '@fidely-ui/react'
+```
+
+```tsx
+<Badge>Badge Text</Badge>
+```
+
+## Examples
+
+### Icon
+
+Render an icon within the badge directly
+
+<ExampleTabs name="badge-icon" scope="badge" />
+
+### Sizes
+
+Badges come in different sizes
+
+<ExampleTabs name="badge-sizes" scope="badge" />
+
+### Variants
+
+Badges come in different variants
+
+<ExampleTabs name="badge-variants" scope="badge" />
+
+### asChild
+
+Use the **asChild** prop to render or use the child elemets component.
+
+<ExampleTabs name="badge-asChild" scope="badge" />
+
+## Props
+
+### Badge
+
+| Prop           | Type                               | Default   | Description                                                                 |
+| -------------- | ---------------------------------- | --------- | --------------------------------------------------------------------------- |
+| `size`         | `"sm" \| "md" \| `"lg" \| "xl"     | `"md"`    | Defines the size of the close button.                                       |
+| `colorPalette` | `-`                                | `"gray"`  | Sets the color palette for the button.                                      |
+| `variant`      | `"solid" \| "subtle" \| "outline"` | `"solid"` | Defines the visual style of the button.                                     |
+| `as`           | `React.ElementType`                | `"-"`     | The underlying element to render.                                           |
+| `asChild`      | `boolean`                          | `false`   | Passes props to a custom element instead of rendering a default `<button>`. |
