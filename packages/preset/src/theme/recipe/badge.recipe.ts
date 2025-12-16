@@ -18,7 +18,7 @@ export const badgeRecipes = defineRecipe({
         color: 'colorPalette.text',
       },
       subtle: {
-        background: 'bg.subtle',
+        background: 'colorPalette.alpha3',
         borderColor: 'border.subtle',
         color: 'colorPalette.text',
       },
@@ -30,23 +30,23 @@ export const badgeRecipes = defineRecipe({
     size: {
       sm: {
         textStyle: 'xs',
-        px: '2.3',
-        h: '5',
+        px: '1.5',
+        minH: '5',
       },
       md: {
         textStyle: 'sm',
-        px: '3',
-        h: '6',
+        px: '2',
+        minH: '6',
       },
       lg: {
-        textStyle: 'md',
-        px: '4',
-        h: '7',
+        textStyle: 'sm',
+        px: '2.5',
+        minH: '7',
       },
       xl: {
         textStyle: 'md',
-        px: '4.3',
-        h: '8',
+        px: '3',
+        minH: '8',
       },
     },
   },

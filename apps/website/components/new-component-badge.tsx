@@ -17,7 +17,8 @@ export const NewComponentBadge = ({
         bg="orange.8"
         color="orange.11"
         _dark={{ bg: 'orange.5', color: 'orange.10' }}
-        p="4.5"
+        py="2"
+        px="3.5"
       >
         {children}
       </Badge>
