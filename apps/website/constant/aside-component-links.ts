@@ -22,6 +22,7 @@ export const asideComponentLinks = [
     items: [
       { name: 'Avatar', linkUrl: 'avatar', info: '' },
       { name: 'Avatar Group', linkUrl: 'avatar-group', info: '' },
+      { name: 'Badge', linkUrl: 'badge', info: '' },
       { name: 'Persona', linkUrl: 'persona', info: '' },
       { name: 'Profile', linkUrl: 'profile', info: 'New' },
       { name: 'Image', linkUrl: 'image', info: '' },

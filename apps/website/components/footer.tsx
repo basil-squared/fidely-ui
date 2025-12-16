@@ -30,7 +30,6 @@ export const Footer = () => {
   return (
     <Box
       as="footer"
-      role="company info"
       bg={'bg.default'}
       backdropFilter="blur(10px)"
       shadow={'2xs'}

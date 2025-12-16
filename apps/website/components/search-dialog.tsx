@@ -104,7 +104,7 @@ export const SearchDialog = ({ value }: SearchDialogProps) => {
                       >
                         <Stack width="full">
                           <Flex gap="2">
-                            <Badge size="sm" bg="blue.4" color="white">
+                            <Badge size="sm" bg="orange.8" color="white">
                               <Text size="xs">{item.category}</Text>
                             </Badge>
                             <Text size="sm" fontWeight="semibold">
