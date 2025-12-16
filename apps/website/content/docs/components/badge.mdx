@@ -1,9 +1,9 @@
 ---
 title: Badge
-description: Used to highlight item status for quick recognition..
+description: Used to highlight item status for quick recognition.
 links:
   source: badge/badge.tsx
-  recipe: recipe/bagde.recipe
+  recipe: recipe/badge.recipe
 ---
 
 <ExampleTabs name="badge-basics" scope="badge" />
@@ -40,7 +40,7 @@ Badges come in different variants
 
 ### asChild
 
-Use the **asChild** prop to render or use the child elemets component.
+Use the **asChild** prop to render or use the child elements component.
 
 <ExampleTabs name="badge-asChild" scope="badge" />
 
@@ -48,10 +48,10 @@ Use the **asChild** prop to render or use the child elemets component.
 
 ### Badge
 
-| Prop           | Type                               | Default   | Description                                                                 |
-| -------------- | ---------------------------------- | --------- | --------------------------------------------------------------------------- |
-| `size`         | `"sm" \| "md" \| `"lg" \| "xl"     | `"md"`    | Defines the size of the close button.                                       |
-| `colorPalette` | `-`                                | `"gray"`  | Sets the color palette for the button.                                      |
-| `variant`      | `"solid" \| "subtle" \| "outline"` | `"solid"` | Defines the visual style of the button.                                     |
-| `as`           | `React.ElementType`                | `"-"`     | The underlying element to render.                                           |
-| `asChild`      | `boolean`                          | `false`   | Passes props to a custom element instead of rendering a default `<button>`. |
+| Prop           | Type                               | Default   | Description                                  |
+| -------------- | ---------------------------------- | --------- | -------------------------------------------- |
+| `size`         | `"sm" \| "md" \| `"lg" \| "xl"     | `"md"`    | Defines the size of the badge.               |
+| `colorPalette` | `-`                                | `"gray"`  | Sets the color palette for the badge.        |
+| `variant`      | `"solid" \| "subtle" \| "outline"` | `"solid"` | Defines the visual style of the badge.       |
+| `as`           | `React.ElementType`                | `"-"`     | The underlying element to render.            |
+| `asChild`      | `boolean`                          | `false`   | Passes props to use a custom inline element. |
