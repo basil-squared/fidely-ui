@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import { grid, type GridProperties } from '@fidely-ui/styled-system/patterns'
 
@@ -8,7 +10,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface GridProps
   extends Omit<HTMLStyledProps<'div'>, keyof GridProperties>,
-    GridProperties {}
+    GridProperties,
+    PolymorphicProps {}
+
+const StyledGrid = styled(ark.div)
 
 /**
  * Grid component
@@ -27,7 +32,7 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>(
 
     const styles = grid.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledGrid ref={ref} {...styles} {...restProps} />
   }
 )
 

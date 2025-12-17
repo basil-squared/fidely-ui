@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import {
   divider,
@@ -11,7 +13,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface DividerProps
   extends Omit<HTMLStyledProps<'div'>, keyof DividerProperties>,
-    DividerProperties {}
+    DividerProperties,
+    PolymorphicProps {}
+
+const StyledDivider = styled(ark.div)
 
 /**
  * Center component
@@ -28,7 +33,7 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(
 
     const styles = divider.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledDivider ref={ref} {...styles} {...restProps} />
   }
 )
 

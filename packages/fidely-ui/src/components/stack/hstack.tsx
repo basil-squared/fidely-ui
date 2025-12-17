@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import { hstack, type HstackStyles } from '@fidely-ui/styled-system/patterns'
 
@@ -8,7 +10,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface HStackProps
   extends Omit<HTMLStyledProps<'div'>, keyof HstackStyles>,
-    HstackStyles {}
+    HstackStyles,
+    PolymorphicProps {}
+
+const StyledHStack = styled(ark.div)
 
 /**
  * HStack component
@@ -21,7 +26,7 @@ export const HStack = forwardRef<HTMLDivElement, HStackProps>(
 
     const styles = hstack.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledHStack ref={ref} {...styles} {...restProps} />
   }
 )
 

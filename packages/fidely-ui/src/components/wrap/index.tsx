@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import { wrap, type WrapProperties } from '@fidely-ui/styled-system/patterns'
 
@@ -8,7 +10,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface WrapProps
   extends Omit<HTMLStyledProps<'div'>, keyof WrapProperties>,
-    WrapProperties {}
+    WrapProperties,
+    PolymorphicProps {}
+
+const StyledWrap = styled(ark.div)
 
 /**
  * Wrap component
@@ -27,7 +32,7 @@ export const Wrap = forwardRef<HTMLDivElement, WrapProps>(
 
     const styles = wrap.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledWrap ref={ref} {...styles} {...restProps} />
   }
 )
 
