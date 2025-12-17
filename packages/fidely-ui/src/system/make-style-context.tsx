@@ -43,7 +43,9 @@ export function makeStyleContext<R extends RecipeFn>(recipe: R) {
         </Ctx.Provider>
       )
     }
-    Comp.displayName = 'FidelyRoot'
+
+    Comp.displayName = 'FidelySlotRootProvider'
+
     return Comp
   }
 
@@ -79,7 +81,9 @@ export function makeStyleContext<R extends RecipeFn>(recipe: R) {
         </Ctx.Provider>
       )
     })
-    Comp.displayName = `FidelySlotProvider(${String(slot)})`
+
+    Comp.displayName = Comp.displayName || Comp.name
+
     return Comp
   }
 
@@ -103,7 +107,9 @@ export function makeStyleContext<R extends RecipeFn>(recipe: R) {
         />
       )
     })
-    Comp.displayName = `FidelySlotConsumer(${String(slot)})`
+
+    Comp.displayName = Comp.displayName || Comp.name
+
     return Comp
   }
 
