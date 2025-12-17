@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import { flex, type FlexProperties } from '@fidely-ui/styled-system/patterns'
 
@@ -8,7 +10,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface FlexProps
   extends Omit<HTMLStyledProps<'div'>, keyof FlexProperties>,
-    FlexProperties {}
+    FlexProperties,
+    PolymorphicProps {}
+
+const StyledFlex = styled(ark.div)
 
 /**
  * Flex component
@@ -30,7 +35,7 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
 
     const styles = flex.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledFlex ref={ref} {...styles} {...restProps} />
   }
 )
 

@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import {
   center,
@@ -11,7 +13,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface CenterProps
   extends Omit<HTMLStyledProps<'div'>, keyof CenterProperties>,
-    CenterProperties {}
+    CenterProperties,
+    PolymorphicProps {}
+
+const StyledCenter = styled(ark.div)
 
 /**
  * Center component
@@ -24,7 +29,7 @@ export const Center = forwardRef<HTMLDivElement, CenterProps>(
 
     const styles = center.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledCenter ref={ref} {...styles} {...restProps} />
   }
 )
 

@@ -1,26 +1,22 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
 import { styled } from '@fidely-ui/styled-system/jsx'
-import { badge } from '@fidely-ui/styled-system/recipes'
-import { ComponentProps } from '@fidely-ui/styled-system/types'
+import { badge, BadgeVariantProps } from '@fidely-ui/styled-system/recipes'
+import { type HTMLStyledProps } from '@fidely-ui/styled-system/types'
 
-const StyledBagde = styled(ark.span, badge)
+export interface BadgeProps
+  extends HTMLStyledProps<'span'>,
+    BadgeVariantProps,
+    PolymorphicProps {}
 
-type BadgeBaseProps = ComponentProps<typeof StyledBagde>
-
-export interface BadgeProps extends BadgeBaseProps {}
+const StyledBadge = styled(ark.span, badge)
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
-  function Bagde(props, ref) {
-    const { children, ...rest } = props
-
-    return (
-      <StyledBagde ref={ref} {...rest}>
-        {children}
-      </StyledBagde>
-    )
+  function Badge(props, ref) {
+    return <StyledBadge ref={ref} {...props} />
   }
 )
 

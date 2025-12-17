@@ -1,7 +1,7 @@
 'use client'
 
 import { forwardRef } from 'react'
-import { type Assign } from '@ark-ui/react'
+import { type PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
 import { styled } from '@fidely-ui/styled-system/jsx'
 import { type HTMLStyledProps } from '@fidely-ui/styled-system/types'
@@ -11,7 +11,9 @@ import {
 } from '@fidely-ui/styled-system/recipes'
 
 export interface HeadingProps
-  extends Assign<HTMLStyledProps<'h2'>, HeadingVariantProps> {}
+  extends HTMLStyledProps<'h2'>,
+    HeadingVariantProps,
+    PolymorphicProps {}
 
 const StyledHeading = styled(ark.h2, heading)
 

@@ -1,6 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
+import { type PolymorphicProps } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
 import {
   vstack,
@@ -11,7 +13,10 @@ import { splitProps } from '../../utils/split-props'
 
 export interface VStackProps
   extends Omit<HTMLStyledProps<'div'>, keyof VstackProperties>,
-    VstackProperties {}
+    VstackProperties,
+    PolymorphicProps {}
+
+const StyledVStack = styled(ark.div)
 
 /**
  * VStackProps component
@@ -24,7 +29,7 @@ export const VStack = forwardRef<HTMLDivElement, VStackProps>(
 
     const styles = vstack.raw(patternProps)
 
-    return <styled.div ref={ref} {...styles} {...restProps} />
+    return <StyledVStack ref={ref} {...styles} {...restProps} />
   }
 )
 
