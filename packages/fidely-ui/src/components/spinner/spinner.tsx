@@ -6,13 +6,13 @@ import { styled } from '@fidely-ui/styled-system/jsx'
 import { spinner } from '@fidely-ui/styled-system/recipes'
 import { type ComponentProps } from '@fidely-ui/styled-system/types'
 
-const StyledSpinner = styled(ark.div, spinner)
+const StyledSpinner = styled(ark.span, spinner)
 
-export type SpinnerPropsProps = ComponentProps<typeof StyledSpinner>
+export type SpinnerBaseProps = ComponentProps<typeof StyledSpinner>
 
-export interface SpinnerProps extends SpinnerPropsProps {}
+export interface SpinnerProps extends SpinnerBaseProps {}
 
-export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
+export const Spinner = forwardRef<HTMLSpanElement, SpinnerProps>(
   function Spinner(props, ref) {
     return <StyledSpinner ref={ref} {...props} />
   }
