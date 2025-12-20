@@ -30,54 +30,34 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const {
       isLoading,
       loadingText,
-      spinnerPlacement = 'start',
-      children,
-      asChild,
-      disabled,
       spinner,
+      spinnerPlacement = 'start',
+      disabled,
+      children,
       ...rest
     } = props
 
-    const LoaderComp = () => <Loader spinner={spinner} />
-
-    const checkDisabled = isLoading || disabled
-
-    const buttonContent = (
-      <>
-        {isLoading && spinnerPlacement === 'start' && !loadingText && (
-          <LoaderComp />
-        )}
-        {isLoading && loadingText ? loadingText : children}
-        {isLoading && spinnerPlacement === 'end' && !loadingText && (
-          <LoaderComp />
-        )}
-      </>
-    )
-
-    if (asChild) {
-      return (
-        <StyledButton
-          asChild
-          ref={ref}
-          disabled={checkDisabled}
-          data-disabled={dataAttr(disabled)}
-          data-loading={dataAttr(isLoading)}
-          {...rest}
-        >
-          {children}
-        </StyledButton>
-      )
-    }
+    const isDisabled = disabled || isLoading
 
     return (
       <StyledButton
         ref={ref}
-        disabled={checkDisabled}
+        disabled={isDisabled}
         data-disabled={dataAttr(disabled)}
         data-loading={dataAttr(isLoading)}
         {...rest}
       >
-        {buttonContent}
+        {!props.asChild && isLoading ? (
+          <Loader
+            spinner={spinner}
+            text={loadingText}
+            spinnerPlacement={spinnerPlacement}
+          >
+            {children}
+          </Loader>
+        ) : (
+          children
+        )}
       </StyledButton>
     )
   }
