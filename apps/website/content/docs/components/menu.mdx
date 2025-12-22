@@ -1,0 +1,215 @@
+---
+title: Menu
+description: A list of options that appears when a user interacts with a button.
+links:
+  source: menu/menu.tsx
+  recipe: slot-recipe/menu.recipe
+  ark: components/menu
+---
+
+<ExampleTabs name="menu-basics" scope="menu" />
+
+## Usage
+
+```tsx
+import { Menu } from '@fidely-ui/react'
+```
+
+```tsx
+<Menu.Root>
+  <Menu.Trigger />
+  <Menu.Positioner>
+    <Menu.Content>
+      <Menu.Item />
+
+      <Menu.ItemGroup>
+        <Menu.Item />
+      </Menu.ItemGroup>
+
+      <Menu.Separator />
+      <Menu.Arrow>
+        <Menu.ArrowTip />
+      </Menu.Arrow>
+
+      <Menu.CheckboxItem>✓</Menu.CheckboxItem>
+
+      <Menu.RadioItemGroup>
+        <Menu.RadioItem>✓</Menu.RadioItem>
+      </Menu.RadioItemGroup>
+    </Menu.Content>
+  </Menu.Positioner>
+</Menu.Root>
+```
+
+## Examples
+
+### Context menu
+
+Use the **Menu.ContextTrigger** component to create a context menu.
+
+<ExampleTabs name="menu-context" scope="menu" />
+
+### Menu Group
+
+Use the **Menu.ItemGroup** component to group related menu items.
+
+<ExampleTabs name="menu-group" scope="menu" />
+
+### Submenu
+
+Here's an example of how to create a submenu.
+
+<ExampleTabs name="menu-submenu" scope="menu" />
+
+### Danger Item
+
+Here's an example of how to style a menu item that is used to delete an item.
+
+<ExampleTabs name="menu-danger-item" scope="menu" />
+
+### Menu with Avatar
+
+Here's an example that composes the Menu with the Avatar component to display a menu underneath an avatar.
+
+<ExampleTabs name="menu-avatar" scope="menu" />
+
+### Checkbox Items
+
+Here's an example of how to create a menu with checkbox items.
+
+<ExampleTabs name="menu-checkbox" scope="menu" />
+
+### Radio Items
+
+Here's an example of how to create a menu with radio items.
+
+<ExampleTabs name="menu-radio" scope="menu" />
+
+### Placement
+
+Use the **positioning.placement** prop to control the placement of the menu.
+
+```tsx
+import { Menu } from '@fidely-ui/react/menu'
+
+const Demo = () => {
+  return (
+    <Menu.Root positioning={{ placement: 'right-end' }}>{/* ... */}</Menu.Root>
+  )
+}
+```
+
+### Menu with links
+
+Here's an example of how to style a menu item that is used to delete an item.
+
+<ExampleTabs name="menu-with-links" scope="menu" />
+
+When using custom router links, (eg, react-router, next) you need to set the navigate prop on the **`Menu.Root`** component.
+
+```tsx
+'use client'
+
+import { Menu } from '@fidely-ui/react/menu'
+import { useNavigate } from 'react-router-dom'
+
+const Demo = () => {
+  const navigate = useNavigate()
+
+  return (
+    <Menu.Root navigate={({ value, node }) => navigate(`/${value}`)}>
+      {/* ... */}
+    </Menu.Root>
+  )
+}
+```
+
+###ß Within Dialog
+
+To use the **Menu** within a **Dialog**, you need to avoid portalling the **`Menu.Positioner`** to the document's body.
+
+```tsx
+;-(
+  <Portal>
+    <Menu.Positioner>
+      <Menu.Content>{/* ... */}</Menu.Content>
+    </Menu.Positioner>
+    -
+  </Portal>
+)
+```
+
+## Guide
+
+### Styling highlighted items
+
+Use the **`_highlighted`** prop to style menu items when they are hovered or focused with keyboard navigation.
+
+```tsx
+<Menu.Item _highlighted={{ bg: 'amber.5', color: 'white' }}>
+  Custom highlighted item
+</Menu.Item>
+```
+
+### Styling open state
+
+Use the **`_open`** prop to style the menu trigger when the menu is open or **`_closed`** when closed
+
+```tsx
+<Menu.Trigger asChild>
+  <Button _open={{ bg: 'purple.6', color: 'white' }}>Menu</Button>
+</Menu.Trigger>
+```
+
+## Props
+
+### Root
+
+| Prop                      | Type                                        | Default | Description                                                                                                                              |
+| ------------------------- | ------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `closeOnSelect`           | `boolean`                                   | `true`  | Whether to close the menu when an option is selected.                                                                                    |
+| `composite`               | `boolean`                                   | `true`  | Whether the menu is a composed with other composite widgets like a combobox or tabs.                                                     |
+| `lazyMount`               | `boolean`                                   | `false` | Whether to enable lazy mounting.                                                                                                         |
+| `skipAnimationOnMount`    | `boolean`                                   | `false` | Whether to allow the initial presence animation.                                                                                         |
+| `loopFocus`               | `boolean`                                   | `false` | Whether to loop the keyboard navigation.                                                                                                 |
+| `typeahead`               | `boolean`                                   | `true`  | Whether the pressing printable characters should trigger typeahead navigation.                                                           |
+| `unmountOnExit`           | `boolean`                                   | `false` | Whether to unmount on exit.                                                                                                              |
+| `size`                    | `"sm" \| "md" `                             | `md`    | The size of the component                                                                                                                |
+| `as`                      | `React.ElementType`                         | `-`     | The underlying element to render.                                                                                                        |
+| `asChild`                 | `boolean`                                   | `-`     | Use the provided child element as the default rendered element, combining their props and behavior                                       |
+| `defaultHighlightedValue` | `string`                                    | `-`     | The initial highlighted value of the menu item when rendered. Use when you don't need to control the highlighted value of the menu item. |
+| `aria-label`              | `string`                                    | `-`     | The accessibility label for the menu                                                                                                     |
+| `anchorPoint`             | `Point`                                     | `-`     | The positioning point for the menu. Can be set by the context menu trigger or the button trigger                                         |
+| `defaultOpen`             | `boolean`                                   | `-`     | The initial open state of the menu when rendered. Use when you don't need to control the open state of the menu                          |
+| `highlightedValue`        | `string`                                    | `-`     | The controlled highlighted value of the menu item                                                                                        |
+| `id`                      | `string`                                    | `-`     | The unique identifier of the machine.                                                                                                    |
+| `ids`                     | `Partial<{}>`                               | `-`     | The ids of the elements in the menu. Useful for composition                                                                              |
+| `immediate`               | `boolean`                                   | `-`     | Whether to synchronize the present change immediately or defer it to the next frame                                                      |
+| `navigate`                | `(details: NavigateDetails) => void`        | `-`     | Function to navigate to the selected item if it's an anchor element                                                                      |
+| `onEscapeKeyDown`         | `(event: KeyboardEvent) => void`            | `-`     | Function called when the escape key is pressed                                                                                           |
+| `onExitComplete`          | `VoidFunction`                              | `-`     | Function called when the animation ends in the closed state                                                                              |
+| `onHighlightChange`       | `(details: HighlightChangeDetails) => void` | `-`     | Function called when the highlighted menu item changes                                                                                   |
+| `onInteractOutside`       | `(event: InteractOutsideEvent) => void`     | `-`     | Function called when an interaction happens outside the component                                                                        |
+| `onPointerDownOutside`    | `(event: PointerDownOutsideEvent) => void`  | `-`     | Function called when the pointer is pressed down outside the component                                                                   |
+| `onOpenChange`            | `(details: OpenChangeDetails) => void`      | `-`     | Function called when the menu opens or closes                                                                                            |
+| `onRequestDismiss`        | `(event: LayerDismissEvent) => void`        | `-`     | Function called when this layer is closed due to a parent layer being closed                                                             |
+| `onSelect`                | `(details: SelectionDetails) => void`       | `-`     | Function called when a menu item is selected                                                                                             |
+| `open`                    | `boolean`                                   | `-`     | The controlled open state of the menu                                                                                                    |
+| `positioning`             | `PositioningOptions`                        | `-`     | The options used to dynamically position the menu                                                                                        |
+| `present`                 | `boolean`                                   | `-`     | Whether the node is present (controlled by the user)                                                                                     |
+
+---
+
+### Item
+
+| Prop            | Type                | Default | Description                                                                                                                                 |
+| --------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`         | `string`            | —       | The unique value of the menu item option, always Required.                                                                                  |
+| `as`            | `React.ElementType` | `-`     | The underlying element to render.                                                                                                           |
+| `asChild`       | `boolean`           | `-`     | Use the provided child element as the default rendered element, combining their props and behavior                                          |
+| `closeOnSelect` | `boolean`           | `-`     | Whether the menu should be closed when the option is selected.                                                                              |
+| `onSelect`      | `VoidFunction`      | `-`     | The function to call when the item is selected                                                                                              |
+| `disabled`      | `boolean`           | `-`     | Whether the menu item is disabled.                                                                                                          |
+| `valueText`     | `string`            | —       | The textual value of the option. Used in typeahead navigation of the menu. If not provided, the text content of the menu item will be used. |
+
+---

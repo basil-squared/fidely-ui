@@ -5,7 +5,7 @@ export const PersonaBasics = () => {
     <Persona
       name="Justice Chimobi"
       title="Frontend Engineer, Creator Fidely  UI"
-      img={'https://avatars.githubusercontent.com/u/74328318?v=4'}
+      img={'/justice-chimobi.jpeg'}
       size="xl"
     />
   )

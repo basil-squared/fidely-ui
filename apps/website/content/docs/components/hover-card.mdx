@@ -1,0 +1,114 @@
+---
+title: Hover Card
+description: Used to display content when hovering over an element
+links:
+  source: hover-card/hover-card.tsx
+  recipe: slot-recipe/hoverCard.recipe
+  ark: components/hover-card
+---
+
+<ExampleTabs name="hover-card-basics" scope="hover-card" />
+
+## Usage
+
+```tsx
+import { HoverCard } from '@fidely-ui/react'
+```
+
+```tsx
+<HoverCard.Root>
+  <HoverCard.Trigger />
+  <HoverCard.Positioner>
+    <HoverCard.Content>
+      <HoverCard.Arrow>
+        <HoverCard.ArrowTip />
+      </HoverCard.Arrow>
+    </HoverCard.Content>
+  </HoverCard.Positioner>
+</HoverCard.Root>
+```
+
+## Controlled
+
+Use the **open** and **onOpenChange** to control the visibility of the hover card.
+
+<ExampleTabs name="hover-card-controlled" scope="hover-card" />
+
+## Placement
+
+Use the **`positioning.placement`** prop to configure the underlying
+**Floating UI** positioning logic, allowing you to control where the
+hover card appears relative to its trigger.
+
+<ExampleTabs name="hover-card-positioning" scope="hover-card" />
+
+## Delays
+
+Control the open and close delays using the openDelay and closeDelay props.
+
+<ExampleTabs name="hover-card-delay" scope="hover-card" />
+
+## Disabled
+
+Use the **disabled** prop to prevent opening the hover card on interaction.
+
+<ExampleTabs name="hover-card-disabled" scope="hover-card" />
+
+## Using the RootProvider
+
+The **RootProvider** component provides a context for the **HoverCard**.
+It accepts the value of the **useHoverCard** hook.
+You can leverage it to access the component state and methods from outside the **HoverCard**.
+
+<ExampleTabs name="hover-card-with-root" scope="hover-card" />
+
+## Within Dialog
+
+To use the **`HoverCard`** within a **`Dialog`**, you need to avoid portalling the **HoverCard.Positioner** to the document's body.
+
+```tsx
+;-(
+  <Portal>
+    <HoverCard.Positioner>
+      <HoverCard.Content>{/* ... */}</HoverCard.Content>
+    </HoverCard.Positioner>
+    -
+  </Portal>
+)
+```
+
+## Accessibility
+
+**HoverCard** should be used only for **supplementary information** that is
+not required to understand the primary content.
+
+Hover cards are not accessible to screen readers and cannot be triggered
+via keyboard interaction. Avoid placing essential or actionable content
+inside a HoverCard.
+
+## Props
+
+| Prop                   | Type                                       | Default | Description                                                                                                                  |
+| ---------------------- | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `closeDelay`           | `number`                                   | `300`   | The duration from when the mouse leaves the trigger or content until the hover card closes.                                  |
+| `openDelay`            | `number`                                   | `600`   | The duration from when the mouse enters the trigger until the hover card opens.                                              |
+| `lazyMount`            | `boolean`                                  | `false` | Whether to enable lazy mounting.                                                                                             |
+| `skipAnimationOnMount` | `boolean`                                  | `false` | Whether to allow the initial presence animation.                                                                             |
+| `unmountOnExit`        | `boolean`                                  | `false` | Whether to unmount on exit.                                                                                                  |
+| `as`                   | `React.ElementType`                        | `-`     | The underlying element to render.                                                                                            |
+| `asChild`              | `boolean`                                  | `-`     | Use the provided child element as the default rendered element, combining their props and behavior                           |
+| `defaultOpen`          | `boolean`                                  | `-`     | The initial open state of the hover card when rendered. Use when you don't need to control the open state of the hover card. |
+| `disabled`             | `boolean`                                  | `-`     | Whether the hover card is disabled.                                                                                          |
+| `id`                   | `string`                                   | `-`     | The unique identifier of the machine.                                                                                        |
+| `ids`                  | `Partial<{}>`                              | `-`     | The ids of the elements in the hoverCard. Useful for composition                                                             |
+| `immediate`            | `boolean`                                  | `-`     | Whether to synchronize the present change immediately or defer it to the next frame                                          |
+| `onExitComplete`       | `VoidFunction`                             | `-`     | Function called when the animation ends in the closed state                                                                  |
+| `onInteractOutside`    | `(event: InteractOutsideEvent) => void`    | `-`     | Function called when an interaction happens outside the component                                                            |
+| `onOpenChange`         | `(details: OpenChangeDetails) => void`     | `-`     | Function called when the hover card opens or closes                                                                          |
+| `onFocusOutside`       | `(event: FocusOutsideEvent) => void`       | `-`     | Function called when the focus is moved outside the component                                                                |
+| `onPointerDownOutside` | `(event: PointerDownOutsideEvent) => void` | `-`     | Function called when the pointer is pressed down outside the component                                                       |
+| `open`                 | `boolean`                                  | `-`     | The controlled open state of the hover card                                                                                  |
+| `positioning`          | `PositioningOptions`                       | `-`     | The user provided options used to position the popover content                                                               |
+| `present`              | `boolean`                                  | `-`     | Whether the node is present (controlled by the user)                                                                         |
+
+---

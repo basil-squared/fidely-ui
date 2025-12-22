@@ -15,13 +15,7 @@ import { testimonials } from '~/constant/testimonials'
 export const Testimonials = () => {
   return (
     <Box as="section" px={{ base: '6', md: '12' }} py="12" mt="16">
-      <Box
-        textAlign={'left'}
-        mb={'25px'}
-        width={'90%'}
-        mx={'auto'}
-        colorPalette={'red'}
-      >
+      <Box textAlign={'left'} mb={'25px'} width={'90%'} mx={'auto'}>
         <Heading
           as="h4"
           textStyle={{ base: '2xl', md: '3xl' }}
