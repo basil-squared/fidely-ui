@@ -67,15 +67,11 @@ You can leverage it to access the component state and methods from outside the *
 To use the **`HoverCard`** within a **`Dialog`**, you need to avoid portalling the **HoverCard.Positioner** to the document's body.
 
 ```tsx
-{
-  /* <Portal> */
-}
-;<HoverCard.Positioner>
+/* <Portal> */
+<HoverCard.Positioner>
   <HoverCard.Content>{/* ... */}</HoverCard.Content>
 </HoverCard.Positioner>
-{
-  /* </Portal> */
-}
+/* </Portal> */
 ```
 
 ## Accessibility
