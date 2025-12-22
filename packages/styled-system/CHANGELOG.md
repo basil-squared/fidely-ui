@@ -1,5 +1,13 @@
 # @fidely-ui/styled-system
 
+## 1.3.0
+
+### Minor Changes
+
+- Introduce Menu, HoverCard, and Marquee components with preset styles
+- Export style context helpers
+- Refine interactions and styling across tabs, badges, and marquee
+
 ## 1.2.0
 
 ### Minor Changes

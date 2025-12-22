@@ -1,5 +1,19 @@
 # @fidely-ui/react
 
+## 1.3.0
+
+### Minor Changes
+
+- Introduce Menu, HoverCard, and Marquee components with preset styles
+- Export style context helpers
+- Refine interactions and styling across tabs, badges, and marquee
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @fidely-ui/panda-preset@1.3.0
+  - @fidely-ui/styled-system@1.3.0
+
 ## 1.2.0
 
 ### Minor Changes
