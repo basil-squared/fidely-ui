@@ -5,9 +5,7 @@ export const AvatarBasics = () => {
     <>
       <Avatar.Root size={'lg'}>
         <Avatar.Fallback name="Justice Chimobi" />
-        <Avatar.Image
-          src={'https://avatars.githubusercontent.com/u/74328318?v=4'}
-        />
+        <Avatar.Image src={'/justice-chimobi.jpeg'} />
       </Avatar.Root>
     </>
   )

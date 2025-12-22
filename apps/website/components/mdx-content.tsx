@@ -19,6 +19,7 @@ import {
   Strong,
   Blockquote,
 } from '~/components/mdx/typography'
+import { Li, Ol, Ul } from '~/components/mdx/list'
 import {
   Table,
   TableBody,
@@ -28,7 +29,7 @@ import {
   TableRow,
   TableFooter,
 } from '~/components/mdx/table'
-import { ColorShowcase } from './mdx/color-showcase'
+import { ColorShowcase } from '~/components/mdx/color-showcase'
 
 const sharedComponents = {
   a: Anchor,
@@ -42,6 +43,9 @@ const sharedComponents = {
   strong: Strong,
   blockquote: Blockquote,
   p: P,
+  ol: Ol,
+  ul: Ul,
+  li: Li,
   card: Card,
   table: Table,
   tbody: TableBody,

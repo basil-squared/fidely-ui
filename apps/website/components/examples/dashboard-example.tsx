@@ -88,7 +88,7 @@ export const DashboardSideBar = () => {
         <Persona
           name="Justice Chimobi"
           title="Creator Fidely UI"
-          img={'https://avatars.githubusercontent.com/u/74328318?v=4'}
+          img={'/justice-chimobi.jpeg'}
           size="sm"
         />
       </Box>
@@ -122,12 +122,16 @@ export const DashboardNavBar = ({ onSearchChange }: DashboardNavBarProps) => {
       <Box width={'20%'}>
         <Flex justifyContent={'flex-end'} alignItems={'center'} gap={'4px'}>
           <Menu.Root>
-            <Menu.Trigger cursor="pointer" aria-label="Open account menu">
-              <Avatar.Root size={'lg'}>
+            <Menu.Trigger
+              cursor="pointer"
+              rounded="full"
+              focusRing="outside"
+              focusRingColor={'colorPalette.default'}
+              aria-label="Open account menu"
+            >
+              <Avatar.Root size={'sm'}>
                 <Avatar.Fallback name="Justice Chimobi" />
-                <Avatar.Image
-                  src={'https://avatars.githubusercontent.com/u/74328318?v=4'}
-                />
+                <Avatar.Image src={'/justice-chimobi.jpeg'} />
               </Avatar.Root>
             </Menu.Trigger>
 

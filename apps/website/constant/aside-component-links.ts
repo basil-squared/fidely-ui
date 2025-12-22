@@ -13,7 +13,6 @@ export const asideComponentLinks = [
       { name: 'Card', linkUrl: 'card', info: '' },
       { name: 'Divider', linkUrl: 'divider', info: '' },
       { name: 'Wrap', linkUrl: 'wrap', info: '' },
-      // { name: 'Card', linkUrl: 'card' },
     ],
   },
 
@@ -26,7 +25,8 @@ export const asideComponentLinks = [
       { name: 'Persona', linkUrl: 'persona', info: '' },
       { name: 'Profile', linkUrl: 'profile', info: 'New' },
       { name: 'Image', linkUrl: 'image', info: '' },
-      { name: 'Table', linkUrl: 'table', info: 'Updated' },
+      { name: 'Table', linkUrl: 'table', info: '' },
+      { name: 'Marquee', linkUrl: 'marquee', info: 'New' },
     ],
   },
 
@@ -57,7 +57,7 @@ export const asideComponentLinks = [
     items: [
       { name: 'Field', linkUrl: 'field', info: '' },
       { name: 'Input', linkUrl: 'input', info: '' },
-      // { name: 'Float Input', linkUrl: 'floating-input' },
+      { name: 'Float Input', linkUrl: 'floating-input', info: 'Alpha' },
       { name: 'Textarea', linkUrl: 'textarea', info: '' },
       { name: 'Command Input', linkUrl: 'command-input', info: '' },
       { name: 'Combobox', linkUrl: 'combobox', info: '' },
@@ -73,7 +73,11 @@ export const asideComponentLinks = [
 
   {
     section: 'Overlays',
-    items: [{ name: 'Dialog', linkUrl: 'dialog', info: '' }],
+    items: [
+      { name: 'Dialog', linkUrl: 'dialog', info: '' },
+      { name: 'Hover Card', linkUrl: 'hover-card', info: 'New' },
+      { name: 'Menu', linkUrl: 'menu', info: 'New' },
+    ],
   },
 
   {

@@ -1,0 +1,118 @@
+---
+title: Marquee
+description: A continuous scrolling component for displaying content in a seamless loop.
+links:
+  source: marquee/marquee.tsx
+  recipe: slot-recipe/marquee.recipe
+  ark: components/marquee
+---
+
+<ExampleTabs name="marquee-basics" scope="marquee" />
+
+## Usage
+
+```tsx
+import { Marquee } from '@fidely-ui/react'
+```
+
+```tsx
+<Marquee.Root>
+  <Marquee.Viewport>
+    <Marquee.Content>
+      <Marquee.Item />
+    </Marquee.Content>
+  </Marquee.Viewport>
+</Marquee.Root>
+```
+
+## Features
+
+- Smooth, GPU-accelerated scrolling with seamless looping
+- Supports horizontal and vertical directions
+- Optional reverse scrolling and RTL layouts
+- Auto-fill mode to duplicate items for continuous flow
+- Configurable speed, gap, and spacing
+- Pause on interaction (hover or focus)
+
+## Autofill
+
+Use the **autoFill** prop to automatically duplicate content to fill the viewport.
+The **spacing** prop controls the gap between duplicated content instances:
+
+<ExampleTabs name="marquee-autofill" scope="marquee" />
+
+## Reverse
+
+Pass the **`reverse`** prop to the **Root** component to reverse the scroll
+direction of the marquee content.
+
+<ExampleTabs name="marquee-reverse" scope="marquee" />
+
+## Vertical Orientation
+
+Set **side="bottom"** (or side="top") to create a vertical marquee:
+
+<ExampleTabs name="marquee-vertical" scope="marquee" />
+
+## Edge Gradients
+
+Add **Marquee.Edge** components to create fade effects at the start and end of the scrolling area:
+
+<ExampleTabs name="marquee-edge" scope="marquee" />
+
+## Pause on Interaction
+
+Enable **pauseOnInteraction** to pause the marquee when users hover or focus on it, improving accessibility:
+
+<ExampleTabs name="marquee-pause" scope="marquee" />
+
+## Custom Speed
+
+Control the scrolling speed of the marquee by passing the **`speed`** prop.
+The value is measured in **pixels per second**, allowing precise control
+over how fast the content moves.
+
+<ExampleTabs name="marquee-speed" scope="marquee" />
+
+## Props
+
+### Root
+
+| Prop                 | Type                                    | Default | Description                                                                                                   |
+| -------------------- | --------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| `autoFill`           | `boolean`                               | `false` | Whether to automatically duplicate content to fill the container.                                             |
+| `defaultPaused`      | `boolean`                               | `false` | Whether the marquee is paused by default.                                                                     |
+| `delay`              | `number`                                | `0`     | The delay before the animation starts (in seconds).                                                           |
+| `ids`                | `Partial<{}>`                           | `-`     | The ids of the elements in the marquee. Useful for composition                                                |
+| `loopCount`          | `number`                                | `0`     | The number of times to loop the animation (0 = infinite)..                                                    |
+| `onComplete`         | `() => void`                            | `-`     | Function called when the marquee completes all loops and stops. Only fires for finite loops (loopCount > 0).. |
+| `onLoopComplete`     | `() => void`                            | `-`     | Function called when the marquee completes one loop iteration..                                               |
+| `onPauseChange`      | `(details: PauseStatusDetails) => void` | `-`     | Function called when the pause status changes.                                                                |
+| `paused`             | `boolean`                               | `-`     | Whether the marquee is paused                                                                                 |
+| `pauseOnInteraction` | `boolean`                               | `false` | Whether to pause the marquee on user interaction (hover, focus).                                              |
+| `as`                 | `React.ElementType`                     | `-`     | The underlying element to render.                                                                             |
+| `asChild`            | `boolean`                               | `-`     | Use the provided child element as the default rendered element, combining their props and behavior.           |
+| `reverse`            | `boolean`                               | `false` | Whether to reverse the animation direction.                                                                   |
+| `side`               | `Side`                                  | `start` | The side/direction the marquee scrolls towards.                                                               |
+| `spacing`            | `string`                                | `1rem`  | The spacing between marquee items.                                                                            |
+| `speed`              | `number`                                | `50`    | The speed of the marquee animation in pixels per second.                                                      |
+| `translations`       | `IntlTranslations`                      | `-`     | The localized messages to use.                                                                                |
+
+---
+
+### Edge
+
+| Prop   | Type   | Default | Description                                     |
+| ------ | ------ | ------- | ----------------------------------------------- |
+| `side` | `Side` | —       | The side where the edge gradient should appear. |
+
+---
+
+### RootProvider
+
+| Prop      | Type               | Default | Description                                                                                         |
+| --------- | ------------------ | ------- | --------------------------------------------------------------------------------------------------- |
+| `value`   | `UseMarqueeReturn` | —       | -                                                                                                   |
+| `asChild` | `boolean`          | `-`     | Use the provided child element as the default rendered element, combining their props and behavior. |
+
+---
