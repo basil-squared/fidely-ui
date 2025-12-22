@@ -13,9 +13,10 @@ export default {
   ],
 } satisfies Meta
 
-export { AccordionBasics as Basics } from 'patherns/examples/accordion/accordion-basics'
-export { AccordionCollapsible as Collapsible } from 'patherns/examples/accordion/accordion-collapsible'
-export { AccordionDefaultValue as DefaultValue } from 'patherns/examples/accordion/accordion-default-value'
-export { AccordionMultiple as Multiple } from 'patherns/examples/accordion/accordion-multiple'
-export { AccordionSize as Sizes } from 'patherns/examples/accordion/accordion-size'
-export { AccordionVariant as Variants } from 'patherns/examples/accordion/accordion-variant'
+export { MarqueeBasics as Basics } from 'patherns/examples/marquee/marquee-basics'
+export { MarqueeAutofill as Autofill } from 'patherns/examples/marquee/marquee-autofill'
+export { MarqueeEdge as Edge } from 'patherns/examples/marquee/marquee-edge'
+export { MarqueePause as Pause } from 'patherns/examples/marquee/marquee-pause'
+export { MarqueeReverse as Reverse } from 'patherns/examples/marquee/marquee-reverse'
+export { MarqueeSpeed as Speed } from 'patherns/examples/marquee/marquee-speed'
+export { MarqueeVertical as Vertical } from 'patherns/examples/marquee/marquee-vertical'

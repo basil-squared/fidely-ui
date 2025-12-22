@@ -124,19 +124,20 @@ const Demo = () => {
 }
 ```
 
-###ß Within Dialog
+### Within Dialog
 
 To use the **Menu** within a **Dialog**, you need to avoid portalling the **`Menu.Positioner`** to the document's body.
 
 ```tsx
-;-(
-  <Portal>
-    <Menu.Positioner>
-      <Menu.Content>{/* ... */}</Menu.Content>
-    </Menu.Positioner>
-    -
-  </Portal>
-)
+{
+  /* <Portal> */
+}
+;<Menu.Positioner>
+  <Menu.Content>{/* ... */}</Menu.Content>
+</Menu.Positioner>
+{
+  /* </Portal> */
+}
 ```
 
 ## Guide

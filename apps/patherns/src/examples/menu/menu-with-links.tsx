@@ -12,7 +12,11 @@ export const MenuWithLinks = () => {
         <Menu.Positioner>
           <Menu.Content>
             <Menu.Item value="fidely-ui" asChild>
-              <a href="https://fidely-ui.vercel.app/" target="_blank">
+              <a
+                href="https://fidely-ui.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Flex justify="space-between" align="center" width="full">
                   Fidely UI
                   <GoLinkExternal />
@@ -20,7 +24,11 @@ export const MenuWithLinks = () => {
               </a>
             </Menu.Item>
             <Menu.Item value="chakra-ui" asChild>
-              <a href="https://chakra-ui.com/" target="_blank">
+              <a
+                href="https://chakra-ui.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Flex justify="space-between" align="center" width="full">
                   Chakra UI
                   <GoLinkExternal />
@@ -28,7 +36,11 @@ export const MenuWithLinks = () => {
               </a>
             </Menu.Item>
             <Menu.Item value="mui" asChild>
-              <a href="https://mui.com/material-ui/" target="_blank">
+              <a
+                href="https://mui.com/material-ui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Flex justify="space-between" align="center" width="full">
                   MUI
                   <GoLinkExternal />
