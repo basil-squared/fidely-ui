@@ -14,6 +14,7 @@ import { IoLogoReact } from 'react-icons/io5'
 import { SiTypescript } from 'react-icons/si'
 import { SiFoodpanda } from 'react-icons/si'
 import { NewComponentBadge } from '~/components/new-component-badge'
+import { FaArrowRight } from 'react-icons/fa6'
 
 const Logos = [
   {
@@ -52,8 +53,16 @@ export const HeroSection = () => {
         textAlign={'center'}
       >
         <Flex gap="3" flexDirection={{ base: 'column', md: 'row' }}>
-          <NewComponentBadge href={'/docs/components/profile'}>
-            [New] Profile Component
+          <NewComponentBadge href={'/docs/components/menu'}>
+            [New] Menu Component
+          </NewComponentBadge>
+
+          <NewComponentBadge href={'/docs/components/hover-card'}>
+            [New] HoverCard Component
+          </NewComponentBadge>
+
+          <NewComponentBadge href={'/docs/components/marquee'}>
+            [New] Marquee Component
           </NewComponentBadge>
         </Flex>
         <Heading
