@@ -14,7 +14,6 @@ import { IoLogoReact } from 'react-icons/io5'
 import { SiTypescript } from 'react-icons/si'
 import { SiFoodpanda } from 'react-icons/si'
 import { NewComponentBadge } from '~/components/new-component-badge'
-import { FaArrowRight } from 'react-icons/fa6'
 
 const Logos = [
   {
