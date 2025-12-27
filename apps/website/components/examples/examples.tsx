@@ -75,7 +75,7 @@ export const PaymentMethod = () => {
         <Text>All transactions are secure and encrypted</Text>
       </Stack>
 
-      <Stack gap={5}>
+      <Stack gap={5} colorPalette="orange">
         <Field.Root>
           <Field.Label>Name</Field.Label>
           <Input placeholder="John Doe" variant={'subtle'} />
@@ -150,7 +150,7 @@ export const TabsExample = () => {
         <Heading as={'h3'}>Tabs</Heading>
       </Stack>
 
-      <Tabs.Root variant="outline" defaultValue="fidely">
+      <Tabs.Root variant="outline" defaultValue="fidely" colorPalette="orange">
         <Tabs.List>
           <Tabs.Trigger value="fidely">fidely</Tabs.Trigger>
           <Tabs.Trigger value="dashboard">Dashboard</Tabs.Trigger>
@@ -211,7 +211,7 @@ export const MoreComponents = () => {
   return (
     <Paper height="min-content">
       <Stack gap={4} mb={'15px'}>
-        <Stack gap={4}>
+        <Stack gap={4} colorPalette="orange">
           <Heading as={'h6'} textStyle={'lg'}>
             Input Group
           </Heading>

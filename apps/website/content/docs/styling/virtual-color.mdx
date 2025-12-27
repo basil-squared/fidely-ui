@@ -1,0 +1,73 @@
+---
+title: Virtual Color
+description: Create color placeholders for better theming and customization.
+---
+
+## Overview
+
+Fidely UI allows you to create a virtual color or color placeholder in your project which uses Panda CSS under the hood.
+The **colorPalette** property is how you create virtual color.
+
+```tsx
+<Box
+  colorPalette="teal"
+  bg={{ base: 'colorPalette.9', _hover: 'colorPalette.10' }}
+>
+  Hello World
+</Box>
+```
+
+## Recipes
+
+Virtual colors are most useful when used with recipes,
+allowing styles to adapt automatically when the palette changes.
+
+```tsx
+const alertRecipe = defineRecipe({
+  className: 'fidely-alert',
+  base: {
+    display: 'flex',
+    gap: '3',
+    padding: '4',
+    rounded: 'md',
+    colorPalette: 'crimson',
+  },
+  variants: {
+    status: {
+      info: {
+        bg: 'colorPalette.3',
+        color: 'colorPalette.11',
+      },
+      error: {
+        bg: 'colorPalette.4',
+        color: 'colorPalette.12',
+      },
+    },
+  },
+})
+```
+
+## Components
+
+Most built-in components in Fidely UI support virtual colors out of the box.
+
+```tsx
+<Badge colorPalette="red">New</Badge>
+
+<Badge colorPalette="grass" variant="subtle">
+  Success
+</Badge>
+```
+
+## Dark mode
+
+Another amazing thing you can do with virtual colors is to use them with dark mode.
+
+```tsx
+<Box
+  colorPalette="orange"
+  bg={{ base: 'colorPalette.6', _dark: 'colorPalette.8' }}
+>
+  Hello World
+</Box>
+```

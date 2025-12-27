@@ -1,0 +1,73 @@
+---
+title: CSS Variables
+description: Using token-aware CSS variables in Fidely UI
+---
+
+## Overview
+
+CSS variables have become the defacto way to create shared values on the web.
+It's very useful to avoid prop interpolations, classname regeneration, and reduce runtime evaluation of token values.
+
+## Examples
+
+### Basic
+
+Use the css prop to create css variables
+
+```tsx
+<Box css={{ '--font-size': '18px' }}>
+  <h3 style={{ fontSize: 'calc(var(--font-size) * 2)' }}>Hello</h3>
+  <p style={{ fontSize: 'var(--font-size)' }}>Hello</p>
+</Box>
+```
+
+### Access tokens
+
+Use the full token path to access tokens
+
+```tsx
+<Box css={{ '--color': 'colors.red.9' }}>
+  <p style={{ color: 'var(--color)' }}>Hello World</p>
+</Box>
+```
+
+Here's an example of how to access size tokens
+
+```tsx
+<Box css={{ '--size': 'sizes.12' }}>
+  <p style={{ width: 'var(--size)', height: 'var(--size)' }}>Hello World</p>
+</Box>
+```
+
+### Responsive Styles
+
+Use the responsive syntax to make css variables responsive
+
+```tsx
+<Box css={{ '--font-size': { base: '16px', lg: '24px' } }}>
+  <h3 style={{ fontSize: 'calc(var(--font-size) * 2)' }}>Hello</h3>
+  <p style={{ fontSize: 'var(--font-size)' }}>Hello</p>
+</Box>
+```
+
+### Color Opacity Modifier
+
+When accessing color tokens, you can use the opacity modifier to access the color with an opacity.
+The requirement is to use the {} syntax.
+
+```tsx
+<Box css={{ '--color': '{colors.red.10/80}' }}>
+  <p style={{ color: 'var(--color)' }}>Hello</p>
+</Box>
+```
+
+### Virtual Color
+
+Variables can point to a virtual color via the colors.colorPalette.\* value.
+This is useful for creating theme components.
+
+```tsx
+<Box colorPalette="purple" css={{ '--color': 'colors.colorPalette.8' }}>
+  <p style={{ color: 'var(--color)' }}>Hello</p>
+</Box>
+```

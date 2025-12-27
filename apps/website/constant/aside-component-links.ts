@@ -23,7 +23,7 @@ export const asideComponentLinks = [
       { name: 'Avatar Group', linkUrl: 'avatar-group', info: '' },
       { name: 'Badge', linkUrl: 'badge', info: '' },
       { name: 'Persona', linkUrl: 'persona', info: '' },
-      { name: 'Profile', linkUrl: 'profile', info: 'New' },
+      { name: 'Profile', linkUrl: 'profile', info: '' },
       { name: 'Image', linkUrl: 'image', info: '' },
       { name: 'Table', linkUrl: 'table', info: '' },
       { name: 'Marquee', linkUrl: 'marquee', info: 'New' },
@@ -63,7 +63,7 @@ export const asideComponentLinks = [
       { name: 'Combobox', linkUrl: 'combobox', info: '' },
       { name: 'Input Group', linkUrl: 'input-group', info: '' },
       { name: 'Pin Input', linkUrl: 'pin-input', info: '' },
-      { name: 'Password Input', linkUrl: 'password-input', info: 'Updated' },
+      { name: 'Password Input', linkUrl: 'password-input', info: '' },
       { name: 'Clipboard', linkUrl: 'clipboard', info: '' },
       { name: 'Checkbox', linkUrl: 'checkbox', info: '' },
       { name: 'Switch', linkUrl: 'switch', info: '' },
@@ -97,6 +97,20 @@ export const asideUtilLinks = [
       { name: 'Portal', linkUrl: 'portal', info: '' },
       { name: 'Download Trigger', linkUrl: 'download-trigger', info: '' },
       { name: 'Formats', linkUrl: 'formats', info: '' },
+    ],
+  },
+]
+
+export const asideStylingLinks = [
+  {
+    section: 'Styling',
+    items: [
+      { name: 'Dark Mode', linkUrl: 'dark-mode', info: '' },
+      { name: 'Css Variables', linkUrl: 'css-variables', info: '' },
+      { name: 'Responsive Design', linkUrl: 'responsive-design', info: '' },
+      // { name: 'Color Opacity Modifier', linkUrl: 'color-opacity-modifier', info: '' },
+      // { name: 'Conditional Styles', linkUrl: 'conditional-styles', info: '' },
+      { name: 'Virtual Color', linkUrl: 'virtual-color', info: '' },
     ],
   },
 ]

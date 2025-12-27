@@ -108,7 +108,7 @@ export const DashboardNavBar = ({ onSearchChange }: DashboardNavBarProps) => {
   return (
     <Flex padding={'10px'}>
       <Box width={'80%'}>
-        <InputGroup>
+        <InputGroup colorPalette="orange">
           <InputAddon bg={'bg.emphasized'}>
             <BiSearch />
           </InputAddon>
@@ -126,12 +126,15 @@ export const DashboardNavBar = ({ onSearchChange }: DashboardNavBarProps) => {
               cursor="pointer"
               rounded="full"
               focusRing="outside"
-              focusRingColor={'colorPalette.default'}
+              focusRingColor={'orange.9'}
               aria-label="Open account menu"
             >
               <Avatar.Root size={'sm'}>
                 <Avatar.Fallback name="Justice Chimobi" />
-                <Avatar.Image src={'/justice-chimobi.jpeg'} />
+                <Avatar.Image
+                  src={'/justice-chimobi.jpeg'}
+                  alt="Justice Chimobi"
+                />
               </Avatar.Root>
             </Menu.Trigger>
 

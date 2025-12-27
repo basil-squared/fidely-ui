@@ -23,16 +23,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Fidely  UI',
+  metadataBase: new URL('https://fidely-ui.vercel.app'),
+  title: {
+    default: 'Fidely UI',
+    template: '%s – Fidely UI',
+  },
   description:
-    'Fidely UI is a modern, beautifully crafted React design system powered by Ark UI and Panda CSS, delivering accessible and themeable components for building exceptional web apps',
+    'Fidely UI is a modern, beautifully crafted React design system powered by Ark UI and Panda CSS, delivering accessible and themeable components for building exceptional web apps.',
+  applicationName: 'Fidely UI',
   authors: [
-    { name: 'Justice Chimobi', url: 'https://github.com/chimobi-justice' },
+    { name: 'Justice Chimobi', url: 'https://justice-chimobi.vercel.app' },
   ],
-  applicationName: 'Fidely  UI',
   keywords: [
     'fidely-ui',
     'react',
+    'fidely ui',
     'ui',
     'ark ui',
     'panda css',
@@ -43,8 +48,34 @@ export const metadata: Metadata = {
     'components',
     'library',
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      'max-snippet': -1,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Fidely UI',
+    url: 'https://fidely-ui.vercel.app',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fidely UI – React Design System',
+      },
+    ],
+  },
   twitter: {
-    creator: '@chimobijustice_',
+    card: 'summary_large_image',
+    creator: '@chimobijustice',
+    images: ['/og.png'],
   },
 }
 

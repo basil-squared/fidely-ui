@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { docs } from '~/.velite'
 import { Box, Flex, Text } from '@fidely-ui/react'
@@ -60,12 +61,28 @@ export default async function DocsPagePage({ params }: Props) {
   )
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug: slugArr } = await params
   const slug = slugArr?.join('/') || ''
   const doc = getDocBySlug(slug)
   if (!doc) return {}
-  return { title: doc.title }
+
+  const url = `https://fidely-ui.vercel.app/docs/${slug}`
+
+  return {
+    title: doc.title,
+    description: doc.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: doc.title,
+      description: doc.description,
+      url,
+      siteName: 'Fidely UI',
+      type: 'article',
+    },
+  }
 }
 
 export function generateStaticParams() {
