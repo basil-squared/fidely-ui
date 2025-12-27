@@ -7,9 +7,11 @@ import { Flex } from '@fidely-ui/react/flex'
 import { Stack } from '@fidely-ui/react/stack'
 import { Text } from '@fidely-ui/react/text'
 import { Span } from '@fidely-ui/react/span'
+import { Divider } from '@fidely-ui/react/divider'
 
 import {
   asideComponentLinks,
+  asideStylingLinks,
   asideUtilLinks,
 } from '~/constant/aside-component-links'
 import { NavItem } from '~/components/nav-item'
@@ -55,7 +57,7 @@ function Sidebar() {
       <Stack gap="6">
         {/* Getting Started */}
         <Stack gap="3">
-          <Text color={'fg.default'}>Getting Started</Text>
+          <Text fontSize="14px">Getting Started</Text>
           <Link
             href="/docs/getting-started/introduction"
             style={{ marginLeft: '6px' }}
@@ -77,9 +79,7 @@ function Sidebar() {
 
         {/* Theming */}
         <Stack gap="3">
-          <Text color="fg.default" fontSize="14px">
-            Theming
-          </Text>
+          <Text fontSize="14px">Theming</Text>
 
           <NavItem href="/docs/theming/customization" label="Customization" />
           <NavItem
@@ -91,13 +91,29 @@ function Sidebar() {
 
         {/* Styling */}
         <Stack gap="3">
-          <Text color="fg.default">Styling</Text>
+          {asideStylingLinks.map((section, index: number) => (
+            <React.Fragment key={index}>
+              <Text fontSize={'14px'}>{section.section}</Text>
 
-          <NavItem href="/docs/styling/dark-mode" label="Dark Mode" />
+              {section.items.map((item) => (
+                <NavItem
+                  key={item.name}
+                  href={`/docs/styling/${item.linkUrl}`}
+                  label={item.name}
+                  info={item.info}
+                />
+              ))}
+            </React.Fragment>
+          ))}
         </Stack>
 
         {/* Components */}
         <Stack gap="3">
+          <Text fontSize={'15px'} color="fg.disabled">
+            Components
+          </Text>
+          <Divider />
+
           {asideComponentLinks.map((section, index: number) => (
             <React.Fragment key={index}>
               <Text fontSize={'14px'}>{section.section}</Text>
