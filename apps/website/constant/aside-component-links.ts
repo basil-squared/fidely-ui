@@ -94,6 +94,11 @@ export const asideUtilLinks = [
     section: 'Utilities',
     items: [
       { name: 'Client Only', linkUrl: 'client-only', info: '' },
+      {
+        name: 'Creating a Reusable Icon',
+        linkUrl: 'creating-a-reusable-icon',
+        info: '',
+      },
       { name: 'Portal', linkUrl: 'portal', info: '' },
       { name: 'Download Trigger', linkUrl: 'download-trigger', info: '' },
       { name: 'Formats', linkUrl: 'formats', info: '' },
