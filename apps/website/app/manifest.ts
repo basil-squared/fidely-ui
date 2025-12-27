@@ -14,9 +14,9 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: '#000',
     icons: [
       {
-        src: '/favicon.ico',
+        src: '/chrome-192x192.png',
         sizes: '192x192',
-        type: 'image/x-icon',
+        type: 'image/png',
       },
     ],
   }
