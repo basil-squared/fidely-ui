@@ -5,19 +5,20 @@ description: Learn how to install and set up Fidely UI in your project.
 
 ## Getting Started
 
-Fidely UI is built on top of **Panda CSS** and **Ark UI**, designed to help you build fast, consistent, and beautiful interfaces.  
+Fidely UI is built on top of **Panda CSS** and **Ark UI**, providing fast, consistent, and beautiful interfaces.
+
 Follow the steps below to get started.
 
 ---
 
 ## Framework Support
 
-Fidely UI currently supports the following React frameworks:
+Fidely UI supports the following React frameworks:
 
-- ✅ **Next.js App Router**
-- ✅ **Next.js Pages Router**
-- ✅ **Vite (React)**
-- ✅ **React Router**
+- **Next.js App Router**
+- **Next.js Pages Router**
+- **Vite (React)**
+- **React Router**
 
 > ❌ **Gatsby is not supported yet**.
 
@@ -25,8 +26,8 @@ Fidely UI currently supports the following React frameworks:
 
 ### 1. Install Panda CSS
 
-Before installing Fidely UI, make sure you have **Panda CSS** set up in your project.  
-Follow the official Panda CSS installation guide for your **react framework**:
+Before installing Fidely UI, ensure Panda CSS is set up.
+Follow the official Panda CSS guide for your framework:
 
 👉 [Panda CSS Installation Guide](https://panda-css.com/docs/overview/getting-started#installation)
 
@@ -34,7 +35,7 @@ Follow the official Panda CSS installation guide for your **react framework**:
 
 ## 2 Install Ark UI
 
-**Ark UI** is a headless component library that forms the foundation for most components.
+**Ark UI** provides headless components that Fidely UI builds on.
 
 ```bash
 # npm
@@ -53,7 +54,7 @@ yarn add @ark-ui/react
 
 ## 3. Install Fidely UI
 
-Once Panda CSS and Ark UI are installed, add Fidely UI and its peer dependencies using your preferred package manager:
+Install Fidely UI and its peer dependencies:
 
 ```bash
 # npm
@@ -73,13 +74,7 @@ yarn add @fidely-ui/react @fidely-ui/panda-preset @fidely-ui/styled-system
 
 ## 4. Configure Panda with Fidely UI Preset
 
-After installation, update your **panda.config.ts** file to include the Fidely UI preset.
-This preset automatically adds design tokens, colors, and component recipes optimized for Fidely UI.
-
-<Callout>
-  As of **v1.2.0**, fidelyPreset now includes default options. This means it
-  works out of the box using: **fidelyPreset()**
-</Callout>
+Update your **panda.config.ts** file to include the Fidely preset:
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
@@ -112,27 +107,49 @@ export default defineConfig({
 })
 ```
 
-Note after updating your config make sure you run **panda codegen** e.g (npx panda codegen) with your package manager.
+> After updating, run panda codegen (npx panda codegen) to generate your styled system.
 
-### Note: make sure you Configure your entry css
+<Callout>
+  To remove the default Panda CSS colors (50–950) and use Fidely UI colors
+  (1/12–alpha12), add the following plugin to your Panda config.
+</Callout>
+
+```ts
+// panda.config.ts
+ plugins: [
+    {
+      name: 'panda-headless-colors',
+      hooks: {
+        'preset:resolved': ({ utils, preset, name }) => {
+          if (name === '@pandacss/preset-panda') {
+            return utils.omit(preset, ['theme.tokens.colors', 'theme.semanticTokens.colors'])
+          }
+          return preset
+        }
+      },
+    },
+  ],
+```
+
+## 5. Configure your Entry CSS
 
 ```bash
 @layer reset, base, tokens, recipes, utilities;
 ```
 
-## 5. Try Fidely UI in action
+## 6. Try Fidely UI Components
 
-Now that you’ve set everything up, create a new React component and try using a Fidely UI component!
+Create a new component and test a Fidely UI button:
 
 ```tsx
 import { Button } from '@fidely-ui/react'
 
 export default function Index() {
-  return <Button variant="solid">I am a Fidely Button</Button>
+  return <Button variant="solid">Fidely UI Button</Button>
 }
 ```
 
-You should now see your first Fidely UI button rendered beautifully in your app. 🎉
+You should now see your first Fidely UI button rendered in your app. 🎉
 
 ---
 
