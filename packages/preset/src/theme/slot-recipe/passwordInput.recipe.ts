@@ -61,14 +61,10 @@ export const passwordInputSlotRecipe = defineSlotRecipe({
       display: 'inline-flex',
       alignItems: 'center',
       color: 'colorPalette.text',
-
+      bg: 'bg.surface',
       borderRadius: '0',
       borderTopRightRadius: 's2',
       borderBottomRightRadius: 's2',
-
-      _hover: {
-        background: 'colorPalette.alpha3',
-      },
 
       _disabled: {
         color: 'fg.disabled',
