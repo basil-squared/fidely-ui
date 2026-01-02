@@ -30,11 +30,12 @@ export const ExampleCode = async (props: CodeProps) => {
         css={{
           overflow: 'auto',
           borderRadius: 'md',
-          p: 2,
+          maxH: '500px',
+          minH: '130px',
         }}
       />
       {showCopy && (
-        <Box pos="absolute" top="45" right="6">
+        <Box pos="absolute" top="10" right="6">
           <CopyButton code={code} />
         </Box>
       )}
