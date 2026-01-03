@@ -20,7 +20,7 @@
   "dependencies": {
     "@fidely-ui/panda-preset": "workspace:*",
     "@fidely-ui/react": "workspace:*",
-    "@pandacss/dev": "^1.5.1",
+    "@pandacss/dev": "^1.7.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "5.5.0",
