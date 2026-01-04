@@ -1,163 +1,139 @@
 import Link from 'next/link'
 import { Box } from '@fidely-ui/react/box'
-import { Center } from '@fidely-ui/react/center'
-import { Clipboard } from '@fidely-ui/react/clipboard'
 import { Button } from '@fidely-ui/react/button'
 import { Flex } from '@fidely-ui/react/flex'
-import { IconButton } from '@fidely-ui/react/icon-button'
-import { Input } from '@fidely-ui/react/input'
 import { Stack } from '@fidely-ui/react/stack'
 import { Heading } from '@fidely-ui/react/heading'
 import { Text } from '@fidely-ui/react/text'
-import { SiArkecosystem } from 'react-icons/si'
-import { IoLogoReact } from 'react-icons/io5'
-import { SiTypescript } from 'react-icons/si'
-import { SiFoodpanda } from 'react-icons/si'
-import { NewComponentBadge } from '~/components/new-component-badge'
-
-const Logos = [
-  {
-    href: 'https://ark-ui.com/',
-    label: 'Ark UI',
-    icon: <SiArkecosystem size={32} color="#FF7F50" />,
-  },
-  {
-    href: 'https://panda-css.com/',
-    label: 'Panda CSS',
-    icon: <SiFoodpanda size={32} color="#fde047" />,
-  },
-  {
-    href: 'https://react.dev/',
-    label: 'React',
-    icon: <IoLogoReact size={32} color="#61DAFB" />,
-  },
-  {
-    href: 'https://www.typescriptlang.org/',
-    label: 'Typescript',
-    icon: <SiTypescript size={32} color="#3178C6" />,
-  },
-]
 
 export const HeroSection = () => {
   return (
-    <Box as={'section'} height={'auto'}>
-      <Box
-        display={'flex'}
-        flexDirection={'column'}
-        justifyContent={'center'}
-        alignItems={'center'}
-        p={'15px'}
-        width={{ base: '100%', md: '65%' }}
-        m={'5rem auto'}
-        textAlign={'center'}
+    <Box
+      as="section"
+      aria-labelledby="hero-heading"
+      position="relative"
+      overflow="auto"
+    >
+      <Flex
+        justify="space-between"
+        height={{ base: '100vdh', lg: '90vh' }}
+        px="4"
+        py="4"
+        gap="2"
+        width="90%"
+        mx="auto"
       >
-        <Flex gap="3" flexDirection={{ base: 'column', md: 'row' }}>
-          <NewComponentBadge href={'/docs/components/menu'}>
-            [New] Menu Component
-          </NewComponentBadge>
-
-          <NewComponentBadge href={'/docs/components/hover-card'}>
-            [New] HoverCard Component
-          </NewComponentBadge>
-
-          <NewComponentBadge href={'/docs/components/marquee'}>
-            [New] Marquee Component
-          </NewComponentBadge>
-        </Flex>
-        <Heading
-          as="h1"
-          textStyle={{ base: '3xl', md: '7xl' }}
-          textAlign="center"
-          color={'orange.9'}
-          lineHeight={'1.4em'}
-        >
-          Build modern apps with speed and flexibility
-        </Heading>
-
-        <Text
-          my={'10px'}
-          textStyle={{ base: 'lg', md: 'xl' }}
-          color={'fg.subtle'}
-          textAlign={'center'}
-          lineHeight={'1.7em'}
-        >
-          Fidely UI is a modern, beautifully crafted React design system powered
-          by Ark UI and Panda CSS, delivering accessible and themeable
-          components for building exceptional web apps
-        </Text>
-
-        <Stack
-          flexDirection={{ base: 'column', sm: 'row' }}
-          alignItems={'center'}
-          gap="3"
-          mt={'25px'}
-          mb={'5px'}
-        >
-          <Button
-            variant={'solid'}
-            size={'xl'}
-            colorPalette={'orange'}
-            asChild
-            ripple
-            px={'30px'}
-          >
-            <Link href={'/docs/getting-started/installation'}>Get Started</Link>
-          </Button>
-
-          <Clipboard.Root value={'npm i @fidely-ui/react'} width={'100%'}>
-            <Clipboard.Control>
-              <Clipboard.Input asChild>
-                <Input />
-              </Clipboard.Input>
-              <Clipboard.Trigger asChild>
-                <IconButton variant="outline">
-                  <Clipboard.Indicator />
-                </IconButton>
-              </Clipboard.Trigger>
-            </Clipboard.Control>
-          </Clipboard.Root>
-        </Stack>
-
-        <Box mt="2rem" opacity={0.7}>
-          <Center>
-            <Text fontSize={'xs'} mb={4} mt={1}>
-              Powered by
-            </Text>
-          </Center>
-
+        <Box width={{ base: '100%', lg: '50%' }}>
           <Flex
-            alignItems="center"
-            justifyContent="center"
-            flexWrap={'wrap'}
-            gap={8}
-            display={'flex'}
+            flexDirection="column"
+            justify="center"
+            height={{ base: '100vdh', lg: '85vh' }}
           >
-            {Logos.map(({ href, label, icon }) => (
-              <Link
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Flex
-                  direction="column"
-                  alignItems="center"
-                  gap={3}
-                  _hover={{
-                    textDecoration: 'none',
-                    transform: 'scale(1.05)',
-                  }}
+            <Stack gap="7">
+              <Stack gap="4">
+                <Heading
+                  as="h1"
+                  id="hero-heading"
+                  size={{ base: '3xl', lg: '5xl' }}
+                  colorPalette="orange"
+                  color="colorPalette.default"
+                  lineHeight="1.4em"
                 >
-                  <Box fontSize={{ base: 'sm', md: '2xl' }}>{icon}</Box>
-                  <Text textStyle={{ base: 'sm', md: 'md' }} mt={1}>
-                    {label}
-                  </Text>
-                </Flex>
-              </Link>
-            ))}
+                  Build modern apps with speed and flexibility
+                </Heading>
+
+                <Heading
+                  as="h2"
+                  size={{ base: '2xl', lg: '4xl' }}
+                  color="fg.muted"
+                >
+                  UI library for modern React apps
+                </Heading>
+              </Stack>
+
+              <Text color="fg.disabled" size={{ base: 'md', lg: 'lg' }}>
+                Fidely UI is a modern, beautifully crafted React design system
+                powered by{' '}
+                <Text
+                  as="strong"
+                  colorPalette="orange"
+                  color="colorPalette.default"
+                >
+                  <a href="https://ark-ui.com/">Ark UI</a>
+                </Text>{' '}
+                and{' '}
+                <Text
+                  as="strong"
+                  colorPalette="orange"
+                  color="colorPalette.default"
+                >
+                  <a href="https://panda-css.com/">Panda CSS</a>
+                </Text>
+                , delivering accessible and themeable components for building
+                exceptional web apps
+              </Text>
+
+              <Stack flexDirection={{ base: 'column', md: 'row' }}>
+                <Button
+                  asChild
+                  size={{ base: 'md', lg: 'lg' }}
+                  colorPalette="orange"
+                >
+                  <Link
+                    href="/http://localhost:3000/docs/getting-started/installation"
+                    aria-label="Getting Started with Fidely UI documentation"
+                  >
+                    Get Started
+                  </Link>
+                </Button>
+
+                <Button
+                  asChild
+                  colorPalette="gray"
+                  variant="subtle"
+                  size={{ base: 'md', lg: 'lg' }}
+                >
+                  <Link href="/#" aria-label="Explore Fidely UI blockss">
+                    Explore Blocks
+                  </Link>
+                </Button>
+              </Stack>
+            </Stack>
           </Flex>
         </Box>
-      </Box>
+
+        <Box
+          aria-hidden="true"
+          role="presentation"
+          display={{ base: 'none', lg: 'block' }}
+          width="50%"
+          height="100%"
+          position="absolute"
+          top="0"
+          right="0"
+          clipPath="polygon(12% 0, 100% 0, 100% 100%, 0 100%)"
+          overflow="hidden"
+          zIndex="10"
+        >
+          <Box
+            position="absolute"
+            inset="0"
+            backgroundImage={`url("/hero-showcase.png")`}
+            backgroundPosition="left"
+            backgroundRepeat="no-repeat"
+            backgroundSize="cover"
+          />
+
+          <Box
+            position="absolute"
+            inset="0"
+            bg={{
+              base: 'bg.emphasized/60',
+              _dark: 'bg.emphasized/30',
+            }}
+          />
+        </Box>
+      </Flex>
     </Box>
   )
 }

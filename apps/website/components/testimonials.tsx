@@ -14,7 +14,7 @@ import { testimonials } from '~/constant/testimonials'
 
 export const Testimonials = () => {
   return (
-    <Box as="section" px={{ base: '6', md: '12' }} py="12" mt="16">
+    <Box as="section" px="4" py="4" mt="16">
       <Box textAlign={'left'} mb={'25px'} width={'90%'} mx={'auto'}>
         <Heading
           as="h4"
@@ -33,7 +33,11 @@ export const Testimonials = () => {
       <Grid
         w={{ base: '100%', md: '90%' }}
         mx="auto"
-        gridTemplateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }}
+        gridTemplateColumns={{
+          base: '1fr',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+        }}
         gap={{ base: '2', md: '3' }}
       >
         {testimonials.map(({ name, role, image, text, linkUrl }) => {

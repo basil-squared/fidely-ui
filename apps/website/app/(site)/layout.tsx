@@ -1,4 +1,5 @@
 import { Footer } from '~/components/footer'
+import { SiteNavBar } from '~/components/site-navbar'
 
 export default function SiteLayout({
   children,
@@ -7,6 +8,7 @@ export default function SiteLayout({
 }) {
   return (
     <>
+      <SiteNavBar />
       {children}
       <Footer />
     </>

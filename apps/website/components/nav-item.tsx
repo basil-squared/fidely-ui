@@ -8,15 +8,16 @@ interface NavItemProps {
   label: string
   info?: string
   closeDrawer?: () => void
+  fontSize?: string
 }
 
 export const NavItem = (props: NavItemProps) => {
-  const { href, label, info, closeDrawer } = props
+  const { href, label, info, fontSize = '13px', closeDrawer } = props
 
   return (
     <Link href={href} onClick={closeDrawer} style={{ marginLeft: '6px' }}>
       <Stack direction="row" align="center" gap="1">
-        <Span color="fg.muted" fontSize="13px">
+        <Span color="fg.muted" fontSize={fontSize}>
           {label}
         </Span>
         {info && <InfoBadge info={info} />}
@@ -29,7 +30,7 @@ interface InfoBadgeProps {
   info: string
 }
 
-const InfoBadge = ({ info }: InfoBadgeProps) => {
+export const InfoBadge = ({ info }: InfoBadgeProps) => {
   return (
     <FidelyBadge colorPalette="orange" size="sm">
       {info}

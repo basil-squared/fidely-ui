@@ -26,7 +26,7 @@ export default async function DocsPagePage({ params }: Props) {
     <DocsPage>
       <Flex gap={6} position="relative" alignItems="flex-start" py={6}>
         {/* Main content */}
-        <Box flex="1" maxW={{ base: '100%', md: '75%' }} px={4}>
+        <Box flex="1" maxW={{ base: '100%', lg: '75%' }} px={4}>
           <article className="doc-container">
             <DocPageHeader data={doc} />
 
@@ -42,7 +42,7 @@ export default async function DocsPagePage({ params }: Props) {
           alignSelf="flex-start"
           px={4}
           py={2}
-          display={{ base: 'none', md: 'block' }}
+          display={{ base: 'none', lg: 'block' }}
         >
           <Text fontWeight="medium" mb={2}>
             On this page

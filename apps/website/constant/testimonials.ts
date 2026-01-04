@@ -31,6 +31,6 @@ export const testimonials = [
   {
     name: 'Elena Petrova',
     role: 'Frontend Lead',
-    text: 'The gradient styling and brand-first approach really stand out. Our product finally looks modern and consistent.',
+    text: 'The gradient styling and brand first approach really stand out. Our product finally looks modern and consistent.',
   },
 ]

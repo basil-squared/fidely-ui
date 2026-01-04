@@ -63,8 +63,8 @@ export const DashboardSideBar = () => {
   return (
     <Box position={'relative'} height={'100vh'}>
       <Box padding={'10px'} borderBottom={'0.6px solid white'}>
-        <Heading fontWeight={'bold'} as={'h3'} textStyle={'2xl'}>
-          Fidely Inc.
+        <Heading fontWeight={'bold'} as={'h3'} textStyle={'xl'}>
+          Fidely Labs.
         </Heading>
       </Box>
 

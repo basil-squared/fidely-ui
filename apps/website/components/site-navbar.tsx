@@ -3,21 +3,19 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Box } from '@fidely-ui/react/box'
-import { Button } from '@fidely-ui/react/button'
 import { Flex } from '@fidely-ui/react/flex'
 import { IconButton } from '@fidely-ui/react/icon-button'
-import { CommandInput } from '@fidely-ui/react/command-input'
 import { Text } from '@fidely-ui/react/text'
 import { useDialog } from '@fidely-ui/react/dialog'
+import { Stack } from '@fidely-ui/react/stack'
 import { FaGithub, FaBars } from 'react-icons/fa6'
-import { FcLike } from 'react-icons/fc'
 
 import { ColorModeButton } from '~/components/color-mode-button'
 import { Drawer } from '~/components/drawer'
 import { AppLogo } from '~/components/logo'
-import { SearchDialog } from '~/components/search-dialog'
+import { InfoBadge, NavItem } from '~/components/nav-item'
 
-export const NavBar = () => {
+export const SiteNavBar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   const toggleDrawer = () => setIsDrawerOpen((prev) => !prev)
@@ -26,19 +24,13 @@ export const NavBar = () => {
   const dialog = useDialog()
 
   const navLinks = [
-    { href: '/docs/getting-started/installation', label: 'Docs' },
-    // { href: '#', label: 'Blogs' },
+    { href: '/docs/getting-started/installation', label: 'Docs', info: false },
+    { href: '#', label: 'Templates', info: true },
+    { href: '/docs/components/accordion', label: 'Components', info: false },
   ]
 
   return (
-    <Box
-      as="nav"
-      bg={'bg.default'}
-      backdropFilter="blur(10px)"
-      shadow={'2xs'}
-      px="4"
-      py="4"
-    >
+    <Box as="nav" px="4" py="4">
       <Flex
         w="90%"
         mx="auto"
@@ -54,23 +46,7 @@ export const NavBar = () => {
           alignItems="center"
           display={{ base: 'none', md: 'flex' }}
         >
-          <Button variant={'ghost'} ripple asChild>
-            <Link
-              href={'https://ko-fi.com/fidely_ui'}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FcLike /> Sponsor
-            </Link>
-          </Button>
-
-          <CommandInput
-            onOpen={() => dialog.setOpen(true)}
-            width={'200px'}
-            shortcut="/"
-          />
-
-          {navLinks.map(({ href, label }, index: number) => (
+          {navLinks.map(({ href, label, info }, index) => (
             <Text
               key={index}
               transition="color 0.2s ease"
@@ -79,7 +55,9 @@ export const NavBar = () => {
                 _dark: { color: 'fg.muted' },
               }}
             >
-              <Link href={href}>{label}</Link>
+              <Link href={href}>
+                {label} {info && <InfoBadge info="soon" />}
+              </Link>
             </Text>
           ))}
 
@@ -88,6 +66,7 @@ export const NavBar = () => {
             aria-label="GitHub Repository"
             variant="ghost"
             size="xs"
+            title="Github"
           >
             <Link
               href="https://github.com/fidely-ui/fidely-ui"
@@ -102,21 +81,7 @@ export const NavBar = () => {
         </Flex>
 
         {/* Mobile Menu Button */}
-        <Box display={{ base: 'block', md: 'none' }}>
-          <IconButton
-            asChild
-            aria-label="Sponsor Fidely UI"
-            variant="plain"
-            size="xs"
-          >
-            <Link
-              href="https://ko-fi.com/fidely_ui"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FcLike />
-            </Link>
-          </IconButton>
+        <Box display={{ base: 'flex', md: 'none' }} alignItems="center">
           <ColorModeButton />
 
           <IconButton
@@ -148,12 +113,44 @@ export const NavBar = () => {
       {/* Mobile Menu Drawer */}
       <Drawer
         isOpen={isDrawerOpen}
+        isInput={false}
         closeDrawer={closeDrawer}
         commandOpen={() => dialog.setOpen(true)}
-      />
-
-      {/* search dialog/combobox */}
-      <SearchDialog value={dialog} />
+      >
+        <SiteMobileLinks closeDrawer={closeDrawer} />
+      </Drawer>
     </Box>
+  )
+}
+
+interface SiteMobileLinksProps {
+  closeDrawer: () => void
+}
+
+const SiteMobileLinks = ({ closeDrawer }: SiteMobileLinksProps) => {
+  return (
+    <Stack mt="3">
+      <Stack gap="8">
+        <NavItem
+          href="/docs/getting-started/installation"
+          label="Documentation"
+          closeDrawer={closeDrawer}
+          fontSize="18px"
+        />
+
+        <NavItem
+          href="/docs/components/accordion"
+          label="Components"
+          closeDrawer={closeDrawer}
+          fontSize="18px"
+        />
+        <NavItem
+          href="/docs/getting-started/installation"
+          label="Templates"
+          closeDrawer={closeDrawer}
+          fontSize="18px"
+        />
+      </Stack>
+    </Stack>
   )
 }
