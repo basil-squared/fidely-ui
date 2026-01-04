@@ -10,10 +10,9 @@ import { LuHeartHandshake } from 'react-icons/lu'
 
 export const BottomHeroSection = () => {
   return (
-    <Box as="nav" px="4" py="6">
+    <Box as="section" px="4" py="6">
       <Flex
         as="ul"
-        role="list"
         mt="4.5"
         gap="6"
         mb="2.5"
@@ -23,7 +22,7 @@ export const BottomHeroSection = () => {
         justify="space-between"
         flexDirection={{ base: 'column', lg: 'row' }}
       >
-        <Box as="li" width={{ base: '100%', lg: '45%' }}>
+        <Box as="li" width={{ base: '100%', lg: '30%' }}>
           <Stack gap="3">
             <Flex align="center" gap="2">
               <Box
@@ -51,7 +50,7 @@ export const BottomHeroSection = () => {
           </Stack>
         </Box>
 
-        <Box as="li" width={{ base: '100%', lg: '45%' }}>
+        <Box as="li" width={{ base: '100%', lg: '30%' }}>
           <Stack gap="3">
             <Flex align="center" gap="2">
               <Box
@@ -78,7 +77,7 @@ export const BottomHeroSection = () => {
           </Stack>
         </Box>
 
-        <Box as="li" width={{ base: '100%', lg: '45%' }}>
+        <Box as="li" width={{ base: '100%', lg: '30%' }}>
           <Stack gap="3">
             <Flex align="center" gap="2">
               <Box

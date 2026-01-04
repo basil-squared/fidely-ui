@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Box } from '@fidely-ui/react/box'
 import { Flex } from '@fidely-ui/react/flex'
 import { Paper } from '@fidely-ui/react/paper'
 import { Center } from '@fidely-ui/react/center'
 import { Heading } from '@fidely-ui/react/heading'
-import { Image } from '@fidely-ui/react/image'
 import { Stack } from '@fidely-ui/react/stack'
 import { Text } from '@fidely-ui/react/text'
 
@@ -55,7 +55,14 @@ export const SponsorSection = () => {
               >
                 <Center>
                   <Stack>
-                    <Image src="/sponsor-1.png/" width="300px" />
+                    <Image
+                      src="/sponsor-1.png"
+                      width="300"
+                      height="200"
+                      alt="kofi logo"
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsn9pfDwAFogI0qPkC4wAAAABJRU5ErkJggg=="
+                    />
                     <Text
                       textAlign="center"
                       size="2xl"

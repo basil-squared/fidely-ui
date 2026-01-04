@@ -25,7 +25,7 @@ const community = [
   { href: 'https://x.com/FidelyUi', label: 'Twitter' },
   { href: 'https://www.github.com/chimobi-justice', label: 'Follow on Github' },
   {
-    href: 'https://github.com/fidely-ui/fidely-ui',
+    href: 'https://github.com/fidely-ui/fidely-ui/discussions',
     label: 'Github Discussions',
   },
 ]

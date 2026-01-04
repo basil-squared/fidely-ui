@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Box } from '@fidely-ui/react/box'
 import { Button } from '@fidely-ui/react/button'
@@ -80,7 +81,7 @@ export const HeroSection = () => {
                   colorPalette="orange"
                 >
                   <Link
-                    href="/http://localhost:3000/docs/getting-started/installation"
+                    href="/docs/getting-started/installation"
                     aria-label="Getting Started with Fidely UI documentation"
                   >
                     Get Started
@@ -104,7 +105,6 @@ export const HeroSection = () => {
 
         <Box
           aria-hidden="true"
-          role="presentation"
           display={{ base: 'none', lg: 'block' }}
           width="50%"
           height="100%"
@@ -115,15 +115,21 @@ export const HeroSection = () => {
           overflow="hidden"
           zIndex="10"
         >
-          <Box
-            position="absolute"
-            inset="0"
-            backgroundImage={`url("/hero-showcase.png")`}
-            backgroundPosition="left"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
+          <Image
+            src="/hero-showcase.png"
+            alt="hero image showcase"
+            fill
+            priority
+            sizes="50vw"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsn9pfDwAFogI0qPkC4wAAAABJRU5ErkJggg=="
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'left',
+            }}
           />
 
+          {/* overlay */}
           <Box
             position="absolute"
             inset="0"
