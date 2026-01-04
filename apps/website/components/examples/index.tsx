@@ -2,6 +2,9 @@
 
 import { Box } from '@fidely-ui/react/box'
 import { Tabs } from '@fidely-ui/react/tabs'
+import { Center } from '@fidely-ui/react/center'
+import { Grid, GridItem } from '@fidely-ui/react/grid'
+import { Heading } from '@fidely-ui/react/heading'
 
 import {
   TeamMembers,
@@ -12,8 +15,7 @@ import {
   MoreComponents,
 } from '~/components/examples/examples'
 import { AuthenticationExample } from '~/components/examples/authentication'
-import { Grid, GridItem } from '@fidely-ui/react'
-import { DashboardExample } from './dashboard-example'
+import { DashboardExample } from '~/components/examples/dashboard-example'
 
 const exampleComponents = [
   BillingAddress,
@@ -27,6 +29,11 @@ const exampleComponents = [
 export const ExampleSection = () => {
   return (
     <Box minH="auto" width={'90%'} mx={'auto'}>
+      <Center minH="100px">
+        <Heading size="2xl" colorPalette="orange" color="colorPalette.default">
+          Quick Examples
+        </Heading>
+      </Center>
       <Tabs.Root variant="underline" defaultValue="examples">
         <Tabs.List>
           {['examples', 'dashboard', 'authentication'].map((tab) => (
@@ -42,7 +49,11 @@ export const ExampleSection = () => {
 
         <Tabs.Content value="examples">
           <Grid
-            gridTemplateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }}
+            gridTemplateColumns={{
+              base: '1fr',
+              md: 'repeat(2, 1fr)',
+              lg: 'repeat(3, 1fr)',
+            }}
             gap={{ base: '2', md: '3' }}
           >
             {exampleComponents.map((Component, i) => (
