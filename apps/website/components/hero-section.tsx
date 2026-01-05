@@ -60,7 +60,13 @@ export const HeroSection = () => {
                   colorPalette="orange"
                   color="colorPalette.default"
                 >
-                  <a href="https://ark-ui.com/">Ark UI</a>
+                  <a
+                    href="https://ark-ui.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ark UI
+                  </a>
                 </Text>{' '}
                 and{' '}
                 <Text
@@ -68,7 +74,13 @@ export const HeroSection = () => {
                   colorPalette="orange"
                   color="colorPalette.default"
                 >
-                  <a href="https://panda-css.com/">Panda CSS</a>
+                  <a
+                    href="https://panda-css.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Panda CSS
+                  </a>
                 </Text>
                 , delivering accessible and themeable components for building
                 exceptional web apps
@@ -94,7 +106,10 @@ export const HeroSection = () => {
                   variant="subtle"
                   size={{ base: 'md', lg: 'lg' }}
                 >
-                  <Link href="#" aria-label="Explore Fidely UI blockss">
+                  <Link
+                    href="/docs/getting-started/installation"
+                    aria-label="Explore Fidely UI blocks coming soon"
+                  >
                     Explore Blocks
                   </Link>
                 </Button>
