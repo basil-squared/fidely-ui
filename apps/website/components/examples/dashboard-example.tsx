@@ -64,7 +64,7 @@ export const DashboardSideBar = () => {
     <Box position={'relative'} height={'100vh'}>
       <Box padding={'10px'} borderBottom={'0.6px solid white'}>
         <Heading fontWeight={'bold'} as={'h3'} textStyle={'xl'}>
-          Fidely Labs.
+          Fidely UI.
         </Heading>
       </Box>
 
