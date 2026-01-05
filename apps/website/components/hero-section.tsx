@@ -94,7 +94,7 @@ export const HeroSection = () => {
                   variant="subtle"
                   size={{ base: 'md', lg: 'lg' }}
                 >
-                  <Link href="/#" aria-label="Explore Fidely UI blockss">
+                  <Link href="#" aria-label="Explore Fidely UI blockss">
                     Explore Blocks
                   </Link>
                 </Button>
