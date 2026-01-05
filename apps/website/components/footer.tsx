@@ -168,9 +168,7 @@ export const Footer = () => {
         mt="5"
         py="4"
       >
-        <Text>
-          © {new Date().getFullYear()} Fidely Labs. All rights reserved
-        </Text>
+        <Text>© {new Date().getFullYear()} Fidely UI. All rights reserved</Text>
       </Box>
     </Box>
   )
