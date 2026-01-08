@@ -22,7 +22,7 @@ export const Drawer = (props: DrawerProps) => {
         css={{
           position: 'fixed',
           inset: '0',
-          bg: 'black/40',
+          bg: 'black/55',
           backdropFilter: 'blur(6px)',
           zIndex: 40,
         }}
@@ -36,7 +36,8 @@ export const Drawer = (props: DrawerProps) => {
           overflowY: 'auto',
           top: 0,
           right: 0,
-          width: '70%',
+          width: '75%',
+          maxWidth: '380px',
           height: '100%',
           bg: 'bg.default',
           p: '20px',
