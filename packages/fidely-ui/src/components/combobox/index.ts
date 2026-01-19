@@ -47,7 +47,6 @@ export {
   useCombobox,
   useComboboxContext,
   useComboboxItemContext,
-  useListCollection,
 } from '@ark-ui/react/combobox'
 
 export type {

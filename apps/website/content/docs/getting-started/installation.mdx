@@ -58,17 +58,17 @@ Install Fidely UI and its peer dependencies:
 
 ```bash
 # npm
-npm install @fidely-ui/react @fidely-ui/panda-preset @fidely-ui/styled-system
+npm install @fidely-ui/react @fidely-ui/panda-preset
 ```
 
 ```bash
 # pnpm
-pnpm add @fidely-ui/react @fidely-ui/panda-preset @fidely-ui/styled-system
+pnpm add @fidely-ui/react @fidely-ui/panda-preset
 ```
 
 ```bash
 # yarn
-yarn add @fidely-ui/react @fidely-ui/panda-preset @fidely-ui/styled-system
+yarn add @fidely-ui/react @fidely-ui/panda-preset
 
 ```
 
@@ -88,10 +88,10 @@ export default defineConfig({
 
   // Specify where Panda should look for your CSS declarations
   include: [
+    './node_modules/@fidely-ui/react/**/*.{ts,tsx,js,jsx}'  // to scan @fidely-ui/react components
     './app/**/*.{js,jsx,ts,tsx}', // Replace with your app source directory
   ],
 
-  importMap: '@fidely-ui/styled-system',
   // The output directory for your css system
   outdir: 'styled-system',
   jsxFramework: 'react',

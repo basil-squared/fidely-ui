@@ -2,11 +2,8 @@
 
 import type { Assign, PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import type { HTMLStyledProps } from '@fidely-ui/styled-system/types'
-import {
-  profile,
-  type ProfileVariantProps,
-} from '@fidely-ui/styled-system/recipes'
+import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { profile, type ProfileVariantProps } from 'styled-system/recipes'
 
 import { makeStyleContext } from '../../system/make-style-context'
 
@@ -14,10 +11,12 @@ const { withSlotProvider, withSlotContext } = makeStyleContext(profile)
 
 // -------------------- Root --------------------
 export interface ProfileRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, PolymorphicProps>,
-    ProfileVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, PolymorphicProps>,
+      ProfileVariantProps
+    >,
+    UnstyledProps {}
 
 export const ProfileRoot = withSlotProvider<HTMLDivElement, ProfileRootProps>(
   ark.div,
@@ -26,7 +25,7 @@ export const ProfileRoot = withSlotProvider<HTMLDivElement, ProfileRootProps>(
 
 // -------------------- Details --------------------
 export interface ProfileDetailsProps
-  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps>, UnstyledProps {}
 
 export const ProfileDetails = withSlotContext<
   HTMLDivElement,
@@ -35,7 +34,7 @@ export const ProfileDetails = withSlotContext<
 
 // -------------------- Name --------------------
 export interface ProfileNameProps
-  extends Assign<HTMLStyledProps<'h2'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'h2'>, PolymorphicProps>, UnstyledProps {}
 
 export const ProfileName = withSlotContext<
   HTMLHeadingElement,
@@ -44,7 +43,7 @@ export const ProfileName = withSlotContext<
 
 // -------------------- Title --------------------
 export interface ProfileTitleProps
-  extends Assign<HTMLStyledProps<'h3'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'h3'>, PolymorphicProps>, UnstyledProps {}
 
 export const ProfileTitle = withSlotContext<
   HTMLHeadingElement,
@@ -53,7 +52,7 @@ export const ProfileTitle = withSlotContext<
 
 // -------------------- AvatarWrapper --------------------
 export interface ProfileAvatarWrapperProps
-  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps>, UnstyledProps {}
 
 export const ProfileAvatarWrapper = withSlotContext<
   HTMLDivElement,

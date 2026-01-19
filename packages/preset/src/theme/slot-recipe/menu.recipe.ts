@@ -1,11 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { menuAnatomy } from '@ark-ui/react/anatomy'
+
+import { menuAnatomy } from '../../anatomy/index'
 
 export const menuSlotRecipe = defineSlotRecipe({
   className: 'fidely-menu',
   jsx: ['Menu', /Menu$/],
   description: 'Styles for the Fidely UI Menu component',
-  slots: menuAnatomy.keys(),
+  slots: menuAnatomy.keys,
 
   base: {
     content: {

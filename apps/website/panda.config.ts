@@ -16,15 +16,41 @@ export default defineConfig({
     './app/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
     '../patherns/src/examples/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/**/*.{ts,tsx,js,jsx}',
   ],
-  importMap: '@fidely-ui/styled-system',
+
   outdir: 'styled-system',
+
   jsxFramework: 'react',
+
   staticCss: {
     recipes: '*',
   },
+
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        float: {
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-12px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+
+      animationStyles: {
+        float: {
+          value: {
+            animation: 'float 6s ease-in-out infinite',
+          },
+        },
+
+        floatSlow: {
+          value: {
+            animation: 'float 9s ease-in-out infinite',
+          },
+        },
+      },
+    },
   },
 
   globalCss: {

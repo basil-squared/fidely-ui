@@ -1,9 +1,10 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { selectAnatomy } from '../../anatomy'
+
+import { selectAnatomy } from '../../anatomy/index'
 
 export const selectSlotRecipe = defineSlotRecipe({
   className: 'fidely-select',
-  slots: selectAnatomy.keys(),
+  slots: selectAnatomy.keys,
   description: 'Styles for the Fidely UI Select component',
 
   base: {

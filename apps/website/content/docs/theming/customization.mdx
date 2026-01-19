@@ -43,11 +43,10 @@ export default defineConfig({
 
   // Files to scan for classnames and recipes
   include: [
+    './node_modules/@fidely-ui/react/**/*.{ts,tsx,js,jsx}'  // to scan @fidely-ui/react components
     './src/components/**/*.{ts,tsx,js,jsx}',
     './src/app/**/*.{ts,tsx,js,jsx}',
   ],
-
-  importMap: '@fidely-ui/styled-system',
 
   // The output directory for your css system
   outdir: 'styled-system',

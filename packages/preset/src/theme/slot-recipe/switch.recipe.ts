@@ -1,9 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { switchAnatomy } from '@ark-ui/react/anatomy'
+
+import { switchAnatomy } from '../../anatomy/index'
 
 export const switchSlotRecipe = defineSlotRecipe({
   className: 'fidely-switch',
-  slots: switchAnatomy.keys(),
+  slots: switchAnatomy.keys,
+  description: 'Styles for the Fidely UI Switch component',
+
   jsx: ['Switch'],
   base: {
     root: {

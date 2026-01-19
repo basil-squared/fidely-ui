@@ -2,9 +2,9 @@
 
 import { ark } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { skeleton } from '@fidely-ui/styled-system/recipes'
-import type { HTMLStyledProps } from '@fidely-ui/styled-system/types'
+import { styled } from 'styled-system/jsx'
+import { skeleton } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/types'
 
 const StyledSkeleton = styled(ark.div, skeleton)
 

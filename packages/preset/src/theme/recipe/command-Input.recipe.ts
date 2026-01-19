@@ -3,68 +3,54 @@ import { defineRecipe } from '@pandacss/dev'
 export const commandInputRecipe = defineRecipe({
   className: 'fidely-command-input',
   base: {
+    appearance: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    w: 'full',
+    w: '100%',
+    height: 'var(--command-input-height)',
+    minW: 'var(--command-input-height)',
+    '--default-color': 'colors.colorPalette.default',
     borderWidth: '1px',
     borderColor: 'border.default',
     bg: 'bg.subtle',
+    outline: '0',
     rounded: 'md',
     cursor: 'pointer',
     transition: 'background 0.2s ease',
     _hover: {
       bg: 'bg.surface',
     },
-
-    _icon: {
-      width: '3.5',
-      height: '3.5',
+    _focus: {
+      outline: 'none',
+    },
+    _focusVisible: {
+      outline: '2px solid',
+      outlineColor: 'colorPalette.default',
+      outlineOffset: '2px',
+      boxShadow: '0 0 0 1px var(--default-color)',
     },
   },
+
   variants: {
     size: {
-      '2xs': {
-        h: '7',
-        minH: '7',
-        textStyle: 'xs',
-        px: '2',
-      },
-      xs: {
-        h: '8',
-        minH: '8',
-        textStyle: 'xs',
-        px: '2',
-      },
       sm: {
-        h: '9',
-        minH: '9',
+        '--command-input-height': 'sizes.9',
         textStyle: 'sm',
-        px: '2.3',
+        px: '2.5',
+        _icon: { width: '4', height: '4' },
       },
       md: {
-        h: '10',
-        minH: '10',
+        '--command-input-height': 'sizes.10',
         textStyle: 'sm',
-        px: '3',
+        px: '2.5',
+        _icon: { width: '4.5', height: '4.5' },
       },
       lg: {
-        h: '11',
-        minH: '11',
+        '--command-input-height': 'sizes.11',
         textStyle: 'md',
-        px: '4',
-      },
-      xl: {
-        h: '12',
-        minH: '12',
-        textStyle: 'md',
-        px: '4.6',
-      },
-      '2xl': {
-        h: '16',
-        minH: '16',
-        textStyle: 'lg',
-        px: '5',
+        px: '3',
+        _icon: { width: '5', height: '5' },
       },
     },
   },

@@ -18,10 +18,10 @@ export default defineConfig({
     './pages/**/*.{js,jsx,ts,tsx}',
     './stories/**/*.{js,jsx,ts,tsx}',
     '../patherns/src/examples/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/**/*.{ts,tsx,js,jsx}',
   ],
   // Files to exclude
   exclude: [],
-  importMap: '@fidely-ui/styled-system',
   // The output directory for your css system
   outdir: 'styled-system',
   staticCss: {
@@ -30,4 +30,6 @@ export default defineConfig({
   theme: {
     extend: {},
   },
+
+  jsxFramework: 'react',
 })

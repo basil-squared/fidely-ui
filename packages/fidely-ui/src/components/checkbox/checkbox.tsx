@@ -2,23 +2,23 @@
 
 import type { Assign } from '@ark-ui/react'
 import { Checkbox as ArkCheckbox } from '@ark-ui/react/checkbox'
-import { HTMLStyledProps } from '@fidely-ui/styled-system/jsx'
-import {
-  checkbox,
-  CheckboxVariantProps,
-} from '@fidely-ui/styled-system/recipes'
+import { HTMLStyledProps } from 'styled-system/jsx'
+import { checkbox, CheckboxVariantProps } from 'styled-system/recipes'
 
 import { makeStyleContext } from '../../system/make-style-context'
-import { FiCheck } from '../icons/FiCheck'
+import { FiCheck } from '../../icons/FiCheck'
+import { UnstyledProps } from 'styled-system/types'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(checkbox)
 
 // -------------------- Root Provider --------------------
 export interface CheckboxRootProviderProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkCheckbox.RootProviderBaseProps>,
-    CheckboxVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkCheckbox.RootProviderBaseProps>,
+      CheckboxVariantProps
+    >,
+    UnstyledProps {}
 
 export const CheckboxRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -27,10 +27,12 @@ export const CheckboxRootProvider = withSlotProvider<
 
 // -------------------- Root --------------------
 export interface CheckboxRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkCheckbox.RootBaseProps>,
-    CheckboxVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkCheckbox.RootBaseProps>,
+      CheckboxVariantProps
+    >,
+    UnstyledProps {}
 
 export const CheckboxRoot = withSlotProvider<HTMLDivElement, CheckboxRootProps>(
   ArkCheckbox.Root,
@@ -39,7 +41,9 @@ export const CheckboxRoot = withSlotProvider<HTMLDivElement, CheckboxRootProps>(
 
 // -------------------- Group --------------------
 export interface CheckboxGroupProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCheckbox.GroupBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCheckbox.GroupBaseProps>,
+    UnstyledProps {}
 
 export const CheckboxGroup = withSlotContext<
   HTMLDivElement,
@@ -48,7 +52,9 @@ export const CheckboxGroup = withSlotContext<
 
 // -------------------- Control --------------------
 export interface CheckboxControlProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCheckbox.ControlBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCheckbox.ControlBaseProps>,
+    UnstyledProps {}
 
 export const CheckboxControl = withSlotContext<
   HTMLDivElement,
@@ -57,7 +63,9 @@ export const CheckboxControl = withSlotContext<
 
 // -------------------- Label --------------------
 export interface CheckboxLabelProps
-  extends Assign<HTMLStyledProps<'span'>, ArkCheckbox.LabelBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'span'>, ArkCheckbox.LabelBaseProps>,
+    UnstyledProps {}
 
 export const CheckboxLabel = withSlotContext<
   HTMLSpanElement,
@@ -66,7 +74,9 @@ export const CheckboxLabel = withSlotContext<
 
 // -------------------- Indicator --------------------
 export interface CheckboxIndicatorProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCheckbox.IndicatorBaseProps> {
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCheckbox.IndicatorBaseProps>,
+    UnstyledProps {
   idleIcon?: React.ReactNode
 }
 

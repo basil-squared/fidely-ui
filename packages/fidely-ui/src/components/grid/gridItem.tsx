@@ -3,16 +3,14 @@
 import { forwardRef } from 'react'
 import { type PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
-import {
-  gridItem,
-  type GridItemProperties,
-} from '@fidely-ui/styled-system/patterns'
+import { HTMLStyledProps, styled } from 'styled-system/jsx'
+import { gridItem, type GridItemProperties } from 'styled-system/patterns'
 
 import { splitProps } from '../../utils/split-props'
 
 export interface GridItemProps
-  extends Omit<HTMLStyledProps<'div'>, keyof GridItemProperties>,
+  extends
+    Omit<HTMLStyledProps<'div'>, keyof GridItemProperties>,
     GridItemProperties,
     PolymorphicProps {}
 

@@ -17,7 +17,7 @@ export const globalCss = defineGlobalStyles({
     color: 'fg.muted/80',
   },
   '*::selection': {
-    bg: 'gray.7',
+    bg: '#0073ff4d',
     color: 'white',
   },
 })

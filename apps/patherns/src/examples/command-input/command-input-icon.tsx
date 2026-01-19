@@ -1,5 +1,3 @@
-'use client'
-
 import { CommandInput } from '@fidely-ui/react/command-input'
 import { LuUserRoundSearch } from 'react-icons/lu'
 

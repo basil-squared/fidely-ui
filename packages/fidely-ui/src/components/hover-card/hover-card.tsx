@@ -2,11 +2,8 @@
 
 import type { Assign } from '@ark-ui/react'
 import { HoverCard as ArkHoverCard } from '@ark-ui/react/hover-card'
-import {
-  hoverCard,
-  type HoverCardVariantProps,
-} from '@fidely-ui/styled-system/recipes'
-import { HTMLStyledProps } from '@fidely-ui/styled-system/types'
+import { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'
+import { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
 
 import { makeStyleContext } from '../../system/make-style-context'
 
@@ -14,20 +11,24 @@ const { withSlotRootProvider, withSlotContext } = makeStyleContext(hoverCard)
 
 // -------------------- RootProvider --------------------
 export interface HoverCardRootProviderProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkHoverCard.RootProviderBaseProps>,
-    HoverCardVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkHoverCard.RootProviderBaseProps>,
+      HoverCardVariantProps
+    >,
+    UnstyledProps {}
 
 export const HoverCardRootProvider =
   withSlotRootProvider<HoverCardRootProviderProps>(ArkHoverCard.RootProvider)
 
 // -------------------- Root --------------------
 export interface HoverCardRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkHoverCard.RootBaseProps>,
-    HoverCardVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkHoverCard.RootBaseProps>,
+      HoverCardVariantProps
+    >,
+    UnstyledProps {}
 
 export const HoverCardRoot = withSlotRootProvider<HoverCardRootProps>(
   ArkHoverCard.Root
@@ -35,7 +36,9 @@ export const HoverCardRoot = withSlotRootProvider<HoverCardRootProps>(
 
 // -------------------- Content --------------------
 export interface HoverCardContentProps
-  extends Assign<HTMLStyledProps<'div'>, ArkHoverCard.ContentBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkHoverCard.ContentBaseProps>,
+    UnstyledProps {}
 
 export const HoverCardContent = withSlotContext<
   HTMLDivElement,
@@ -44,7 +47,9 @@ export const HoverCardContent = withSlotContext<
 
 // -------------------- Trigger --------------------
 export interface HoverCardTriggerProps
-  extends Assign<HTMLStyledProps<'button'>, ArkHoverCard.TriggerBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkHoverCard.TriggerBaseProps>,
+    UnstyledProps {}
 
 export const HoverCardTrigger = withSlotContext<
   HTMLButtonElement,
@@ -53,7 +58,9 @@ export const HoverCardTrigger = withSlotContext<
 
 // -------------------- Positioner --------------------
 export interface HoverCardPositionerProps
-  extends Assign<HTMLStyledProps<'div'>, ArkHoverCard.PositionerBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkHoverCard.PositionerBaseProps>,
+    UnstyledProps {}
 
 export const HoverCardPositioner = withSlotContext<
   HTMLDivElement,
@@ -62,7 +69,9 @@ export const HoverCardPositioner = withSlotContext<
 
 // -------------------- ArrowTip --------------------
 export interface HoverCardArrowTipProps
-  extends Assign<HTMLStyledProps<'div'>, ArkHoverCard.ArrowTipBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkHoverCard.ArrowTipBaseProps>,
+    UnstyledProps {}
 
 export const HoverCardArrowTip = withSlotContext<
   HTMLDivElement,
@@ -71,7 +80,9 @@ export const HoverCardArrowTip = withSlotContext<
 
 // -------------------- Arrow --------------------
 export interface HoverCardArrowProps
-  extends Assign<HTMLStyledProps<'div'>, ArkHoverCard.ArrowBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkHoverCard.ArrowBaseProps>,
+    UnstyledProps {}
 
 export const HoverCardArrow = withSlotContext<
   HTMLDivElement,

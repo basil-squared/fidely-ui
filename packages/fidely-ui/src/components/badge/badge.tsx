@@ -3,14 +3,12 @@
 import { forwardRef } from 'react'
 import { type PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { badge, BadgeVariantProps } from '@fidely-ui/styled-system/recipes'
-import { type HTMLStyledProps } from '@fidely-ui/styled-system/types'
+import { styled } from 'styled-system/jsx'
+import { badge, BadgeVariantProps } from 'styled-system/recipes'
+import { type HTMLStyledProps } from 'styled-system/types'
 
 export interface BadgeProps
-  extends HTMLStyledProps<'span'>,
-    BadgeVariantProps,
-    PolymorphicProps {}
+  extends HTMLStyledProps<'span'>, BadgeVariantProps, PolymorphicProps {}
 
 const StyledBadge = styled(ark.span, badge)
 

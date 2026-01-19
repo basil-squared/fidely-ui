@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       patherns: path.resolve(__dirname, '../../apps/patherns/src'),
+      'styled-system': path.resolve(__dirname, 'styled-system'),
     },
   },
 })

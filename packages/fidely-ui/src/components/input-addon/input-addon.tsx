@@ -2,10 +2,10 @@
 
 import { forwardRef } from 'react'
 import { ark } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { inputAddon } from '@fidely-ui/styled-system/recipes'
+import { styled } from 'styled-system/jsx'
+import { inputAddon } from 'styled-system/recipes'
 
-import { ComponentProps } from '@fidely-ui/styled-system/types'
+import { ComponentProps } from 'styled-system/types'
 
 const StyledInputAddon = styled(ark.div, inputAddon)
 

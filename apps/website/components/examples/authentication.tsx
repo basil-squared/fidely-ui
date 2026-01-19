@@ -1,98 +1,68 @@
-'use client'
-
 import { Button } from '@fidely-ui/react/button'
 import { Box } from '@fidely-ui/react/box'
+import { Center } from '@fidely-ui/react/center'
 import { Flex } from '@fidely-ui/react/flex'
 import { Field } from '@fidely-ui/react/field'
 import { Input } from '@fidely-ui/react/input'
-import { Paper } from '@fidely-ui/react/paper'
 import { Stack } from '@fidely-ui/react/stack'
+import { Span } from '@fidely-ui/react/span'
 import { Text } from '@fidely-ui/react/text'
-import { Heading } from '@fidely-ui/react/heading'
-import { Divider } from '@fidely-ui/react/divider'
-import { FaGithub, FaGoogle } from 'react-icons/fa6'
+
+import { AppLogo } from '~/components/logo'
 
 export const AuthenticationExample = () => {
   return (
-    <Flex
-      width={'full'}
-      height={{ base: 'auto', md: '100vh' }}
-      flexDirection={{ base: 'column', md: 'row' }}
-    >
-      <Box
-        width={'50%'}
-        bg={'orange.4'}
-        padding={'10px'}
-        display={{ base: 'none', md: 'block' }}
-      >
-        <Heading as={'h1'} textStyle={'3xl'}>
-          Fidely UI
-        </Heading>
-      </Box>
+    <Flex minHeight="100vh" colorPalette="orange">
+      <Center flex="1" px="6">
+        <Stack width="100%" maxW="420px" gap="6">
+          <Stack align="center" gap="4">
+            <AppLogo />
 
-      <Box
-        width={{ base: '100%', md: '50%' }}
-        display={'flex'}
-        flexDirection={'column'}
-        justifyContent={'center'}
-        alignItems={'center'}
-      >
-        <Box width={{ base: '100%', md: '60%' }}>
-          <Paper width={'full'}>
-            <Stack gap={2} mb={'15px'} textAlign={'center'}>
-              <Heading as={'h4'} textStyle={'xl'}>
-                Create an account
-              </Heading>
-              <Text textStyle={'md'}>
-                Enter your details below to create your account
+            <Stack textAlign="center" gap="1">
+              <Text textStyle="2xl">Create your account</Text>
+              <Text textStyle="sm" color="fg.muted">
+                Get started with Fidely UI in just a few steps
               </Text>
             </Stack>
+          </Stack>
 
-            <Stack gap={5}>
-              <Field.Root>
-                <Field.Label>
-                  Email <Field.RequiredIndicator />
-                </Field.Label>
-                <Input
-                  placeholder="mail@example.com"
-                  variant={'subtle'}
-                  colorPalette="orange"
-                />
-              </Field.Root>
+          <Stack gap="5">
+            <Field.Root>
+              <Field.Label>Full name</Field.Label>
+              <Input placeholder="John Doe" />
+            </Field.Root>
 
-              <Field.Root>
-                <Field.Label>Password</Field.Label>
-                <Input
-                  placeholder="*********"
-                  variant={'subtle'}
-                  colorPalette="orange"
-                />
-              </Field.Root>
+            <Field.Root>
+              <Field.Label>Email</Field.Label>
+              <Input type="email" placeholder="you@example.com" />
+            </Field.Root>
 
-              <Stack gap={3}>
-                <Button colorPalette={'orange'}>Sign up with Email </Button>
+            <Field.Root>
+              <Field.Label>Password</Field.Label>
+              <Input type="password" placeholder="Create a password" />
+            </Field.Root>
 
-                <Flex align={'center'} justify={'center'} gap={'2'}>
-                  <Divider color={'gray'} width={'25%'} />
-                  <Text textStyle={'sm'} textAlign={'center'}>
-                    Or continue with
-                  </Text>
-                  <Divider color={'gray'} width={'25%'} />
-                </Flex>
+            <Button fullWidth type="submit">
+              Create Account
+            </Button>
 
-                <Stack gap={3}>
-                  <Button variant={'outline'}>
-                    <FaGoogle /> Google
-                  </Button>
-                  <Button variant={'outline'}>
-                    <FaGithub /> Github
-                  </Button>
-                </Stack>
-              </Stack>
-            </Stack>
-          </Paper>
-        </Box>
-      </Box>
+            <Center>
+              <Text size="xs">
+                Already have an account?{' '}
+                <Span color="colorPalette.default">
+                  <a href="#">Sign in</a>
+                </Span>
+              </Text>
+            </Center>
+          </Stack>
+        </Stack>
+      </Center>
+
+      <Box
+        flex="1"
+        display={{ base: 'none', md: 'block' }}
+        bg="colorPalette.default"
+      />
     </Flex>
   )
 }

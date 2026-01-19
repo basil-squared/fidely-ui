@@ -1,9 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { checkboxAnatomy } from '@ark-ui/react/anatomy'
+
+import { checkboxAnatomy } from '../../anatomy/index'
 
 export const checkboxSlotRecipe = defineSlotRecipe({
   className: 'fidely-checkbox',
-  slots: checkboxAnatomy.keys(),
+  slots: checkboxAnatomy.keys,
+  description: 'Styles for the Fidely UI Checkbox component',
+
   base: {
     root: {
       display: 'inline-flex',

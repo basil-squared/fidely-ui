@@ -10,5 +10,5 @@ export default defineConfig({
     'src/utils/**/index.ts',
     'src/components/**/index.ts',
   ],
-  external: ['@ark-ui/react', '@pandacss/dev'],
+  external: ['@pandacss/dev'],
 })
