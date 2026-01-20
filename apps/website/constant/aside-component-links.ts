@@ -117,3 +117,16 @@ export const asideStylingLinks = [
     ],
   },
 ]
+
+export const asideFrameworkLinks = [
+  {
+    section: 'Frameworks',
+    items: [
+      { name: 'Next.js (App)', linkUrl: 'next-js-app', info: '' },
+      { name: 'Next.js (Page)', linkUrl: 'next-js-page', info: '' },
+      { name: 'Vite-ts', linkUrl: 'vite-ts', info: '' },
+      { name: 'Vite-js', linkUrl: 'vite-js', info: '' },
+      { name: 'Fidely Preset', linkUrl: 'preset', info: '' },
+    ],
+  },
+]

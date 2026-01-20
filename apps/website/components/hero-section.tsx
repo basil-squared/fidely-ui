@@ -105,7 +105,7 @@ export const HeroSection = () => {
                 >
                   <Link
                     href="/docs/getting-started/installation"
-                    aria-label="Getting Started with Fidely UI documentation"
+                    aria-label="Getting Started"
                   >
                     Get Started
                   </Link>

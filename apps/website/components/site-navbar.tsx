@@ -24,7 +24,7 @@ export const SiteNavBar = () => {
   const dialog = useDialog()
 
   const navLinks = [
-    { href: '/docs/getting-started/installation', label: 'Docs', info: false },
+    { href: '/docs/getting-started/introduction', label: 'Docs', info: false },
     { href: '#', label: 'Templates', info: true },
     { href: '/docs/components/accordion', label: 'Components', info: false },
   ]

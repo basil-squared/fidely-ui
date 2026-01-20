@@ -13,6 +13,7 @@ import {
   asideComponentLinks,
   asideStylingLinks,
   asideUtilLinks,
+  asideFrameworkLinks,
 } from '~/constant/aside-component-links'
 import { NavItem } from '~/components/nav-item'
 
@@ -99,6 +100,24 @@ function Sidebar() {
                 <NavItem
                   key={item.name}
                   href={`/docs/styling/${item.linkUrl}`}
+                  label={item.name}
+                  info={item.info}
+                />
+              ))}
+            </React.Fragment>
+          ))}
+        </Stack>
+
+        {/* Frameworks */}
+        <Stack gap="3">
+          {asideFrameworkLinks.map((section, index: number) => (
+            <React.Fragment key={index}>
+              <Text fontSize={'14px'}>{section.section}</Text>
+
+              {section.items.map((item) => (
+                <NavItem
+                  key={item.name}
+                  href={`/docs/frameworks/${item.linkUrl}`}
                   label={item.name}
                   info={item.info}
                 />
