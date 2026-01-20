@@ -18,6 +18,7 @@ import { Drawer } from '~/components/drawer'
 import { AppLogo } from '~/components/logo'
 import { SearchDialog } from '~/components/search-dialog'
 import { NavItem } from '~/components/nav-item'
+import { VersionSwitcher } from '~/components/version-switcher'
 import {
   asideComponentLinks,
   asideUtilLinks,
@@ -65,6 +66,8 @@ export const DocNavBar = () => {
             </Link>
           </Button>
 
+          <VersionSwitcher />
+
           <CommandInput
             onOpen={() => dialog.setOpen(true)}
             isOpen={dialog.open}
@@ -107,6 +110,8 @@ export const DocNavBar = () => {
               <FcLike />
             </Link>
           </IconButton>
+
+          <VersionSwitcher />
 
           <ColorModeButton />
 
