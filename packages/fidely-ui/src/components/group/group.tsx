@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 import { ark } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { group } from '@fidely-ui/styled-system/recipes'
-import { type ComponentProps } from '@fidely-ui/styled-system/types'
-import { cx } from '@fidely-ui/styled-system/css'
+import { styled } from 'styled-system/jsx'
+import { group } from 'styled-system/recipes'
+import { type ComponentProps } from 'styled-system/types'
+import { cx } from 'styled-system/css'
 
 const StyledGroup = styled(ark.div, group)
 

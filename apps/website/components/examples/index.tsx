@@ -1,10 +1,6 @@
-'use client'
-
 import { Box } from '@fidely-ui/react/box'
 import { Tabs } from '@fidely-ui/react/tabs'
-import { Center } from '@fidely-ui/react/center'
 import { Grid, GridItem } from '@fidely-ui/react/grid'
-import { Heading } from '@fidely-ui/react/heading'
 
 import {
   TeamMembers,
@@ -16,6 +12,7 @@ import {
 } from '~/components/examples/examples'
 import { AuthenticationExample } from '~/components/examples/authentication'
 import { DashboardExample } from '~/components/examples/dashboard-example'
+import { Heading, Text } from '@fidely-ui/react'
 
 const exampleComponents = [
   BillingAddress,
@@ -28,15 +25,25 @@ const exampleComponents = [
 
 export const ExampleSection = () => {
   return (
-    <Box minH="auto" width={'90%'} mx={'auto'}>
-      <Center minH="100px">
-        <Heading size="2xl" colorPalette="orange" color="colorPalette.default">
-          Quick Examples
+    <Box minH="auto" width={'90%'} mx={'auto'} mt="6" mb="3">
+      <Box mb="5">
+        <Heading
+          as="h4"
+          textStyle={{ base: '2xl', md: '3xl' }}
+          color="orange.9"
+          mb="5px"
+        >
+          Components built for modern React apps
         </Heading>
-      </Center>
-      <Tabs.Root variant="underline" defaultValue="examples">
+
+        <Text color={'fg.muted'}>
+          Accessible, theme ready, and designed to scale with your product
+        </Text>
+      </Box>
+
+      <Tabs.Root variant="underline" defaultValue="authentication">
         <Tabs.List>
-          {['examples', 'dashboard', 'authentication'].map((tab) => (
+          {['authentication', 'dashboard', 'examples'].map((tab) => (
             <Tabs.Trigger
               key={tab}
               value={tab}
@@ -46,6 +53,14 @@ export const ExampleSection = () => {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
+
+        <Tabs.Content value="authentication" width={'100%'}>
+          <AuthenticationExample />
+        </Tabs.Content>
+
+        <Tabs.Content value="dashboard">
+          <DashboardExample />
+        </Tabs.Content>
 
         <Tabs.Content value="examples">
           <Grid
@@ -66,14 +81,6 @@ export const ExampleSection = () => {
               </GridItem>
             ))}
           </Grid>
-        </Tabs.Content>
-
-        <Tabs.Content value="dashboard">
-          <DashboardExample />
-        </Tabs.Content>
-
-        <Tabs.Content value="authentication" width={'100%'}>
-          <AuthenticationExample />
         </Tabs.Content>
       </Tabs.Root>
     </Box>

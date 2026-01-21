@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   },
   description:
     'Fidely UI is a modern, beautifully crafted React design system powered by Ark UI and Panda CSS, delivering accessible and themeable components for building exceptional web apps.',
+
   applicationName: 'Fidely UI',
   authors: [
     { name: 'Justice Chimobi', url: 'https://justice-chimobi.vercel.app' },

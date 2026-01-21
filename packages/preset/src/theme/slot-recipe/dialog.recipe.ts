@@ -1,10 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
 
-import { dialogAnatomy } from '../../anatomy'
+import { dialogAnatomy } from '../../anatomy/index'
 
 export const dialogSlotRecipe = defineSlotRecipe({
   className: 'fidely-dialog',
-  slots: dialogAnatomy.keys(),
+  slots: dialogAnatomy.keys,
+  description: 'Styles for the Fidely UI Dialog component',
+
   base: {
     content: {
       display: 'flex',

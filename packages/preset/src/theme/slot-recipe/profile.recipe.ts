@@ -1,10 +1,10 @@
 import { defineSlotRecipe } from '@pandacss/dev'
 
-import { profileAnatomy } from '../../anatomy'
+import { profileAnatomy } from '../../anatomy/index'
 
 export const profileSlotRecipe = defineSlotRecipe({
   className: 'fidely-profile',
-  slots: profileAnatomy.keys(),
+  slots: profileAnatomy.keys,
   description: 'Styles for the Fidely UI Profile/Persona component',
   jsx: ['Profile', 'Persona'],
   base: {

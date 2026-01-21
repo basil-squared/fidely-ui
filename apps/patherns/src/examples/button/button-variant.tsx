@@ -2,7 +2,7 @@ import { Button, HStack } from '@fidely-ui/react'
 
 export const ButtonVariant = () => {
   return (
-    <HStack gap="6">
+    <HStack gap="6" flexWrap="wrap">
       <Button variant={'solid'}>solid</Button>
       <Button variant={'subtle'}>subtle</Button>
       <Button variant={'ghost'}>ghost</Button>

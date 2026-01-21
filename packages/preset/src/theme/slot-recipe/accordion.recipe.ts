@@ -1,9 +1,11 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { accordionAnatomy } from '@ark-ui/react/anatomy'
+
+import { accordionAnatomy } from '../../anatomy/index'
 
 export const accordionSlotRecipe = defineSlotRecipe({
   className: 'fidely-accordion',
-  slots: accordionAnatomy.keys(),
+  slots: accordionAnatomy.keys,
+  description: 'Styles for the Fidely UI Accordion component',
 
   base: {
     root: {

@@ -54,4 +54,10 @@ const dark = {
   alpha12: { value: '#ffe7b3' },
 }
 
-export default createColorTokens('amber', light, dark)
+export default createColorTokens(
+  'amber',
+  light,
+  dark,
+  'gray.light.12',
+  'gray.light.12'
+)

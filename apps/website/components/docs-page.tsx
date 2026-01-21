@@ -7,12 +7,12 @@ import { Flex } from '@fidely-ui/react/flex'
 import { Stack } from '@fidely-ui/react/stack'
 import { Text } from '@fidely-ui/react/text'
 import { Span } from '@fidely-ui/react/span'
-import { Divider } from '@fidely-ui/react/divider'
 
 import {
   asideComponentLinks,
   asideStylingLinks,
   asideUtilLinks,
+  asideFrameworkLinks,
 } from '~/constant/aside-component-links'
 import { NavItem } from '~/components/nav-item'
 
@@ -58,23 +58,30 @@ function Sidebar() {
         {/* Getting Started */}
         <Stack gap="3">
           <Text fontSize="14px">Getting Started</Text>
-          <Link
-            href="/docs/getting-started/introduction"
-            style={{ marginLeft: '6px' }}
-          >
-            <Span color={'fg.muted'} fontSize={'13px'}>
-              Introduction
-            </Span>
-          </Link>
 
-          <Link
+          <NavItem
+            href="/docs/getting-started/introduction"
+            label="Introduction"
+          />
+          <NavItem
             href="/docs/getting-started/installation"
+            label="Installation"
+          />
+          <NavItem href="/docs/getting-started/migration" label="Migration" />
+          <Link
+            href="https://github.com/fidely-ui/fidely-ui/blob/main/CHANNGELOG.md"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ marginLeft: '6px' }}
           >
             <Span color={'fg.muted'} fontSize={'13px'}>
-              Installation
+              Changelog
             </Span>
           </Link>
+          <NavItem
+            href="/docs/getting-started/contributing"
+            label="Contributing"
+          />
         </Stack>
 
         {/* Theming */}
@@ -107,17 +114,30 @@ function Sidebar() {
           ))}
         </Stack>
 
-        {/* Components */}
+        {/* Frameworks */}
         <Stack gap="3">
-          <Text fontSize={'15px'} color="fg.disabled">
-            Components
-          </Text>
-          <Divider />
-
-          {asideComponentLinks.map((section, index: number) => (
+          {asideFrameworkLinks.map((section, index: number) => (
             <React.Fragment key={index}>
               <Text fontSize={'14px'}>{section.section}</Text>
 
+              {section.items.map((item) => (
+                <NavItem
+                  key={item.name}
+                  href={`/docs/frameworks/${item.linkUrl}`}
+                  label={item.name}
+                  info={item.info}
+                />
+              ))}
+            </React.Fragment>
+          ))}
+        </Stack>
+
+        {/* Components */}
+        <Stack gap="3">
+          <Text fontSize={'14px'}>Components</Text>
+
+          {asideComponentLinks.map((section, index: number) => (
+            <React.Fragment key={index}>
               {section.items.map((item) => (
                 <NavItem
                   key={item.name}

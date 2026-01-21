@@ -1,11 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { marqueeAnatomy } from '@ark-ui/react/anatomy'
+
+import { marqueeAnatomy } from '../../anatomy/index'
 
 export const marqueeSlotRecipe = defineSlotRecipe({
   className: 'fidely-marquee',
   jsx: ['Marquee', /Marquee$/],
   description: 'Styles for the Fidely UI Marquee component',
-  slots: marqueeAnatomy.keys(),
+  slots: marqueeAnatomy.keys,
 
   base: {
     root: {

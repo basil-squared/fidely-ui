@@ -2,22 +2,22 @@
 
 import type { Assign } from '@ark-ui/react'
 import { Marquee as ArkMarquee } from '@ark-ui/react/marquee'
-import {
-  marquee,
-  type MarqueeVariantProps,
-} from '@fidely-ui/styled-system/recipes'
-import type { HTMLStyledProps } from '@fidely-ui/styled-system/jsx'
+import { marquee, type MarqueeVariantProps } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/jsx'
 
 import { makeStyleContext } from '../../system/make-style-context'
+import { UnstyledProps } from 'styled-system/types'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(marquee)
 
 // -------------------- RootProvider --------------------
 export interface MarqueeRootProviderProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkMarquee.RootProviderBaseProps>,
-    MarqueeVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkMarquee.RootProviderBaseProps>,
+      MarqueeVariantProps
+    >,
+    UnstyledProps {}
 
 export const MarqueeRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -26,10 +26,12 @@ export const MarqueeRootProvider = withSlotProvider<
 
 // -------------------- Root --------------------
 export interface MarqueeRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkMarquee.RootBaseProps>,
-    MarqueeVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkMarquee.RootBaseProps>,
+      MarqueeVariantProps
+    >,
+    UnstyledProps {}
 
 export const MarqueeRoot = withSlotProvider<HTMLDivElement, MarqueeRootProps>(
   ArkMarquee.Root,
@@ -38,7 +40,9 @@ export const MarqueeRoot = withSlotProvider<HTMLDivElement, MarqueeRootProps>(
 
 // -------------------- Viewport --------------------
 export interface MarqueeViewportProps
-  extends Assign<HTMLStyledProps<'div'>, ArkMarquee.ViewportBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMarquee.ViewportBaseProps>,
+    UnstyledProps {}
 
 export const MarqueeViewport = withSlotContext<
   HTMLDivElement,
@@ -47,7 +51,9 @@ export const MarqueeViewport = withSlotContext<
 
 // -------------------- Content --------------------
 export interface MarqueeContentProps
-  extends Assign<HTMLStyledProps<'div'>, ArkMarquee.ContentBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMarquee.ContentBaseProps>,
+    UnstyledProps {}
 
 export const MarqueeContent = withSlotContext<
   HTMLDivElement,
@@ -56,7 +62,9 @@ export const MarqueeContent = withSlotContext<
 
 // -------------------- Item --------------------
 export interface MarqueeItemProps
-  extends Assign<HTMLStyledProps<'div'>, ArkMarquee.ItemBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMarquee.ItemBaseProps>,
+    UnstyledProps {}
 
 export const MarqueeItem = withSlotContext<HTMLDivElement, MarqueeItemProps>(
   ArkMarquee.Item,
@@ -65,7 +73,9 @@ export const MarqueeItem = withSlotContext<HTMLDivElement, MarqueeItemProps>(
 
 // -------------------- Edge --------------------
 export interface MarqueeEdgeProps
-  extends Assign<HTMLStyledProps<'div'>, ArkMarquee.EdgeBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMarquee.EdgeBaseProps>,
+    UnstyledProps {}
 
 export const MarqueeEdge = withSlotContext<HTMLDivElement, MarqueeEdgeProps>(
   ArkMarquee.Edge,

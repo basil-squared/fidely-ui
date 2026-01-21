@@ -1,11 +1,11 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { comboboxAnatomy } from '../../anatomy'
+import { comboboxAnatomy } from '../../anatomy/index'
 
 import { inputRecipe } from '../recipe/input.recipe'
 
 export const comboboxSlotRecipe = defineSlotRecipe({
   className: 'fidely-combobox',
-  slots: comboboxAnatomy.keys(),
+  slots: comboboxAnatomy.keys,
   description: 'Styles for the Fidely UI Combobox component',
 
   base: {

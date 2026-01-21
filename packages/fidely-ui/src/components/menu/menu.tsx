@@ -2,37 +2,43 @@
 
 import type { Assign } from '@ark-ui/react'
 import { Menu as ArkMenu } from '@ark-ui/react/menu'
-import { menu, type MenuVariantProps } from '@fidely-ui/styled-system/recipes'
-import type { HTMLStyledProps } from '@fidely-ui/styled-system/jsx'
+import { menu, type MenuVariantProps } from 'styled-system/recipes'
+import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
 
 import { makeStyleContext } from '../../system/make-style-context'
-import { FiCaretDownIcon } from '../icons/FiCaretDownIcon'
+import { FiCaretDownIcon } from '../../icons/FiCaretDownIcon'
 
 const { withSlotRootProvider, withSlotContext } = makeStyleContext(menu)
 
 // -------------------- RootProvider --------------------
-export interface MenuRootProviderProps extends Assign<
-  Assign<HTMLStyledProps<'div'>, ArkMenu.RootProviderBaseProps>,
-  MenuVariantProps
-> {}
+export interface MenuRootProviderProps
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkMenu.RootProviderBaseProps>,
+      MenuVariantProps
+    >,
+    UnstyledProps {}
 
 export const MenuRootProvider = withSlotRootProvider<MenuRootProviderProps>(
   ArkMenu.RootProvider
 )
 
 // -------------------- Root --------------------
-export interface MenuRootProps extends Assign<
-  Assign<HTMLStyledProps<'div'>, ArkMenu.RootBaseProps>,
-  MenuVariantProps
-> {}
+export interface MenuRootProps
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkMenu.RootBaseProps>,
+      MenuVariantProps
+    >,
+    UnstyledProps {}
 
 export const MenuRoot = withSlotRootProvider<MenuRootProps>(ArkMenu.Root)
 
 // -------------------- Content --------------------
-export interface MenuContentProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ContentBaseProps
-> {}
+export interface MenuContentProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ContentBaseProps>,
+    UnstyledProps {}
 
 export const MenuContent = withSlotContext<HTMLDivElement, MenuContentProps>(
   ArkMenu.Content,
@@ -40,10 +46,10 @@ export const MenuContent = withSlotContext<HTMLDivElement, MenuContentProps>(
 )
 
 // -------------------- Trigger --------------------
-export interface MenuTriggerProps extends Assign<
-  HTMLStyledProps<'button'>,
-  ArkMenu.TriggerBaseProps
-> {}
+export interface MenuTriggerProps
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkMenu.TriggerBaseProps>,
+    UnstyledProps {}
 
 export const MenuTrigger = withSlotContext<HTMLButtonElement, MenuTriggerProps>(
   ArkMenu.Trigger,
@@ -51,10 +57,10 @@ export const MenuTrigger = withSlotContext<HTMLButtonElement, MenuTriggerProps>(
 )
 
 // -------------------- ContextTrigger --------------------
-export interface MenuContextTriggerProps extends Assign<
-  HTMLStyledProps<'button'>,
-  ArkMenu.ContextTriggerBaseProps
-> {}
+export interface MenuContextTriggerProps
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkMenu.ContextTriggerBaseProps>,
+    UnstyledProps {}
 
 export const MenuContextTrigger = withSlotContext<
   HTMLButtonElement,
@@ -62,10 +68,10 @@ export const MenuContextTrigger = withSlotContext<
 >(ArkMenu.ContextTrigger, 'contextTrigger')
 
 // -------------------- TriggerItem --------------------
-export interface MenuTriggerItemProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.TriggerItemBaseProps
-> {}
+export interface MenuTriggerItemProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.TriggerItemBaseProps>,
+    UnstyledProps {}
 
 export const MenuTriggerItem = withSlotContext<
   HTMLDivElement,
@@ -73,10 +79,10 @@ export const MenuTriggerItem = withSlotContext<
 >(ArkMenu.TriggerItem, 'triggerItem')
 
 // -------------------- Separator --------------------
-export interface MenuSeparatorProps extends Assign<
-  HTMLStyledProps<'hr'>,
-  ArkMenu.SeparatorBaseProps
-> {}
+export interface MenuSeparatorProps
+  extends
+    Assign<HTMLStyledProps<'hr'>, ArkMenu.SeparatorBaseProps>,
+    UnstyledProps {}
 
 export const MenuSeparator = withSlotContext<HTMLHRElement, MenuSeparatorProps>(
   ArkMenu.Separator,
@@ -84,10 +90,10 @@ export const MenuSeparator = withSlotContext<HTMLHRElement, MenuSeparatorProps>(
 )
 
 // -------------------- Positioner --------------------
-export interface MenuPositionerProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.PositionerBaseProps
-> {}
+export interface MenuPositionerProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.PositionerBaseProps>,
+    UnstyledProps {}
 
 export const MenuPositioner = withSlotContext<
   HTMLDivElement,
@@ -95,10 +101,10 @@ export const MenuPositioner = withSlotContext<
 >(ArkMenu.Positioner, 'positioner')
 
 // -------------------- Item --------------------
-export interface MenuItemProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ItemBaseProps
-> {}
+export interface MenuItemProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ItemBaseProps>,
+    UnstyledProps {}
 
 export const MenuItem = withSlotContext<HTMLDivElement, MenuItemProps>(
   ArkMenu.Item,
@@ -106,10 +112,10 @@ export const MenuItem = withSlotContext<HTMLDivElement, MenuItemProps>(
 )
 
 // -------------------- ItemText --------------------
-export interface MenuItemTextProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ItemTextBaseProps
-> {}
+export interface MenuItemTextProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ItemTextBaseProps>,
+    UnstyledProps {}
 
 export const MenuItemText = withSlotContext<HTMLDivElement, MenuItemTextProps>(
   ArkMenu.ItemText,
@@ -117,10 +123,10 @@ export const MenuItemText = withSlotContext<HTMLDivElement, MenuItemTextProps>(
 )
 
 // -------------------- ItemGroup --------------------
-export interface MenuItemGroupProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ItemGroupProps
-> {}
+export interface MenuItemGroupProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ItemGroupProps>,
+    UnstyledProps {}
 
 export const MenuItemGroup = withSlotContext<
   HTMLDivElement,
@@ -128,10 +134,10 @@ export const MenuItemGroup = withSlotContext<
 >(ArkMenu.ItemGroup, 'itemGroup')
 
 // -------------------- ItemGroupLabel --------------------
-export interface MenuItemGroupLabelProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ItemGroupLabelBaseProps
-> {}
+export interface MenuItemGroupLabelProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ItemGroupLabelBaseProps>,
+    UnstyledProps {}
 
 export const MenuItemGroupLabel = withSlotContext<
   HTMLDivElement,
@@ -139,10 +145,10 @@ export const MenuItemGroupLabel = withSlotContext<
 >(ArkMenu.ItemGroupLabel, 'itemGroupLabel')
 
 // -------------------- CheckboxItem --------------------
-export interface MenuCheckboxItemProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.CheckboxItemBaseProps
-> {}
+export interface MenuCheckboxItemProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.CheckboxItemBaseProps>,
+    UnstyledProps {}
 
 export const MenuCheckboxItem = withSlotContext<
   HTMLDivElement,
@@ -150,10 +156,10 @@ export const MenuCheckboxItem = withSlotContext<
 >(ArkMenu.CheckboxItem, 'item')
 
 // -------------------- RadioItem --------------------
-export interface MenuRadioItemProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.RadioItemBaseProps
-> {}
+export interface MenuRadioItemProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.RadioItemBaseProps>,
+    UnstyledProps {}
 
 export const MenuRadioItem = withSlotContext<
   HTMLDivElement,
@@ -161,10 +167,10 @@ export const MenuRadioItem = withSlotContext<
 >(ArkMenu.RadioItem, 'item')
 
 // -------------------- RadioItemGroup --------------------
-export interface MenuRadioItemGroupProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.RadioItemGroupBaseProps
-> {}
+export interface MenuRadioItemGroupProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.RadioItemGroupBaseProps>,
+    UnstyledProps {}
 
 export const MenuRadioItemGroup = withSlotContext<
   HTMLDivElement,
@@ -172,10 +178,10 @@ export const MenuRadioItemGroup = withSlotContext<
 >(ArkMenu.RadioItemGroup, 'itemGroup')
 
 // -------------------- Indicator --------------------
-export interface MenuIndicatorProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.IndicatorBaseProps
-> {
+export interface MenuIndicatorProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.IndicatorBaseProps>,
+    UnstyledProps {
   idleIcon?: React.ReactNode
 }
 
@@ -189,10 +195,10 @@ export const MenuIndicator = withSlotContext<
 }, 'indicator')
 
 // -------------------- ItemIndicator --------------------
-export interface MenuItemIndicatorProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ItemIndicatorBaseProps
-> {}
+export interface MenuItemIndicatorProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ItemIndicatorBaseProps>,
+    UnstyledProps {}
 
 export const MenuItemIndicator = withSlotContext<
   HTMLDivElement,
@@ -200,10 +206,10 @@ export const MenuItemIndicator = withSlotContext<
 >(ArkMenu.ItemIndicator, 'itemIndicator')
 
 // -------------------- MenuArrow --------------------
-export interface MenuArrowProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ArrowBaseProps
-> {}
+export interface MenuArrowProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ArrowBaseProps>,
+    UnstyledProps {}
 
 export const MenuArrow = withSlotContext<HTMLDivElement, MenuArrowProps>(
   ArkMenu.Arrow,
@@ -211,10 +217,10 @@ export const MenuArrow = withSlotContext<HTMLDivElement, MenuArrowProps>(
 )
 
 // -------------------- MenuArrowTip --------------------
-export interface MenuArrowTipProps extends Assign<
-  HTMLStyledProps<'div'>,
-  ArkMenu.ArrowTipBaseProps
-> {}
+export interface MenuArrowTipProps
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkMenu.ArrowTipBaseProps>,
+    UnstyledProps {}
 
 export const MenuArrowTip = withSlotContext<HTMLDivElement, MenuArrowTipProps>(
   ArkMenu.ArrowTip,

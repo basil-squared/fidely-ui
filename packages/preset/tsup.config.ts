@@ -8,7 +8,7 @@ export default defineConfig({
     'src/index.ts',
     'src/colors/**.ts',
     'src/utils/**/index.ts',
-    'src/components/**/index.ts',
+    'src/anatomy/**/index.ts',
   ],
-  external: ['@ark-ui/react', '@pandacss/dev'],
+  external: ['@pandacss/dev'],
 })

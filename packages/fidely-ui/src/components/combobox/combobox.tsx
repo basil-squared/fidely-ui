@@ -2,25 +2,23 @@
 
 import type { Assign, CollectionItem } from '@ark-ui/react'
 import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
-import {
-  combobox,
-  type ComboboxVariantProps,
-} from '@fidely-ui/styled-system/recipes'
-import { type HTMLStyledProps } from '@fidely-ui/styled-system/types'
+import { combobox, type ComboboxVariantProps } from 'styled-system/recipes'
+import { UnstyledProps, type HTMLStyledProps } from 'styled-system/types'
 
 import { makeStyleContext } from '../../system/make-style-context'
-import React from 'react'
-import { FiClose } from '../icons/FiClose'
-import { FiCaretDownIcon } from '../icons/FiCaretDownIcon'
+import { FiClose } from '../../icons/FiClose'
+import { FiCaretDownIcon } from '../../icons/FiCaretDownIcon'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(combobox)
 
 // -------------------- RootProvider --------------------
 export interface ComboboxRootProviderProps<T extends CollectionItem = any>
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkCombobox.RootProviderBaseProps<T>>,
-    ComboboxVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkCombobox.RootProviderBaseProps<T>>,
+      ComboboxVariantProps
+    >,
+    UnstyledProps {}
 
 export const ComboboxRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -29,10 +27,12 @@ export const ComboboxRootProvider = withSlotProvider<
 
 // -------------------- Root --------------------
 export interface ComboboxRootProps<T extends CollectionItem = any>
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkCombobox.RootBaseProps<T>>,
-    ComboboxVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkCombobox.RootBaseProps<T>>,
+      ComboboxVariantProps
+    >,
+    UnstyledProps {}
 
 export const ComboboxRoot = withSlotProvider<HTMLDivElement, ComboboxRootProps>(
   ArkCombobox.Root,
@@ -41,7 +41,9 @@ export const ComboboxRoot = withSlotProvider<HTMLDivElement, ComboboxRootProps>(
 
 // -------------------- Label --------------------
 export interface ComboboxLabelProps
-  extends Assign<HTMLStyledProps<'label'>, ArkCombobox.LabelBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'label'>, ArkCombobox.LabelBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxLabel = withSlotContext<
   HTMLLabelElement,
@@ -50,7 +52,9 @@ export const ComboboxLabel = withSlotContext<
 
 // -------------------- Control --------------------
 export interface ComboboxControlProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ControlBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ControlBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxControl = withSlotContext<
   HTMLDivElement,
@@ -59,7 +63,9 @@ export const ComboboxControl = withSlotContext<
 
 // -------------------- Input --------------------
 export interface ComboboxInputProps
-  extends Assign<HTMLStyledProps<'input'>, ArkCombobox.InputBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'input'>, ArkCombobox.InputBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxInput = withSlotContext<
   HTMLInputElement,
@@ -68,7 +74,9 @@ export const ComboboxInput = withSlotContext<
 
 // -------------------- Trigger --------------------
 export interface ComboboxTriggerProps
-  extends Assign<HTMLStyledProps<'button'>, ArkCombobox.TriggerBaseProps> {
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkCombobox.TriggerBaseProps>,
+    UnstyledProps {
   idleIcon?: React.ReactNode
 }
 
@@ -85,7 +93,9 @@ export const ComboboxTrigger = withSlotContext<
 
 // -------------------- ClearTrigger --------------------
 export interface ComboboxClearTriggerProps
-  extends Assign<HTMLStyledProps<'button'>, ArkCombobox.ClearTriggerBaseProps> {
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkCombobox.ClearTriggerBaseProps>,
+    UnstyledProps {
   idleIcon?: React.ReactNode
 }
 
@@ -104,7 +114,9 @@ export const ComboboxClearTrigger = withSlotContext<
 
 // -------------------- Positioner --------------------
 export interface ComboboxPositionerProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.PositionerBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.PositionerBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxPositioner = withSlotContext<
   HTMLDivElement,
@@ -113,7 +125,9 @@ export const ComboboxPositioner = withSlotContext<
 
 // -------------------- Content --------------------
 export interface ComboboxContentProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ContentBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ContentBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxContent = withSlotContext<
   HTMLDivElement,
@@ -122,7 +136,9 @@ export const ComboboxContent = withSlotContext<
 
 // -------------------- ItemGroup --------------------
 export interface ComboboxItemGroupProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemGroupBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemGroupBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxItemGroup = withSlotContext<
   HTMLDivElement,
@@ -131,7 +147,9 @@ export const ComboboxItemGroup = withSlotContext<
 
 // -------------------- ItemGroupLabel --------------------
 export interface ComboboxItemGroupLabelProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemGroupLabelBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemGroupLabelBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxItemGroupLabel = withSlotContext<
   HTMLDivElement,
@@ -140,7 +158,9 @@ export const ComboboxItemGroupLabel = withSlotContext<
 
 // -------------------- Item --------------------
 export interface ComboboxItemProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxItem = withSlotContext<HTMLDivElement, ComboboxItemProps>(
   ArkCombobox.Item,
@@ -149,7 +169,9 @@ export const ComboboxItem = withSlotContext<HTMLDivElement, ComboboxItemProps>(
 
 // -------------------- ItemText --------------------
 export interface ComboboxItemTextProps
-  extends Assign<HTMLStyledProps<'span'>, ArkCombobox.ItemTextBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'span'>, ArkCombobox.ItemTextBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxItemText = withSlotContext<
   HTMLSpanElement,
@@ -158,7 +180,9 @@ export const ComboboxItemText = withSlotContext<
 
 // -------------------- ItemIndicator --------------------
 export interface ComboboxItemIndicatorProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemIndicatorBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ItemIndicatorBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxItemIndicator = withSlotContext<
   HTMLDivElement,
@@ -166,7 +190,8 @@ export const ComboboxItemIndicator = withSlotContext<
 >(ArkCombobox.ItemIndicator, 'itemIndicator')
 
 // -------------------- IndicatorGroup --------------------
-export interface ComboboxIndicatorGroupProps extends HTMLStyledProps<'div'> {}
+export interface ComboboxIndicatorGroupProps
+  extends HTMLStyledProps<'div'>, UnstyledProps {}
 
 export const ComboboxIndicatorGroup = withSlotContext<
   HTMLDivElement,
@@ -175,7 +200,9 @@ export const ComboboxIndicatorGroup = withSlotContext<
 
 // -------------------- Empty --------------------
 export interface ComboboxEmptyProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.EmptyBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.EmptyBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxEmpty = withSlotContext<
   HTMLDivElement,
@@ -184,7 +211,9 @@ export const ComboboxEmpty = withSlotContext<
 
 // // -------------------- List --------------------
 export interface ComboboxListrProps
-  extends Assign<HTMLStyledProps<'div'>, ArkCombobox.ListBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkCombobox.ListBaseProps>,
+    UnstyledProps {}
 
 export const ComboboxList = withSlotContext<HTMLDivElement, ComboboxListrProps>(
   ArkCombobox.List,
@@ -195,11 +224,13 @@ export const ComboboxList = withSlotContext<HTMLDivElement, ComboboxListrProps>(
 export const ComboboxContext = ArkCombobox.Context
 export const ComboboxItemContext = ArkCombobox.ItemContext
 
-export interface ComboboxValueChangeDetails<T extends CollectionItem = any>
-  extends ArkCombobox.ValueChangeDetails<T> {}
+export interface ComboboxValueChangeDetails<
+  T extends CollectionItem = any,
+> extends ArkCombobox.ValueChangeDetails<T> {}
 
-export interface ComboboxHighlightChangeDetails<T extends CollectionItem = any>
-  extends ArkCombobox.HighlightChangeDetails<T> {}
+export interface ComboboxHighlightChangeDetails<
+  T extends CollectionItem = any,
+> extends ArkCombobox.HighlightChangeDetails<T> {}
 
 export interface ComboboxOpenChangeDetails
   extends ArkCombobox.OpenChangeDetails {}

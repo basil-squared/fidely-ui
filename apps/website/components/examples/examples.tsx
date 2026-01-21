@@ -55,10 +55,8 @@ export const BillingAddress = () => {
         </Field.Root>
 
         <HStack gap={3}>
-          <Button colorPalette={'orange'} ripple>
-            Submit
-          </Button>
-          <Button variant={'outline'} colorPalette={'gray'} ripple>
+          <Button colorPalette={'orange'}>Submit</Button>
+          <Button variant={'outline'} colorPalette={'gray'}>
             Cancel
           </Button>
         </HStack>
@@ -216,7 +214,7 @@ export const MoreComponents = () => {
             Input Group
           </Heading>
           <InputGroup startAddon={<BiUser />}>
-            <Input placeholder="@justicechimobi_" />
+            <Input placeholder="@justicechimobi" />
           </InputGroup>
 
           <InputGroup>

@@ -1,11 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { hoverCardAnatomy } from '@ark-ui/react/anatomy'
+
+import { hoverCardAnatomy } from '../../anatomy/index'
 
 export const hoverCardSlotRecipe = defineSlotRecipe({
   className: 'fidely-hover-card',
   jsx: ['HoverCard', /HoverCard$/],
   description: 'Styles for the Fidely UI HoverCard component',
-  slots: hoverCardAnatomy.keys(),
+  slots: hoverCardAnatomy.keys,
 
   base: {
     content: {

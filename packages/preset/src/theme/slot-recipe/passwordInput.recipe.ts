@@ -1,14 +1,14 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { passwordInputAnatomy } from '@ark-ui/react/anatomy'
 
 import { inputRecipe } from '../recipe/input.recipe'
 import { mapEntries } from '../../utils/entries'
+import { passwordInputAnatomy } from '../../anatomy/index'
 
 const { variants } = inputRecipe
 
 export const passwordInputSlotRecipe = defineSlotRecipe({
   className: 'fidely-password-input',
-  slots: passwordInputAnatomy.keys(),
+  slots: passwordInputAnatomy.keys,
   description: 'Styles for the Fidely UI Password Input component',
   base: {
     root: {

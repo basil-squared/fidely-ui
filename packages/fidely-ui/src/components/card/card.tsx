@@ -2,8 +2,8 @@
 
 import type { Assign, HTMLArkProps, PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import type { HTMLStyledProps } from '@fidely-ui/styled-system/types'
-import { card, type CardVariantProps } from '@fidely-ui/styled-system/recipes'
+import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { card, type CardVariantProps } from 'styled-system/recipes'
 
 import { makeStyleContext } from '../../system/make-style-context'
 
@@ -14,10 +14,9 @@ const { withSlotProvider, withSlotContext } = makeStyleContext(card)
 
 // -------------------- Root --------------------
 export interface CardRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, PolymorphicProps>,
-    CardVariantProps
-  > {}
+  extends
+    Assign<Assign<HTMLStyledProps<'div'>, PolymorphicProps>, CardVariantProps>,
+    UnstyledProps {}
 
 export const CardRoot = withSlotProvider<HTMLDivElement, CardRootProps>(
   ark.div,
@@ -26,7 +25,7 @@ export const CardRoot = withSlotProvider<HTMLDivElement, CardRootProps>(
 
 // -------------------- Body --------------------
 export interface CardBodyProps
-  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps>, UnstyledProps {}
 
 export const CardBody = withSlotContext<HTMLDivElement, CardBodyProps>(
   ark.div,
@@ -35,7 +34,7 @@ export const CardBody = withSlotContext<HTMLDivElement, CardBodyProps>(
 
 // -------------------- Header --------------------
 export interface CardHeaderProps
-  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps>, UnstyledProps {}
 
 export const CardHeader = withSlotContext<HTMLDivElement, CardHeaderProps>(
   ark.div,
@@ -44,7 +43,7 @@ export const CardHeader = withSlotContext<HTMLDivElement, CardHeaderProps>(
 
 // -------------------- Title --------------------
 export interface CardTitleProps
-  extends Assign<HTMLStyledProps<'h4'>, HTMLArkProps<'h4'>> {}
+  extends Assign<HTMLStyledProps<'h4'>, HTMLArkProps<'h4'>>, UnstyledProps {}
 
 export const CardTitle = withSlotContext<HTMLHeadingElement, CardTitleProps>(
   ark.h4,
@@ -53,7 +52,7 @@ export const CardTitle = withSlotContext<HTMLHeadingElement, CardTitleProps>(
 
 // -------------------- Description --------------------
 export interface CardDescriptionProps
-  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps>, UnstyledProps {}
 
 export const CardDescription = withSlotContext<
   HTMLDivElement,
@@ -62,7 +61,7 @@ export const CardDescription = withSlotContext<
 
 // -------------------- Footer --------------------
 export interface CardFooterProps
-  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'div'>, PolymorphicProps>, UnstyledProps {}
 
 export const CardFooter = withSlotContext<HTMLDivElement, CardFooterProps>(
   ark.div,

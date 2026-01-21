@@ -1,43 +1,74 @@
 ---
 title: Introduction
-description: Fidely UI is a modern UI library with reusable, intuitive components that help you ship products faster to create beautiful, consistent interfaces with customizable, production-ready building blocks.
+description: Welcome to the Fidely UI documentation!
 ---
 
-## Introduction
+## What is Fidely UI?
 
-### A modern React component library built on **Ark UI** and **Panda CSS**
+A modern, beautifully crafted React design system powered by **[Ark UI](https://ark-ui.com/)** and **[Panda CSS](https://panda-css.com/)**,
+It provides accessible, themeable, and composable components for building high-quality web applications.
 
-Fidely UI provides a collection of reusable, accessible, and customizable components designed to help you build modern web applications with speed and consistency.
+Rather than focusing only on components, Fidely UI is built around a design system first approach,
+combining design tokens, styling recipes, and headless primitives into a cohesive and scalable workflow.
 
-Whether you're creating dashboards, marketing sites, or complex applications, Fidely UI gives you a solid foundation of composable components and design tokens that scale with your product.
-
----
-
-## Why Fidely UI?
-
-- ⚡ **Fast Development** — Prebuilt, intuitive components let you focus on functionality instead of UI setup.
-
-- 🎨 **Theming Made Simple** — Built with Panda CSS, theming and styling are fully customizable through tokens and design presets.
-
-- ♿ **Accessible by Default** — Powered by Ark UI primitives, every component follows the WAI-ARIA accessibility standards.
-
-- 🧱 **Composable & Reusable** — Each component is flexible and easy to extend, making it simple to create your own design system.
-
-- 📦 **Production Ready** — Fidely UI is built with scalability and performance in mind, ensuring lightweight and optimized components for any environment.
+The primary goal of Fidely UI is to help teams build consistent, accessible interfaces without sacrificing flexibility or performance.
 
 ---
 
-## Core Technologies
+## How Fidely UI is structured
 
-Fidely UI is built upon a modern, reliable foundation:
+Fidely UI is organized into two layers:
 
-- **React** – For building dynamic, component-based interfaces.
-- **Ark UI** – Provides accessible and headless primitives that power each component.
-- **Panda CSS** – Handles design tokens, theming, and responsive styles with zero-runtime CSS generation.
+- **Panda Preset**  
+  Design tokens, recipes, and utilities powered by Panda CSS.  
+  Can be used independently or as the foundation for components.
 
-Together, these tools make Fidely UI both developer-friendly and performance-optimized.
+- **React Components**  
+  Accessible, headless first components built on Ark UI and styled using the preset.
+
+This separation lets you:
+
+- Use only the preset with your own components, or
+- Use the full Fidely UI React component library.
 
 ---
+
+## How Fidely UI is different from other UI libraries?
+
+Many UI libraries are built on top of **Emotion** or **Tailwind CSS**.
+
+Fidely UI is built on **Panda CSS**, a zero-runtime CSS-in-JS system that generates static, type-safe styles at build time.
+
+This means:
+
+No runtime styling cost
+
+Faster rendering and smaller bundles
+
+Strongly typed design tokens and recipes
+
+Predictable and scalable theming
+
+Combined with **Ark UI’s** headless, accessible primitives, Fidely UI delivers both performance and accessibility out of the box.
+
+---
+
+> Note: this isn't about which library is better, every library has its own pros and cons.
+
+## Core technologies
+
+Fidely UI is built on:
+
+- **React**: Component-based UI development
+- **Ark UI**: Accessible, headless primitives
+- **Panda CSS**: Zero-runtime styling, tokens, and recipes
+
+---
+
+## Contributing
+
+PRs on Fidely UI are always welcome, please see our [contribution guidelines](https://github.com/fidely-ui/fidely-ui/blob/main/CONTRIBUTING.md)
+to learn how you can contribute to this project.
 
 ## Acknowledgements
 

@@ -10,11 +10,11 @@ import { textareaRecipe } from './textarea.recipe'
 import { commandInputRecipe } from './command-Input.recipe'
 import { badgeRecipes } from './badge.recipe'
 import { groupRecipe } from './group.recipe'
-import { floatLabelRecipe } from './float-label.recipe'
 import { inputGroupRecipe } from './input.group'
 import { inputAddonRecipe } from './input-addon.recipe'
 import { headingRecipe } from './heading.recipe'
 import { textRecipe } from './text.recipe'
+import { iconRecipes } from './icon.recipe'
 
 export const recipes: Record<
   string,
@@ -23,9 +23,9 @@ export const recipes: Record<
   badge: badgeRecipes,
   button: buttonRecipe,
   commandInput: commandInputRecipe,
-  floatLabel: floatLabelRecipe,
   heading: headingRecipe,
   group: groupRecipe,
+  icon: iconRecipes,
   input: inputRecipe,
   inputGroup: inputGroupRecipe,
   inputAddon: inputAddonRecipe,

@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { pinInputAnatomy } from '@ark-ui/react/anatomy'
 
+import { pinInputAnatomy } from '../../anatomy/index'
 import { inputRecipe } from '../recipe/input.recipe'
 import { mapEntries } from '../../utils/entries'
 
@@ -8,7 +8,8 @@ const { variants, defaultVariants } = inputRecipe
 
 export const pinInputSlotRecipe = defineSlotRecipe({
   className: 'fidely-pin-input',
-  slots: pinInputAnatomy.keys(),
+  slots: pinInputAnatomy.keys,
+  description: 'Styles for the Fidely UI PinInput component',
 
   base: {
     root: {

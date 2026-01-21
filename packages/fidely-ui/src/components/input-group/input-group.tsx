@@ -2,30 +2,40 @@
 
 import * as React from 'react'
 import { ark } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { inputGroup } from '@fidely-ui/styled-system/recipes'
+import { styled } from 'styled-system/jsx'
+import { inputGroup } from 'styled-system/recipes'
+import { ComponentProps } from 'styled-system/types'
 
 import { type BoxProps } from '../box/index'
 import { InputAddon, type InputAddonProps } from '../input-addon/index'
 
 const StyledInputGroup = styled(ark.div, inputGroup)
 
-export interface InputGroupProps extends Omit<BoxProps, 'direction'> {
-  startAddon?: React.ReactNode | undefined
+type InputGroupBaseProps = ComponentProps<typeof StyledInputGroup>
+
+export interface InputGroupProps
+  extends Omit<BoxProps, 'direction'>, InputGroupBaseProps {
   /**
-   * The props to pass to the start addon
+   * Element rendered at the start (left side) of the input group.
+   * Commonly used for icons, labels, or prefixes.
+   */
+  startAddon?: React.ReactNode | undefined
+
+  /**
+   * Props forwarded to the start addon component.
    */
   startAddonProps?: InputAddonProps | undefined
   /**
-   * The end addon to render the right of the group
+   * Element rendered at the end (right side) of the input group.
+   * Commonly used for actions, suffixes, or icons.
    */
   endAddon?: React.ReactNode | undefined
   /**
-   * The props to pass to the end addon
+   * Props forwarded to the end addon component.
    */
   endAddonProps?: InputAddonProps | undefined
   /**
-   * The children to render inside the group
+   * The input or elements rendered inside the input group.
    */
   children: React.ReactNode
 }

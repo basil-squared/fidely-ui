@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { Box } from '@fidely-ui/react/box'
 import { Card } from '@fidely-ui/react/card'
@@ -15,12 +13,12 @@ import { testimonials } from '~/constant/testimonials'
 export const Testimonials = () => {
   return (
     <Box as="section" px="4" py="4" mt="16">
-      <Box textAlign={'left'} mb={'25px'} width={'90%'} mx={'auto'}>
+      <Box textAlign="left" mb="25px" width="90%" mx="auto">
         <Heading
           as="h4"
           textStyle={{ base: '2xl', md: '3xl' }}
-          color={'fg.muted'}
-          mb={'5px'}
+          color="orange.9"
+          mb="5px"
         >
           Trusted by developers, startups, and enterprises
         </Heading>

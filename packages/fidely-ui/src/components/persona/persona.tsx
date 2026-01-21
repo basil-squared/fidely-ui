@@ -1,7 +1,7 @@
 'use client'
 
 import { forwardRef } from 'react'
-import { cx } from '@fidely-ui/styled-system/css'
+import { cx } from 'styled-system/css'
 
 import { Avatar } from '../avatar/index'
 import { Profile, type ProfileRootProps } from '../profile/index'

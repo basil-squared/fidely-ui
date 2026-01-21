@@ -1,0 +1,97 @@
+---
+title: Popover
+description: Used to show contextual information inside a popup when triggered
+links:
+  source: popover
+  recipe: slot-recipe/popover.recipe
+  ark: components/popover
+---
+
+<ExampleTabs name="popover-basics" scope="popover" />
+
+## Usage
+
+```tsx
+import { Popover } from '@fidely-ui/react'
+```
+
+```tsx
+<Popover.Root>
+  <Popover.Trigger />
+  <Popover.Positioner>
+    <Popover.Content>
+      <Popover.CloseTrigger />
+
+      <Popover.Arrow>
+        <Popover.ArrowTip />
+      </Popover.Arrow>
+
+      <Popover.Title />
+      <Popover.Description />
+    </Popover.Content>
+  </Popover.Positioner>
+</Popover.Root>
+```
+
+## Examples
+
+### Controlled
+
+Use the **open** and **onOpenChange** props to control the visibility of the popover.
+
+<ExampleTabs name="popover-controlled" scope="popover" />
+
+### Placement
+
+Use the **`positioning.placement`** prop to configure the underlying Floating UI
+positioning logic, allowing you to control where the popover appears relative to its trigger.
+
+<ExampleTabs name="popover-positioning" scope="popover" />
+
+### Offset
+
+Use the **`positioning.offset`** prop to adjust the position of the popover content.
+
+<ExampleTabs name="popover-offset" scope="popover" />
+
+### Form and CloseTrigger
+
+<ExampleTabs name="popover-close-with-form" scope="popover" />
+
+### Custom Background
+
+Use the **`--popover-bg`** CSS variable to change the background color of the **Popover.Content** and its arrow.
+
+<ExampleTabs name="popover-with-bg" scope="popover" />
+
+### Custom Background
+
+Use the **`--popover-bg`** CSS variable to change the background color of the **Popover.Content** and its arrow.
+
+<ExampleTabs name="popover-with-bg" scope="popover" />
+
+### Within Dialog
+
+To use the **`Popover`** within a **`Dialog`**, you need to avoid portalling the **Popover.Positioner** to the document's body.
+
+```tsx
+/* <Portal> */
+<Popover.Positioner>
+  <Popover.Content>{/* ... */}</Popover.Content>
+</Popover.Positioner>
+/* </Portal> */
+```
+
+If the dialog uses scrollBehavior="inside":
+
+- Set the popover positioning strategy to fixed to prevent clipping.
+
+- Enable hideWhenDetached to hide the popover when its trigger scrolls out of view.
+
+```tsx
+<Popover.Root positioning={{ strategy: 'fixed', hideWhenDetached: true }}>
+  ...
+</Popover.Root>
+```
+
+## Props

@@ -1,10 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
 
-import { cardAnatomy } from '../../anatomy'
+import { cardAnatomy } from '../../anatomy/index'
 
 export const cardSlotRecipe = defineSlotRecipe({
   className: 'fidely-card',
-  slots: cardAnatomy.keys(),
+  slots: cardAnatomy.keys,
+  description: 'Styles for the Fidely UI Card component',
+
   base: {
     root: {
       background: 'bg.default',

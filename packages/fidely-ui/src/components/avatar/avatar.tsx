@@ -4,12 +4,9 @@ import { forwardRef } from 'react'
 import { ark } from '@ark-ui/react/factory'
 import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
-import {
-  avatar,
-  type AvatarVariantProps,
-} from '@fidely-ui/styled-system/recipes'
-import type { HTMLStyledProps } from '@fidely-ui/styled-system/types'
-import { styled } from '@fidely-ui/styled-system/jsx'
+import { avatar, type AvatarVariantProps } from 'styled-system/recipes'
+import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { styled } from 'styled-system/jsx'
 
 import { makeStyleContext } from '../../system/make-style-context'
 import { getInitials } from '../../utils/get-initial'
@@ -18,10 +15,12 @@ const { withSlotProvider, withSlotContext } = makeStyleContext(avatar)
 
 // -------------------- RootProvider --------------------
 export interface AvatarRootProviderProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkAvatar.RootProviderBaseProps>,
-    AvatarVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkAvatar.RootProviderBaseProps>,
+      AvatarVariantProps
+    >,
+    UnstyledProps {}
 
 export const AvatarRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -30,10 +29,12 @@ export const AvatarRootProvider = withSlotProvider<
 
 // -------------------- Root --------------------
 export interface AvatarRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkAvatar.RootBaseProps>,
-    AvatarVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkAvatar.RootBaseProps>,
+      AvatarVariantProps
+    >,
+    UnstyledProps {}
 
 export const AvatarRoot = withSlotProvider<HTMLDivElement, AvatarRootProps>(
   ArkAvatar.Root,
@@ -42,7 +43,9 @@ export const AvatarRoot = withSlotProvider<HTMLDivElement, AvatarRootProps>(
 
 // -------------------- Fallback --------------------
 export interface AvatarFallbackProps
-  extends Assign<HTMLStyledProps<'span'>, ArkAvatar.FallbackBaseProps> {
+  extends
+    Assign<HTMLStyledProps<'span'>, ArkAvatar.FallbackBaseProps>,
+    UnstyledProps {
   /**
    * The name to derive the initials from the avatar.
    */
@@ -69,7 +72,9 @@ export const AvatarFallback = forwardRef<HTMLDivElement, AvatarFallbackProps>(
 )
 // -------------------- Image --------------------
 export interface AvatarImageProps
-  extends Assign<HTMLStyledProps<'img'>, ArkAvatar.ImageBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'img'>, ArkAvatar.ImageBaseProps>,
+    UnstyledProps {}
 
 export const AvatarImage = withSlotContext<HTMLImageElement, AvatarImageProps>(
   ArkAvatar.Image,

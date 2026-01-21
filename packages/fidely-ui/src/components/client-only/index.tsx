@@ -1,7 +1,7 @@
 'use client'
 
 import { ClientOnly as ArkClientOnly } from '@ark-ui/react/client-only'
-import { ComponentProps } from '@fidely-ui/styled-system/types'
+import { ComponentProps } from 'styled-system/types'
 
 export interface ClientOnlyProps extends ComponentProps<typeof ArkClientOnly> {}
 

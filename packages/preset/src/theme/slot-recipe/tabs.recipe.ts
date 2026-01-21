@@ -1,9 +1,10 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { tabsAnatomy } from '@ark-ui/react/anatomy'
+
+import { tabsAnatomy } from '../../anatomy/index'
 
 export const tabsSlotRecipe = defineSlotRecipe({
   className: 'fidely-tabs',
-  slots: tabsAnatomy.keys(),
+  slots: tabsAnatomy.keys,
   description: 'Styles for the Fidely UI Tabs component',
   base: {
     root: {

@@ -18,6 +18,7 @@ import { profileSlotRecipe } from './profile.recipe'
 import { menuSlotRecipe } from './menu.recipe'
 import { hoverCardSlotRecipe } from './hoverCard.recipe'
 import { marqueeSlotRecipe } from './marquee.recipe'
+import { popoverSlotRecipe } from './popover.recipe'
 
 export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   accordion: accordionSlotRecipe,
@@ -33,6 +34,7 @@ export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   menu: menuSlotRecipe,
   passwordInput: passwordInputSlotRecipe,
   pinInput: pinInputSlotRecipe,
+  popover: popoverSlotRecipe,
   profile: profileSlotRecipe,
   switchRecipe: switchSlotRecipe,
   tabs: tabsSlotRecipe,

@@ -17,7 +17,6 @@ export const buttonRecipe = defineRecipe({
     minW: 'var(--button-height)',
     justifyContent: 'center',
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
     transition: 'all 0.2s',
     position: 'relative',
     transitionDuration: 'normal',
@@ -127,30 +126,6 @@ export const buttonRecipe = defineRecipe({
       },
     },
 
-    ripple: {
-      true: {
-        _before: {
-          content: '""',
-          position: 'absolute',
-          inset: 0,
-          width: 'full',
-          height: 'auto',
-          borderRadius: 'full',
-          background: 'currentColor',
-          opacity: 0,
-          transform: 'scale(0)',
-          transformOrigin: 'bottom left',
-          pointerEvents: 'none',
-        },
-        _active: {
-          _before: {
-            animation: 'ripple 0.6s ease-out',
-          },
-        },
-      },
-      false: {}, // no ripple styles
-    },
-
     fullWidth: {
       true: {
         width: '100%',
@@ -234,7 +209,6 @@ export const buttonRecipe = defineRecipe({
   defaultVariants: {
     variant: 'solid',
     size: 'md',
-    ripple: false,
     fullWidth: false,
   },
 })

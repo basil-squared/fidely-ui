@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 import { ark, type PolymorphicProps } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { button } from '@fidely-ui/styled-system/recipes'
-import { type ComponentProps } from '@fidely-ui/styled-system/types'
+import { styled } from 'styled-system/jsx'
+import { button } from 'styled-system/recipes'
+import { type ComponentProps } from 'styled-system/types'
 
 import { dataAttr } from '../../utils/attr'
 import { Loader } from '../loader'
@@ -21,9 +21,7 @@ interface LoadingButtonProps {
 type ButtonBaseProps = ComponentProps<typeof StyledButton>
 
 export interface ButtonProps
-  extends ButtonBaseProps,
-    LoadingButtonProps,
-    PolymorphicProps {}
+  extends ButtonBaseProps, LoadingButtonProps, PolymorphicProps {}
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(props, ref) {
@@ -42,6 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <StyledButton
         ref={ref}
+        type="button"
         disabled={isDisabled}
         data-disabled={dataAttr(disabled)}
         data-loading={dataAttr(isLoading)}

@@ -56,16 +56,6 @@ export const keyframes = defineKeyframes({
     '0%': { transform: 'rotate(0deg)' },
     '100%': { transform: 'rotate(360deg)' },
   },
-  ripple: {
-    '0%': {
-      transform: 'scale(0)',
-      opacity: '0.9',
-    },
-    '100%': {
-      transform: 'scale(4.9)',
-      opacity: '0',
-    },
-  },
   marqueeX: {
     from: {
       transform: 'translateX(0%)',

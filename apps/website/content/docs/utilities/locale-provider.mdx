@@ -1,0 +1,45 @@
+---
+title: Locale Provider
+description: Use to set and access the active locale for your application
+---
+
+## Usage
+
+**LocaleProvider** defines the active locale for your application.
+It enables locale-aware behavior such as formatting and text direction across Fidely UI components.
+
+```tsx
+import { LocaleProvider, useLocaleContext } from '@fidely-ui/react/locale'
+```
+
+```tsx
+<LocaleProvider locale=".....">Your App</LocaleProvider>
+```
+
+> Most Fidely UI components automatically read the locale provided by **LocaleProvider**.
+
+---
+
+# Examples
+
+### Setting Locale
+
+Provide the locale prop with the locale you want to use.
+
+```tsx
+<LocaleProvider locale="fr-FR">
+  <YourComponent />
+</LocaleProvider>
+```
+
+### Reading the Locale
+
+Access the current locale and text direction using useLocaleContext.
+
+```tsx
+const App = () => {
+  const { locale, dir } = useLocaleContext()
+
+  return <pre>{JSON.stringify({ locale, dir }, null, 2)}</pre>
+}
+```
