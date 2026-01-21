@@ -1,6 +1,10 @@
-import { Center, Grid, GridItem, Icon, Stack, Text } from '@fidely-ui/react'
-import { Box } from '@fidely-ui/react/box'
 import Link from 'next/link'
+import { Box } from '@fidely-ui/react/box'
+import { Grid, GridItem } from '@fidely-ui/react/grid'
+import { Icon } from '@fidely-ui/react/icon'
+import { Stack } from '@fidely-ui/react/stack'
+import { Text } from '@fidely-ui/react/text'
+
 import { RiNextjsFill } from 'react-icons/ri'
 import { SiFoodpanda, SiReactrouter, SiVite } from 'react-icons/si'
 

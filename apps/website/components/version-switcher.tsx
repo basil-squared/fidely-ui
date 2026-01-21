@@ -29,6 +29,12 @@ export const VersionSwitcher = () => {
           <Menu.Positioner>
             <Menu.Content>
               <Menu.ItemGroup>
+                <Menu.ItemGroupLabel textStyle="sm">
+                  Previous versions
+                </Menu.ItemGroupLabel>
+
+                <Menu.Separator />
+
                 {prevVersions.map((version) => (
                   <Menu.Item value={version.version} key={version.id} asChild>
                     <Link

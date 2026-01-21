@@ -43,7 +43,7 @@ npm install @fidely-ui/react @fidely-ui/panda-preset
 
 Open your **package.json** file and add the **prepare** script:
 
-```bash
+```json
 {
   "scripts": {
 +    "prepare": "panda codegen",
@@ -60,7 +60,7 @@ The **prepare** script ensures Panda CSS generates styles automatically when dep
 
 Since this is a JavaScript project, create a **jsconfig.json** file at the root
 
-```bash
+```json
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -118,9 +118,9 @@ Due to a Vite limitation, CSS files (and CSS dialects) cannot be resolved with t
 
 Update **panda.config.ts**
 
-```bash
-import { defineConfig } from "@pandacss/dev"
-import { fidelyPreset } from "@fidely-ui/panda-preset"
+```ts
+import { defineConfig } from '@pandacss/dev'
+import { fidelyPreset } from '@fidely-ui/panda-preset'
 
 export default defineConfig({
   presets: [fidelyPreset()],
@@ -130,9 +130,9 @@ export default defineConfig({
 
   // Files Panda should scan for styles
   include: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}",
+    './src/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}',
   ],
 
   exclude: [],
@@ -144,24 +144,24 @@ export default defineConfig({
 
   // Generate static CSS for all recipes
   staticCss: {
-    recipes: "*",
+    recipes: '*',
   },
 
   // Output directory for generated styles
-  outdir: "styled-system",
+  outdir: 'styled-system',
 
-  jsxFramework: "react",
+  jsxFramework: 'react',
 
   // Remove Panda default 50 / 950 color steps
   plugins: [
     {
-      name: "panda-headless-colors",
+      name: 'panda-headless-colors',
       hooks: {
-        "preset:resolved": ({ utils, preset, name }) => {
-          if (name === "@pandacss/preset-panda") {
+        'preset:resolved': ({ utils, preset, name }) => {
+          if (name === '@pandacss/preset-panda') {
             return utils.omit(preset, [
-              "theme.tokens.colors",
-              "theme.semanticTokens.colors",
+              'theme.tokens.colors',
+              'theme.semanticTokens.colors',
             ])
           }
           return preset
@@ -182,7 +182,7 @@ npx panda codegen
 
 Open **src/App.css** and replace its contents with:
 
-```bash
+```css
 @layer reset, base, tokens, recipes, utilities;
 ```
 
@@ -192,7 +192,7 @@ Open **src/App.css** and replace its contents with:
 
 Update src/main.tsx:
 
-```bash
+```jsx
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 
@@ -210,7 +210,7 @@ createRoot(document.getElementById('root')!).render(
 
 You can now start using Fidely UI components:
 
-```tsx
+```jsx
 import { Button } from '@fidely-ui/react'
 
 const Demo = () => {

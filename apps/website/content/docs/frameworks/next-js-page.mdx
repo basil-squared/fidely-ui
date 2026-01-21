@@ -166,33 +166,6 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-> When using libraries like **next-themes**, it is recommended to add the  
-> **suppressHydrationWarning** prop to the `Html` element in **\_document.tsx**  
-> to prevent hydration mismatch warnings.
-
-## Configure **\_document.tsx** (for next-themes)
-
-Update **pages/\_document.tsx** as shown below:
-
-```tsx
-import { Html, Head, Main, NextScript } from 'next/document'
-
-export default function Document() {
-  return (
-    <Html lang="en" suppressHydrationWarning>
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
-}
-```
-
-This prevents hydration warnings caused by theme mismatches when **next-themes**
-switches between light and dark modes on the client.
-
 ## Enjoy ✨
 
 You can now start using Fidely UI components:

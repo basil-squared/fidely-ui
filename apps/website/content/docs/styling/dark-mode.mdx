@@ -1,12 +1,12 @@
 ---
 title: Dark Mode
-description: Learn how to enable and manage dark mode in your Fidely UI project using next-themes.
+description: Learn how to enable and manage dark mode in your Fidely UI projects.
 ---
 
 # 🌙 Dark Mode
 
 Fidely UI doesn’t include a built-in color mode manager.  
-Instead, it integrates seamlessly with [`next-themes`](https://github.com/pacocoursey/next-themes) — a lightweight and powerful theme switcher for you project.
+Instead, it integrates seamlessly with [`next-themes`](https://github.com/pacocoursey/next-themes) a lightweight and powerful theme switcher for you project.
 
 ---
 
@@ -119,6 +119,38 @@ To reduce repetition and ensure consistency, use semantic tokens.
 These tokens handle both light and dark mode colors automatically.
 
 ---
+
+## Forcing Color Mode
+
+You can explicitly force **dark** or **light** mode by applying a corresponding class name to a parent element.
+
+---
+
+### Element Specific Dark Mode
+
+To force dark mode, add the **dark** className to any parent element (including the root of your application).
+All child components will inherit the dark color scheme.
+
+```tsx
+<Box className="dark">
+  <Box bg="bg.subtle">
+    <Text>Hello World</Text>
+  </Box>
+</Box>
+```
+
+### Element Specific Light Mode
+
+Similarly, to force **light mode**, apply the `light` className to a parent element.
+This ensures all nested components render using the light color scheme.
+
+```tsx
+<Box className="light">
+  <Box bg="bg.subtle">
+    <Text>Hello World</Text>
+  </Box>
+</Box>
+```
 
 # Add a Theme Toggle Button
 

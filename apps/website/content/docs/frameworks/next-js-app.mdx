@@ -43,7 +43,7 @@ npm install @fidely-ui/react @fidely-ui/panda-preset
 
 Open your **package.json** file and add the **prepare** script:
 
-```bash
+```json
 {
   "scripts": {
 +    "prepare": "panda codegen",
@@ -61,7 +61,7 @@ The **prepare** script ensures Panda CSS generates styles automatically when dep
 
 If you are using TypeScript, update your **compilerOptions** to include the following:
 
-```bash
+```json
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -82,9 +82,9 @@ This allows Panda’s generated **styled-system** files to resolve correctly.
 
 Update **panda.config.ts**
 
-```bash
-import { defineConfig } from "@pandacss/dev"
-import { fidelyPreset } from "@fidely-ui/panda-preset"
+```ts
+import { defineConfig } from '@pandacss/dev'
+import { fidelyPreset } from '@fidely-ui/panda-preset'
 
 export default defineConfig({
   presets: [fidelyPreset()],
@@ -94,9 +94,9 @@ export default defineConfig({
 
   // Files Panda should scan for styles
   include: [
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}",
+    './app/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}',
   ],
 
   exclude: [],
@@ -108,24 +108,24 @@ export default defineConfig({
 
   // Generate static CSS for all recipes
   staticCss: {
-    recipes: "*",
+    recipes: '*',
   },
 
   // Output directory for generated styles
-  outdir: "styled-system",
+  outdir: 'styled-system',
 
-  jsxFramework: "react",
+  jsxFramework: 'react',
 
   // Remove Panda default 50 / 950 color steps
   plugins: [
     {
-      name: "panda-headless-colors",
+      name: 'panda-headless-colors',
       hooks: {
-        "preset:resolved": ({ utils, preset, name }) => {
-          if (name === "@pandacss/preset-panda") {
+        'preset:resolved': ({ utils, preset, name }) => {
+          if (name === '@pandacss/preset-panda') {
             return utils.omit(preset, [
-              "theme.tokens.colors",
-              "theme.semanticTokens.colors",
+              'theme.tokens.colors',
+              'theme.semanticTokens.colors',
             ])
           }
           return preset
@@ -146,7 +146,7 @@ npx panda codegen
 
 Navigate to **app/globals.css** and replace its contents with:
 
-```bash
+```css
 @layer reset, base, tokens, recipes, utilities;
 ```
 
@@ -156,7 +156,7 @@ Navigate to **app/globals.css** and replace its contents with:
 
 Update your **app/layout.tsx** file:
 
-```bash
+```tsx
 import type { Metadata } from "next"
 +  import "./globals.css"
 ...rest here

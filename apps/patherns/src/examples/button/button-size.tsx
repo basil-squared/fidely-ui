@@ -2,7 +2,7 @@ import { Button, HStack } from '@fidely-ui/react'
 
 export const ButtonSize = () => {
   return (
-    <HStack gap="6">
+    <HStack gap="6" flexWrap="wrap">
       <Button size="xs">Button (xs)</Button>
       <Button size="sm">Button (sm)</Button>
       <Button size="md">Button (md)</Button>
