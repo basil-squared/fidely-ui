@@ -7,7 +7,7 @@ const prevVersions = [
   {
     id: 1,
     version: 'v1.x',
-    url: 'https://v1-fidely-ui.vercel.app/',
+    url: 'https://fidely-ui.vercel.app/',
   },
 ]
 
