@@ -6,6 +6,9 @@ import { Flex } from '@fidely-ui/react/flex'
 import { Stack } from '@fidely-ui/react/stack'
 import { Heading } from '@fidely-ui/react/heading'
 import { Text } from '@fidely-ui/react/text'
+import { FaExternalLinkAlt } from 'react-icons/fa'
+
+import { NewComponentBadge } from '~/components/new-component-badge'
 
 export const HeroSection = () => {
   return (
@@ -31,6 +34,10 @@ export const HeroSection = () => {
             height={{ base: '100vdh', lg: '85vh' }}
           >
             <Stack gap="7">
+              <NewComponentBadge href="https://v2-fidely-ui.vercel.app/">
+                Fidely UI v2.0.0 (beta){' '}
+                <FaExternalLinkAlt style={{ marginLeft: '6px' }} />
+              </NewComponentBadge>
               <Stack gap="4">
                 <Heading
                   as="h1"
@@ -100,7 +107,7 @@ export const HeroSection = () => {
                   </Link>
                 </Button>
 
-                <Button
+                {/* <Button
                   asChild
                   colorPalette="gray"
                   variant="subtle"
@@ -112,7 +119,7 @@ export const HeroSection = () => {
                   >
                     Explore Blocks
                   </Link>
-                </Button>
+                </Button> */}
               </Stack>
             </Stack>
           </Flex>

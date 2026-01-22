@@ -25,7 +25,7 @@ export const SiteNavBar = () => {
 
   const navLinks = [
     { href: '/docs/getting-started/installation', label: 'Docs', info: false },
-    { href: '#', label: 'Templates', info: true },
+    // { href: '#', label: 'Templates', info: true },
     { href: '/docs/components/accordion', label: 'Components', info: false },
   ]
 
@@ -144,12 +144,12 @@ const SiteMobileLinks = ({ closeDrawer }: SiteMobileLinksProps) => {
           closeDrawer={closeDrawer}
           fontSize="18px"
         />
-        <NavItem
+        {/* <NavItem
           href="/docs/getting-started/installation"
           label="Templates"
           closeDrawer={closeDrawer}
           fontSize="18px"
-        />
+        /> */}
       </Stack>
     </Stack>
   )
