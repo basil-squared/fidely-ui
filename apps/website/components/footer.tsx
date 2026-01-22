@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { Box } from '@fidely-ui/react/box'
 import { Flex } from '@fidely-ui/react/flex'
@@ -11,7 +9,7 @@ import { Grid, GridItem } from '@fidely-ui/react/grid'
 
 import { AppLogo } from '~/components/logo'
 import { Span } from '@fidely-ui/react'
-import { InfoBadge } from './nav-item'
+// import { InfoBadge } from './nav-item'
 
 const documentation = [
   { href: '/docs/getting-started/installation', label: 'Getting Started' },
@@ -30,11 +28,11 @@ const community = [
   },
 ]
 
-const resources = [
-  { href: '#', label: 'Fidely UI pro' },
-  { href: '#', label: 'Blocks' },
-  { href: '#', label: 'Templates' },
-]
+// const resources = [
+//   { href: '#', label: 'Fidely UI pro' },
+//   { href: '#', label: 'Blocks' },
+//   { href: '#', label: 'Templates' },
+// ]
 
 export const Footer = () => {
   return (
@@ -76,11 +74,11 @@ export const Footer = () => {
           gridTemplateColumns={{
             base: '1fr',
             md: 'repeat(2, 1fr)',
-            lg: 'repeat(3, 1fr)',
+            lg: 'repeat(2, 1fr)',
           }}
           gap={{ base: '10', md: '16' }}
         >
-          {/* Resources */}
+          {/* Documentation */}
           <GridItem>
             <Heading as={'h5'} textStyle={'lg'} mb={4} color={'fg.default'}>
               Documentation
@@ -130,7 +128,7 @@ export const Footer = () => {
           </GridItem>
 
           {/* Projects */}
-          <GridItem>
+          {/* <GridItem>
             <Heading as={'h5'} textStyle={'lg'} mb={4} color={'fg.default'}>
               Resources
             </Heading>
@@ -157,7 +155,7 @@ export const Footer = () => {
                 </Link>
               ))}
             </Stack>
-          </GridItem>
+          </GridItem> */}
         </Grid>
       </Flex>
 

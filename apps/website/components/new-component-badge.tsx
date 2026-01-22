@@ -11,14 +11,18 @@ export const NewComponentBadge = ({
   children,
 }: NewComponentBadgeProps) => {
   return (
-    <Link href={href}>
+    <Link href={href} target="_blank" rel="noopener noreferrer">
       <Badge
-        size="xl"
-        bg="orange.8"
-        color="orange.11"
-        _dark={{ bg: 'orange.5', color: 'orange.10' }}
+        size="md"
+        // bg="orange.8"
+        // color="orange.11"
+
+        // _dark={{ bg: 'orange.5', color: 'orange.10' }}
         py="2"
         px="3.5"
+        rounded="full"
+        variant="outline"
+        colorPalette="orange"
       >
         {children}
       </Badge>

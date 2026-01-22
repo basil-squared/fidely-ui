@@ -25,7 +25,7 @@ export const SiteNavBar = () => {
 
   const navLinks = [
     { href: '/docs/getting-started/installation', label: 'Docs', info: false },
-    { href: '#', label: 'Templates', info: true },
+    // { href: '#', label: 'Templates', info: true },
     { href: '/docs/components/accordion', label: 'Components', info: false },
   ]
 
