@@ -144,12 +144,12 @@ const SiteMobileLinks = ({ closeDrawer }: SiteMobileLinksProps) => {
           closeDrawer={closeDrawer}
           fontSize="18px"
         />
-        <NavItem
+        {/* <NavItem
           href="/docs/getting-started/installation"
           label="Templates"
           closeDrawer={closeDrawer}
           fontSize="18px"
-        />
+        /> */}
       </Stack>
     </Stack>
   )
