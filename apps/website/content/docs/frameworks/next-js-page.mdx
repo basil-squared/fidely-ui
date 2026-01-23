@@ -8,6 +8,8 @@ description: A guide to installing and using Fidely UI with the Next.js Page Rou
 The easiest way to get started is to use our **Next.js 16** page template.  
 It comes preconfigured with Panda CSS, Ark UI, Fidely UI, and theme support.
 
+> Note the command below uses Fidely UI v1 would update once v2 stable
+
 ```bash
 npx create-next-app -e https://github.com/fidely-ui/next-page-template
 ```
@@ -25,21 +27,13 @@ npm install -D @pandacss/dev
 npx panda init --postcss
 ```
 
-## 2. install Ark UI
-
-Ark UI provides the headless, accessible primitives used by Fidely UI.
+## 2. install Fidely UI
 
 ```bash
-npm install @ark-ui/react
+npm install @fidely-ui/react@beta @fidely-ui/panda-preset@beta
 ```
 
-## 3. install Fidely UI
-
-```bash
-npm install @fidely-ui/react @fidely-ui/panda-preset
-```
-
-## 4. Update package.json scripts
+## 3. Update package.json scripts
 
 Open your **package.json** file and add the **prepare** script:
 
@@ -57,7 +51,7 @@ Open your **package.json** file and add the **prepare** script:
 
 The **prepare** script ensures Panda CSS generates styles automatically when dependencies are installed.
 
-## 5. Update tsconfig
+## 4. Update tsconfig
 
 If you are using TypeScript, update your **compilerOptions** to include the following:
 
@@ -78,7 +72,7 @@ If you are using TypeScript, update your **compilerOptions** to include the foll
 
 This allows Panda’s generated **styled-system** files to resolve correctly.
 
-## 6. Configure Panda CSS
+## 5. Configure Panda CSS
 
 Update **panda.config.ts**
 
@@ -142,7 +136,7 @@ After updating the config, generate the styled system:
 npx panda codegen
 ```
 
-## 7. Configure the entry CSS with layers
+## 6. Configure the entry CSS with layers
 
 Navigate to **styles/globals.css** and replace its contents with:
 
@@ -152,7 +146,7 @@ Navigate to **styles/globals.css** and replace its contents with:
 
 > You can safely remove any unused CSS modules if present.
 
-## 8. Import global CSS in **\_app.tsx**
+## 7. Import global CSS in **\_app.tsx**
 
 Update **pages/\_app.tsx** file:
 
