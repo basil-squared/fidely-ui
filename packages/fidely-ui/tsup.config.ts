@@ -15,7 +15,7 @@ export default defineConfig({
     'react-dom',
     '@pandacss/dev',
     '@fidely-ui/panda-preset',
-    'styled-system',
+    /^styled-system\/.+$/,
     '@ark-ui/react',
   ],
 })
