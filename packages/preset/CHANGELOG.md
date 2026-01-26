@@ -1,5 +1,11 @@
 # @fidely-ui/panda-preset
 
+## 2.0.0-beta.1
+
+### Patch Changes 2026-01-26
+
+- Replaced bundled styles with panda ship manifest (panda.buildinfo.json) to allow user-defined prefixes and hashing.
+
 ## 2.0.0-beta.0 - 2026-01-22
 
 ### Major Changes

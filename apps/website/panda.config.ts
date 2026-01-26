@@ -17,7 +17,8 @@ export default defineConfig({
     './app/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
     '../patherns/src/examples/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@fidely-ui/react/**/*.{ts,tsx,js,jsx}',
+    // './node_modules/@fidely-ui/react/**/*.{ts,tsx,js,jsx}',
+    './node_modules/@fidely-ui/react/dist/panda.buildinfo.json',
   ],
 
   outdir: 'styled-system',
