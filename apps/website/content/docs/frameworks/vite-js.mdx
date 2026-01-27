@@ -6,9 +6,7 @@ description: A guide to installing and using Fidely UI with Vite and Jsx
 ## Get started with a template
 
 The easiest way to get started is to use our **Vite + JavaScript** template.  
-It comes preconfigured with Panda CSS, Ark UI, and Fidely UI and theme support.
-
-> Note the command below uses Fidely UI v1 would update once v2 stable
+It comes preconfigured with Panda CSS, Ark UI, and Fidely UI v2 and theme support.
 
 ```bash
 npx degit https://github.com/fidely-ui/vite-js-template
@@ -71,12 +69,12 @@ Since this is a JavaScript project, create a **jsconfig.json** file at the root
 
 This allows Panda’s generated **styled-system** files to resolve correctly.
 
-## 4.5 Configure Vite path aliases
+## 4.5 Configure Vite path aliases and optimizeDeps
 
 Vite does not automatically read **jsconfig.json** or **tsconfig.json** path
 aliases at runtime.
 
-You must explicitly configure aliases in **vite.config.js**.
+You must explicitly configure aliases in **vite.config.js** and add the **`optimizeDeps`**.
 
 ### Install Node types
 
@@ -99,6 +97,9 @@ export default defineConfig({
     alias: {
       'styled-system': path.resolve(__dirname, 'styled-system'),
     },
+  },
+  optimizeDeps: {
+    exclude: ['@fidely-ui/react'],
   },
 })
 ```
@@ -126,7 +127,7 @@ export default defineConfig({
   include: [
     './src/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/dist/panda.buildinfo.json',
   ],
 
   exclude: [],

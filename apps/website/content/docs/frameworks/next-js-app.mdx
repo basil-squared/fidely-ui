@@ -6,9 +6,7 @@ description: A guide to installing and using Fidely UI with the Next.js App Rout
 ## Get started with a template
 
 The easiest way to get started is to use our **Next.js 16** app template.  
-It comes preconfigured with Panda CSS, Ark UI, Fidely UI, and theme support.
-
-> Note the command below uses Fidely UI v1 would update once v2 stable
+It comes preconfigured with Panda CSS, Ark UI, Fidely UI v2 and theme support.
 
 ```bash
 npx create-next-app -e https://github.com/fidely-ui/next-app-template
@@ -72,7 +70,22 @@ If you are using TypeScript, update your **compilerOptions** to include the foll
 
 This allows Panda’s generated **styled-system** files to resolve correctly.
 
-## 5. Configure Panda CSS
+## 5. Update next.config.ts file
+
+Add **`transpilePackages`** to include **`@fidely-ui/react`**
+
+```ts
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  transpilePackages: ['@fidely-ui/react'],
+}
+
+export default nextConfig
+```
+
+## 6. Configure Panda CSS
 
 Update **panda.config.ts**
 
@@ -90,7 +103,7 @@ export default defineConfig({
   include: [
     './app/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/dist/panda.buildinfo.json',
   ],
 
   exclude: [],
@@ -136,7 +149,7 @@ After updating the config, generate the styled system:
 npx panda codegen
 ```
 
-## 6. Configure the entry CSS with layers
+## 7. Configure the entry CSS with layers
 
 Navigate to **app/globals.css** and replace its contents with:
 
@@ -146,7 +159,7 @@ Navigate to **app/globals.css** and replace its contents with:
 
 > You can safely delete **page.module.css** if it exists, it is not needed.
 
-## 7. Import the global CSS in the root layout
+## 8. Import the global CSS in the root layout
 
 Update your **app/layout.tsx** file:
 

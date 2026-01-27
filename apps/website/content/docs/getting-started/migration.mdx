@@ -34,10 +34,10 @@ This shift gives you **full control over your design system** while keeping Fide
 
 ## 1. Update package
 
-Remove the unused packages **`@fidely-ui/styled-system`**
+Remove the unused packages **`@fidely-ui/styled-system`** and **`@ark-ui/react`**
 
 ```bash
-npm uninstall @fidely-ui/styled-system
+npm uninstall @fidely-ui/styled-system @ark-ui/react
 ```
 
 Install updated versions of the packages: **`@fidely-ui/react`** and **`@fidely-ui/panda-preset`**.
@@ -141,20 +141,22 @@ In v2, styles come from your project, not a package:
 import { accordion } from 'styled-system/recipes'
 ```
 
-And your **tsconfig.json** must include:
+### Next.js users update next.config
 
-```json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "styled-system/*": ["styled-system/*"]
-    }
-  }
+If you are using Next.js add **`transpilePackages`** to include **`@fidely-ui/react`**
+
+```ts
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  transpilePackages: ['@fidely-ui/react'],
 }
+
+export default nextConfig
 ```
 
-### Vite Users: Alias Configuration (Required)
+### Vite Users: Alias Configuration and optimizeDeps (Required)
 
 Vite does not read **tsconfig.json** paths automatically.
 
@@ -174,13 +176,16 @@ export default defineConfig({
       'styled-system': path.resolve(__dirname, 'styled-system'),
     },
   },
+  optimizeDeps: {
+    exclude: ['@fidely-ui/react'],
+  },
 })
 ```
 
 Without this, you may see errors like:
 
 ```bash
-Cannot resolve module 'styled-system/css'
+Cannot resolve module 'styled-system/css' xxx....
 ```
 
 also update your **`tsconfig.app.json`**
@@ -195,14 +200,6 @@ also update your **`tsconfig.app.json`**
   }
 }
 ```
-
-### **`Next.js`** Users
-
-**`Next.js`** automatically respects **`tsconfig.json`** paths, so no extra config is needed as long as:
-
-- **`baseUrl`** is set to "."
-
-- **`styled-system/`** exists in **paths**
 
 ### Reminder: Run Panda Codegen
 
@@ -221,7 +218,7 @@ npx panda codegen
 export default defineConfig({
   // Files Panda should scan for styles
   include: [
-    './node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}', // include this
+    './node_modules/@fidely-ui/react/dist/panda.buildinfo.json', // include this
   ],
 })
 ```
