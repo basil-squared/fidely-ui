@@ -46,9 +46,9 @@ const frameworks = [
     id: 5,
     name: 'React Router',
     description: 'Client-side routing with full control over app structure.',
-    url: '#',
+    url: 'frameworks/react-router',
     logo: <SiReactrouter />,
-    comingSoon: true,
+    comingSoon: false,
   },
   {
     id: 6,

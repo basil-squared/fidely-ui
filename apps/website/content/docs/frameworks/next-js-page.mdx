@@ -6,9 +6,7 @@ description: A guide to installing and using Fidely UI with the Next.js Page Rou
 ## Get started with a template
 
 The easiest way to get started is to use our **Next.js 16** page template.  
-It comes preconfigured with Panda CSS, Ark UI, Fidely UI, and theme support.
-
-> Note the command below uses Fidely UI v1 would update once v2 stable
+It comes preconfigured with Panda CSS, Ark UI, Fidely UI v2 and theme support.
 
 ```bash
 npx create-next-app -e https://github.com/fidely-ui/next-page-template
@@ -37,7 +35,7 @@ npm install @fidely-ui/react@beta @fidely-ui/panda-preset@beta
 
 Open your **package.json** file and add the **prepare** script:
 
-```bash
+```json
 {
   "scripts": {
 +    "prepare": "panda codegen",
@@ -55,7 +53,7 @@ The **prepare** script ensures Panda CSS generates styles automatically when dep
 
 If you are using TypeScript, update your **compilerOptions** to include the following:
 
-```bash
+```json
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -72,13 +70,26 @@ If you are using TypeScript, update your **compilerOptions** to include the foll
 
 This allows Panda’s generated **styled-system** files to resolve correctly.
 
-## 5. Configure Panda CSS
+## 5. Update next.config.ts file
+
+Add **`transpilePackages`** to include **`@fidely-ui/react`**
+
+```ts
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  transpilePackages: ['@fidely-ui/react'],
+}
+```
+
+## 6. Configure Panda CSS
 
 Update **panda.config.ts**
 
-```bash
-import { defineConfig } from "@pandacss/dev"
-import { fidelyPreset } from "@fidely-ui/panda-preset"
+```ts
+import { defineConfig } from '@pandacss/dev'
+import { fidelyPreset } from '@fidely-ui/panda-preset'
 
 export default defineConfig({
   presets: [fidelyPreset()],
@@ -88,9 +99,9 @@ export default defineConfig({
 
   // Files Panda should scan for styles
   include: [
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@fidely-ui/react/**/*.{js,jsx,ts,tsx}",
+    './pages/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@fidely-ui/react/dist/panda.buildinfo.json',
   ],
 
   exclude: [],
@@ -102,24 +113,24 @@ export default defineConfig({
 
   // Generate static CSS for all recipes
   staticCss: {
-    recipes: "*",
+    recipes: '*',
   },
 
   // Output directory for generated styles
-  outdir: "styled-system",
+  outdir: 'styled-system',
 
-  jsxFramework: "react",
+  jsxFramework: 'react',
 
   // Remove Panda default 50 / 950 color steps
   plugins: [
     {
-      name: "panda-headless-colors",
+      name: 'panda-headless-colors',
       hooks: {
-        "preset:resolved": ({ utils, preset, name }) => {
-          if (name === "@pandacss/preset-panda") {
+        'preset:resolved': ({ utils, preset, name }) => {
+          if (name === '@pandacss/preset-panda') {
             return utils.omit(preset, [
-              "theme.tokens.colors",
-              "theme.semanticTokens.colors",
+              'theme.tokens.colors',
+              'theme.semanticTokens.colors',
             ])
           }
           return preset
@@ -136,7 +147,7 @@ After updating the config, generate the styled system:
 npx panda codegen
 ```
 
-## 6. Configure the entry CSS with layers
+## 7. Configure the entry CSS with layers
 
 Navigate to **styles/globals.css** and replace its contents with:
 
@@ -146,12 +157,11 @@ Navigate to **styles/globals.css** and replace its contents with:
 
 > You can safely remove any unused CSS modules if present.
 
-## 7. Import global CSS in **\_app.tsx**
+## 8. Import global CSS in **\_app.tsx**
 
 Update **pages/\_app.tsx** file:
 
-```bash
-
+```tsx
 import type { AppProps } from "next/app"
 +  import "../styles/globals.css"
 
