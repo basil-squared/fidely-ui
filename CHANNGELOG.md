@@ -1,5 +1,11 @@
 # @fidely-ui/react
 
+## 2.0.0-beta.2 - 2026-01-28
+
+### Patch Changes
+
+- fix: CommandInput key-shortcuts causing mismatch Meta/Ctrl keys
+
 ## 2.0.0-beta.0 - 2026-01-22
 
 ### Major Changes

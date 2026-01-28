@@ -75,7 +75,6 @@ export const CommandInput = React.forwardRef<
       onClick={onOpen}
       aria-haspopup="dialog"
       aria-expanded={isOpen}
-      aria-keyshortcuts={shortcutLabel}
       className={className}
       {...rest}
     >
