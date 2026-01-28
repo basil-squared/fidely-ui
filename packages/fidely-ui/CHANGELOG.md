@@ -1,5 +1,14 @@
 # @fidely-ui/react
 
+## 2.0.0-beta.2
+
+### Patch Changes
+
+- fix: CommandInput key-shortcuts causing mismatch Meta/Ctrl keys
+
+- Updated dependencies []:
+  - @fidely-ui/panda-preset@2.0.0-beta.2
+
 ## 2.0.0-beta.1
 
 ### Patch Changes - 2026-01-26

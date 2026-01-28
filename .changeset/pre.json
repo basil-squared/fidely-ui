@@ -8,5 +8,5 @@
     "@fidely-ui/react": "1.3.0",
     "@fidely-ui/panda-preset": "1.3.0"
   },
-  "changesets": ["odd-keys-write", "sharp-chefs-sniff"]
+  "changesets": ["free-bars-arrive", "odd-keys-write", "sharp-chefs-sniff"]
 }
