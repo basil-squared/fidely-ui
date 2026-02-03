@@ -1,17 +1,15 @@
-'use client'
-
 import Link from 'next/link'
 import { Box } from '@fidely-ui/react/box'
+import { Center } from '@fidely-ui/react/center'
 import { Flex } from '@fidely-ui/react/flex'
 import { Stack } from '@fidely-ui/react/stack'
+import { Span } from '@fidely-ui/react/span'
 import { Heading } from '@fidely-ui/react/heading'
 import { Text } from '@fidely-ui/react/text'
-
 import { Grid, GridItem } from '@fidely-ui/react/grid'
 
 import { AppLogo } from '~/components/logo'
-import { Span } from '@fidely-ui/react'
-import { InfoBadge } from './nav-item'
+import { InfoBadge } from '~/components/nav-item'
 
 const documentation = [
   { href: '/docs/getting-started/installation', label: 'Getting Started' },
@@ -38,11 +36,17 @@ const resources = [
 
 export const Footer = () => {
   return (
-    <Box as="footer" px={{ base: '6', md: '12' }} mt="14" color={'fg.subtle'}>
-      <Flex flexDirection={{ base: 'column-reverse', lg: 'row' }}>
+    <Box as="footer" px="4" py="4">
+      <Flex
+        w="90%"
+        mx="auto"
+        alignItems="center"
+        justifyContent="space-between"
+        flexDirection={{ base: 'column-reverse', lg: 'row' }}
+      >
         <Stack
           gap={4}
-          width={{ base: '100%', md: '50%' }}
+          width={{ base: '100%', lg: '50%' }}
           mt={{ base: '35px', md: '0px' }}
           color={'fg.subtle'}
         >
@@ -72,7 +76,7 @@ export const Footer = () => {
           </Text>
         </Stack>
         <Grid
-          width={{ base: '100%', md: '50%' }}
+          width={{ base: '100%', lg: '50%' }}
           gridTemplateColumns={{
             base: '1fr',
             md: 'repeat(2, 1fr)',
@@ -87,17 +91,17 @@ export const Footer = () => {
             </Heading>
             <Stack gap={3}>
               {documentation.map(({ href, label }) => (
-                <Link key={label} href={href}>
-                  <Text
-                    transition="color 0.2s ease"
-                    color={'fg.subtle'}
-                    _hover={{
-                      color: 'fg.muted',
-                    }}
-                  >
-                    {label}
-                  </Text>
-                </Link>
+                <Text
+                  transition="color 0.2s ease"
+                  color={'fg.subtle'}
+                  _hover={{
+                    color: 'fg.muted',
+                  }}
+                  asChild
+                  key={label}
+                >
+                  <Link href={href}>{label}</Link>
+                </Text>
               ))}
             </Stack>
           </GridItem>
@@ -109,22 +113,19 @@ export const Footer = () => {
             </Heading>
             <Stack gap={3}>
               {community.map(({ href, label }) => (
-                <Link
+                <Text
+                  transition="color 0.2s ease"
+                  color={'fg.subtle'}
+                  _hover={{
+                    color: 'fg.muted',
+                  }}
                   key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  asChild
                 >
-                  <Text
-                    transition="color 0.2s ease"
-                    color={'fg.subtle'}
-                    _hover={{
-                      color: 'fg.muted',
-                    }}
-                  >
+                  <Link href={href} target="_blank" rel="noopener noreferrer">
                     {label}
-                  </Text>
-                </Link>
+                  </Link>
+                </Text>
               ))}
             </Stack>
           </GridItem>
@@ -161,7 +162,7 @@ export const Footer = () => {
         </Grid>
       </Flex>
 
-      <Box
+      <Center
         borderTopWidth="1px"
         borderTopStyle="solid"
         borderColor="border.muted"
@@ -169,7 +170,7 @@ export const Footer = () => {
         py="4"
       >
         <Text>© {new Date().getFullYear()} Fidely UI. All rights reserved</Text>
-      </Box>
+      </Center>
     </Box>
   )
 }
