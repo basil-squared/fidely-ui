@@ -57,6 +57,7 @@
   "keywords": [
     "Fidely UI",
     "presets",
+    "fidely preset",
     "panda css",
     "fidely-ui"
   ],
@@ -67,7 +68,7 @@
     "@pandacss/dev": ">=1.1.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "^1.7.3",
+    "@pandacss/dev": "^1.8.1",
     "rimraf": "^6.0.1",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"

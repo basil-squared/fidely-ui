@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  transpilePackages: ['@fidely-ui/react'],
 }
 
 export default nextConfig
