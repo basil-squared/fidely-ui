@@ -64,12 +64,6 @@ Use the **`--popover-bg`** CSS variable to change the background color of the **
 
 <ExampleTabs name="popover-with-bg" scope="popover" />
 
-### Custom Background
-
-Use the **`--popover-bg`** CSS variable to change the background color of the **Popover.Content** and its arrow.
-
-<ExampleTabs name="popover-with-bg" scope="popover" />
-
 ### Within Dialog
 
 To use the **`Popover`** within a **`Dialog`**, you need to avoid portalling the **Popover.Positioner** to the document's body.
@@ -95,3 +89,35 @@ If the dialog uses scrollBehavior="inside":
 ```
 
 ## Props
+
+### Root
+
+| Prop                     | Default | Type                                       | Description                                                                                                |
+| :----------------------- | :------ | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
+| `autoFocus`              | `true`  | `boolean`                                  | Whether to automatically set focus on the first focusable content within the popover when opened.          |
+| `closeOnEscape`          | `true`  | `boolean`                                  | Whether to close the popover when the escape key is pressed.                                               |
+| `as`                     | —       | `React.ElementType`                        | The underlying element to render. We don't recommend changing the input to another `ElementType`.          |
+| `asChild`                | `false` | `boolean`                                  | Use the provided child element as the default rendered element, combining their props and behavior.        |
+| `closeOnInteractOutside` | `true`  | `boolean`                                  | Whether to close the popover when the user clicks outside of the popover.                                  |
+| `lazyMount`              | `false` | `boolean`                                  | Whether to enable lazy mounting.                                                                           |
+| `modal`                  | `false` | `boolean`                                  | Whether the popover should be modal. When `true`, interaction with outside elements will be disabled.      |
+| `portalled`              | `true`  | `boolean`                                  | Whether the popover is portalled. This proxies tabbing behavior regardless of the DOM position.            |
+| `skipAnimationOnMount`   | `false` | `boolean`                                  | Whether to allow the initial presence animation.                                                           |
+| `unmountOnExit`          | `false` | `boolean`                                  | Whether to unmount on exit.                                                                                |
+| `unstyled`               | —       | `boolean`                                  | Whether to remove the component's default styles.                                                          |
+| `defaultOpen`            | —       | `boolean`                                  | The initial open state of the popover when rendered (uncontrolled).                                        |
+| `id`                     | —       | `string`                                   | The unique identifier.                                                                                     |
+| `ids`                    | —       | `Partial<{}>`                              | The ids of the elements in the popover.                                                                    |
+| `immediate`              | —       | `boolean`                                  | Whether to synchronize the present change immediately or defer it to the next frame.                       |
+| `initialFocusEl`         | —       | `() => HTMLElement \| null`                | The element to focus on when the popover is opened.                                                        |
+| `onEscapeKeyDown`        | —       | `(event: KeyboardEvent) => void`           | Function called when the escape key is pressed.                                                            |
+| `onExitComplete`         | —       | `VoidFunction`                             | Function called when the animation ends in the closed state.                                               |
+| `onFocusOutside`         | —       | `(event: FocusOutsideEvent) => void`       | Function called when the focus is moved outside the component.                                             |
+| `onInteractOutside`      | —       | `(event: InteractOutsideEvent) => void`    | Function called when an interaction happens outside the component.                                         |
+| `onOpenChange`           | —       | `(details: OpenChangeDetails) => void`     | Function invoked when the popover opens or closes.                                                         |
+| `onPointerDownOutside`   | —       | `(event: PointerDownOutsideEvent) => void` | Function called when the pointer is pressed down outside the component.                                    |
+| `onRequestDismiss`       | —       | `(event: LayerDismissEvent) => void`       | Function called when this layer is closed due to a parent layer being closed.                              |
+| `open`                   | —       | `boolean`                                  | The controlled open state of the popover.                                                                  |
+| `persistentElements`     | —       | `(() => Element \| null)[]`                | Returns the persistent elements that should not have pointer-events disabled or trigger the dismiss event. |
+| `positioning`            | —       | `PositioningOptions`                       | The user provided options used to position the popover content.                                            |
+| `present`                | —       | `boolean`                                  | Whether the node is present (controlled by the user).                                                      |
