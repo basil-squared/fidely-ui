@@ -1,99 +1,96 @@
 'use client'
 
 import * as React from 'react'
-import { cx } from '@fidely-ui/styled-system/css'
-import { commandInput } from '@fidely-ui/styled-system/recipes'
+import { ark } from '@ark-ui/react/factory'
+import { commandInput } from 'styled-system/recipes'
+import { ComponentProps } from 'styled-system/types'
+import { styled } from 'styled-system/jsx'
 
-import { Group } from '../group/index'
 import { Kbd } from '../kbd/index'
 import { Flex } from '../flex/index'
 import { Text } from '../text/index'
-import { BoxProps } from '../box/index'
-import { isMobileDevice } from '../../utils/is-mobile-device'
-import { FiSearch } from '../icons/FiSearch'
+import { useCommand } from '../../hooks/useCommand'
+import { FiSearch } from '../../icons/FiSearch'
 
-export interface CommandInputProps extends Omit<BoxProps, 'direction'> {
+const StyledCommandInput = styled(ark.button, commandInput)
+
+type CommandInputBaseProps = ComponentProps<typeof StyledCommandInput>
+
+export interface CommandInputProps extends CommandInputBaseProps {
+  /**
+   * Keyboard shortcut used to trigger the command menu/input.
+   * Example: "Ctrl+K" or "⌘+K"
+   */
   shortcut?: string
+
+  /**
+   * Callback fired when the command input is clicked
+   * or when the keyboard shortcut is triggered.
+   */
   onOpen?: () => void
+
+  /**
+   * Controls the open state of the command dialog.
+   * Used for accessibility (`aria-expanded`).
+   */
+  isOpen?: boolean
+
+  /**
+   * Placeholder text displayed inside the command input.
+   *
+   * @default "Search..."
+   */
   placeholder?: string
+
+  /**
+   * Optional element rendered on the left side of the input.
+   * Falls back to a search icon when not provided.
+   */
   leftElement?: React.ReactNode
 }
 
 export const CommandInput = React.forwardRef<
-  HTMLInputElement,
+  HTMLButtonElement,
   CommandInputProps
 >(function CommandInput(props, ref) {
   const {
     shortcut,
     onOpen,
+    isOpen,
     placeholder = 'Search...',
     leftElement,
     className,
     ...rest
   } = props
-  const slotStyles = commandInput()
 
-  const [isMobile, setIsMobile] = React.useState(false)
-  const [resolvedShortcut, setResolvedShortcut] = React.useState<string | null>(
-    null
-  )
-
-  React.useEffect(() => {
-    const mobile = isMobileDevice()
-    setIsMobile(mobile)
-    if (!mobile) {
-      const isMac = /Mac|iPod|iPhone|iPad/.test(navigator.userAgent)
-      setResolvedShortcut(shortcut ?? (isMac ? '⌘ + K' : 'Ctrl + K'))
-    }
-  }, [shortcut])
-
-  React.useEffect(() => {
-    if (isMobile || !resolvedShortcut) return
-
-    const parts = resolvedShortcut.split('+').map((p) => p.trim().toLowerCase())
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const pressed: string[] = []
-      if (e.metaKey) pressed.push('⌘')
-      if (e.ctrlKey) pressed.push('ctrl')
-      pressed.push(e.key.toLowerCase())
-
-      const combo = pressed.join(' ')
-      const target = parts.join(' ').toLowerCase()
-
-      if (combo === target) {
-        e.preventDefault()
-        onOpen?.()
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [resolvedShortcut, onOpen, isMobile])
+  const { isMobile, shortcutLabel } = useCommand({
+    shortcut,
+    onTrigger: onOpen,
+  })
 
   return (
-    <Group
-      as="button"
+    <StyledCommandInput
       ref={ref}
+      type="button"
       onClick={onOpen}
       aria-haspopup="dialog"
-      aria-expanded={false}
-      className={cx(slotStyles, className)}
+      aria-expanded={isOpen}
+      className={className}
       {...rest}
     >
       <Flex alignItems="center" gap="2">
-        {leftElement ?? <FiSearch />}
+        {leftElement ?? <FiSearch aria-hidden="true" focusable={false} />}
         <Text color="fg.muted">{placeholder}</Text>
       </Flex>
 
-      {!isMobile && resolvedShortcut ? (
-        <Flex gap="1">
-          {resolvedShortcut.split('+').map((key, i) => (
+      {!isMobile && shortcutLabel ? (
+        <Flex gap="1" aria-hidden="true">
+          {shortcutLabel.split('+').map((key, i) => (
             <Kbd key={i}>{key.trim()}</Kbd>
           ))}
         </Flex>
       ) : null}
-    </Group>
+    </StyledCommandInput>
   )
 })
 

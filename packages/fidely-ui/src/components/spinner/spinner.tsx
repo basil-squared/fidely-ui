@@ -2,9 +2,9 @@
 
 import { forwardRef } from 'react'
 import { ark } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { spinner } from '@fidely-ui/styled-system/recipes'
-import { type ComponentProps } from '@fidely-ui/styled-system/types'
+import { styled } from 'styled-system/jsx'
+import { spinner } from 'styled-system/recipes'
+import { type ComponentProps } from 'styled-system/types'
 
 const StyledSpinner = styled(ark.span, spinner)
 

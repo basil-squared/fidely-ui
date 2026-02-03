@@ -26,7 +26,8 @@ export const asideComponentLinks = [
       { name: 'Profile', linkUrl: 'profile', info: '' },
       { name: 'Image', linkUrl: 'image', info: '' },
       { name: 'Table', linkUrl: 'table', info: '' },
-      { name: 'Marquee', linkUrl: 'marquee', info: 'New' },
+      { name: 'Marquee', linkUrl: 'marquee', info: '' },
+      { name: 'Icon', linkUrl: 'icon', info: 'New' },
     ],
   },
 
@@ -57,9 +58,8 @@ export const asideComponentLinks = [
     items: [
       { name: 'Field', linkUrl: 'field', info: '' },
       { name: 'Input', linkUrl: 'input', info: '' },
-      { name: 'Float Input', linkUrl: 'floating-input', info: 'Alpha' },
       { name: 'Textarea', linkUrl: 'textarea', info: '' },
-      { name: 'Command Input', linkUrl: 'command-input', info: '' },
+      { name: 'Command Input', linkUrl: 'command-input', info: 'Updated' },
       { name: 'Combobox', linkUrl: 'combobox', info: '' },
       { name: 'Input Group', linkUrl: 'input-group', info: '' },
       { name: 'Pin Input', linkUrl: 'pin-input', info: '' },
@@ -75,8 +75,9 @@ export const asideComponentLinks = [
     section: 'Overlays',
     items: [
       { name: 'Dialog', linkUrl: 'dialog', info: '' },
-      { name: 'Hover Card', linkUrl: 'hover-card', info: 'New' },
-      { name: 'Menu', linkUrl: 'menu', info: 'New' },
+      { name: 'Hover Card', linkUrl: 'hover-card', info: '' },
+      { name: 'Menu', linkUrl: 'menu', info: '' },
+      { name: 'Popover', linkUrl: 'popover', info: 'New' },
     ],
   },
 
@@ -94,11 +95,7 @@ export const asideUtilLinks = [
     section: 'Utilities',
     items: [
       { name: 'Client Only', linkUrl: 'client-only', info: '' },
-      {
-        name: 'Creating a Reusable Icon',
-        linkUrl: 'creating-a-reusable-icon',
-        info: '',
-      },
+      { name: 'Locale Provider', linkUrl: 'locale-provider', info: 'New' },
       { name: 'Portal', linkUrl: 'portal', info: '' },
       { name: 'Download Trigger', linkUrl: 'download-trigger', info: '' },
       { name: 'Formats', linkUrl: 'formats', info: '' },
@@ -111,11 +108,25 @@ export const asideStylingLinks = [
     section: 'Styling',
     items: [
       { name: 'Dark Mode', linkUrl: 'dark-mode', info: '' },
+      { name: 'Fidely Factory', linkUrl: 'fidely-factory', info: 'Updated' },
       { name: 'Css Variables', linkUrl: 'css-variables', info: '' },
       { name: 'Responsive Design', linkUrl: 'responsive-design', info: '' },
       // { name: 'Color Opacity Modifier', linkUrl: 'color-opacity-modifier', info: '' },
       // { name: 'Conditional Styles', linkUrl: 'conditional-styles', info: '' },
       { name: 'Virtual Color', linkUrl: 'virtual-color', info: '' },
+    ],
+  },
+]
+
+export const asideFrameworkLinks = [
+  {
+    section: 'Frameworks',
+    items: [
+      { name: 'Next.js (App)', linkUrl: 'next-js-app', info: '' },
+      { name: 'Next.js (Page)', linkUrl: 'next-js-page', info: '' },
+      { name: 'Vite-ts', linkUrl: 'vite-ts', info: '' },
+      { name: 'Vite-js', linkUrl: 'vite-js', info: '' },
+      { name: 'Fidely Preset', linkUrl: 'preset', info: '' },
     ],
   },
 ]

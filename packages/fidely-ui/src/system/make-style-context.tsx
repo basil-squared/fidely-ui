@@ -1,10 +1,6 @@
 import * as React from 'react'
-import {
-  styled,
-  type StyledComponent,
-  isCssProperty,
-} from '@fidely-ui/styled-system/jsx'
-import { cx } from '@fidely-ui/styled-system/css'
+import { styled, type StyledComponent, isCssProperty } from 'styled-system/jsx'
+import { cx } from 'styled-system/css'
 
 type GenericProps = Record<string, unknown>
 type RecipeFn = {
@@ -34,7 +30,13 @@ export function makeStyleContext<R extends RecipeFn>(recipe: R) {
    * Root component provider
    */
   function withSlotRootProvider<P extends {}>(Component: React.ElementType) {
-    const Comp = (props: P) => {
+    const Comp = (props: P & { unstyled?: boolean }) => {
+      const { unstyled, ...restProps } = props as any
+
+      if (unstyled) {
+        return <Component {...restProps} />
+      }
+
       const [variantProps, rest] = recipe.splitVariantProps(props)
       const slots = recipe(variantProps) as Record<SlotKey<R>, string>
       return (
@@ -68,19 +70,27 @@ export function makeStyleContext<R extends RecipeFn>(recipe: R) {
       }
     ) as StyledComponent<React.ElementType>
 
-    const Comp = React.forwardRef<T, P>((props, ref) => {
-      const [variantProps, rest] = recipe.splitVariantProps(props)
-      const slots = recipe(variantProps) as Record<SlotKey<R>, string>
-      return (
-        <Ctx.Provider value={slots}>
-          <Styled
-            {...rest}
-            ref={ref}
-            className={cx(slots?.[slot], props.className)}
-          />
-        </Ctx.Provider>
-      )
-    })
+    const Comp = React.forwardRef<T, P & { unstyled?: boolean }>(
+      (props, ref) => {
+        const { unstyled, className, ...restProps } = props as any
+
+        if (unstyled) {
+          return <Component ref={ref} {...restProps} className={className} />
+        }
+
+        const [variantProps, rest] = recipe.splitVariantProps(props)
+        const slots = recipe(variantProps) as Record<SlotKey<R>, string>
+        return (
+          <Ctx.Provider value={slots}>
+            <Styled
+              {...rest}
+              ref={ref}
+              className={cx(slots?.[slot], className)}
+            />
+          </Ctx.Provider>
+        )
+      }
+    )
 
     Comp.displayName = Comp.displayName || Comp.name
 
@@ -97,16 +107,24 @@ export function makeStyleContext<R extends RecipeFn>(recipe: R) {
     React.PropsWithoutRef<P> & React.RefAttributes<T>
   > {
     const Styled = styled(Component)
-    const Comp = React.forwardRef<T, P>((props, ref) => {
-      const slots = React.useContext(Ctx)
-      return (
-        <Styled
-          {...props}
-          ref={ref}
-          className={cx(slots?.[slot], props.className)}
-        />
-      )
-    })
+    const Comp = React.forwardRef<T, P & { unstyled?: boolean }>(
+      (props, ref) => {
+        const { unstyled, className, ...rest } = props as any
+
+        if (unstyled) {
+          return <Component ref={ref} {...rest} className={className} />
+        }
+
+        const slots = React.useContext(Ctx)
+        return (
+          <Styled
+            {...props}
+            ref={ref}
+            className={cx(slots?.[slot], className)}
+          />
+        )
+      }
+    )
 
     Comp.displayName = Comp.displayName || Comp.name
 

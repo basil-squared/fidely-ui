@@ -1,8 +1,8 @@
 'use client'
 
 import { ark } from '@ark-ui/react/factory'
-import { styled } from '@fidely-ui/styled-system/jsx'
-import { type HTMLStyledProps } from '@fidely-ui/styled-system/types'
+import { styled } from 'styled-system/jsx'
+import { type HTMLStyledProps } from 'styled-system/types'
 
 export interface SpanProps extends HTMLStyledProps<'span'> {}
 

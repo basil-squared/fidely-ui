@@ -3,16 +3,14 @@
 import { forwardRef } from 'react'
 import { type PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
-import {
-  vstack,
-  type VstackProperties,
-} from '@fidely-ui/styled-system/patterns'
+import { HTMLStyledProps, styled } from 'styled-system/jsx'
+import { vstack, type VstackProperties } from 'styled-system/patterns'
 
 import { splitProps } from '../../utils/split-props'
 
 export interface VStackProps
-  extends Omit<HTMLStyledProps<'div'>, keyof VstackProperties>,
+  extends
+    Omit<HTMLStyledProps<'div'>, keyof VstackProperties>,
     VstackProperties,
     PolymorphicProps {}
 

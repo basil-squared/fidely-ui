@@ -1,0 +1,83 @@
+---
+title: Fidely Factory
+description: Create supercharged components with built-in style props
+---
+
+## Overview
+
+The fidely factory is a utility for creating enhanced JSX components from native HTML elements or custom components.
+Components created with the factory accept style props, allowing you to apply styling directly through JSX
+
+> Note this is still experimental
+
+```tsx
+import { fidely } from '@fidely-ui/react'
+```
+
+> The Fidely factory can be used either as a JSX element or as a factory function.
+
+---
+
+# JSX Element
+
+Style props are CSS properties exposed as JSX props.
+Using the JSX factory, you can create elements with the **`fidely.<element>`** syntax that automatically support these props.
+
+```tsx
+import { fidely } from '@fidely-ui/react'
+```
+
+```tsx
+const Button = ({ children }) => (
+  <fidely.button bg="blue.5" color="white" py="2" px="4" rounded="md">
+    {children}
+  </fidely.button>
+)
+```
+
+# Factory function
+
+You can also use the **fidely** function directly to enhance native elements or custom components.
+
+```tsx
+import { fidely } from '@fidely-ui/react'
+```
+
+```tsx
+const A = fidely('a')
+
+function Link() {
+  return (
+    <A bg="crimson.8" href="https://fidely-ui.vercel.app">
+      fidely
+    </A>
+  )
+}
+```
+
+## Polymorphism
+
+All components created with the **fidely** factory support polymorphism via the **as** and **asChild** props.
+This allows you to change the underlying element without changing the component’s styling or behavior.
+
+```tsx
+<Button as="a" href="https://fidely-ui.vercel.app">
+  Fidely UI
+</Button>
+```
+
+or
+
+```tsx
+<Button asChild>
+  <a href="https://fidely-ui.vercel.app">Fidely UI</a>
+</Button>
+```
+
+## Notes
+
+- **as** replaces the rendered element directly.
+
+- **asChild** merges props into the child element and avoids extra DOM nodes.
+
+- Style props continue to work regardless of the rendered element.

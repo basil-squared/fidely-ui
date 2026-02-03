@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <>
       {/* <BlogsSection /> */}
-      jjdjdj
+      Coming soon
     </>
   )
 }

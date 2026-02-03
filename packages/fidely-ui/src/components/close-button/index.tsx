@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 
 import { IconButton, type IconButtonProps } from '../icon-button/index'
-import { FiClose } from '../icons/FiClose'
+import { FiClose } from '../../icons/FiClose'
 
 export interface CloseButtonProps extends IconButtonProps {}
 

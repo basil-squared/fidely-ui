@@ -5,21 +5,23 @@ import { PasswordInput as ArkPasswordInput } from '@ark-ui/react/password-input'
 import {
   passwordInput,
   type PasswordInputVariantProps,
-} from '@fidely-ui/styled-system/recipes'
-import { HTMLStyledProps } from '@fidely-ui/styled-system/jsx'
+} from 'styled-system/recipes'
+import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
 
 import { makeStyleContext } from '../../system/make-style-context'
-import { FiEyeIcon } from '../icons/FiEyeIcon'
-import { FiEyeSlashIcon } from '../icons/FiEyeSlashIcon'
+import { FiEyeIcon } from '../../icons/FiEyeIcon'
+import { FiEyeSlashIcon } from '../../icons/FiEyeSlashIcon'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(passwordInput)
 
 // -------------------- RootProvider --------------------
 export interface PasswordInputRootProviderProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkPasswordInput.RootProviderBaseProps>,
-    PasswordInputVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkPasswordInput.RootProviderBaseProps>,
+      PasswordInputVariantProps
+    >,
+    UnstyledProps {}
 
 export const PasswordInputRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -28,10 +30,12 @@ export const PasswordInputRootProvider = withSlotProvider<
 
 // -------------------- Root --------------------
 export interface PasswordInputRootProps
-  extends Assign<
-    Assign<HTMLStyledProps<'div'>, ArkPasswordInput.RootBaseProps>,
-    PasswordInputVariantProps
-  > {}
+  extends
+    Assign<
+      Assign<HTMLStyledProps<'div'>, ArkPasswordInput.RootBaseProps>,
+      PasswordInputVariantProps
+    >,
+    UnstyledProps {}
 
 export const PasswordInputRoot = withSlotProvider<
   HTMLDivElement,
@@ -40,7 +44,9 @@ export const PasswordInputRoot = withSlotProvider<
 
 // -------------------- Input --------------------
 export interface PasswordInputInputProps
-  extends Assign<HTMLStyledProps<'input'>, ArkPasswordInput.InputBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'input'>, ArkPasswordInput.InputBaseProps>,
+    UnstyledProps {}
 
 export const PasswordInputInput = withSlotContext<
   HTMLInputElement,
@@ -49,7 +55,9 @@ export const PasswordInputInput = withSlotContext<
 
 // -------------------- Label --------------------
 export interface PasswordInputLabelProps
-  extends Assign<HTMLStyledProps<'label'>, ArkPasswordInput.LabelBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'label'>, ArkPasswordInput.LabelBaseProps>,
+    UnstyledProps {}
 
 export const PasswordInputLabel = withSlotContext<
   HTMLLabelElement,
@@ -58,7 +66,9 @@ export const PasswordInputLabel = withSlotContext<
 
 // -------------------- Control --------------------
 export interface PasswordInputControlProps
-  extends Assign<HTMLStyledProps<'div'>, ArkPasswordInput.ControlBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkPasswordInput.ControlBaseProps>,
+    UnstyledProps {}
 
 export const PasswordInputControl = withSlotContext<
   HTMLDivElement,
@@ -67,7 +77,9 @@ export const PasswordInputControl = withSlotContext<
 
 // -------------------- Indicator --------------------
 export interface PasswordInputIndicatorProps
-  extends Assign<HTMLStyledProps<'span'>, ArkPasswordInput.IndicatorBaseProps> {
+  extends
+    Assign<HTMLStyledProps<'span'>, ArkPasswordInput.IndicatorBaseProps>,
+    UnstyledProps {
   fallbackIcon?: React.ReactNode
   idleIcon?: React.ReactNode
 }
@@ -95,10 +107,12 @@ export const PasswordInputIndicator = withSlotContext<
 
 // -------------------- VisibilityTrigger --------------------
 export interface PasswordInputVisibilityTriggerProps
-  extends Assign<
-    HTMLStyledProps<'button'>,
-    ArkPasswordInput.VisibilityTriggerBaseProps
-  > {}
+  extends
+    Assign<
+      HTMLStyledProps<'button'>,
+      ArkPasswordInput.VisibilityTriggerBaseProps
+    >,
+    UnstyledProps {}
 
 export const PasswordInputVisibilityTrigger = withSlotContext<
   HTMLButtonElement,

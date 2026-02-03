@@ -1,20 +1,23 @@
 'use client'
 
+import { forwardRef } from 'react'
 import type { Assign, PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { HTMLStyledProps, styled } from '@fidely-ui/styled-system/jsx'
-import { table, type TableVariantProps } from '@fidely-ui/styled-system/recipes'
+import { styled } from 'styled-system/jsx'
+import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { table, type TableVariantProps } from 'styled-system/recipes'
+import { cx } from 'styled-system/css'
 
 import { makeStyleContext } from '../../system/make-style-context'
-import { forwardRef } from 'react'
-import { cx } from '@fidely-ui/styled-system/css'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(table)
 
 // -------------------- Root --------------------
 export interface TableRootProps
-  extends Assign<HTMLStyledProps<'table'>, PolymorphicProps>,
-    TableVariantProps {}
+  extends
+    Assign<HTMLStyledProps<'table'>, PolymorphicProps>,
+    TableVariantProps,
+    UnstyledProps {}
 
 export const TableRoot = withSlotProvider<HTMLTableElement, TableRootProps>(
   ark.table,
@@ -23,7 +26,7 @@ export const TableRoot = withSlotProvider<HTMLTableElement, TableRootProps>(
 
 // -------------------- Body --------------------
 export interface TableBodyProps
-  extends Assign<HTMLStyledProps<'tbody'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'tbody'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableBody = withSlotContext<
   HTMLTableSectionElement,
@@ -32,7 +35,7 @@ export const TableBody = withSlotContext<
 
 // -------------------- Header --------------------
 export interface TableHeaderProps
-  extends Assign<HTMLStyledProps<'thead'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'thead'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableHeader = withSlotContext<
   HTMLTableSectionElement,
@@ -41,7 +44,7 @@ export const TableHeader = withSlotContext<
 
 // -------------------- Footer --------------------
 export interface TableFooterProps
-  extends Assign<HTMLStyledProps<'tfoot'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'tfoot'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableFooter = withSlotContext<
   HTMLTableSectionElement,
@@ -50,7 +53,7 @@ export const TableFooter = withSlotContext<
 
 // -------------------- Row --------------------
 export interface TableRowProps
-  extends Assign<HTMLStyledProps<'tr'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'tr'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableRow = withSlotContext<HTMLTableSectionElement, TableRowProps>(
   ark.tr,
@@ -59,7 +62,7 @@ export const TableRow = withSlotContext<HTMLTableSectionElement, TableRowProps>(
 
 // -------------------- HeadCell --------------------
 export interface TableHeadCellProps
-  extends Assign<HTMLStyledProps<'th'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'th'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableHeadCell = withSlotContext<
   HTMLTableSectionElement,
@@ -68,7 +71,7 @@ export const TableHeadCell = withSlotContext<
 
 // -------------------- Cell --------------------
 export interface TableCellProps
-  extends Assign<HTMLStyledProps<'td'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'td'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableCell = withSlotContext<HTMLTableCellElement, TableCellProps>(
   ark.td,
@@ -77,7 +80,7 @@ export const TableCell = withSlotContext<HTMLTableCellElement, TableCellProps>(
 
 // -------------------- Caption --------------------
 export interface TableCaptionProps
-  extends Assign<HTMLStyledProps<'caption'>, PolymorphicProps> {}
+  extends Assign<HTMLStyledProps<'caption'>, PolymorphicProps>, UnstyledProps {}
 
 export const TableCaption = withSlotContext<
   HTMLTableCaptionElement,
@@ -85,7 +88,8 @@ export const TableCaption = withSlotContext<
 >(ark.caption, 'caption')
 
 // -------------------- ScrollArea --------------------
-export interface TableScrollAreaProps extends HTMLStyledProps<'div'> {}
+export interface TableScrollAreaProps
+  extends HTMLStyledProps<'div'>, UnstyledProps {}
 
 export const TableScrollArea = forwardRef<HTMLDivElement, TableScrollAreaProps>(
   function TableScrollArea(props, ref) {

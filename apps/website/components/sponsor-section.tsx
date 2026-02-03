@@ -29,10 +29,13 @@ export const SponsorSection = () => {
               Sponsor Us
             </Heading>
             <Text lineHeight="1.8em" color="fg.muted" size="md">
-              Fidely UI is an open source project supported by the community.
-              Your support helps us continue building high quality, accessible
-              UI components and sustain ongoing development. Available on the
-              following platforms.
+              Fidely UI is an open-source project built and sustained by the
+              community. Your support helps us continue developing and keeps the
+              project moving forward.
+            </Text>
+
+            <Text color="fg.muted" size="md">
+              Available on the following platforms.
             </Text>
           </Stack>
         </Box>

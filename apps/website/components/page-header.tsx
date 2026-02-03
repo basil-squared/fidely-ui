@@ -1,9 +1,14 @@
 import Link from 'next/link'
-import { Button, Heading, HStack, Span, Stack, Text } from '@fidely-ui/react'
+import { Button } from '@fidely-ui/react/button'
+import { Heading } from '@fidely-ui/react/heading'
+import { HStack, Stack } from '@fidely-ui/react/stack'
+import { Span } from '@fidely-ui/react/span'
+import { Text } from '@fidely-ui/react/text'
 import { LuArrowUpRight } from 'react-icons/lu'
-import type { Docs } from '~/.velite'
 import { SiArkecosystem, SiStorybook } from 'react-icons/si'
 import { FaGithub } from 'react-icons/fa6'
+
+import type { Docs } from '~/.velite'
 
 interface PageHeaderProps {
   data: Docs
@@ -26,21 +31,23 @@ export const DocPageHeader = (props: PageHeaderProps) => {
       {links && (
         <HStack gap="6" flexWrap="wrap">
           {Object.entries(links).map(([title, url]) => (
-            <Link target="_blank" key={title + url} href={url as string}>
-              <Button
-                fontWeight="medium"
-                variant={'subtle'}
-                size={'xs'}
-                fontSize="sm"
-                color="fg.muted"
-              >
+            <Button
+              fontWeight="medium"
+              variant={'subtle'}
+              size={'xs'}
+              fontSize="sm"
+              color="fg.muted"
+              key={title + url}
+              asChild
+            >
+              <Link target="_blank" href={url as string}>
                 <Icons type={title} />
                 {capitalize(title)}
                 <Span color="fg.subtle">
                   <LuArrowUpRight />
                 </Span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           ))}
         </HStack>
       )}

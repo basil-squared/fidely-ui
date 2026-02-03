@@ -33,11 +33,11 @@ export const CardWithAvatar = () => {
           composable and the design system is consistent out of the box
         </Card.Description>
         <Card.Footer>
-          <Button variant="subtle" ripple colorPalette={'orange'} flex="1">
+          <Button variant="subtle" colorPalette={'orange'} flex="1">
             <LuX />
             Decline
           </Button>
-          <Button ripple colorPalette={'orange'} flex="1">
+          <Button colorPalette={'orange'} flex="1">
             <LuCheck />
             Follow
           </Button>

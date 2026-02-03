@@ -32,7 +32,7 @@ interface InfoBadgeProps {
 
 export const InfoBadge = ({ info }: InfoBadgeProps) => {
   return (
-    <FidelyBadge colorPalette="orange" size="sm">
+    <FidelyBadge colorPalette="orange" size="sm" variant="subtle">
       {info}
     </FidelyBadge>
   )

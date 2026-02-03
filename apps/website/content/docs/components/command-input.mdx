@@ -1,12 +1,25 @@
 ---
 title: Command Input
-description: An input-like trigger used to open command palettes or search dialogs, supporting icons, keyboard shortcuts, and custom placeholders.
+description: A non editable, input like trigger for opening command palettes or search dialog. Supports icons, keyboard shortcuts, and custom placeholders
 links:
   source: command-input/command-input.tsx
   recipe: recipe/command-Input.recipe
 ---
 
 <ExampleTabs name="command-input-demo" scope="command-input" />
+
+## Overview
+
+**CommandInput** is an input styled trigger used to open command palettes, dialogs, or search surfaces.
+It does not accept text input directly.
+
+It is commonly used to:
+
+- Open command palettes (⌘K / Ctrl+K)
+
+- Trigger global search dialogs
+
+- Act as a combobox or dialog entry point
 
 ## Usage
 
@@ -15,39 +28,51 @@ import { CommandInput } from '@fidely-ui/react'
 ```
 
 ```tsx
-<CommandInput onOpen={() => console.log('Open command palette')} />
+<CommandInput />
 ```
 
-The **CommandInput** component acts as a trigger for opening a command palette or search dialog.
-It supports keyboard shortcuts, icons, and custom placeholder text.
+> When the user clicks the component or presses the configured keyboard shortcut, the **onOpen** callback is invoked.
 
 ## With Custom Icon
 
+You can replace the default search icon using the **leftElement** prop.
+
 <ExampleTabs name="command-input-icon" scope="command-input" />
 
-## With Custom Shortcut
+## Use with Dialog & Combobox
 
-You can override the default shortcut (⌘ + K on Mac or Ctrl + K on Windows) using the shortcut prop.
+**CommandInput** is typically paired with a dialog and combobox for search UI.
+
+On desktop devices, pressing the configured keyboard shortcut automatically triggers **onOpen**.
+
+On mobile devices, the shortcut hint is hidden and keyboard shortcuts are disabled.
+
+<ExampleTabs name="command-input-with-search" scope="command-input" />
+
+## Custom Keyboard Shortcut
+
+You can override the default shortcut (⌘ + K on macOS or Ctrl + K on Windows) using the **shortcut** prop.
 
 <ExampleTabs name="command-input-shortcut" scope="command-input" />
 
 ## Responsive Behavior
 
-On mobile devices, the keyboard shortcut display is automatically hidden to ensure a clean UI.
+- Keyboard shortcut hints are hidden on mobile devices
 
-When the user presses the defined shortcut, the onOpen callback is automatically triggered (except on mobile devices).
+- Keyboard shortcuts only trigger onOpen on desktop
 
-## Accessibility
-
-The CommandInput uses a semantic button **role** with **aria-haspopup="dialog"** for accessibility, making it discoverable by assistive technologies as a command or dialog trigger.
+- Tap or click interaction is always supported
 
 ## Props
 
 ### CommandInput
 
-| Prop          | Type         | Default                             | Description                                                               |
-| ------------- | ------------ | ----------------------------------- | ------------------------------------------------------------------------- |
-| `placeholder` | `string`     | `"Search or type a command..."`     | Text displayed when the input is empty.                                   |
-| `shortcut`    | `string`     | `"⌘K"` (Mac) / `"Ctrl+K"` (Windows) | Keyboard shortcut to trigger the command palette.                         |
-| `onOpen`      | `() => void` | —                                   | Callback invoked when the input or shortcut triggers the command palette. |
-| `leftElement` | `ReactNode`  | `<SearchIcon />`                    | Optional icon displayed inside the input trigger.                         |
+| Prop          | Type                   | Default                             | Description                                                                                                |
+| ------------- | ---------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `placeholder` | `string`               | `"Search..."`                       | Placeholder text shown inside the input trigger..                                                          |
+| `shortcut`    | `string`               | `"⌘K"` (Mac) / `"Ctrl+K"` (Windows) | Keyboard shortcut that triggers the command action.                                                        |
+| `onOpen`      | `() => void`           | `—`                                 | Callback fired when the input or keyboard shortcut is activated.                                           |
+| `isOpen`      | `boolean`              | `false`                             | Controls the active/open visual state of the trigger.                                                      |
+| `size`        | `'sm' \| 'md' \| 'lg'` | `md`                                | The size of the CommandInput component                                                                     |
+| `leftElement` | `ReactNode`            | `<SearchIcon />`                    | Element rendered at the start of the input trigger.                                                        |
+| `aria-label`  | `string`               | `-`                                 | Optional. Overrides the accessible name of the button. Required only if visible text is removed or hidden. |

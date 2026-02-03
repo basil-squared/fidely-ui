@@ -62,9 +62,7 @@ export const Loader = React.forwardRef<HTMLSpanElement, LoaderProps>(
           </Span>
         )}
 
-        <Span visibility="hidden" display="contents">
-          {children}
-        </Span>
+        <Span display="contents">{children}</Span>
 
         {spinnerPlacement === 'end' && (
           <Span style={{ marginInlineStart: children ? '0.6em' : 0 }}>

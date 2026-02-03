@@ -8,9 +8,10 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
-    "customConditions": ["dev"],
+    "baseUrl": ".",
     "paths": {
-      "patherns/*": ["../../apps/patherns/src/*"]
+      "patherns/*": ["../../apps/patherns/src/*"],
+      "styled-system/*": ["styled-system/*"]
     },
 
     /* Bundler mode */

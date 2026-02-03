@@ -4,9 +4,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "strict": true,
-    "customConditions": ["dev"],
+
+    "baseUrl": ".",
     "paths": {
-      "patherns/*": ["./src/*"]
+      "patherns/*": ["./src/*"],
+      "styled-system/*": ["styled-system/*"]
     }
   }
 }

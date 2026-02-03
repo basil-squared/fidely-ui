@@ -1,9 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { fieldAnatomy } from '@ark-ui/react/anatomy'
+
+import { fieldAnatomy } from '../../anatomy/index'
 
 export const fieldSlotRecipe = defineSlotRecipe({
   className: 'fidely-field',
-  slots: fieldAnatomy.keys(),
+  slots: fieldAnatomy.keys,
+  description: 'Styles for the Fidely UI Field component',
+
   base: {
     root: {
       display: 'flex',

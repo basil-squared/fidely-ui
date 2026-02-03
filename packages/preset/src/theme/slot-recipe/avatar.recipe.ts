@@ -1,9 +1,12 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { avatarAnatomy } from '@ark-ui/react/anatomy'
+
+import { avatarAnatomy } from '../../anatomy/index'
 
 export const avatarSlotRecipe = defineSlotRecipe({
   className: 'fidely-avatar',
-  slots: avatarAnatomy.keys(),
+  slots: avatarAnatomy.keys,
+  description: 'Styles for the Fidely UI Avatar component',
+
   base: {
     root: {
       display: 'inline-flex',

@@ -1,10 +1,10 @@
 import { defineSlotRecipe } from '@pandacss/dev'
-import { tableAnatomy } from '../../anatomy'
+import { tableAnatomy } from '../../anatomy/index'
 
 export const tableSlotRecipe = defineSlotRecipe({
   className: 'fidely-table',
   description: 'Styles for the Fidely UI Table component',
-  slots: tableAnatomy.keys(),
+  slots: tableAnatomy.keys,
   base: {
     root: {
       width: 'full',

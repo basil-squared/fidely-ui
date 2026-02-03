@@ -1,0 +1,123 @@
+---
+title: Popover
+description: Used to show contextual information inside a popup when triggered
+links:
+  source: popover
+  recipe: slot-recipe/popover.recipe
+  ark: components/popover
+---
+
+<ExampleTabs name="popover-basics" scope="popover" />
+
+## Usage
+
+```tsx
+import { Popover } from '@fidely-ui/react'
+```
+
+```tsx
+<Popover.Root>
+  <Popover.Trigger />
+  <Popover.Positioner>
+    <Popover.Content>
+      <Popover.CloseTrigger />
+
+      <Popover.Arrow>
+        <Popover.ArrowTip />
+      </Popover.Arrow>
+
+      <Popover.Title />
+      <Popover.Description />
+    </Popover.Content>
+  </Popover.Positioner>
+</Popover.Root>
+```
+
+## Examples
+
+### Controlled
+
+Use the **open** and **onOpenChange** props to control the visibility of the popover.
+
+<ExampleTabs name="popover-controlled" scope="popover" />
+
+### Placement
+
+Use the **`positioning.placement`** prop to configure the underlying Floating UI
+positioning logic, allowing you to control where the popover appears relative to its trigger.
+
+<ExampleTabs name="popover-positioning" scope="popover" />
+
+### Offset
+
+Use the **`positioning.offset`** prop to adjust the position of the popover content.
+
+<ExampleTabs name="popover-offset" scope="popover" />
+
+### Form and CloseTrigger
+
+<ExampleTabs name="popover-close-with-form" scope="popover" />
+
+### Custom Background
+
+Use the **`--popover-bg`** CSS variable to change the background color of the **Popover.Content** and its arrow.
+
+<ExampleTabs name="popover-with-bg" scope="popover" />
+
+### Within Dialog
+
+To use the **`Popover`** within a **`Dialog`**, you need to avoid portalling the **Popover.Positioner** to the document's body.
+
+```tsx
+/* <Portal> */
+<Popover.Positioner>
+  <Popover.Content>{/* ... */}</Popover.Content>
+</Popover.Positioner>
+/* </Portal> */
+```
+
+If the dialog uses scrollBehavior="inside":
+
+- Set the popover positioning strategy to fixed to prevent clipping.
+
+- Enable hideWhenDetached to hide the popover when its trigger scrolls out of view.
+
+```tsx
+<Popover.Root positioning={{ strategy: 'fixed', hideWhenDetached: true }}>
+  ...
+</Popover.Root>
+```
+
+## Props
+
+### Root
+
+| Prop                     | Default | Type                                       | Description                                                                                                |
+| :----------------------- | :------ | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
+| `autoFocus`              | `true`  | `boolean`                                  | Whether to automatically set focus on the first focusable content within the popover when opened.          |
+| `closeOnEscape`          | `true`  | `boolean`                                  | Whether to close the popover when the escape key is pressed.                                               |
+| `as`                     | —       | `React.ElementType`                        | The underlying element to render. We don't recommend changing the input to another `ElementType`.          |
+| `asChild`                | `false` | `boolean`                                  | Use the provided child element as the default rendered element, combining their props and behavior.        |
+| `closeOnInteractOutside` | `true`  | `boolean`                                  | Whether to close the popover when the user clicks outside of the popover.                                  |
+| `lazyMount`              | `false` | `boolean`                                  | Whether to enable lazy mounting.                                                                           |
+| `modal`                  | `false` | `boolean`                                  | Whether the popover should be modal. When `true`, interaction with outside elements will be disabled.      |
+| `portalled`              | `true`  | `boolean`                                  | Whether the popover is portalled. This proxies tabbing behavior regardless of the DOM position.            |
+| `skipAnimationOnMount`   | `false` | `boolean`                                  | Whether to allow the initial presence animation.                                                           |
+| `unmountOnExit`          | `false` | `boolean`                                  | Whether to unmount on exit.                                                                                |
+| `unstyled`               | —       | `boolean`                                  | Whether to remove the component's default styles.                                                          |
+| `defaultOpen`            | —       | `boolean`                                  | The initial open state of the popover when rendered (uncontrolled).                                        |
+| `id`                     | —       | `string`                                   | The unique identifier.                                                                                     |
+| `ids`                    | —       | `Partial<{}>`                              | The ids of the elements in the popover.                                                                    |
+| `immediate`              | —       | `boolean`                                  | Whether to synchronize the present change immediately or defer it to the next frame.                       |
+| `initialFocusEl`         | —       | `() => HTMLElement \| null`                | The element to focus on when the popover is opened.                                                        |
+| `onEscapeKeyDown`        | —       | `(event: KeyboardEvent) => void`           | Function called when the escape key is pressed.                                                            |
+| `onExitComplete`         | —       | `VoidFunction`                             | Function called when the animation ends in the closed state.                                               |
+| `onFocusOutside`         | —       | `(event: FocusOutsideEvent) => void`       | Function called when the focus is moved outside the component.                                             |
+| `onInteractOutside`      | —       | `(event: InteractOutsideEvent) => void`    | Function called when an interaction happens outside the component.                                         |
+| `onOpenChange`           | —       | `(details: OpenChangeDetails) => void`     | Function invoked when the popover opens or closes.                                                         |
+| `onPointerDownOutside`   | —       | `(event: PointerDownOutsideEvent) => void` | Function called when the pointer is pressed down outside the component.                                    |
+| `onRequestDismiss`       | —       | `(event: LayerDismissEvent) => void`       | Function called when this layer is closed due to a parent layer being closed.                              |
+| `open`                   | —       | `boolean`                                  | The controlled open state of the popover.                                                                  |
+| `persistentElements`     | —       | `(() => Element \| null)[]`                | Returns the persistent elements that should not have pointer-events disabled or trigger the dismiss event. |
+| `positioning`            | —       | `PositioningOptions`                       | The user provided options used to position the popover content.                                            |
+| `present`                | —       | `boolean`                                  | Whether the node is present (controlled by the user).                                                      |

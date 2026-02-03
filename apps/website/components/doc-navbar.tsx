@@ -18,6 +18,7 @@ import { Drawer } from '~/components/drawer'
 import { AppLogo } from '~/components/logo'
 import { SearchDialog } from '~/components/search-dialog'
 import { NavItem } from '~/components/nav-item'
+import { VersionSwitcher } from '~/components/version-switcher'
 import {
   asideComponentLinks,
   asideUtilLinks,
@@ -55,7 +56,7 @@ export const DocNavBar = () => {
           alignItems="center"
           display={{ base: 'none', md: 'flex' }}
         >
-          <Button variant="ghost" ripple asChild>
+          <Button variant="ghost" asChild>
             <Link
               href="https://ko-fi.com/fidely_ui"
               target="_blank"
@@ -65,10 +66,14 @@ export const DocNavBar = () => {
             </Link>
           </Button>
 
+          <VersionSwitcher />
+
           <CommandInput
             onOpen={() => dialog.setOpen(true)}
+            isOpen={dialog.open}
             width="200px"
             shortcut="/"
+            aria-label="Quick search"
           />
 
           <IconButton
@@ -105,6 +110,8 @@ export const DocNavBar = () => {
               <FcLike />
             </Link>
           </IconButton>
+
+          <VersionSwitcher />
 
           <ColorModeButton />
 

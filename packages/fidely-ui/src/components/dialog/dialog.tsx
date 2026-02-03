@@ -1,23 +1,22 @@
 'use client'
 
+import { forwardRef } from 'react'
 import { type Assign } from '@ark-ui/react'
 import { ark, HTMLArkProps } from '@ark-ui/react/factory'
 import { Dialog as ArkDialog, useDialogContext } from '@ark-ui/react/dialog'
-import {
-  dialog,
-  type DialogVariantProps,
-} from '@fidely-ui/styled-system/recipes'
-import { type HTMLStyledProps } from '@fidely-ui/styled-system/types'
-import { styled } from '@fidely-ui/styled-system/jsx'
+import { dialog, type DialogVariantProps } from 'styled-system/recipes'
+import type { UnstyledProps, HTMLStyledProps } from 'styled-system/types'
+import { styled } from 'styled-system/jsx'
 
 import { makeStyleContext } from '../../system/make-style-context'
-import { forwardRef } from 'react'
 
 const { withSlotRootProvider, withSlotContext } = makeStyleContext(dialog)
 
 // -------------------- RootProvider --------------------
 export interface DialogRootProviderProps
-  extends Assign<ArkDialog.RootProviderProps, DialogVariantProps> {}
+  extends
+    Assign<ArkDialog.RootProviderProps, DialogVariantProps>,
+    UnstyledProps {}
 
 export const DialogRootProvider = withSlotRootProvider<DialogRootProviderProps>(
   ArkDialog.RootProvider
@@ -25,13 +24,15 @@ export const DialogRootProvider = withSlotRootProvider<DialogRootProviderProps>(
 
 // -------------------- Root --------------------
 export interface DialogRootProps
-  extends Assign<ArkDialog.RootProps, DialogVariantProps> {}
+  extends Assign<ArkDialog.RootProps, DialogVariantProps>, UnstyledProps {}
 
 export const DialogRoot = withSlotRootProvider<DialogRootProps>(ArkDialog.Root)
 
 // -------------------- Content --------------------
 export interface DialogContentProps
-  extends Assign<HTMLStyledProps<'div'>, ArkDialog.ContentBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkDialog.ContentBaseProps>,
+    UnstyledProps {}
 
 export const DialogContent = withSlotContext<
   HTMLDivElement,
@@ -40,7 +41,9 @@ export const DialogContent = withSlotContext<
 
 // -------------------- Description --------------------
 export interface DialogDescriptionProps
-  extends Assign<HTMLStyledProps<'div'>, ArkDialog.DescriptionBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkDialog.DescriptionBaseProps>,
+    UnstyledProps {}
 
 export const DialogDescription = withSlotContext<
   HTMLDivElement,
@@ -49,7 +52,9 @@ export const DialogDescription = withSlotContext<
 
 // -------------------- Title --------------------
 export interface DialogTitleProps
-  extends Assign<HTMLStyledProps<'h2'>, ArkDialog.TitleBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'h2'>, ArkDialog.TitleBaseProps>,
+    UnstyledProps {}
 
 export const DialogTitle = withSlotContext<
   HTMLHeadingElement,
@@ -58,7 +63,9 @@ export const DialogTitle = withSlotContext<
 
 // -------------------- CloseTrigger --------------------
 export interface DialogCloseTriggerProps
-  extends Assign<HTMLStyledProps<'button'>, ArkDialog.CloseTriggerBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkDialog.CloseTriggerBaseProps>,
+    UnstyledProps {}
 
 export const DialogCloseTrigger = withSlotContext<
   HTMLButtonElement,
@@ -67,7 +74,9 @@ export const DialogCloseTrigger = withSlotContext<
 
 // -------------------- Trigger --------------------
 export interface DialogTriggerProps
-  extends Assign<HTMLStyledProps<'button'>, ArkDialog.TriggerBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'button'>, ArkDialog.TriggerBaseProps>,
+    UnstyledProps {}
 
 export const DialogTrigger = withSlotContext<
   HTMLButtonElement,
@@ -75,7 +84,8 @@ export const DialogTrigger = withSlotContext<
 >(ArkDialog.Trigger, 'trigger')
 
 // -------------------- CloseAction --------------------
-export interface DialogCloseActionProps extends HTMLArkProps<'button'> {}
+export interface DialogCloseActionProps
+  extends HTMLArkProps<'button'>, UnstyledProps {}
 
 const StyledCloseAction = styled(ark.button)
 
@@ -96,7 +106,9 @@ export const DialogCloseAction = forwardRef<
 
 // -------------------- Positioner --------------------
 export interface DialogPositionerProps
-  extends Assign<HTMLStyledProps<'div'>, ArkDialog.PositionerBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkDialog.PositionerBaseProps>,
+    UnstyledProps {}
 
 export const DialogPositioner = withSlotContext<
   HTMLDivElement,
@@ -105,7 +117,9 @@ export const DialogPositioner = withSlotContext<
 
 // -------------------- Backdrop --------------------
 export interface DialogBackdropProps
-  extends Assign<HTMLStyledProps<'div'>, ArkDialog.BackdropBaseProps> {}
+  extends
+    Assign<HTMLStyledProps<'div'>, ArkDialog.BackdropBaseProps>,
+    UnstyledProps {}
 
 export const DialogBackdrop = withSlotContext<
   HTMLDivElement,
@@ -113,7 +127,8 @@ export const DialogBackdrop = withSlotContext<
 >(ArkDialog.Backdrop, 'backdrop')
 
 // -------------------- Body --------------------
-export interface DialogBodyProps extends HTMLStyledProps<'div'> {}
+export interface DialogBodyProps
+  extends HTMLStyledProps<'div'>, UnstyledProps {}
 
 export const DialogBody = withSlotContext<HTMLDivElement, DialogBodyProps>(
   'div',
@@ -121,7 +136,8 @@ export const DialogBody = withSlotContext<HTMLDivElement, DialogBodyProps>(
 )
 
 // -------------------- Header --------------------
-export interface DialogHeaderProps extends HTMLStyledProps<'div'> {}
+export interface DialogHeaderProps
+  extends HTMLStyledProps<'div'>, UnstyledProps {}
 
 export const DialogHeader = withSlotContext<HTMLDivElement, DialogHeaderProps>(
   'div',
@@ -129,7 +145,8 @@ export const DialogHeader = withSlotContext<HTMLDivElement, DialogHeaderProps>(
 )
 
 // -------------------- Footer --------------------
-export interface DialogFooterProps extends HTMLStyledProps<'div'> {}
+export interface DialogFooterProps
+  extends HTMLStyledProps<'div'>, UnstyledProps {}
 
 export const DialogFooter = withSlotContext<HTMLDivElement, DialogFooterProps>(
   'div',

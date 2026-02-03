@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Box } from '@fidely-ui/react/box'
 import { Button } from '@fidely-ui/react/button'
@@ -6,9 +5,17 @@ import { Flex } from '@fidely-ui/react/flex'
 import { Stack } from '@fidely-ui/react/stack'
 import { Heading } from '@fidely-ui/react/heading'
 import { Text } from '@fidely-ui/react/text'
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import { Center } from '@fidely-ui/react/center'
 
-import { NewComponentBadge } from '~/components/new-component-badge'
+import {
+  HeroCard,
+  HeroSwitch,
+  HeroSpinner,
+  HeroMenu,
+  HeroTabs,
+  HeroHighlightCard,
+  HeroCardPlaylist,
+} from '~/components/hero'
 
 export const HeroSection = () => {
   return (
@@ -27,6 +34,7 @@ export const HeroSection = () => {
         width="90%"
         mx="auto"
       >
+        {/* left section */}
         <Box width={{ base: '100%', lg: '50%' }}>
           <Flex
             flexDirection="column"
@@ -34,10 +42,6 @@ export const HeroSection = () => {
             height={{ base: '100vdh', lg: '85vh' }}
           >
             <Stack gap="7">
-              <NewComponentBadge href="https://v2-fidely-ui.vercel.app/">
-                Fidely UI v2.0.0 (beta){' '}
-                <FaExternalLinkAlt style={{ marginLeft: '6px' }} />
-              </NewComponentBadge>
               <Stack gap="4">
                 <Heading
                   as="h1"
@@ -101,13 +105,13 @@ export const HeroSection = () => {
                 >
                   <Link
                     href="/docs/getting-started/installation"
-                    aria-label="Getting Started with Fidely UI documentation"
+                    aria-label="Getting Started"
                   >
                     Get Started
                   </Link>
                 </Button>
 
-                {/* <Button
+                <Button
                   asChild
                   colorPalette="gray"
                   variant="subtle"
@@ -119,47 +123,43 @@ export const HeroSection = () => {
                   >
                     Explore Blocks
                   </Link>
-                </Button> */}
+                </Button>
               </Stack>
             </Stack>
           </Flex>
         </Box>
 
+        {/* right section */}
         <Box
-          aria-hidden="true"
+          width={'50%'}
           display={{ base: 'none', lg: 'block' }}
-          width="50%"
           height="100%"
           position="absolute"
           top="0"
           right="0"
-          clipPath="polygon(12% 0, 100% 0, 100% 100%, 0 100%)"
-          overflow="hidden"
-          zIndex="10"
         >
-          <Image
-            src="/hero-showcase.png"
-            alt="hero image showcase"
-            fill
-            priority
-            sizes="50vw"
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsn9pfDwAFogI0qPkC4wAAAABJRU5ErkJggg=="
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'left',
-            }}
-          />
+          <Stack gap="2">
+            <Flex gap="3" justify="space-between" minH="auto">
+              <HeroCard />
+              <HeroSwitch />
+              <HeroSpinner />
+            </Flex>
 
-          {/* overlay */}
-          <Box
-            position="absolute"
-            inset="0"
-            bg={{
-              base: 'bg.emphasized/60',
-              _dark: 'bg.emphasized/30',
-            }}
-          />
+            <Center py="6">
+              <Flex gap="4" width="80%">
+                <HeroCardPlaylist />
+                <HeroMenu />
+              </Flex>
+            </Center>
+
+            <Flex justify="flex-end" mb="2">
+              <HeroTabs />
+            </Flex>
+
+            <Flex justify="center" mt="8">
+              <HeroHighlightCard />
+            </Flex>
+          </Stack>
         </Box>
       </Flex>
     </Box>

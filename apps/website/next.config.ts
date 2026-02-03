@@ -13,8 +13,15 @@ const nextConfig: NextConfig = {
         hostname: 'images.unsplash.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        pathname: '/**',
+      },
     ],
   },
+
+  transpilePackages: ['@fidely-ui/react'],
 }
 
 export default nextConfig

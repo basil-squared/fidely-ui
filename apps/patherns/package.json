@@ -4,6 +4,7 @@
   "private": true,
   "description": "Reusable UI patterns and compositions for Fidely UI",
   "scripts": {
+    "prepare": "panda codegen --clean",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
@@ -18,15 +19,15 @@
   "license": "MIT",
   "packageManager": "pnpm@10.27.0",
   "dependencies": {
-    "@fidely-ui/panda-preset": "workspace:*",
     "@fidely-ui/react": "workspace:*",
-    "@pandacss/dev": "^1.7.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "5.5.0",
     "react-spinners": "^0.17.0"
   },
   "devDependencies": {
+    "@fidely-ui/panda-preset": "workspace:*",
+    "@pandacss/dev": "^1.8.1",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3"
   }
