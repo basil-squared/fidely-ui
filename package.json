@@ -18,7 +18,7 @@
     "test:watch": "vitest --watch --onlyChanged",
     "commitlint": "commitlint --edit",
     "release": "changeset publish",
-    "publish": "pnpm --filter @fidely-ui /* publish --access public --tag latest",
+    "publish": "pnpm --filter @fidely-ui /* publish --access public --tag v1-latest",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "changeset publish"
