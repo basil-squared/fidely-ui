@@ -1,47 +1,45 @@
 # @fidely-ui/react
 
-## 2.0.0-beta.2 - 2026-01-28
-
-### Patch Changes
-
-- fix: CommandInput key-shortcuts causing mismatch Meta/Ctrl keys
-
-## 2.0.0-beta.0 - 2026-01-22
+## 2.0.0 - 2026-02-4
 
 ### Major Changes
 
-Upgrade Fidely UI to **v2 beta** with breaking changes and a new modular architecture.
+- [#185](https://github.com/fidely-ui/fidely-ui/pull/185) [`48240ec`](https://github.com/fidely-ui/fidely-ui/commit/48240ec0ec34a4cb2dc75dc5d2356fbef7305b23) Thanks [@chimobi-justice](https://github.com/chimobi-justice)! - Upgrade Fidely UI to **v2** with breaking changes and a new modular architecture.
 
-## Breaking Changes
+  ## Breaking Changes
+  - Removed `@fidely-ui/styled-system` package
+  - Removed ripple effects from `Button` and related keyframes
+  - Removed `SkeletonText` component
+  - Removed `FloatInput` component
+  - Removed `ark-ui` from presets
+  - Removed unused collections
+    - createFileTreeCollection
+    - createTreeCollection,
+    - FilePathTreeNode,
+    - FlatTreeNode,
+    - TreeCollection,
+    - TreeCollectionOptions,
+    - TreeNode,
+  - Added presets anatomy (new structure)
 
-- Removed `@fidely-ui/styled-system` package
-- Removed ripple effects from `Button` and related keyframes
-- Removed `SkeletonText` component
-- Removed `FloatInput` component
-- Removed `ark-ui` from presets
-- Removed unused collections
-  - createFileTreeCollection
-  - createTreeCollection,
-  - FilePathTreeNode,
-  - FlatTreeNode,
-  - TreeCollection,
-  - TreeCollectionOptions,
-  - TreeNode,
-- Added presets anatomy (new structure)
+  ## Changes
+  - Added `Unstyled` type to all slot components and `unstyled` prop to `makeStyleContext`
+  - Added Fidely factory API
+  - Added new `Popover` component with documentation
+  - Added new `Icon` component with documentation
+  - Added `size` variants to `InputGroup`
+  - Added `size` variants to `CommandInput`
+  - Added `isOpen` prop to `CommandInput` to track open/close state when used with `Dialog` or `Combobox`
+  - Added size variants to `CommandInput` and `InputGroup`
+  - Refactored `CommandInput` using `useCommand` hook and `isOpen` prop
+  - Updated global `::selection` background style
+  - Re-exported `ark-ui` locales
 
-## Changes
+### Patch Changes
 
-- Added `Unstyled` type to all slot components and `unstyled` prop to `makeStyleContext`
-- Added Fidely factory API
-- Added new `Popover` component with documentation
-- Added new `Icon` component with documentation
-- Added `size` variants to `InputGroup`
-- Added `size` variants to `CommandInput`
-- Added `isOpen` prop to `CommandInput` to track open/close state when used with `Dialog` or `Combobox`
-- Added size variants to `CommandInput` and `InputGroup`
-- Refactored `CommandInput` using `useCommand` hook and `isOpen` prop
-- Updated global `::selection` background style
-- Re-exported `ark-ui` locales
+- [#190](https://github.com/fidely-ui/fidely-ui/pull/190) [`8d6a55c`](https://github.com/fidely-ui/fidely-ui/commit/8d6a55c5f6c3af176b857a9b0d165cb19b0c2860) Thanks [@chimobi-justice](https://github.com/chimobi-justice)! - fix: CommandInput key-shortcuts causing mismatch Meta/Ctrl keys
+
+- [#188](https://github.com/fidely-ui/fidely-ui/pull/188) [`f0eac70`](https://github.com/fidely-ui/fidely-ui/commit/f0eac70aaa7556ec96d6023f618561c5c1738781) Thanks [@chimobi-justice](https://github.com/chimobi-justice)! - Replaced bundled styles with panda ship manifest (panda.buildinfo.json) to allow user-defined prefixes and hashing.
 
 ## 1.3.0
 
