@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Badge } from '@fidely-ui/react/badge'
 import { Box } from '@fidely-ui/react/box'
 import { Grid, GridItem } from '@fidely-ui/react/grid'
 import { Icon } from '@fidely-ui/react/icon'
@@ -17,6 +18,7 @@ const frameworks = [
     url: 'frameworks/next-js-app',
     logo: <RiNextjsFill />,
     comingSoon: false,
+    recommended: true,
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const frameworks = [
     url: 'frameworks/next-js-page',
     logo: <RiNextjsFill />,
     comingSoon: false,
+    recommended: true,
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const frameworks = [
     url: 'frameworks/vite-ts',
     logo: <SiVite />,
     comingSoon: false,
+    recommended: true,
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ const frameworks = [
     url: 'frameworks/vite-js',
     logo: <SiVite />,
     comingSoon: false,
+    recommended: true,
   },
   {
     id: 5,
@@ -77,6 +82,7 @@ export const Frameworks = () => {
               h: '100%',
               px: '6',
               py: '5',
+              position: 'relative',
               borderRadius: 'xl',
               border: '1px solid',
               borderColor: 'border.default',
@@ -92,6 +98,14 @@ export const Frameworks = () => {
               cursor: framework.comingSoon ? 'not-allowed' : 'pointer',
             }}
           >
+            {framework.recommended && (
+              <Box position="absolute" top="0" right="0">
+                <Badge size="sm" colorPalette="amber">
+                  RECOMMENDED
+                </Badge>
+              </Box>
+            )}
+
             <Stack gap="3" align="center" textAlign="center">
               <Icon boxSize="12">{framework.logo}</Icon>
 
