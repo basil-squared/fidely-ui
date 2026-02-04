@@ -38,7 +38,13 @@
 
 ## 📖 Documentation
 
-[Documentation](https://fidely-ui.vercel.app/)
+- Latest: (https://fidely-ui.vercel.app/)
+
+- v1: (https://v1-fidely-ui.vercel.app/)
+
+## Usage
+
+Read the docs here: (https://fidely-ui.vercel.app/docs/getting-started/installation)
 
 ## 🤝 Contributing
 
@@ -50,7 +56,13 @@ Check out our [CONTRIBUTING File](CONTRIBUTING.md) for details.
 
 [Twitter](https://x.com/FidelyUi)
 
+[Github](https://github.com/orgs/fidely-ui/discussions)
+
 💬 Community Discord (coming soon)
+
+## 👍 Sponsor Us
+
+[Ko-Fi](https://ko-fi.com/fidely_ui)
 
 ## Acknowledgement
 
