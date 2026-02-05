@@ -60,7 +60,7 @@ export const AuthenticationExample = () => {
 
       <Box
         flex="1"
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: 'none', lg: 'block' }}
         bg="colorPalette.default"
       />
     </Flex>

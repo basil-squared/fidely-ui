@@ -175,7 +175,11 @@ export const DashboardMain = ({ searchValue }: DashboardMainProps) => {
     <Box padding={'10px'}>
       <Grid
         mx="auto"
-        gridTemplateColumns={{ base: '1fr', md: 'repeat(4, 1fr)' }}
+        gridTemplateColumns={{
+          base: '1fr',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(4, 1fr)',
+        }}
         gap={{ base: '2', md: '1.5' }}
       >
         {exampleDashboardData.map((data) => (
