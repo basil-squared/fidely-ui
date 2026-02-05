@@ -161,12 +161,12 @@ interface DashboardMainProps {
 
 export const DashboardMain = ({ searchValue }: DashboardMainProps) => {
   const filteredUsers = React.useMemo(() => {
-    const query = searchValue.toLocaleLowerCase().trim()
+    const query = searchValue.toLowerCase().trim()
     if (!query) return exampleUsersData
 
     return exampleUsersData.filter((d) =>
       [d.user.name, d.user.email].some((field) =>
-        field.toLocaleLowerCase().includes(query)
+        field.toLowerCase().includes(query)
       )
     )
   }, [searchValue])
