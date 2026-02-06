@@ -1,5 +1,14 @@
 # @fidely-ui/react
 
+## 2.0.1
+
+### Patch Changes
+
+- fix(command-input): prevent crash and correctly resolve default keyboard shortcuts when the shortcut prop is omitted
+
+- Updated dependencies []:
+  - @fidely-ui/panda-preset@2.0.1
+
 ## 2.0.0
 
 ### Major Changes

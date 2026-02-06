@@ -1,5 +1,11 @@
 # @fidely-ui/react
 
+## 2.0.1 - 2026-02-6
+
+### Patch Changes
+
+- fix(command-input): prevent crash and correctly resolve default keyboard shortcuts when the shortcut prop is omitted
+
 ## 2.0.0 - 2026-02-4
 
 ### Major Changes
