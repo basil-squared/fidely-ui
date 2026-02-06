@@ -85,9 +85,12 @@ export const CommandInput = React.forwardRef<
 
       {!isMobile && shortcutLabel ? (
         <Flex gap="1" aria-hidden="true">
-          {shortcutLabel.split('+').map((key, i) => (
-            <Kbd key={i}>{key.trim()}</Kbd>
-          ))}
+          {shortcutLabel
+            .split('+')
+            .filter(Boolean)
+            .map((key, i) => (
+              <Kbd key={i}>{key.trim()}</Kbd>
+            ))}
         </Flex>
       ) : null}
     </StyledCommandInput>

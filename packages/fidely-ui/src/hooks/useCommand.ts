@@ -12,19 +12,21 @@ interface UseCommandProps {
 
 export const useCommand = ({ shortcut, onTrigger }: UseCommandProps) => {
   const [isMobile] = React.useState(() =>
-    typeof window !== undefined ? isMobileDevice() : false
+    typeof window !== 'undefined' ? isMobileDevice() : false
   )
 
-  const [resolvedShortcut] = React.useState(() => {
+  const resolvedShortcut = React.useMemo(() => {
     if (isMobile) return null
 
     const isMac =
       typeof navigator !== 'undefined' &&
       /Mac|iPod|iPhone|iPad/.test(navigator.userAgent)
-    const defaultShortcut = isMac ? '⌘ + K' : 'Ctrl + K'
 
-    return parseShortcut(shortcut ?? defaultShortcut)
-  })
+    // If no shortcut is passed, provide a string default BEFORE parsing
+    const shortcutToParse = shortcut || (isMac ? '⌘+K' : 'Ctrl+K')
+
+    return parseShortcut(shortcutToParse)
+  }, [shortcut, isMobile])
 
   const triggerRef = React.useRef(onTrigger)
   React.useEffect(() => {
@@ -73,6 +75,6 @@ export const useCommand = ({ shortcut, onTrigger }: UseCommandProps) => {
 
   return {
     isMobile,
-    shortcutLabel: resolvedShortcut?.label,
+    shortcutLabel: resolvedShortcut?.label ?? '',
   }
 }
