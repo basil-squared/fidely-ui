@@ -1,4 +1,13 @@
-# @fidely-ui/react
+# Changelog
+
+## 2.0.2
+
+### Patch Changes
+
+- Fixed an issue where the Select trigger lost its active border when the dropdown content opened.
+
+- Updated dependencies []:
+  - @fidely-ui/panda-preset@2.0.2
 
 ## 2.0.1
 

@@ -1,4 +1,10 @@
-# @fidely-ui/panda-preset
+# Changelog
+
+## 2.0.2
+
+### Patch Changes
+
+- Fixed an issue where the Select trigger lost its active border when the dropdown content opened.
 
 ## 2.0.1
 
