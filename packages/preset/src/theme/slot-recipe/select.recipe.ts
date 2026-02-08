@@ -40,6 +40,11 @@ export const selectSlotRecipe = defineSlotRecipe({
         color: 'fg.subtle',
       },
 
+      _focusVisible: {
+        outline: '2px solid',
+        outlineColor: 'colorPalette.default',
+      },
+
       '&[data-invalid], &:has([data-invalid])': {
         borderColor: 'fg.error',
         boxShadow: '0 0 0 1px var(--error-color)',
@@ -157,7 +162,7 @@ export const selectSlotRecipe = defineSlotRecipe({
         trigger: {
           borderWidth: '1px',
           borderColor: 'border.default',
-          _focus: {
+          _expanded: {
             borderColor: 'colorPalette.default',
             boxShadow: '0 0 0 1px var(--default-color)',
           },
@@ -165,13 +170,9 @@ export const selectSlotRecipe = defineSlotRecipe({
       },
       subtle: {
         trigger: {
-          borderWidth: '1px',
-          borderColor: 'border.default',
+          borderWidth: 'none',
+          borderColor: 'transparent',
           bg: 'bg.subtle',
-          _focus: {
-            borderColor: 'colorPalette.default',
-            boxShadow: '0 0 0 1px var(--default-color)',
-          },
         },
       },
     },
