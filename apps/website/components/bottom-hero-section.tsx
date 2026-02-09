@@ -65,7 +65,7 @@ export const BottomHeroSection = () => {
         <FeatureItem
           icon={<LuHeartHandshake />}
           title="Production Ready"
-          description="Thoughtfully designed components intended for real world applications, scalability, and long-term maintenance."
+          description="Build production-ready React apps"
         />
       </Grid>
     </Box>
