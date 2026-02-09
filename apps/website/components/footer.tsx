@@ -29,9 +29,9 @@ const community = [
 ]
 
 const resources = [
-  { href: '#', label: 'Fidely UI pro' },
-  { href: '#', label: 'Blocks' },
+  { href: '#', label: 'Pro Blocks' },
   { href: '#', label: 'Templates' },
+  { href: '#', label: 'Commerce' },
 ]
 
 export const Footer = () => {
@@ -52,7 +52,7 @@ export const Footer = () => {
         >
           <AppLogo />
 
-          <Text>Build modern apps with speed and flexibility</Text>
+          <Text>Build production-ready React apps faster</Text>
 
           <Text>
             Maintained by{' '}

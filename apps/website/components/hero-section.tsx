@@ -51,7 +51,7 @@ export const HeroSection = () => {
                   color="colorPalette.default"
                   lineHeight="1.4em"
                 >
-                  Build modern apps with speed and flexibility
+                  Build production-ready React apps faster
                 </Heading>
 
                 <Heading
@@ -64,8 +64,7 @@ export const HeroSection = () => {
               </Stack>
 
               <Text color="fg.disabled" size={{ base: 'md', lg: 'lg' }}>
-                Fidely UI is a modern, beautifully crafted React design system
-                powered by{' '}
+                Fidely UI is a modern React design system powered by{' '}
                 <Text
                   as="strong"
                   colorPalette="orange"
@@ -92,9 +91,9 @@ export const HeroSection = () => {
                   >
                     Panda CSS
                   </a>
-                </Text>
-                , delivering accessible and themeable components for building
-                exceptional web apps
+                </Text>{' '}
+                It provides accessible, themeable, and composable components for
+                building high-quality web applications.
               </Text>
 
               <Stack flexDirection={{ base: 'column', md: 'row' }}>

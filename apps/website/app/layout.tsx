@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: '%s – Fidely UI',
   },
   description:
-    'Fidely UI is a modern, beautifully crafted React design system powered by Ark UI and Panda CSS, delivering accessible and themeable components for building exceptional web apps.',
+    'Fidely UI is a modern React design system powered by Ark UI and Panda CSS. It provides accessible, themeable, and composable components for building high-quality web applications.',
 
   applicationName: 'Fidely UI',
   authors: [

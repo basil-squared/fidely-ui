@@ -15,9 +15,10 @@
 
 # Fidely UI ⭐
 
-## Build modern apps with speed and flexibility
+## Build production-ready React apps faster.
 
-> **Fidely UI is a modern, beautifully crafted React design system powered by Ark UI and Panda CSS, delivering accessible and themeable components for building exceptional web apps.**
+> Fidely UI is a modern React design system powered by Ark UI and Panda CSS.  
+> It provides accessible, themeable, and composable components for building high-quality web applications.
 
 ---
 
@@ -38,13 +39,23 @@
 
 ## 📖 Documentation
 
-- Latest: (https://fidely-ui.vercel.app/)
+- [Latest](https://fidely-ui.vercel.app/)
 
-- v1: (https://v1-fidely-ui.vercel.app/)
+- [v1](https://v1-fidely-ui.vercel.app/)
+
+## 📦 Installation
+
+```bash
+npm install @fidely-ui/react @fidely-ui/panda-preset
+# or
+pnpm add @fidely-ui/react @fidely-ui/panda-preset
+# or
+yarn add @fidely-ui/react @fidely-ui/panda-preset
+```
 
 ## Usage
 
-Read the docs here: (https://fidely-ui.vercel.app/docs/getting-started/installation)
+[Get started by following the installation guide:](https://fidely-ui.vercel.app/docs/getting-started/installation)
 
 ## 🤝 Contributing
 
@@ -52,13 +63,11 @@ Check out our [CONTRIBUTING File](CONTRIBUTING.md) for details.
 
 ## 📣 Stay Connected
 
-[LinkedIn](https://www.linkedin.com/company/fidely-ui)
-
-[Twitter](https://x.com/FidelyUi)
-
+[LinkedIn](https://www.linkedin.com/company/fidely-ui),
+[Twitter](https://x.com/FidelyUi),
 [Github](https://github.com/orgs/fidely-ui/discussions)
 
-💬 Community Discord (coming soon)
+<!-- 💬 Community Discord (coming soon) -->
 
 ## 👍 Sponsor Us
 
@@ -71,8 +80,10 @@ We’re grateful for their contributions to the open-source ecosystem.
 
 ## 🙏🏽 Support
 
-This project needs a star️ from you. Don't forget to leave a star✨
+If Fidely UI helps you, consider giving it a ⭐ on GitHub, it helps the project grow.
 
 ## 📜 License
 
-MIT © [Justice Chimobi](LICENSE)
+MIT © [Fidely UI](LICENSE)
+
+Created and maintained by [Justice Chimobi](https://github.com/chimobi-justice) and contributors.

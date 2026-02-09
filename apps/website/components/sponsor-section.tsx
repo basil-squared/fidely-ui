@@ -82,6 +82,41 @@ export const SponsorSection = () => {
           </Center>
         </Box>
       </Flex>
+
+      <Flex
+        w="90%"
+        m="4.5rem auto"
+        alignItems="flex-start"
+        gap="4"
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
+        <Box width={{ base: '100%', lg: '35%' }}>
+          <Stack gap="3">
+            <Heading
+              colorPalette="orange"
+              color="colorPalette.default"
+              fontWeight="semibold"
+              size="3xl"
+            >
+              Support Us
+            </Heading>
+            <Text lineHeight="1.8em" color="fg.muted" size="md">
+              Give us a star on GitHub, it helps the project grow and reach more
+              audience.
+            </Text>
+
+            <Text color="fg.muted" size="md" textDecoration="underline" asChild>
+              <Link
+                href="https://github.com/fidely-ui/fidely-ui"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ⭐ Star on GitHub
+              </Link>
+            </Text>
+          </Stack>
+        </Box>
+      </Flex>
     </Box>
   )
 }
