@@ -3,17 +3,19 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Box } from '@fidely-ui/react/box'
+import { Button } from '@fidely-ui/react/button'
 import { Flex } from '@fidely-ui/react/flex'
 import { IconButton } from '@fidely-ui/react/icon-button'
 import { Text } from '@fidely-ui/react/text'
 import { useDialog } from '@fidely-ui/react/dialog'
 import { Stack } from '@fidely-ui/react/stack'
 import { FaGithub, FaBars } from 'react-icons/fa6'
+import { FcLike } from 'react-icons/fc'
 
 import { ColorModeButton } from '~/components/color-mode-button'
 import { Drawer } from '~/components/drawer'
 import { AppLogo } from '~/components/logo'
-import { InfoBadge, NavItem } from '~/components/nav-item'
+import { NavItem } from '~/components/nav-item'
 
 export const SiteNavBar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -24,9 +26,9 @@ export const SiteNavBar = () => {
   const dialog = useDialog()
 
   const navLinks = [
-    { href: '/docs/getting-started/introduction', label: 'Docs', info: false },
-    { href: '#', label: 'Templates', info: true },
-    { href: '/docs/components/accordion', label: 'Components', info: false },
+    { href: '/docs/getting-started/introduction', label: 'Docs' },
+    { href: '/showcase', label: 'Showcase' },
+    { href: '/docs/components/accordion', label: 'Components' },
   ]
 
   return (
@@ -46,7 +48,7 @@ export const SiteNavBar = () => {
           alignItems="center"
           display={{ base: 'none', md: 'flex' }}
         >
-          {navLinks.map(({ href, label, info }, index) => (
+          {navLinks.map(({ href, label }, index) => (
             <Text
               key={index}
               transition="color 0.2s ease"
@@ -55,11 +57,19 @@ export const SiteNavBar = () => {
                 _dark: { color: 'fg.muted' },
               }}
             >
-              <Link href={href}>
-                {label} {info && <InfoBadge info="soon" />}
-              </Link>
+              <Link href={href}>{label}</Link>
             </Text>
           ))}
+
+          <Button size="sm" variant="ghost" asChild>
+            <Link
+              href="https://ko-fi.com/fidely_ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FcLike /> Sponsor
+            </Link>
+          </Button>
 
           <IconButton
             asChild
@@ -82,6 +92,21 @@ export const SiteNavBar = () => {
 
         {/* Mobile Menu Button */}
         <Box display={{ base: 'flex', md: 'none' }} alignItems="center">
+          <IconButton
+            size="sm"
+            variant="ghost"
+            aria-label="Sponsor Fidely UI"
+            asChild
+          >
+            <Link
+              href="https://ko-fi.com/fidely_ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FcLike />
+            </Link>
+          </IconButton>
+
           <ColorModeButton />
 
           <IconButton
@@ -145,8 +170,8 @@ const SiteMobileLinks = ({ closeDrawer }: SiteMobileLinksProps) => {
           fontSize="18px"
         />
         <NavItem
-          href="/docs/getting-started/installation"
-          label="Templates"
+          href="/showcase"
+          label="Showcase"
           closeDrawer={closeDrawer}
           fontSize="18px"
         />

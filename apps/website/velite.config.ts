@@ -60,9 +60,20 @@ const docs = defineCollection({
     }),
 })
 
+export const projects = defineCollection({
+  name: 'Showcase',
+  pattern: ['showcase/**/*.json'],
+  schema: s.object({
+    name: s.string(),
+    description: s.string().optional(),
+    url: s.string(),
+    image: s.string(),
+  }),
+})
+
 export default defineConfig({
   root: join(process.cwd(), './content'),
-  collections: { docs },
+  collections: { docs, projects },
   mdx: {
     remarkPlugins: [remarkDirective, remarkGfm],
     rehypePlugins: [
