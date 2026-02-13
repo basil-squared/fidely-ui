@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0 - 2026-02-14
+
+### Minor Changes
+
+- Add **full** size variant to Dialog
+
 ## 2.0.2 - 2026-02-8
 
 ### Patch Changes
