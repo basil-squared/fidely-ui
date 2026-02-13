@@ -121,6 +121,14 @@ export const dialogSlotRecipe = defineSlotRecipe({
           maxW: '4xl',
         },
       },
+      full: {
+        content: {
+          maxW: '100dvw',
+          minH: '100dvh',
+          borderRadius: '0',
+          overflow: 'auto',
+        },
+      },
     },
   },
 

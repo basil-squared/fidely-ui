@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.1.0
+
+### Minor Changes
+
+- Add **full** size variant to Dialog
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @fidely-ui/panda-preset@2.1.0
+
 ## 2.0.2
 
 ### Patch Changes
