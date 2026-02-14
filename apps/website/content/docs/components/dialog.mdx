@@ -40,6 +40,12 @@ Use the **size** prop to change the size of the dialog component.
 
 <ExampleTabs name="dialog-sizes" scope="dialog" />
 
+### Fullscreen
+
+Use the **`size="full"`** prop to make the dialog fill the entire viewport.
+
+<ExampleTabs name="dialog-fullscreen" scope="dialog" />
+
 ### Controlled
 
 Use the **open** and **onOpenChange** prop to control the visibility of the dialog component.
@@ -87,7 +93,7 @@ Use the **initialFocusEl** prop to set the initial focus of the dialog component
 | `modal`                  | `boolean`                                                                                                                                 | `true`     | Whether to prevent pointer interaction outside the element and hide all content below it.                               |
 | `preventScroll`          | `boolean`                                                                                                                                 | `true`     | Whether to prevent scrolling behind the dialog when it's opened                                                         |
 | `role`                   | `"dialog" \| "alertdialog"`                                                                                                               | `"dialog"` | The dialog's role.                                                                                                      |
-| `size`                   | ` "xs" \| "sm" \| "md" \| "lg"`                                                                                                           | `"md"`     | Controls the size of the switch.                                                                                        |
+| `size`                   | ` "xs" \| "sm" \| "md" \| "lg" \| "full"`                                                                                                 | `"md"`     | Controls the size of the switch.                                                                                        |
 | `skipAnimationOnMount`   | `boolean                                                                                                                                  | `"false"`  | Whether to allow the initial presence animation.                                                                        |
 | `unmountOnExit`          | `boolean`                                                                                                                                 | `false`    | Whether to unmount on exit.                                                                                             |
 | `trapFocus`              | `boolean`                                                                                                                                 | `true`     | Whether to trap focus inside the dialog when it's opened.                                                               |

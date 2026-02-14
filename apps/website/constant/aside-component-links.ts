@@ -27,7 +27,7 @@ export const asideComponentLinks = [
       { name: 'Image', linkUrl: 'image', info: '' },
       { name: 'Table', linkUrl: 'table', info: '' },
       { name: 'Marquee', linkUrl: 'marquee', info: '' },
-      { name: 'Icon', linkUrl: 'icon', info: 'New' },
+      { name: 'Icon', linkUrl: 'icon', info: '' },
     ],
   },
 
@@ -59,7 +59,7 @@ export const asideComponentLinks = [
       { name: 'Field', linkUrl: 'field', info: '' },
       { name: 'Input', linkUrl: 'input', info: '' },
       { name: 'Textarea', linkUrl: 'textarea', info: '' },
-      { name: 'Command Input', linkUrl: 'command-input', info: 'Updated' },
+      { name: 'Command Input', linkUrl: 'command-input', info: '' },
       { name: 'Combobox', linkUrl: 'combobox', info: '' },
       { name: 'Input Group', linkUrl: 'input-group', info: '' },
       { name: 'Pin Input', linkUrl: 'pin-input', info: '' },
@@ -77,7 +77,7 @@ export const asideComponentLinks = [
       { name: 'Dialog', linkUrl: 'dialog', info: '' },
       { name: 'Hover Card', linkUrl: 'hover-card', info: '' },
       { name: 'Menu', linkUrl: 'menu', info: '' },
-      { name: 'Popover', linkUrl: 'popover', info: 'New' },
+      { name: 'Popover', linkUrl: 'popover', info: '' },
     ],
   },
 
@@ -95,7 +95,7 @@ export const asideUtilLinks = [
     section: 'Utilities',
     items: [
       { name: 'Client Only', linkUrl: 'client-only', info: '' },
-      { name: 'Locale Provider', linkUrl: 'locale-provider', info: 'New' },
+      { name: 'Locale Provider', linkUrl: 'locale-provider', info: '' },
       { name: 'Portal', linkUrl: 'portal', info: '' },
       { name: 'Download Trigger', linkUrl: 'download-trigger', info: '' },
       { name: 'Formats', linkUrl: 'formats', info: '' },
@@ -108,7 +108,7 @@ export const asideStylingLinks = [
     section: 'Styling',
     items: [
       { name: 'Dark Mode', linkUrl: 'dark-mode', info: '' },
-      { name: 'Fidely Factory', linkUrl: 'fidely-factory', info: 'Updated' },
+      { name: 'Fidely Factory', linkUrl: 'fidely-factory', info: '' },
       { name: 'Css Variables', linkUrl: 'css-variables', info: '' },
       { name: 'Responsive Design', linkUrl: 'responsive-design', info: '' },
       // { name: 'Color Opacity Modifier', linkUrl: 'color-opacity-modifier', info: '' },
