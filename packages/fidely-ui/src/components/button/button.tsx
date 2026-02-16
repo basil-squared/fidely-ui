@@ -26,11 +26,11 @@ export interface ButtonProps
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(props, ref) {
     const {
-      isLoading,
+      isLoading = false,
       loadingText,
       spinner,
       spinnerPlacement = 'start',
-      disabled,
+      disabled = false,
       children,
       ...rest
     } = props
@@ -41,6 +41,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <StyledButton
         ref={ref}
         type="button"
+        aria-disabled={isDisabled}
         disabled={isDisabled}
         data-disabled={dataAttr(disabled)}
         data-loading={dataAttr(isLoading)}
