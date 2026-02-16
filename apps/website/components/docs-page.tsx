@@ -69,7 +69,7 @@ function Sidebar() {
           />
           <NavItem href="/docs/getting-started/migration" label="Migration" />
           <Link
-            href="https://github.com/fidely-ui/fidely-ui/blob/main/CHANNGELOG.md"
+            href="https://github.com/fidely-ui/fidely-ui/blob/main/CHANGELOG.md"
             target="_blank"
             rel="noopener noreferrer"
             style={{ marginLeft: '6px' }}
