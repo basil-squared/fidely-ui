@@ -78,9 +78,11 @@ Check out our [CONTRIBUTING File](CONTRIBUTING.md) for details.
 Fidely UI’s documentation and design philosophy are inspired by [Ark UI](https://ark-ui.com/) and [Chakra UI](https://chakra-ui.com/).
 We’re grateful for their contributions to the open-source ecosystem.
 
-## 🙏🏽 Support
+---
 
-If Fidely UI helps you, consider giving it a ⭐ on GitHub, it helps the project grow.
+[![Love Fidely UI](https://img.shields.io/badge/Love%20Fidely%20UI-Give%20a%20⭐-blue?style=for-the-badge)](https://github.com/fidely-ui/fidely-ui)
+
+**Love Fidely UI? Give our repo a star ⭐ ⬆️**
 
 ## 📜 License
 
