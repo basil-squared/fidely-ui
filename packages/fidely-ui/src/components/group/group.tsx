@@ -33,7 +33,13 @@ export const Group = React.forwardRef<HTMLDivElement, GroupProps>(
         {...rest}
         className={cx(className)}
       >
-        {children}
+        {React.Children.map(children, (child) => {
+          if (!React.isValidElement(child)) return child
+
+          return React.cloneElement(child, {
+            'data-group-item': '',
+          } as any)
+        })}
       </StyledGroup>
     )
   }

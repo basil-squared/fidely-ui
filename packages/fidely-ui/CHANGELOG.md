@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.2.0
+
+### Minor Changes
+
+- Add `data-avatar-group` & `data-group-item` support and automatic border styling to **AvatarGroup**.
+
+### Patch Changes
+
+- [#212](https://github.com/fidely-ui/fidely-ui/pull/212) [`d45c338`](https://github.com/fidely-ui/fidely-ui/commit/d45c338cbe068ed170dc3d66612bbf41e41b48d8) Thanks [@chimobi-justice](https://github.com/chimobi-justice)! - fix **button** correct isLoading & disabled behavior
+
+- Fix `AvatarGroup` overlap stacking behavior.
+
 ## 2.1.0
 
 ### Minor Changes
