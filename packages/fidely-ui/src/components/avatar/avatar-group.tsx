@@ -8,6 +8,6 @@ export interface AvatarGroupProps extends GroupProps {}
 
 export const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
   function AvatarGroup(props, ref) {
-    return <Group overlap ref={ref} {...props} />
+    return <Group overlap attached ref={ref} data-avatar-group="" {...props} />
   }
 )

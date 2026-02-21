@@ -6,6 +6,14 @@ export const groupRecipe = defineRecipe({
   base: {
     display: 'flex',
     alignItems: 'center',
+    gap: '0.4rem',
+
+    '&[data-avatar-group]': {
+      '& > *[data-group-item]': {
+        borderWidth: '2px',
+        borderColor: 'bg.default',
+      },
+    },
   },
   variants: {
     direction: {
@@ -19,7 +27,7 @@ export const groupRecipe = defineRecipe({
     },
     overlap: {
       true: {
-        '& > *:not(:first-child)': {
+        '&[data-avatar-group] > *:not(:first-child)': {
           marginLeft: '-0.75rem',
         },
       },
@@ -27,6 +35,5 @@ export const groupRecipe = defineRecipe({
   },
   defaultVariants: {
     direction: 'row',
-    overlap: false,
   },
 })
