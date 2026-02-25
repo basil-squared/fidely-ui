@@ -9,12 +9,7 @@ import { Text } from '@fidely-ui/react/text'
 
 export const HeroCard = () => {
   return (
-    <Card.Root
-      width="100%"
-      maxWidth="320px"
-      height="min-content"
-      animationStyle="float"
-    >
+    <Card.Root width="100%" maxWidth="320px" height="min-content">
       <Card.Body>
         <Stack gap="3">
           <Flex justify="space-between" width="full">

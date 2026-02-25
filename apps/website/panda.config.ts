@@ -29,29 +29,7 @@ export default defineConfig({
   },
 
   theme: {
-    extend: {
-      keyframes: {
-        float: {
-          '0%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' },
-          '100%': { transform: 'translateY(0)' },
-        },
-      },
-
-      animationStyles: {
-        float: {
-          value: {
-            animation: 'float 6s ease-in-out infinite',
-          },
-        },
-
-        floatSlow: {
-          value: {
-            animation: 'float 9s ease-in-out infinite',
-          },
-        },
-      },
-    },
+    extend: {},
   },
 
   globalCss: {

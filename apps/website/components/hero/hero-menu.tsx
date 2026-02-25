@@ -9,7 +9,7 @@ import { MdKeyboardCommandKey } from 'react-icons/md'
 
 export const HeroMenu = () => {
   return (
-    <Stack animationStyle="float" animationDelay="1.8s">
+    <Stack>
       <Text>Menu</Text>
 
       <Menu.Root>

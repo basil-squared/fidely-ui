@@ -4,13 +4,7 @@ import { Spinner } from '@fidely-ui/react/spinner'
 
 export const HeroSpinner = () => {
   return (
-    <Card.Root
-      width="100%"
-      maxWidth="130px"
-      height="min-content"
-      animationStyle="float"
-      animationDelay="1.2s"
-    >
+    <Card.Root width="100%" maxWidth="130px" height="min-content">
       <Card.Body height="100px">
         <Center height="200px">
           <Spinner size="xl" colorPalette="orange" />
