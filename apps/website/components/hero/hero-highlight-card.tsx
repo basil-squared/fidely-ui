@@ -8,12 +8,7 @@ import { Text } from '@fidely-ui/react/text'
 
 export const HeroHighlightCard = () => {
   return (
-    <Card.Root
-      maxWidth="420px"
-      boxShadow="xl"
-      animationStyle="floatSlow"
-      animationDelay="1.4s"
-    >
+    <Card.Root maxWidth="420px" boxShadow="xl">
       <Card.Body>
         <Stack gap="4">
           <Box px="3" py="1">

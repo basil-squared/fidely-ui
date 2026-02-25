@@ -13,8 +13,6 @@ export const HeroSwitch = () => {
       defaultChecked
       onCheckedChange={toggleTheme}
       size="lg"
-      animationStyle="float"
-      animationDelay="0.6s"
     >
       <Switch.HiddenInput />
       <Switch.Control>

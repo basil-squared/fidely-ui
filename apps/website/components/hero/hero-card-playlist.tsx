@@ -15,12 +15,7 @@ import {
 
 export const HeroCardPlaylist = () => {
   return (
-    <Card.Root
-      width="100%"
-      maxWidth="320px"
-      height="min-content"
-      animationStyle="float"
-    >
+    <Card.Root width="100%" maxWidth="320px" height="min-content">
       <Card.Body>
         <Flex gap="1" align="center">
           <Box width="30%">

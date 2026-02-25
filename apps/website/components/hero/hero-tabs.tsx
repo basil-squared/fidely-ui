@@ -3,7 +3,7 @@ import { Tabs } from '@fidely-ui/react/tabs'
 
 export const HeroTabs = () => {
   return (
-    <Stack animationStyle="float" animationDelay="2.4s">
+    <Stack>
       <Tabs.Root
         defaultValue="fidely-ui"
         variant="outline"
