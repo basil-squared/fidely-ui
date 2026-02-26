@@ -2,7 +2,7 @@
 
 import type { Assign, CollectionItem } from '@ark-ui/react'
 import { Select as ArkSelect } from '@ark-ui/react/select'
-import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { type HTMLStyledProps } from 'styled-system/types'
 import { select, type SelectVariantProps } from 'styled-system/recipes'
 
 import { makeStyleContext } from '../../system/make-style-context'
@@ -12,13 +12,12 @@ import { FiCaretDownIcon } from '../../icons/FiCaretDownIcon'
 const { withSlotProvider, withSlotContext } = makeStyleContext(select)
 
 // -------------------- RootProvider --------------------
-export interface SelectRootProviderProps<T extends CollectionItem = any>
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'div'>, ArkSelect.RootProviderBaseProps<T>>,
-      SelectVariantProps
-    >,
-    UnstyledProps {}
+export interface SelectRootProviderProps<
+  T extends CollectionItem = any,
+> extends Assign<
+  Assign<HTMLStyledProps<'div'>, ArkSelect.RootProviderBaseProps<T>>,
+  SelectVariantProps
+> {}
 
 export const SelectRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -26,13 +25,10 @@ export const SelectRootProvider = withSlotProvider<
 >(ArkSelect.RootProvider, 'root')
 
 // -------------------- Root --------------------
-export interface SelectRootProps<T extends CollectionItem = any>
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'div'>, ArkSelect.RootBaseProps<T>>,
-      SelectVariantProps
-    >,
-    UnstyledProps {}
+export interface SelectRootProps<T extends CollectionItem = any> extends Assign<
+  Assign<HTMLStyledProps<'div'>, ArkSelect.RootBaseProps<T>>,
+  SelectVariantProps
+> {}
 
 export const SelectRoot = withSlotProvider<HTMLDivElement, SelectRootProps>(
   ArkSelect.Root,
@@ -40,10 +36,10 @@ export const SelectRoot = withSlotProvider<HTMLDivElement, SelectRootProps>(
 )
 
 // -------------------- Control --------------------
-export interface SelectControlProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ControlBaseProps>,
-    UnstyledProps {}
+export interface SelectControlProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ControlBaseProps
+> {}
 
 export const SelectControl = withSlotContext<
   HTMLDivElement,
@@ -51,10 +47,10 @@ export const SelectControl = withSlotContext<
 >(ArkSelect.Control, 'control')
 
 // -------------------- Content --------------------
-export interface SelectContentProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ContentBaseProps>,
-    UnstyledProps {}
+export interface SelectContentProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ContentBaseProps
+> {}
 
 export const SelectContent = withSlotContext<
   HTMLDivElement,
@@ -62,10 +58,10 @@ export const SelectContent = withSlotContext<
 >(ArkSelect.Content, 'content')
 
 // -------------------- ClearTrigger --------------------
-export interface SelectClearTriggerProps
-  extends
-    Assign<HTMLStyledProps<'button'>, ArkSelect.ClearTriggerBaseProps>,
-    UnstyledProps {
+export interface SelectClearTriggerProps extends Assign<
+  HTMLStyledProps<'button'>,
+  ArkSelect.ClearTriggerBaseProps
+> {
   idleIcon?: React.ReactNode
 }
 
@@ -83,10 +79,10 @@ export const SelectClearTrigger = withSlotContext<
 }, 'clearTrigger')
 
 // -------------------- Trigger --------------------
-export interface SelectTriggerProps
-  extends
-    Assign<HTMLStyledProps<'button'>, ArkSelect.TriggerBaseProps>,
-    UnstyledProps {}
+export interface SelectTriggerProps extends Assign<
+  HTMLStyledProps<'button'>,
+  ArkSelect.TriggerBaseProps
+> {}
 
 export const SelectTrigger = withSlotContext<
   HTMLButtonElement,
@@ -94,10 +90,10 @@ export const SelectTrigger = withSlotContext<
 >(ArkSelect.Trigger, 'trigger')
 
 // -------------------- Indicator --------------------
-export interface SelectIndicatorProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.IndicatorBaseProps>,
-    UnstyledProps {
+export interface SelectIndicatorProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.IndicatorBaseProps
+> {
   idleIcon?: React.ReactNode
 }
 
@@ -113,8 +109,7 @@ export const SelectIndicator = withSlotContext<
 }, 'indicator')
 
 // -------------------- IndicatorGroup --------------------
-export interface SelectIndicatorGroupProps
-  extends HTMLStyledProps<'div'>, UnstyledProps {}
+export interface SelectIndicatorGroupProps extends HTMLStyledProps<'div'> {}
 
 export const SelectIndicatorGroup = withSlotContext<
   HTMLDivElement,
@@ -122,10 +117,10 @@ export const SelectIndicatorGroup = withSlotContext<
 >('div', 'indicatorGroup')
 
 // -------------------- Label --------------------
-export interface SelectLabelProps
-  extends
-    Assign<HTMLStyledProps<'label'>, ArkSelect.LabelBaseProps>,
-    UnstyledProps {}
+export interface SelectLabelProps extends Assign<
+  HTMLStyledProps<'label'>,
+  ArkSelect.LabelBaseProps
+> {}
 
 export const SelectLabel = withSlotContext<HTMLLabelElement, SelectLabelProps>(
   ArkSelect.Label,
@@ -133,10 +128,10 @@ export const SelectLabel = withSlotContext<HTMLLabelElement, SelectLabelProps>(
 )
 
 // -------------------- Item --------------------
-export interface SelectItemProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ItemBaseProps>,
-    UnstyledProps {}
+export interface SelectItemProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ItemBaseProps
+> {}
 
 export const SelectItem = withSlotContext<HTMLDivElement, SelectItemProps>(
   ArkSelect.Item,
@@ -144,10 +139,10 @@ export const SelectItem = withSlotContext<HTMLDivElement, SelectItemProps>(
 )
 
 // -------------------- ItemText --------------------
-export interface SelectItemTextProps
-  extends
-    Assign<HTMLStyledProps<'span'>, ArkSelect.ItemTextBaseProps>,
-    UnstyledProps {}
+export interface SelectItemTextProps extends Assign<
+  HTMLStyledProps<'span'>,
+  ArkSelect.ItemTextBaseProps
+> {}
 
 export const SelectItemText = withSlotContext<
   HTMLSpanElement,
@@ -155,10 +150,10 @@ export const SelectItemText = withSlotContext<
 >(ArkSelect.ItemText, 'itemText')
 
 // -------------------- ItemGroup --------------------
-export interface SelectItemGroupProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ItemGroupBaseProps>,
-    UnstyledProps {}
+export interface SelectItemGroupProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ItemGroupBaseProps
+> {}
 
 export const SelectItemGroup = withSlotContext<
   HTMLDivElement,
@@ -166,10 +161,10 @@ export const SelectItemGroup = withSlotContext<
 >(ArkSelect.ItemGroup, 'itemGroup')
 
 // -------------------- ItemGroupLabel --------------------
-export interface SelectItemGroupLabelProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ItemGroupLabelBaseProps>,
-    UnstyledProps {}
+export interface SelectItemGroupLabelProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ItemGroupLabelBaseProps
+> {}
 
 export const SelectItemGroupLabel = withSlotContext<
   HTMLDivElement,
@@ -177,10 +172,10 @@ export const SelectItemGroupLabel = withSlotContext<
 >(ArkSelect.ItemGroupLabel, 'itemGroupLabel')
 
 // -------------------- ItemIndicator --------------------
-export interface SelectItemIndicatorProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ItemIndicatorBaseProps>,
-    UnstyledProps {}
+export interface SelectItemIndicatorProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ItemIndicatorBaseProps
+> {}
 
 export const SelectItemIndicator = withSlotContext<
   HTMLDivElement,
@@ -188,10 +183,10 @@ export const SelectItemIndicator = withSlotContext<
 >(ArkSelect.ItemIndicator, 'itemIndicator')
 
 // -------------------- List --------------------
-export interface SelectListProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ListBaseProps>,
-    UnstyledProps {}
+export interface SelectListProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ListBaseProps
+> {}
 
 export const SelectList = withSlotContext<HTMLDivElement, SelectListProps>(
   ArkSelect.List,
@@ -199,10 +194,10 @@ export const SelectList = withSlotContext<HTMLDivElement, SelectListProps>(
 )
 
 // -------------------- Positioner --------------------
-export interface SelectPositionerProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.PositionerBaseProps>,
-    UnstyledProps {}
+export interface SelectPositionerProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.PositionerBaseProps
+> {}
 
 export const SelectPositioner = withSlotContext<
   HTMLDivElement,
@@ -210,10 +205,10 @@ export const SelectPositioner = withSlotContext<
 >(ArkSelect.Positioner, 'positioner')
 
 // -------------------- ValueText --------------------
-export interface SelectValueTextProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkSelect.ValueTextBaseProps>,
-    UnstyledProps {}
+export interface SelectValueTextProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkSelect.ValueTextBaseProps
+> {}
 
 export const SelectValueText = withSlotContext<
   HTMLDivElement,

@@ -5,7 +5,7 @@ import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
 import { Field as ArkField, useFieldContext } from '@ark-ui/react/field'
 import { field, type FieldVariantProps } from 'styled-system/recipes'
-import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { type HTMLStyledProps } from 'styled-system/types'
 import { cx } from 'styled-system/css'
 
 import { makeStyleContext } from '../../system/make-style-context'
@@ -13,13 +13,10 @@ import { makeStyleContext } from '../../system/make-style-context'
 const { withSlotProvider, withSlotContext } = makeStyleContext(field)
 
 // -------------------- RootProvider --------------------
-export interface FieldRootProviderProps
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'div'>, ArkField.RootProviderBaseProps>,
-      FieldVariantProps
-    >,
-    UnstyledProps {}
+export interface FieldRootProviderProps extends Assign<
+  Assign<HTMLStyledProps<'div'>, ArkField.RootProviderBaseProps>,
+  FieldVariantProps
+> {}
 
 export const FieldRootProvider = withSlotProvider<
   HTMLDivElement,
@@ -27,13 +24,10 @@ export const FieldRootProvider = withSlotProvider<
 >(ArkField.RootProvider, 'root')
 
 // -------------------- Root --------------------
-export interface FieldRootProps
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'div'>, ArkField.RootBaseProps>,
-      FieldVariantProps
-    >,
-    UnstyledProps {}
+export interface FieldRootProps extends Assign<
+  Assign<HTMLStyledProps<'div'>, ArkField.RootBaseProps>,
+  FieldVariantProps
+> {}
 
 export const FieldRoot = withSlotProvider<HTMLDivElement, FieldRootProps>(
   ArkField.Root,
@@ -41,10 +35,10 @@ export const FieldRoot = withSlotProvider<HTMLDivElement, FieldRootProps>(
 )
 
 // -------------------- Error --------------------
-export interface FieldErrorProps
-  extends
-    Assign<HTMLStyledProps<'span'>, ArkField.ErrorTextBaseProps>,
-    UnstyledProps {}
+export interface FieldErrorProps extends Assign<
+  HTMLStyledProps<'span'>,
+  ArkField.ErrorTextBaseProps
+> {}
 
 export const FieldError = withSlotContext<HTMLSpanElement, FieldErrorProps>(
   ArkField.ErrorText,
@@ -52,10 +46,10 @@ export const FieldError = withSlotContext<HTMLSpanElement, FieldErrorProps>(
 )
 
 // -------------------- HelperText --------------------
-export interface FieldHelperTextProps
-  extends
-    Assign<HTMLStyledProps<'span'>, ArkField.HelperTextBaseProps>,
-    UnstyledProps {}
+export interface FieldHelperTextProps extends Assign<
+  HTMLStyledProps<'span'>,
+  ArkField.HelperTextBaseProps
+> {}
 
 export const FieldHelperText = withSlotContext<
   HTMLSpanElement,
@@ -63,10 +57,10 @@ export const FieldHelperText = withSlotContext<
 >(ArkField.HelperText, 'helperText')
 
 // -------------------- Label --------------------
-export interface FieldLabelProps
-  extends
-    Assign<HTMLStyledProps<'label'>, ArkField.LabelBaseProps>,
-    UnstyledProps {}
+export interface FieldLabelProps extends Assign<
+  HTMLStyledProps<'label'>,
+  ArkField.LabelBaseProps
+> {}
 
 export const FieldLabel = withSlotContext<HTMLLabelElement, FieldLabelProps>(
   ArkField.Label,
@@ -74,8 +68,7 @@ export const FieldLabel = withSlotContext<HTMLLabelElement, FieldLabelProps>(
 )
 
 // -------------------- Indicator --------------------
-export interface FieldRequiredIndicatorProps
-  extends HTMLArkProps<'span'>, UnstyledProps {
+export interface FieldRequiredIndicatorProps extends HTMLArkProps<'span'> {
   fallback?: React.ReactNode | undefined
 }
 

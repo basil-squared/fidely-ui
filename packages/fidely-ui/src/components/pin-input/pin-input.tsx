@@ -3,32 +3,26 @@
 import type { Assign } from '@ark-ui/react'
 import { PinInput as ArkPinInput } from '@ark-ui/react/pin-input'
 import { pinInput, type PinInputVariantProps } from 'styled-system/recipes'
-import { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { type HTMLStyledProps } from 'styled-system/types'
 
 import { makeStyleContext } from '../../system/make-style-context'
 
 const { withSlotProvider, withSlotContext } = makeStyleContext(pinInput)
 
-export interface PinInputRootProviderProps
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'div'>, ArkPinInput.RootProviderBaseProps>,
-      PinInputVariantProps
-    >,
-    UnstyledProps {}
+export interface PinInputRootProviderProps extends Assign<
+  Assign<HTMLStyledProps<'div'>, ArkPinInput.RootProviderBaseProps>,
+  PinInputVariantProps
+> {}
 
 export const PinInputRootProvider = withSlotProvider<
   HTMLDivElement,
   PinInputRootProviderProps
 >(ArkPinInput.RootProvider, 'root')
 
-export interface PinInputRootProps
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'div'>, ArkPinInput.RootBaseProps>,
-      PinInputVariantProps
-    >,
-    UnstyledProps {}
+export interface PinInputRootProps extends Assign<
+  Assign<HTMLStyledProps<'div'>, ArkPinInput.RootBaseProps>,
+  PinInputVariantProps
+> {}
 
 export const PinInputRoot = withSlotProvider<HTMLDivElement, PinInputRootProps>(
   ArkPinInput.Root,
@@ -36,30 +30,30 @@ export const PinInputRoot = withSlotProvider<HTMLDivElement, PinInputRootProps>(
   { forwardProps: ['mask'] }
 )
 
-export interface PinInputLabelProps
-  extends
-    Assign<HTMLStyledProps<'label'>, ArkPinInput.LabelBaseProps>,
-    UnstyledProps {}
+export interface PinInputLabelProps extends Assign<
+  HTMLStyledProps<'label'>,
+  ArkPinInput.LabelBaseProps
+> {}
 
 export const PinInputLabel = withSlotContext<
   HTMLLabelElement,
   PinInputLabelProps
 >(ArkPinInput.Label, 'label')
 
-export interface PinInputControlProps
-  extends
-    Assign<HTMLStyledProps<'div'>, ArkPinInput.ControlBaseProps>,
-    UnstyledProps {}
+export interface PinInputControlProps extends Assign<
+  HTMLStyledProps<'div'>,
+  ArkPinInput.ControlBaseProps
+> {}
 
 export const PinInputControl = withSlotContext<
   HTMLDivElement,
   PinInputControlProps
 >(ArkPinInput.Control, 'control')
 
-export interface PinInputInputProps
-  extends
-    Assign<HTMLStyledProps<'input'>, ArkPinInput.InputBaseProps>,
-    UnstyledProps {}
+export interface PinInputInputProps extends Assign<
+  HTMLStyledProps<'input'>,
+  ArkPinInput.InputBaseProps
+> {}
 
 export const PinInputInput = withSlotContext<
   HTMLInputElement,

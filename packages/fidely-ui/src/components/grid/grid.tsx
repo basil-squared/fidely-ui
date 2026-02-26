@@ -3,7 +3,8 @@
 import { forwardRef } from 'react'
 import { type PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { HTMLStyledProps, styled } from 'styled-system/jsx'
+import { styled } from 'styled-system/jsx'
+import { type HTMLStyledProps } from 'styled-system/types'
 import { grid, type GridProperties } from 'styled-system/patterns'
 
 import { splitProps } from '../../utils/split-props'

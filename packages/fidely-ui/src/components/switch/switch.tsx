@@ -2,7 +2,7 @@
 
 import type { Assign } from '@ark-ui/react'
 import { Switch as ArkSwitch } from '@ark-ui/react/switch'
-import type { HTMLStyledProps, UnstyledProps } from 'styled-system/types'
+import { type HTMLStyledProps } from 'styled-system/types'
 import {
   switchRecipe,
   type SwitchRecipeVariantProps,
@@ -13,13 +13,10 @@ import { makeStyleContext } from '../../system/make-style-context'
 const { withSlotProvider, withSlotContext } = makeStyleContext(switchRecipe)
 
 // -------------------- Root Provider --------------------
-export interface SwitchRootProviderProps
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'label'>, ArkSwitch.RootProviderBaseProps>,
-      SwitchRecipeVariantProps
-    >,
-    UnstyledProps {}
+export interface SwitchRootProviderProps extends Assign<
+  Assign<HTMLStyledProps<'label'>, ArkSwitch.RootProviderBaseProps>,
+  SwitchRecipeVariantProps
+> {}
 
 export const SwitchRootProvider = withSlotProvider<
   HTMLLabelElement,
@@ -27,13 +24,10 @@ export const SwitchRootProvider = withSlotProvider<
 >(ArkSwitch.RootProvider, 'root')
 
 // -------------------- Root --------------------
-export interface SwitchRootProps
-  extends
-    Assign<
-      Assign<HTMLStyledProps<'label'>, ArkSwitch.RootBaseProps>,
-      SwitchRecipeVariantProps
-    >,
-    UnstyledProps {}
+export interface SwitchRootProps extends Assign<
+  Assign<HTMLStyledProps<'label'>, ArkSwitch.RootBaseProps>,
+  SwitchRecipeVariantProps
+> {}
 
 export const SwitchRoot = withSlotProvider<HTMLLabelElement, SwitchRootProps>(
   ArkSwitch.Root,
@@ -41,10 +35,10 @@ export const SwitchRoot = withSlotProvider<HTMLLabelElement, SwitchRootProps>(
 )
 
 // -------------------- Control --------------------
-export interface SwitchControlProps
-  extends
-    Assign<HTMLStyledProps<'span'>, ArkSwitch.ControlBaseProps>,
-    UnstyledProps {}
+export interface SwitchControlProps extends Assign<
+  HTMLStyledProps<'span'>,
+  ArkSwitch.ControlBaseProps
+> {}
 
 export const SwitchControl = withSlotContext<
   HTMLSpanElement,
@@ -52,10 +46,10 @@ export const SwitchControl = withSlotContext<
 >(ArkSwitch.Control, 'control')
 
 // -------------------- Thumb --------------------
-export interface SwitchThumbProps
-  extends
-    Assign<HTMLStyledProps<'span'>, ArkSwitch.ThumbBaseProps>,
-    UnstyledProps {}
+export interface SwitchThumbProps extends Assign<
+  HTMLStyledProps<'span'>,
+  ArkSwitch.ThumbBaseProps
+> {}
 
 export const SwitchThumb = withSlotContext<HTMLSpanElement, SwitchThumbProps>(
   ArkSwitch.Thumb,
@@ -63,10 +57,10 @@ export const SwitchThumb = withSlotContext<HTMLSpanElement, SwitchThumbProps>(
 )
 
 // -------------------- Label --------------------
-export interface SwitchLabelProps
-  extends
-    Assign<HTMLStyledProps<'span'>, ArkSwitch.LabelBaseProps>,
-    UnstyledProps {}
+export interface SwitchLabelProps extends Assign<
+  HTMLStyledProps<'span'>,
+  ArkSwitch.LabelBaseProps
+> {}
 
 export const SwitchLabel = withSlotContext<HTMLSpanElement, SwitchLabelProps>(
   ArkSwitch.Label,
