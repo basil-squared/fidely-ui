@@ -67,8 +67,8 @@ export default function ShowcaseProjectPage() {
                 <Image
                   src={link.image}
                   alt={link.name}
-                  width="400"
-                  height="200"
+                  width={400}
+                  height={200}
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsn9pfDwAFogI0qPkC4wAAAABJRU5ErkJggg=="
                 />
