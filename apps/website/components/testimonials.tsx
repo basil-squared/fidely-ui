@@ -42,25 +42,25 @@ export const Testimonials = () => {
           return (
             <GridItem key={name} height="min-content">
               <Card.Root>
-                <Card.Body gap="2">
-                  <Card.Header>
-                    <Flex
-                      justifyContent={'space-between'}
-                      alignItems={'flex-start'}
-                    >
-                      <Persona name={name} title={role} img={image} size="xl" />
+                <Card.Header>
+                  <Flex
+                    justifyContent={'space-between'}
+                    alignItems={'flex-start'}
+                  >
+                    <Persona name={name} title={role} img={image} size="xl" />
 
-                      {linkUrl && (
-                        <Link
-                          href={linkUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaLinkedin size={'18px'} />
-                        </Link>
-                      )}
-                    </Flex>
-                  </Card.Header>
+                    {linkUrl && (
+                      <Link
+                        href={linkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaLinkedin size={'18px'} />
+                      </Link>
+                    )}
+                  </Flex>
+                </Card.Header>
+                <Card.Body gap="2">
                   <Card.Description>{text}</Card.Description>
                 </Card.Body>
               </Card.Root>

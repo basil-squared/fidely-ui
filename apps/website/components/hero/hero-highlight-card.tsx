@@ -11,7 +11,7 @@ export const HeroHighlightCard = () => {
     <Card.Root maxWidth="420px" boxShadow="xl">
       <Card.Body>
         <Stack gap="4">
-          <Box px="3" py="1">
+          <Box px="1" py="1">
             <Text fontSize="xs" fontWeight="medium">
               Built with Fidely UI
             </Text>
