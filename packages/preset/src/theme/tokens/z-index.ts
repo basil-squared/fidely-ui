@@ -13,7 +13,7 @@ export const zIndex = defineTokens.zIndex({
   sticky: {
     value: 1100,
   },
-  banner: {
+  top: {
     value: 1200,
   },
   overlay: {
@@ -25,13 +25,10 @@ export const zIndex = defineTokens.zIndex({
   popover: {
     value: 1500,
   },
-  skipLink: {
+  toast: {
     value: 1600,
   },
-  toast: {
-    value: 1700,
-  },
   tooltip: {
-    value: 1800,
+    value: 1700,
   },
 })
