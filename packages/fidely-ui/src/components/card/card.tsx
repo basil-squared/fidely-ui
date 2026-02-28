@@ -1,6 +1,6 @@
 'use client'
 
-import type { Assign, HTMLArkProps, PolymorphicProps } from '@ark-ui/react'
+import type { Assign, PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
 import { type HTMLStyledProps } from 'styled-system/types'
 import { card, type CardVariantProps } from 'styled-system/recipes'
@@ -48,7 +48,7 @@ export const CardHeader = withSlotContext<HTMLDivElement, CardHeaderProps>(
 // -------------------- Title --------------------
 export interface CardTitleProps extends Assign<
   HTMLStyledProps<'h4'>,
-  HTMLArkProps<'h4'>
+  PolymorphicProps
 > {}
 
 export const CardTitle = withSlotContext<HTMLHeadingElement, CardTitleProps>(
@@ -58,14 +58,14 @@ export const CardTitle = withSlotContext<HTMLHeadingElement, CardTitleProps>(
 
 // -------------------- Description --------------------
 export interface CardDescriptionProps extends Assign<
-  HTMLStyledProps<'div'>,
+  HTMLStyledProps<'p'>,
   PolymorphicProps
 > {}
 
 export const CardDescription = withSlotContext<
-  HTMLDivElement,
+  HTMLParagraphElement,
   CardDescriptionProps
->(ark.div, 'description')
+>(ark.p, 'description')
 
 // -------------------- Footer --------------------
 export interface CardFooterProps extends Assign<
