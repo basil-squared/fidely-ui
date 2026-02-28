@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Image } from '@fidely-ui/react/image'
+import Image from 'next/image'
 import { Button } from '@fidely-ui/react/button'
 import { Card } from '@fidely-ui/react/card'
 import { Flex } from '@fidely-ui/react/flex'
 import { Grid, GridItem } from '@fidely-ui/react/grid'
 import { Heading } from '@fidely-ui/react/heading'
-import { Stack } from '@fidely-ui/react/stack'
 import { Text } from '@fidely-ui/react/text'
 import { Container } from '~/styled-system/jsx'
 
@@ -60,19 +59,24 @@ export default function ShowcaseProjectPage() {
           <GridItem height="min-content" key={link.name}>
             <Link href={link.url} target="_blank" rel="noopener noreferer">
               <Card.Root
-                bg="transparent"
-                shadow="none"
                 _hover={{
                   colorPalette: 'gray',
                   bg: 'colorPalette.alpha3',
                 }}
               >
-                <Image src={link.image} />
+                <Image
+                  src={link.image}
+                  alt={link.name}
+                  width="400"
+                  height="200"
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsn9pfDwAFogI0qPkC4wAAAABJRU5ErkJggg=="
+                />
+                <Card.Header>
+                  <Card.Title>{link.name}</Card.Title>
+                </Card.Header>
                 <Card.Body>
-                  <Stack gap="4">
-                    <Card.Title>{link.name}</Card.Title>
-                    <Card.Description>{link.description}</Card.Description>
-                  </Stack>
+                  <Card.Description>{link.description}</Card.Description>
                 </Card.Body>
               </Card.Root>
             </Link>
