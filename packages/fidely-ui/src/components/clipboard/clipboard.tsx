@@ -52,7 +52,7 @@ export interface ClipboardTriggerProps extends Assign<
 > {}
 
 export const ClipboardTrigger = withSlotContext<
-  HTMLDivElement,
+  HTMLButtonElement,
   ClipboardTriggerProps
 >(ArkClipboard.Trigger, 'trigger')
 
@@ -90,7 +90,7 @@ export interface ClipboardInputProps extends Assign<
 > {}
 
 export const ClipboardInput = withSlotContext<
-  HTMLDivElement,
+  HTMLInputElement,
   ClipboardInputProps
 >(ArkClipboard.Input, 'input')
 
@@ -101,7 +101,7 @@ export interface ClipboardLabelProps extends Assign<
 > {}
 
 export const ClipboardLabel = withSlotContext<
-  HTMLDivElement,
+  HTMLLabelElement,
   ClipboardLabelProps
 >(ArkClipboard.Label, 'label')
 
