@@ -62,7 +62,7 @@ export interface TableRowProps extends Assign<
   PolymorphicProps
 > {}
 
-export const TableRow = withSlotContext<HTMLTableSectionElement, TableRowProps>(
+export const TableRow = withSlotContext<HTMLTableRowElement, TableRowProps>(
   ark.tr,
   'row'
 )
@@ -74,7 +74,7 @@ export interface TableHeadCellProps extends Assign<
 > {}
 
 export const TableHeadCell = withSlotContext<
-  HTMLTableSectionElement,
+  HTMLTableCellElement,
   TableHeadCellProps
 >(ark.th, 'headCell')
 
