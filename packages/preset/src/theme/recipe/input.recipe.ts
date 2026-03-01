@@ -35,7 +35,7 @@ export const inputRecipe = defineRecipe({
   variants: {
     variant: {
       outline: {
-        bg: 'bg.surface',
+        bg: 'transparent',
         _focus: {
           borderColor: 'colorPalette.default',
           boxShadow: '0 0 0 1px var(--default-color)',
