@@ -13,13 +13,13 @@ export const commandInputRecipe = defineRecipe({
     '--default-color': 'colors.colorPalette.default',
     borderWidth: '1px',
     borderColor: 'border.default',
-    bg: 'bg.subtle',
+    bg: 'transparent',
     outline: '0',
     rounded: 'md',
     cursor: 'pointer',
     transition: 'background 0.2s ease',
     _hover: {
-      bg: 'bg.surface',
+      bg: 'bg.subtle',
     },
     _focus: {
       outline: 'none',

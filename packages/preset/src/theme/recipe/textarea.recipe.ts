@@ -33,13 +33,14 @@ export const textareaRecipe = defineRecipe({
   variants: {
     variant: {
       outline: {
-        bg: 'bg.surface',
+        bg: 'transparent',
         _focus: {
           borderColor: 'colorPalette.default',
           boxShadow: '0 0 0 1px var(--default-color)',
         },
       },
       flushed: {
+        bg: 'transparent',
         borderRadius: '0',
         borderTop: '0',
         borderLeft: '0',
