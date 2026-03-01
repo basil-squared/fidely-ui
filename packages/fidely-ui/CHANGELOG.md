@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.1
+
+### Patch Changes
+
+- [#229](https://github.com/fidely-ui/fidely-ui/pull/229) [`34b40de`](https://github.com/fidely-ui/fidely-ui/commit/34b40de91db22a93e49b23dabddc23fcdc6ef034) Thanks [@chimobi-justice](https://github.com/chimobi-justice)! - Fix slot typing mismatches in `Table` and `Clipboard` components.
+
+- [#227](https://github.com/fidely-ui/fidely-ui/pull/227) [`2ee6c71`](https://github.com/fidely-ui/fidely-ui/commit/2ee6c7101cbfff0c4b3fc64da99c9a11c5878366) Thanks [@chimobi-justice](https://github.com/chimobi-justice)! - Change **`CardDescription`** default element from `div` to `p` while preserving polymorphism
+
+- Updated dependencies [[`44e51e4`](https://github.com/fidely-ui/fidely-ui/commit/44e51e4f351066c5617165dd38ef662348eb582d), [`c033b2e`](https://github.com/fidely-ui/fidely-ui/commit/c033b2e5350b0c8c904a1a0a1e439139f6033ac2)]:
+  - @fidely-ui/panda-preset@2.2.1
+
 ## 2.2.0
 
 ### Minor Changes
